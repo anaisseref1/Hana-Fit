@@ -1,11 +1,266 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hana Fit</title>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Hana Fit">
+
+    <title>Hana Fit</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <h1>Hana Fit fonctionne 💙</h1>
+
+    <header class="top-header">
+
+        <div>
+            <p class="app-name">HANA FIT</p>
+
+            <h1>Bonjour Hana 👋</h1>
+
+            <p class="subtitle">
+                Chaque petit pas te rapproche de ton objectif.
+            </p>
+        </div>
+
+        <div class="logo-container">
+            <img
+                src="icon-192.png"
+                alt="Logo Hana Fit"
+                class="app-logo"
+                onerror="
+                    this.style.display='none';
+                    document.getElementById('logoFallback').style.display='grid';
+                "
+            >
+
+            <div id="logoFallback" class="logo-fallback">
+                H
+            </div>
+        </div>
+
+    </header>
+
+
+    <main class="app-container">
+
+        <section class="stats-grid">
+
+            <article class="stat-card">
+                <div class="stat-icon">🔥</div>
+
+                <p>Calories</p>
+
+                <strong>
+                    <span id="caloriesToday">0</span>
+                    /
+                    <span id="caloriesGoal">1550</span>
+                </strong>
+
+                <small>kcal</small>
+            </article>
+
+
+            <article class="stat-card">
+                <div class="stat-icon">🥩</div>
+
+                <p>Protéines</p>
+
+                <strong>
+                    <span id="proteinToday">0</span>
+                    /
+                    <span id="proteinGoal">110</span>
+                </strong>
+
+                <small>grammes</small>
+            </article>
+
+
+            <article class="stat-card">
+                <div class="stat-icon">🚶</div>
+
+                <p>Pas</p>
+
+                <strong id="stepsToday">
+                    0
+                </strong>
+
+                <small>objectif 8 000</small>
+            </article>
+
+
+            <article class="stat-card">
+                <div class="stat-icon">💧</div>
+
+                <p>Eau</p>
+
+                <strong>
+                    <span id="waterToday">0</span>
+                    / 2,3
+                </strong>
+
+                <small>litres</small>
+            </article>
+
+        </section>
+
+
+        <section class="main-card weight-card">
+
+            <div>
+                <p class="section-label">
+                    POIDS ACTUEL
+                </p>
+
+                <h2>
+                    <span id="currentWeight">65,3</span>
+                    kg
+                </h2>
+
+                <p class="objective-text">
+                    Objectif : 60 kg
+                </p>
+            </div>
+
+
+            <div class="progress-circle">
+                <span id="weightProgress">
+                    38 %
+                </span>
+            </div>
+
+        </section>
+
+
+        <section class="main-card mascot-card">
+
+            <div class="mascot-image-container">
+
+                <img
+                    src="chat-totem.jpg"
+                    alt="Chat totem Hana Fit"
+                    class="mascot-image"
+                    onerror="
+                        this.style.display='none';
+                        document.getElementById('catFallback').style.display='grid';
+                    "
+                >
+
+                <div id="catFallback" class="cat-fallback">
+                    🐈
+                </div>
+
+            </div>
+
+
+            <div class="mascot-message">
+
+                <p class="section-label">
+                    TON CHAT TOTEM
+                </p>
+
+                <h2>
+                    On y va ensemble 🦋
+                </h2>
+
+                <p>
+                    Tu fais de ton mieux, et c’est déjà incroyable.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="menu-grid">
+
+            <a href="nutrition.html" class="menu-card">
+                <div class="menu-icon">🥗</div>
+
+                <strong>Nutrition</strong>
+
+                <small>
+                    Repas, calories et macros
+                </small>
+            </a>
+
+
+            <a href="training.html" class="menu-card">
+                <div class="menu-icon">🏋️</div>
+
+                <strong>Entraînement</strong>
+
+                <small>
+                    Séances et historique
+                </small>
+            </a>
+
+
+            <a href="progress.html" class="menu-card">
+                <div class="menu-icon">📈</div>
+
+                <strong>Progression</strong>
+
+                <small>
+                    Poids et mensurations
+                </small>
+            </a>
+
+
+            <a href="profile.html" class="menu-card">
+                <div class="menu-icon">👤</div>
+
+                <strong>Profil</strong>
+
+                <small>
+                    Objectifs et paramètres
+                </small>
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <nav class="bottom-nav">
+
+        <a href="index.html" class="active">
+            <span>⌂</span>
+            Accueil
+        </a>
+
+        <a href="nutrition.html">
+            <span>●</span>
+            Nutrition
+        </a>
+
+        <a href="training.html">
+            <span>H</span>
+            Training
+        </a>
+
+        <a href="progress.html">
+            <span>⌁</span>
+            Progression
+        </a>
+
+        <a href="profile.html">
+            <span>◉</span>
+            Profil
+        </a>
+
+    </nav>
+
+
+    <script src="app.js"></script>
+
 </body>
 </html>
