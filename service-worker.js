@@ -4,7 +4,7 @@
 ========================================= */
 
 const CACHE_NAME =
-    "hana-fit-v5-2026-08-09";
+    "hana-fit-v7-2026-08-09";
 
 const APP_FILES = [
     "./",
@@ -39,7 +39,7 @@ const APP_FILES = [
     "./assets/js/daily.js",
     "./assets/js/database.js",
     "./assets/js/neha.js",
-    "./assets/js/nutrition-v4.js",
+    "./assets/js/nutrition-live-v6.js",
     "./assets/js/profile.js",
     "./assets/js/program-detail.js",
     "./assets/js/programs.js",
