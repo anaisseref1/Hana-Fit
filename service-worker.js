@@ -4,8 +4,7 @@
 ========================================= */
 
 const CACHE_NAME =
-    "hana-fit-v1-2026-08-08";
-
+    "hana-fit-v2-2026-08-09";
 
 const APP_FILES = [
     "./",
@@ -19,7 +18,6 @@ const APP_FILES = [
     "./assets/css/progress.css",
     "./assets/css/recipes.css",
     "./assets/css/style.css",
-    "./assets/css/today.css",
     "./assets/css/training.css",
     "./assets/css/wellbeing.css",
 
@@ -28,6 +26,7 @@ const APP_FILES = [
     "./assets/database/quotes.json",
     "./assets/database/recipes.json",
     "./assets/database/settings.json",
+    "./assets/database/training-programs.json",
     "./assets/database/workouts.json",
 
     "./assets/icons/apple-touch-icon.png",
@@ -49,12 +48,12 @@ const APP_FILES = [
     "./assets/js/recipes.js",
     "./assets/js/storage.js",
     "./assets/js/store.js",
-    "./assets/js/today.js",
     "./assets/js/training.js",
     "./assets/js/utils.js",
     "./assets/js/wellbeing.js",
 
     "./pages/daily.html",
+    "./pages/nutrition-guide.html",
     "./pages/nutrition.html",
     "./pages/profile.html",
     "./pages/program-detail.html",
@@ -62,7 +61,6 @@ const APP_FILES = [
     "./pages/progress.html",
     "./pages/recipe-detail.html",
     "./pages/recipes.html",
-    "./pages/today.html",
     "./pages/training.html",
     "./pages/wellbeing.html"
 ];

@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
+
+    <meta
+        name="theme-color"
+        content="#2563eb"
+    >
+
+    <title>
+        Repères nutrition — Hana Fit
+    </title>
+
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/components.css"
+    >
+
+
+    <style>
+
+        .guide-page {
+            width: min(calc(100% - 28px), 950px);
+            margin: 0 auto;
+            padding: 28px 0 110px;
+        }
+
+
+        .guide-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 22px;
+        }
+
+
+        .back-button {
+            width: 46px;
+            height: 46px;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+            border: 1px solid #dbeafe;
+            border-radius: 15px;
+            background: rgba(255,255,255,.92);
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 800;
+            box-shadow: 0 12px 30px rgba(37,99,235,.12);
+        }
+
+
+        .guide-kicker {
+            margin: 0 0 6px;
+            color: #2563eb;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: .12em;
+        }
+
+
+        .guide-title {
+            margin: 0;
+            color: #172554;
+            font-size: clamp(30px,7vw,42px);
+        }
+
+
+        .guide-subtitle {
+            margin: 8px 0 0;
+            color: #64748b;
+            line-height: 1.55;
+        }
+
+
+        .intro-card {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 22px;
+        }
+
+
+        .intro-icon {
+            width: 58px;
+            height: 58px;
+            display: grid;
+            place-items: center;
+            border-radius: 18px;
+            background: linear-gradient(135deg,#eff6ff,#dbeafe);
+            font-size: 30px;
+        }
+
+
+        .intro-card h2 {
+            margin: 0 0 6px;
+            color: #172554;
+            font-size: 20px;
+        }
+
+
+        .intro-card p {
+            margin: 0;
+            color: #64748b;
+            line-height: 1.55;
+        }
+
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(2,minmax(0,1fr));
+            gap: 16px;
+        }
+
+
+        .guide-card {
+            padding: 0;
+            overflow: hidden;
+        }
+
+
+        .guide-card summary {
+            list-style: none;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 13px;
+            padding: 20px;
+            cursor: pointer;
+        }
+
+
+        .guide-card summary::-webkit-details-marker {
+            display: none;
+        }
+
+
+        .guide-card[open] summary {
+            border-bottom: 1px solid #dbeafe;
+            background: linear-gradient(135deg,#eff6ff,#fff);
+        }
+
+
+        .guide-icon {
+            width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            border-radius: 15px;
+            background: #eff6ff;
+            font-size: 24px;
+        }
+
+
+        .guide-summary-text strong {
+            display: block;
+            color: #172554;
+            font-size: 16px;
+        }
+
+
+        .guide-summary-text span {
+            display: block;
+            margin-top: 4px;
+            color: #64748b;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+
+        .chevron {
+            color: #2563eb;
+            font-size: 18px;
+            transition: transform .2s ease;
+        }
+
+
+        .guide-card[open] .chevron {
+            transform: rotate(90deg);
+        }
+
+
+        .guide-content {
+            padding: 18px 20px 20px;
+        }
+
+
+        .guide-content h3 {
+            margin: 0 0 10px;
+            color: #0d47a1;
+            font-size: 15px;
+        }
+
+
+        .guide-content p {
+            margin: 0 0 12px;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+
+        .guide-content ul {
+            margin: 0;
+            padding-left: 20px;
+            color: #475569;
+            line-height: 1.65;
+        }
+
+
+        .example-box {
+            margin-top: 14px;
+            padding: 14px;
+            border-radius: 15px;
+            background: #eff6ff;
+            color: #1e3a8a;
+            line-height: 1.55;
+        }
+
+
+        .note-card {
+            margin-top: 20px;
+            border: 1px solid #bfdbfe;
+            background: linear-gradient(135deg,#eff6ff,#fff);
+        }
+
+
+        .note-card strong {
+            display: block;
+            margin-bottom: 6px;
+            color: #172554;
+        }
+
+
+        .note-card p {
+            margin: 0;
+            color: #64748b;
+            line-height: 1.55;
+        }
+
+
+        @media(max-width:700px) {
+
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-card {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-icon {
+                width: 52px;
+                height: 52px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<main class="guide-page">
+
+
+    <header class="guide-header">
+
+        <a
+            href="./nutrition.html"
+            class="back-button"
+            aria-label="Retour à Nutrition"
+        >
+            ←
+        </a>
+
+
+        <div>
+
+            <p class="guide-kicker">
+                HANA FIT • APPRENDRE SIMPLEMENT
+            </p>
+
+            <h1 class="guide-title">
+                📚 Repères nutrition
+            </h1>
+
+            <p class="guide-subtitle">
+                Des repères pratiques pour mieux composer tes repas,
+                comprendre les aliments et trouver des idées faciles au quotidien.
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <section class="intro-card card">
+
+        <div class="intro-icon">
+            🐈
+        </div>
+
+        <div>
+
+            <h2>
+                Le repère de NEHA
+            </h2>
+
+            <p>
+                Pas besoin de chercher la perfection à chaque repas.
+                L'équilibre se construit surtout avec la variété,
+                la régularité et des associations qui te conviennent.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="guide-grid">
+
+
+        <details class="guide-card card">
+
+            <summary>
+
+                <span class="guide-icon">🍽️</span>
+
+                <span class="guide-summary-text">
+                    <strong>Composer une assiette équilibrée</strong>
+                    <span>Une base simple pour construire un repas complet.</span>
+                </span>
+
+                <span class="chevron">›</span>
+
+            </summary>
+
+            <div class="guide-content">
+
+                <h3>Le principe</h3>
+
+                <p>
+                    Pense ton repas comme une combinaison de plusieurs familles
+                    plutôt que comme une liste d'aliments « parfaits ».
+                </p>
+
+                <ul>
+                    <li>Une source de protéines.</li>
+                    <li>Un féculent ou une céréale selon ta faim et ton activité.</li>
+                    <li>Des légumes ou un fruit pour la variété et les fibres.</li>
+                    <li>Une source de matières grasses en quantité adaptée.</li>
+                </ul>
+
+                <div class="example-box">
+                    Exemple : poulet + quinoa + courgettes + huile d'olive.
+                </div>
+
+            </div>
+
+        </details>
+
+
+
+        <details class="guide-card card">
+
+            <summary>
+
+                <span class="guide-icon">🧩</span>
+
+                <span class="guide-summary-text">
+                    <strong>Bien associer les aliments</strong>
+                    <span>Construire des repas rassasiants et variés.</span>
+                </span>
+
+                <span class="chevron">›</span>
+
+            </summary>
+
+            <div class="guide-content">
+
+                <h3>Une formule pratique</h3>
+
+                <p>
+                    Associer protéines, glucides, fibres et un peu de matières grasses
+                    permet généralement d'obtenir un repas plus complet qu'un aliment isolé.
+                </p>
+
+                <ul>
+                    <li>Skyr + avoine + fruits rouges + graines de chia.</li>
+                    <li>Quinoa + pois chiches + légumes + feta.</li>
+                    <li>Pain complet + œuf + crudités ou légumes cuits.</li>
+                </ul>
+
+            </div>
+
+        </details>
+
+
+
+        <details class="guide-card card">
+
+            <summary>
+
+                <span class="guide-icon">🥩</span>
+
+                <span class="guide-summary-text">
+                    <strong>Les protéines au quotidien</strong>
+                    <span>Animales, végétales et idées faciles.</span>
+                </span>
+
+                <span class="chevron">›</span>
+
+            </summary>
+
+            <div class="guide-content">
+
+                <p>
+                    Les protéines participent notamment au renouvellement des tissus
+                    et peuvent être réparties sur les différents repas de la journée.
+                </p>
+
+                <ul>
+                    <li>Volaille, poisson, œufs.</li>
+                    <li>Skyr, yaourt, fromage selon les produits.</li>
+                    <li>Lentilles, pois chiches, haricots.</li>
+                    <li>Tofu et autres alternatives végétales.</li>
+                </ul>
+
+                <div class="example-box">
+                    Une alimentation variée permet d'utiliser plusieurs sources
+                    au fil de la semaine.
+                </div>
+
+            </div>
+
+        </details>
+
+
+
+        <details class="guide-card card">
+
+            <summary>
+
+                <span class="guide-icon">🌾</span>
+
+                <span class="guide-summary-text">
+                    <strong>Fibres & transit</strong>
+                    <span>Les aliments qui peuvent aider à soutenir un transit régulier.</span>
+                </span>
+
+                <span class="chevron">›</span>
+
+            </summary>
+
+            <div class="guide-content">
+
+                <h3>Où trouver des fibres ?</h3>
+
+                <ul>
+                    <li>Fruits et légumes.</li>
+                    <li>Légumineuses : lentilles, pois chiches, haricots.</li>
+                    <li>Avoine et céréales complètes.</li>
+                    <li>Graines et oléagineux.</li>
+                </ul>
+
+                <p>
+                    Si tu augmentes les fibres, fais-le progressivement
+                    et pense aussi à boire suffisamment.
+                    La tolérance digestive reste très individuelle.
+                </p>
+
+                <div class="example-box">
+                    Idée Hana Fit : avoine + chia + fruits rouges + skyr,
+                    ou quinoa + lentilles + légumes cuits.
+                </div>
+
+            </div>
+
+        </details>
+
+
+
+        <details class="guide-card card">
+
+            <summary>
+
+                <span class="guide-icon">🥛</span>
+
+                <span class="guide-summary-text">
+                    <strong>Focus kéfir</strong>
+                    <span>Comprendre cette boisson fermentée.</span>
+                </span>
+
+                <span class="chevron">›</span>
+
+            </summary>
+
+            <div class="guide-content">
+
+                <p>
+                    Le kéfir est une boisson fermentée.
+                    Selon le produit, il peut apporter des micro-organismes issus
+                    de la fermentation et s'intégrer comme un aliment parmi d'autres.
+                </p>
+
+                <ul>
+                    <li>Regarder la composition et les sucres ajoutés selon les marques.</li>
+                    <li>Commencer par une quantité modérée si tu es sensible digestivement.</li>
+                    <li>Le consommer au petit-déjeuner ou en collation si tu l'apprécies.</li>
+                </ul>
+
+                <div class="example-box">
+                    Exemple : kéfir + fruit + quelques flocons d'avoine.
+                </div>
+
+            </div>
+
+        </details>
+
+
+
+        <details class="guide-card card">
+
+            <summary>
+
+                <span class="guide-icon">🥣</span>
+
+                <span class="guide-summary-text">
+                    <strong>Focus Activia & yaourts fermentés</strong>
+                    <span>Ferments, calcium et utilisation au quotidien.</span>
+                </span>
+
+                <span class="chevron">›</span>
+
+            </summary>
+
+            <div class="guide-content">
+
+                <p>
+                    Les yaourts et laits fermentés apportent des ferments.
+                    Selon le produit, ils peuvent aussi être une source de protéines
+                    et de calcium.
+                </p>
+
+                <ul>
+                    <li>Comparer les versions nature et aromatisées selon tes préférences.</li>
+                    <li>Vérifier les sucres ajoutés si c'est un critère important pour toi.</li>
+                    <li>Les associer à un fruit ou à de l'avoine pour une collation plus complète.</li>
+                </ul>
+
+                <div class="example-box">
+                    Activia nature + pomme + quelques amandes,
+                    ou yaourt + fruits rouges + avoine.
+                </div>
+
+            </div>
+
+        </details>
+
+
+
+        <details class="guide-card card">
+
+            <summary>
+
+                <span class="guide-icon">🍎</span>
+
+                <span class="guide-summary-text">
+                    <strong>Construire une collation</strong>
+                    <span>Adapter la collation à ta faim.</span>
+                </span>
+
+                <span class="chevron">›</span>
+
+            </summary>
+
+            <div class="guide-content">
+
+                <p>
+                    Une collation n'est pas obligatoire.
+                    Elle peut simplement aider lorsque l'intervalle entre deux repas est long
+                    ou lorsque la faim est présente.
+                </p>
+
+                <ul>
+                    <li>Petite faim : un fruit ou un yaourt.</li>
+                    <li>Faim moyenne : fruit + yaourt.</li>
+                    <li>Plus rassasiant : fruit + produit laitier + quelques oléagineux.</li>
+                </ul>
+
+            </div>
+
+        </details>
+
+
+
+        <details class="guide-card card">
+
+            <summary>
+
+                <span class="guide-icon">🏋️</span>
+
+                <span class="guide-summary-text">
+                    <strong>Avant & après l'entraînement</strong>
+                    <span>Des repères simples autour du sport.</span>
+                </span>
+
+                <span class="chevron">›</span>
+
+            </summary>
+
+            <div class="guide-content">
+
+                <p>
+                    Autour d'une séance, l'objectif est surtout d'arriver avec assez d'énergie,
+                    puis de retrouver un repas ou une collation adaptée ensuite.
+                </p>
+
+                <ul>
+                    <li>Avant : privilégier quelque chose que tu digères bien.</li>
+                    <li>Après : associer protéines, glucides et hydratation.</li>
+                    <li>Le repas normal suivant peut parfaitement suffire.</li>
+                </ul>
+
+            </div>
+
+        </details>
+
+
+
+        <details class="guide-card card">
+
+            <summary>
+
+                <span class="guide-icon">💧</span>
+
+                <span class="guide-summary-text">
+                    <strong>Hydratation</strong>
+                    <span>Une habitude simple mais importante.</span>
+                </span>
+
+                <span class="chevron">›</span>
+
+            </summary>
+
+            <div class="guide-content">
+
+                <p>
+                    Les besoins varient selon la température, l'activité physique,
+                    l'alimentation et la personne.
+                </p>
+
+                <ul>
+                    <li>Répartir les boissons dans la journée.</li>
+                    <li>Boire davantage autour d'une activité qui fait transpirer.</li>
+                    <li>L'eau reste la boisson de référence.</li>
+                </ul>
+
+            </div>
+
+        </details>
+
+
+
+        <details class="guide-card card">
+
+            <summary>
+
+                <span class="guide-icon">🛒</span>
+
+                <span class="guide-summary-text">
+                    <strong>Faire des courses équilibrées</strong>
+                    <span>Une checklist simple pour remplir le frigo.</span>
+                </span>
+
+                <span class="chevron">›</span>
+
+            </summary>
+
+            <div class="guide-content">
+
+                <ul>
+                    <li>2 à 4 sources de protéines.</li>
+                    <li>Féculents et céréales que tu aimes.</li>
+                    <li>Légumineuses.</li>
+                    <li>Fruits et légumes frais, surgelés ou en conserve selon les besoins.</li>
+                    <li>Produits laitiers ou alternatives selon tes habitudes.</li>
+                    <li>Quelques matières grasses et oléagineux.</li>
+                </ul>
+
+            </div>
+
+        </details>
+
+
+    </section>
+
+
+
+    <section class="note-card card">
+
+        <strong>
+            💙 À garder en tête
+        </strong>
+
+        <p>
+            Ces fiches donnent des repères généraux et éducatifs.
+            Elles ne remplacent pas un avis médical ou diététique individualisé,
+            notamment en cas de symptômes digestifs persistants ou de maladie.
+        </p>
+
+    </section>
+
+
+</main>
+
+
+</body>
+
+</html>

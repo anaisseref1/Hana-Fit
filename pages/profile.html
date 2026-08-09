@@ -474,6 +474,11 @@
                 </label>
 
                 <label class="field-label">
+                    Objectif calories (kcal)
+                    <input type="number" id="profileCaloriesGoal" min="500" max="5000" step="50">
+                </label>
+
+                <label class="field-label">
                     Objectif protéines (g)
                     <input type="number" id="profileProteinGoal" min="0" step="1">
                 </label>
@@ -482,6 +487,11 @@
             <button type="button" id="saveProfileButton" class="primary-button">
                 ✓ Enregistrer mes paramètres
             </button>
+
+            <p style="margin:10px 2px 0;color:#64748b;font-size:11px;line-height:1.5;">
+                Les nouveaux objectifs sont utilisés par les pages Hana Fit compatibles
+                dès leur prochain affichage.
+            </p>
         </section>
 
         <section class="profile-card full">
@@ -630,12 +640,13 @@
                 <h3>🗑️ Zone sensible</h3>
 
                 <p>
-                    Cette action supprimera les données Hana Fit enregistrées localement
-                    sur cet appareil. Une confirmation sera toujours demandée avant suppression.
+                    Cette action supprimera les données Hana Fit enregistrées dans le stockage
+                    local du navigateur. Les photos privées de progression ne seront pas supprimées.
+                    Une confirmation sera toujours demandée.
                 </p>
 
                 <button type="button" id="deleteLocalDataButton" class="danger-button">
-                    Supprimer mes données locales
+                    Supprimer mes données locales (hors photos)
                 </button>
             </div>
         </section>

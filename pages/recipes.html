@@ -2,6 +2,7 @@
 <html lang="fr">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -9,7 +10,10 @@
         content="width=device-width, initial-scale=1.0"
     >
 
+    <meta name="theme-color" content="#2563eb">
+
     <title>Mes recettes | Hana Fit</title>
+
 
     <link
         rel="stylesheet"
@@ -20,174 +24,194 @@
         rel="stylesheet"
         href="../assets/css/recipes.css"
     >
+
 </head>
 
 
 <body>
 
-<main class="page">
 
-    <!-- RETOUR -->
-
-    <a
-        href="../index.html"
-        class="back-link"
-    >
-        ← Accueil
-    </a>
+    <main class="page">
 
 
-    <!-- EN-TÊTE -->
+        <!-- RETOUR VERS NUTRITION -->
 
-    <header class="recipes-header">
-
-        <div class="header-icon">
-            🍽️
-        </div>
-
-        <div>
-
-            <span class="badge">
-                HANA FIT
-            </span>
-
-            <h1 class="section-title">
-                Mes recettes
-            </h1>
-
-            <p class="section-subtitle">
-                Retrouve toutes tes idées de repas et leurs valeurs nutritionnelles.
-            </p>
-
-        </div>
-
-    </header>
-
-
-    <!-- RECHERCHE -->
-
-    <section class="recipe-tools card">
-
-        <div class="recipe-search">
-
-            <span>
-                🔎
-            </span>
-
-            <input
-                type="search"
-                id="recipe-search"
-                placeholder="Rechercher une recette..."
-                autocomplete="off"
-            >
-
-        </div>
-
-
-        <div
-            id="recipe-filters"
-            class="recipe-filters"
+        <a
+            href="./nutrition.html"
+            class="back-link"
         >
-
-            <button
-                type="button"
-                class="recipe-filter active"
-                data-filter="all"
-            >
-                Toutes
-            </button>
-
-            <button
-                type="button"
-                class="recipe-filter"
-                data-filter="Petit-déjeuner"
-            >
-                🥣 Petit-déjeuner
-            </button>
-
-            <button
-                type="button"
-                class="recipe-filter"
-                data-filter="Déjeuner"
-            >
-                🥗 Déjeuner
-            </button>
-
-            <button
-                type="button"
-                class="recipe-filter"
-                data-filter="Collation"
-            >
-                🍎 Collation
-            </button>
-
-            <button
-                type="button"
-                class="recipe-filter"
-                data-filter="Dîner"
-            >
-                🍝 Dîner
-            </button>
-
-            <button
-                type="button"
-                class="recipe-filter"
-                data-filter="favorites"
-            >
-                ⭐ Favoris
-            </button>
-
-        </div>
-
-    </section>
+            ← Retour
+        </a>
 
 
-    <!-- RÉSUMÉ -->
 
-    <section class="recipes-summary">
+        <!-- EN-TÊTE -->
 
-        <div>
+        <header class="recipes-header">
 
-            <h2>
-                Bibliothèque
-            </h2>
-
-            <p id="recipes-count">
-                Chargement des recettes...
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- RECETTES -->
-
-    <section
-        id="recipes-container"
-        class="recipes-grid"
-    >
-
-        <div class="loading-card card">
-
-            <div class="loading-spinner">
+            <div class="header-icon">
+                🍽️
             </div>
 
-            <p>
-                Chargement de tes recettes...
-            </p>
 
-        </div>
+            <div>
 
-    </section>
+                <span class="badge">
+                    HANA FIT
+                </span>
+
+                <h1 class="section-title">
+                    Mes recettes
+                </h1>
+
+                <p class="section-subtitle">
+                    Retrouve toutes tes idées de repas et leurs valeurs nutritionnelles.
+                </p>
+
+            </div>
+
+        </header>
 
 
-</main>
+
+        <!-- RECHERCHE -->
+
+        <section class="recipe-tools card">
+
+            <div class="recipe-search">
+
+                <span>
+                    🔎
+                </span>
+
+                <input
+                    type="search"
+                    id="recipe-search"
+                    placeholder="Rechercher une recette..."
+                    autocomplete="off"
+                >
+
+            </div>
 
 
-<script src="../assets/js/store.js"></script>
-<script src="../assets/js/database.js"></script>
-<script src="../assets/js/recipes.js"></script>
+
+            <div
+                id="recipe-filters"
+                class="recipe-filters"
+            >
+
+                <button
+                    type="button"
+                    class="recipe-filter active"
+                    data-filter="all"
+                >
+                    Toutes
+                </button>
+
+
+                <button
+                    type="button"
+                    class="recipe-filter"
+                    data-filter="Petit-déjeuner"
+                >
+                    🥣 Petit-déjeuner
+                </button>
+
+
+                <button
+                    type="button"
+                    class="recipe-filter"
+                    data-filter="Déjeuner"
+                >
+                    🥗 Déjeuner
+                </button>
+
+
+                <button
+                    type="button"
+                    class="recipe-filter"
+                    data-filter="Collation"
+                >
+                    🍎 Collation
+                </button>
+
+
+                <button
+                    type="button"
+                    class="recipe-filter"
+                    data-filter="Dîner"
+                >
+                    🍝 Dîner
+                </button>
+
+
+                <button
+                    type="button"
+                    class="recipe-filter"
+                    data-filter="favorites"
+                >
+                    ⭐ Favoris
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- RÉSUMÉ -->
+
+        <section class="recipes-summary">
+
+            <div>
+
+                <h2>
+                    Bibliothèque
+                </h2>
+
+                <p id="recipes-count">
+                    Chargement des recettes...
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- RECETTES -->
+
+        <section
+            id="recipes-container"
+            class="recipes-grid"
+        >
+
+            <div class="loading-card card">
+
+                <div class="loading-spinner">
+                </div>
+
+                <p>
+                    Chargement de tes recettes...
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="../assets/js/store.js"></script>
+
+    <script src="../assets/js/database.js"></script>
+
+    <script src="../assets/js/recipes.js"></script>
+
 
 </body>
 

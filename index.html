@@ -113,7 +113,7 @@
                     0
                 </strong>
 
-                <small>objectif 8 000</small>
+                <small>objectif <span id="stepsGoalDisplay">8 000</span></small>
             </article>
 
 
@@ -124,7 +124,8 @@
 
                 <strong>
                     <span id="waterToday">0</span>
-                    / 2,3
+                    /
+                    <span id="waterGoalDisplay">2,3</span>
                 </strong>
 
                 <small>litres</small>
@@ -133,35 +134,143 @@
         </section>
 
 
+        <section class="today-overview">
+
+            <a
+                href="pages/training.html"
+                class="overview-card"
+            >
+                <div class="overview-icon">
+                    🏋️
+                </div>
+
+                <div>
+                    <span>ENTRAÎNEMENT</span>
+                    <strong id="todayTrainingStatus">
+                        Aucune séance enregistrée
+                    </strong>
+                    <small id="todayTrainingDetail">
+                        Jour de repos ou séance à venir
+                    </small>
+                </div>
+            </a>
+
+
+            <a
+                href="pages/wellbeing.html"
+                class="overview-card"
+            >
+                <div class="overview-icon">
+                    🌿
+                </div>
+
+                <div>
+                    <span>BIEN-ÊTRE</span>
+                    <strong id="todayWellbeingStatus">
+                        À compléter
+                    </strong>
+                    <small id="todayWellbeingDetail">
+                        Quelques secondes pour faire le point
+                    </small>
+                </div>
+            </a>
+
+
+            <a
+                href="#dailyGoals"
+                class="overview-card"
+            >
+                <div class="overview-icon">
+                    ✅
+                </div>
+
+                <div>
+                    <span>OBJECTIFS DU JOUR</span>
+                    <strong id="todayGoalsStatus">
+                        0 / 5
+                    </strong>
+                    <small id="todayGoalsDetail">
+                        Avance à ton rythme
+                    </small>
+                </div>
+            </a>
+
+        </section>
+
+
         <section class="main-card weight-card">
 
-            <div>
+            <div class="weight-main">
+
                 <p class="section-label">
-                    POIDS ACTUEL
+                    MON VOYAGE
                 </p>
 
-                <h2>
-                    <span id="currentWeight">
-                        65,3
-                    </span>
-                    kg
-                </h2>
+                <div class="weight-headline">
+                    <div>
+                        <small>Poids actuel</small>
+
+                        <h2>
+                            <span id="currentWeight">
+                                65,3
+                            </span>
+                            kg
+                        </h2>
+                    </div>
+
+                    <div class="progress-circle">
+                        <span id="weightProgress">
+                            38 %
+                        </span>
+                    </div>
+                </div>
 
                 <p class="objective-text">
-                    Objectif : 60 kg
+                    Objectif :
+                    <span id="goalWeightDisplay">
+                        60
+                    </span>
+                    kg
                 </p>
+
             </div>
 
-            <div class="progress-circle">
-                <span id="weightProgress">
-                    38 %
-                </span>
+
+            <div class="weight-trend">
+
+                <div class="weight-trend-row">
+                    <span>
+                        Moyenne cette semaine
+                    </span>
+
+                    <strong id="weeklyAverageHome">
+                        —
+                    </strong>
+                </div>
+
+                <div class="weight-trend-row">
+                    <span>
+                        Tendance
+                    </span>
+
+                    <strong id="weeklyTrendHome">
+                        —
+                    </strong>
+                </div>
+
+                <a
+                    href="pages/progress.html"
+                    class="weight-trend-link"
+                >
+                    Voir ma progression →
+                </a>
+
             </div>
 
         </section>
 
 
-        <section class="main-card daily-goals-card">
+        <section class="main-card daily-goals-card" id="dailyGoals">
 
             <div class="section-heading">
 
@@ -190,7 +299,7 @@
                     >
 
                     <span>
-                        Rester proche de 1 550 kcal
+                        Rester proche de <span id="goalCaloriesValue">1 550</span> kcal
                     </span>
                 </label>
 
@@ -202,7 +311,7 @@
                     >
 
                     <span>
-                        Atteindre 110 g de protéines
+                        Atteindre <span id="goalProteinValue">110</span> g de protéines
                     </span>
                 </label>
 
@@ -214,7 +323,7 @@
                     >
 
                     <span>
-                        Marcher 8 000 pas
+                        Marcher <span id="goalStepsValue">8 000</span> pas
                     </span>
                 </label>
 
@@ -226,7 +335,7 @@
                     >
 
                     <span>
-                        Boire 2,3 L d'eau
+                        Boire <span id="goalWaterValue">2,3</span> L d'eau
                     </span>
                 </label>
 
@@ -437,6 +546,7 @@
 
 
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/neha.js"></script>
 
 
     <script>

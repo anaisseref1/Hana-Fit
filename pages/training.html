@@ -1004,6 +1004,316 @@
                 padding: 9px 4px;
             }
         }
+    
+        /* =========================================
+           BIBLIOTHÈQUE DE SÉANCES
+        ========================================= */
+
+        .training-program-library {
+            margin-top: 18px;
+        }
+
+        .training-program-intro {
+            margin: 0 0 16px;
+            padding: 15px 16px;
+            border: 1px solid #bfdbfe;
+            border-radius: 16px;
+            background: linear-gradient(135deg,#eff6ff,#ffffff);
+            color: #475569;
+            font-size: 13px;
+            line-height: 1.55;
+        }
+
+        .training-program-tools {
+            display: grid;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .training-program-search input {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #bfdbfe;
+            border-radius: 14px;
+            background: #f8fbff;
+            color: #1e293b;
+            font: inherit;
+        }
+
+        .training-program-search input:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 4px rgba(37,99,235,.1);
+        }
+
+        .training-program-filters {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 3px;
+            scrollbar-width: thin;
+        }
+
+        .training-program-filter {
+            flex: 0 0 auto;
+            padding: 9px 13px;
+            border: 1px solid #dbeafe;
+            border-radius: 999px;
+            background: #fff;
+            color: #475569;
+            font: inherit;
+            font-size: 12px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .training-program-filter.active {
+            border-color: #2563eb;
+            background: #2563eb;
+            color: #fff;
+        }
+
+        .training-program-count {
+            margin: 0 0 12px;
+            color: #64748b;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .training-program-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .training-program-card {
+            border: 1px solid #dbeafe;
+            border-radius: 19px;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .training-program-card summary {
+            list-style: none;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            cursor: pointer;
+        }
+
+        .training-program-card summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .training-program-card[open] summary {
+            border-bottom: 1px solid #dbeafe;
+            background: linear-gradient(135deg,#eff6ff,#fff);
+        }
+
+        .training-program-emoji {
+            width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            border-radius: 15px;
+            background: #eff6ff;
+            font-size: 24px;
+        }
+
+        .training-program-title strong {
+            display: block;
+            color: #172554;
+            font-size: 15px;
+        }
+
+        .training-program-title span {
+            display: block;
+            margin-top: 4px;
+            color: #64748b;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+        .training-program-chevron {
+            color: #2563eb;
+            font-size: 20px;
+            transition: transform .2s ease;
+        }
+
+        .training-program-card[open] .training-program-chevron {
+            transform: rotate(90deg);
+        }
+
+        .training-program-content {
+            padding: 16px;
+        }
+
+        .training-program-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 13px;
+        }
+
+        .training-program-badge {
+            padding: 6px 9px;
+            border-radius: 999px;
+            background: #eff6ff;
+            color: #1d4ed8;
+            font-size: 10px;
+            font-weight: 850;
+        }
+
+        .training-program-summary {
+            margin: 0 0 13px;
+            color: #475569;
+            font-size: 13px;
+            line-height: 1.55;
+        }
+
+        .training-program-meta {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+
+        .training-program-meta div {
+            padding: 10px;
+            border-radius: 12px;
+            background: #f8fbff;
+        }
+
+        .training-program-meta span {
+            display: block;
+            color: #64748b;
+            font-size: 10px;
+        }
+
+        .training-program-meta strong {
+            display: block;
+            margin-top: 4px;
+            color: #172554;
+            font-size: 12px;
+        }
+
+        .training-program-exercises {
+            display: grid;
+            gap: 7px;
+        }
+
+        .training-program-exercise {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 9px;
+            align-items: start;
+            padding: 10px 11px;
+            border-radius: 12px;
+            background: #f8fbff;
+        }
+
+        .training-program-exercise-index {
+            width: 24px;
+            height: 24px;
+            display: grid;
+            place-items: center;
+            border-radius: 8px;
+            background: #dbeafe;
+            color: #1d4ed8;
+            font-size: 10px;
+            font-weight: 900;
+        }
+
+        .training-program-exercise strong {
+            display: block;
+            color: #334155;
+            font-size: 12px;
+        }
+
+        .training-program-exercise span {
+            display: block;
+            margin-top: 2px;
+            color: #64748b;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+        .training-program-note {
+            margin-top: 12px;
+            padding: 12px;
+            border-radius: 13px;
+            background: #fff7ed;
+            color: #9a3412;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .training-program-load {
+            width: 100%;
+            margin-top: 14px;
+            padding: 13px 15px;
+            border: 0;
+            border-radius: 14px;
+            background: linear-gradient(135deg,#2563eb,#60a5fa);
+            color: #fff;
+            font: inherit;
+            font-weight: 900;
+            cursor: pointer;
+        }
+
+        .training-methods {
+            margin-top: 14px;
+            border: 1px solid #dbeafe;
+            border-radius: 16px;
+            background: #f8fbff;
+            overflow: hidden;
+        }
+
+        .training-methods summary {
+            padding: 14px 16px;
+            color: #2563eb;
+            font-size: 13px;
+            font-weight: 850;
+            cursor: pointer;
+        }
+
+        .training-methods-content {
+            display: grid;
+            gap: 8px;
+            padding: 0 16px 16px;
+        }
+
+        .training-method-line {
+            padding: 10px 11px;
+            border-radius: 12px;
+            background: #fff;
+            color: #475569;
+            font-size: 11px;
+            line-height: 1.45;
+        }
+
+        .training-method-line strong {
+            color: #172554;
+        }
+
+        .program-exercise-guide {
+            margin-top: 8px;
+            padding: 8px 10px;
+            border-radius: 10px;
+            background: #eff6ff;
+            color: #1e40af;
+            font-size: 11px;
+            line-height: 1.45;
+            font-weight: 700;
+        }
+
+        @media(max-width:650px) {
+            .training-program-meta {
+                grid-template-columns: 1fr;
+            }
+        }
+
     </style>
 </head>
 
@@ -1063,6 +1373,138 @@
             <p>Cardio aujourd'hui</p>
             <strong id="todayCardio">0 min</strong>
         </article>
+
+    </section>
+
+
+
+    <section class="training-card training-program-library">
+
+        <div class="card-heading">
+            <div>
+                <h2>🏋️ Programmes Training</h2>
+                <p>
+                    Choisis une séance selon ton envie, ton matériel et le temps disponible.
+                </p>
+            </div>
+
+            <span class="card-icon">✨</span>
+        </div>
+
+        <p class="training-program-intro">
+            Les séances sont indépendantes : tu peux en choisir une sans suivre un planning
+            de 4 ou 5 jours. Les fiches « Coach » viennent de tes anciens coachings et restent
+            proposées comme archives à adapter à ton niveau actuel.
+        </p>
+
+        <div class="training-program-tools">
+
+            <div class="training-program-search">
+                <input
+                    type="search"
+                    id="trainingProgramSearch"
+                    placeholder="Rechercher : fessiers, haltères, maison, superset..."
+                    autocomplete="off"
+                >
+            </div>
+
+            <div
+                id="trainingProgramFilters"
+                class="training-program-filters"
+                aria-label="Filtres des programmes Training"
+            >
+                <button type="button" class="training-program-filter active" data-filter="all">
+                    Tous
+                </button>
+                <button type="button" class="training-program-filter" data-filter="jambes">
+                    🦵 Jambes
+                </button>
+                <button type="button" class="training-program-filter" data-filter="fessiers">
+                    🍑 Fessiers
+                </button>
+                <button type="button" class="training-program-filter" data-filter="haut du corps">
+                    💪 Haut du corps
+                </button>
+                <button type="button" class="training-program-filter" data-filter="full body">
+                    🏋️ Full Body
+                </button>
+                <button type="button" class="training-program-filter" data-filter="maison">
+                    🏠 Maison
+                </button>
+                <button type="button" class="training-program-filter" data-filter="coach">
+                    🏅 Coach
+                </button>
+            </div>
+
+        </div>
+
+        <p
+            id="trainingProgramCount"
+            class="training-program-count"
+        >
+            Chargement des séances...
+        </p>
+
+        <div
+            id="trainingProgramList"
+            class="training-program-list"
+        >
+            <p class="empty-message">
+                Chargement des programmes Training...
+            </p>
+        </div>
+
+        <details class="training-methods">
+
+            <summary>
+                💡 Comprendre les formats spéciaux
+            </summary>
+
+            <div class="training-methods-content">
+
+                <div class="training-method-line">
+                    <strong>Superset / Biset :</strong>
+                    deux exercices enchaînés avec très peu ou pas de récupération entre eux.
+                </div>
+
+                <div class="training-method-line">
+                    <strong>Triset :</strong>
+                    trois exercices enchaînés dans le même bloc.
+                </div>
+
+                <div class="training-method-line">
+                    <strong>Dégressif :</strong>
+                    on baisse la charge puis on poursuit la série.
+                </div>
+
+                <div class="training-method-line">
+                    <strong>Rest-pause :</strong>
+                    courte pause de quelques secondes, puis reprise de la série.
+                </div>
+
+                <div class="training-method-line">
+                    <strong>Tempo :</strong>
+                    vitesse d'exécution volontairement contrôlée, par exemple une descente lente.
+                </div>
+
+                <div class="training-method-line">
+                    <strong>Pyramide :</strong>
+                    le nombre de répétitions monte puis redescend selon le format indiqué.
+                </div>
+
+                <div class="training-method-line">
+                    <strong>MSC :</strong>
+                    maintien bref de la contraction en fin de mouvement.
+                </div>
+
+                <div class="training-method-line">
+                    <strong>PE LOW :</strong>
+                    phase descendante réalisée lentement.
+                </div>
+
+            </div>
+
+        </details>
 
     </section>
 

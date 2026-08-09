@@ -399,6 +399,14 @@
             );
 
 
+        const caloriesGoal =
+            numberOr(
+                settings?.goals?.calories ??
+                mainData?.caloriesGoal,
+                1550
+            );
+
+
         const proteinGoal =
             numberOr(
                 settings?.goals?.protein ??
@@ -422,6 +430,9 @@
 
             profileWaterGoal:
                 waterGoal,
+
+            profileCaloriesGoal:
+                caloriesGoal,
 
             profileProteinGoal:
                 proteinGoal
@@ -453,7 +464,8 @@
         renderProfileSummary(
             nickname,
             height,
-            goalWeight
+            goalWeight,
+            caloriesGoal
         );
 
     }
@@ -462,7 +474,8 @@
     function renderProfileSummary(
         nickname,
         height,
-        goalWeight
+        goalWeight,
+        caloriesGoal
     ) {
 
         const name =
@@ -494,7 +507,13 @@
                 ).replace(
                     ".",
                     ","
-                )} kg`;
+                )} kg · ${Math.round(
+                    Number(
+                        caloriesGoal
+                    ) || 1550
+                ).toLocaleString(
+                    "fr-FR"
+                )} kcal`;
 
         }
 
@@ -546,6 +565,15 @@
             );
 
 
+        const caloriesGoal =
+            numberOr(
+                document.getElementById(
+                    "profileCaloriesGoal"
+                )?.value,
+                1550
+            );
+
+
         const proteinGoal =
             numberOr(
                 document.getElementById(
@@ -575,6 +603,8 @@
                 stepsGoal,
             water:
                 waterGoal,
+            calories:
+                caloriesGoal,
             protein:
                 proteinGoal
         };
@@ -626,6 +656,10 @@
             waterGoal;
 
 
+        mainData.caloriesGoal =
+            caloriesGoal;
+
+
         mainData.proteinGoal =
             proteinGoal;
 
@@ -639,7 +673,8 @@
         renderProfileSummary(
             nickname,
             height,
-            goalWeight
+            goalWeight,
+            caloriesGoal
         );
 
 

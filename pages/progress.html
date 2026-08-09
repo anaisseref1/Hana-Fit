@@ -616,9 +616,146 @@
             font-size:12px;
         }
 
+
+
+        /* =========================================
+           TENDANCE HEBDOMADAIRE
+        ========================================= */
+
+        .weekly-trend-grid{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:10px;
+            margin-top:4px;
+        }
+
+        .weekly-trend-stat{
+            padding:15px;
+            border:1px solid #dbeafe;
+            border-radius:17px;
+            background:#f8fbff;
+        }
+
+        .weekly-trend-stat span{
+            display:block;
+            color:#64748b;
+            font-size:11px;
+            font-weight:750;
+        }
+
+        .weekly-trend-stat strong{
+            display:block;
+            margin-top:6px;
+            color:#0d47a1;
+            font-size:18px;
+        }
+
+        .weekly-trend-banner{
+            display:grid;
+            grid-template-columns:auto 1fr;
+            gap:13px;
+            align-items:center;
+            margin-top:14px;
+            padding:15px;
+            border:1px solid #bfdbfe;
+            border-radius:17px;
+            background:linear-gradient(135deg,#eff6ff,#ffffff);
+        }
+
+        .weekly-trend-icon{
+            width:44px;
+            height:44px;
+            display:grid;
+            place-items:center;
+            border-radius:14px;
+            background:#dbeafe;
+            color:#1d4ed8;
+            font-size:23px;
+            font-weight:900;
+        }
+
+        .weekly-trend-banner strong{
+            display:block;
+            color:#172554;
+        }
+
+        .weekly-trend-banner p{
+            margin:4px 0 0;
+            color:#64748b;
+            font-size:12px;
+            line-height:1.5;
+        }
+
+        .weekly-history-heading{
+            display:flex;
+            align-items:end;
+            justify-content:space-between;
+            gap:12px;
+            margin-top:20px;
+            margin-bottom:10px;
+        }
+
+        .weekly-history-heading strong{
+            color:#172554;
+            font-size:14px;
+        }
+
+        .weekly-history-heading span{
+            color:#64748b;
+            font-size:11px;
+        }
+
+        .weekly-average-history{
+            display:grid;
+            gap:9px;
+        }
+
+        .weekly-average-item{
+            display:grid;
+            grid-template-columns:1fr auto;
+            gap:12px;
+            align-items:center;
+            padding:12px 14px;
+            border:1px solid #dbeafe;
+            border-radius:15px;
+            background:#f8fbff;
+        }
+
+        .weekly-average-item strong{
+            display:block;
+            color:#172554;
+            font-size:13px;
+        }
+
+        .weekly-average-item span{
+            display:block;
+            margin-top:3px;
+            color:#64748b;
+            font-size:11px;
+        }
+
+        .weekly-average-value{
+            color:#0d47a1 !important;
+            font-size:15px !important;
+            font-weight:850;
+            white-space:nowrap;
+        }
+
+        .weekly-note{
+            margin:12px 0 0;
+            color:#64748b;
+            font-size:11px;
+            line-height:1.5;
+        }
+
+
         @media(max-width:760px){
             .progress-grid{
                 grid-template-columns:1fr;
+            }
+
+            .weekly-trend-grid{
+                grid-template-columns:repeat(2,1fr);
             }
 
             .weight-form{
@@ -658,6 +795,14 @@
         @media(max-width:430px){
             .measurement-grid{
                 grid-template-columns:1fr;
+            }
+
+            .weekly-trend-stat{
+                padding:13px;
+            }
+
+            .weekly-trend-stat strong{
+                font-size:16px;
             }
 
             .photo-form,
@@ -771,6 +916,112 @@
                 —
             </span>
         </div>
+
+    </section>
+
+
+
+
+    <section class="journey-card">
+
+        <div class="card-heading">
+
+            <div>
+                <h2>📊 Tendance hebdomadaire</h2>
+                <p>
+                    Les moyennes permettent de regarder la tendance sans s'attarder
+                    sur les variations d'une seule pesée.
+                </p>
+            </div>
+
+            <span class="card-icon">
+                〰️
+            </span>
+
+        </div>
+
+
+        <div class="weekly-trend-grid">
+
+            <article class="weekly-trend-stat">
+                <span>Cette semaine</span>
+                <strong id="currentWeekAverage">
+                    —
+                </strong>
+            </article>
+
+            <article class="weekly-trend-stat">
+                <span>Semaine précédente</span>
+                <strong id="previousWeekAverage">
+                    —
+                </strong>
+            </article>
+
+            <article class="weekly-trend-stat">
+                <span>Écart des moyennes</span>
+                <strong id="weeklyDifference">
+                    —
+                </strong>
+            </article>
+
+            <article class="weekly-trend-stat">
+                <span>Pesées cette semaine</span>
+                <strong id="currentWeekCount">
+                    0
+                </strong>
+            </article>
+
+        </div>
+
+
+        <div class="weekly-trend-banner">
+
+            <div
+                id="weeklyTrendIcon"
+                class="weekly-trend-icon"
+            >
+                →
+            </div>
+
+            <div>
+                <strong id="weeklyTrendTitle">
+                    En attente de données
+                </strong>
+
+                <p id="weeklyTrendMessage">
+                    Ajoute tes pesées et Hana Fit calculera automatiquement
+                    ta moyenne de la semaine.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="weekly-history-heading">
+            <strong>
+                Dernières moyennes hebdomadaires
+            </strong>
+
+            <span>
+                semaines avec au moins une pesée
+            </span>
+        </div>
+
+
+        <div
+            id="weeklyAverageHistory"
+            class="weekly-average-history"
+        >
+            <p class="empty-message">
+                Pas encore de moyenne hebdomadaire.
+            </p>
+        </div>
+
+
+        <p class="weekly-note">
+            Une moyenne est calculée uniquement à partir des pesées réellement
+            enregistrées pendant la semaine. La semaine en cours reste donc provisoire.
+        </p>
 
     </section>
 

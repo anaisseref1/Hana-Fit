@@ -2,41 +2,426 @@
   {
     "id": 1,
     "type": "welcome",
-    "message": "Bonjour Hana 🌸 Prête pour une nouvelle journée ?"
+    "message": "Bonjour Hana 🌸 Une nouvelle journée, sans pression."
   },
   {
     "id": 2,
-    "type": "protein_success",
-    "message": "Bravo ! Tu as atteint ton objectif de protéines aujourd'hui 💪"
+    "type": "welcome",
+    "message": "Coucou Hana 🐈 On avance à ton rythme aujourd'hui."
   },
   {
     "id": 3,
-    "type": "water_reminder",
-    "message": "Pense à boire un verre d'eau 💧"
+    "type": "welcome",
+    "message": "Bonjour 💙 Pas besoin d'en faire trop pour faire quelque chose de bien."
   },
   {
     "id": 4,
-    "type": "steps",
-    "message": "Une petite marche et ton objectif sera atteint 🚶"
+    "type": "welcome",
+    "message": "Nouvelle journée, nouvelle occasion de prendre soin de toi 🌿"
   },
   {
     "id": 5,
-    "type": "sleep",
-    "message": "Le sommeil est aussi important que l'entraînement 😴"
+    "type": "welcome",
+    "message": "Un petit pas suffit pour lancer la journée 🐾"
   },
   {
     "id": 6,
-    "type": "motivation",
-    "message": "Les petits progrès répétés chaque jour font les grandes réussites 🌸"
+    "type": "welcome",
+    "message": "Aujourd'hui aussi, on fait au mieux avec l'énergie disponible."
   },
   {
     "id": 7,
-    "type": "program_start",
-    "message": "Un nouveau programme commence aujourd'hui ! Je serai là pour t'accompagner 🐈"
+    "type": "motivation",
+    "message": "La régularité compte bien plus qu'une journée parfaite."
   },
   {
     "id": 8,
-    "type": "program_complete",
-    "message": "Félicitations ! Tu viens de terminer ton programme. Tu peux être fière de toi 💙"
+    "type": "motivation",
+    "message": "Les petits progrès répétés finissent par faire une vraie différence 🌸"
+  },
+  {
+    "id": 9,
+    "type": "motivation",
+    "message": "Tu n'as pas besoin d'aller vite. Tu as juste besoin de continuer."
+  },
+  {
+    "id": 10,
+    "type": "motivation",
+    "message": "Une journée moyenne peut quand même faire partie d'une belle progression."
+  },
+  {
+    "id": 11,
+    "type": "motivation",
+    "message": "Ce que tu fais souvent compte plus que ce que tu fais parfaitement."
+  },
+  {
+    "id": 12,
+    "type": "motivation",
+    "message": "Chaque petit pas compte. Oui, même celui-là 🐾"
+  },
+  {
+    "id": 13,
+    "type": "motivation",
+    "message": "Avancer doucement reste avancer."
+  },
+  {
+    "id": 14,
+    "type": "motivation",
+    "message": "Tu construis tes habitudes une journée à la fois 💙"
+  },
+  {
+    "id": 15,
+    "type": "motivation",
+    "message": "Pas de tout ou rien ici. Un peu, c'est déjà quelque chose."
+  },
+  {
+    "id": 16,
+    "type": "motivation",
+    "message": "La motivation change. Tes habitudes, elles, peuvent rester."
+  },
+  {
+    "id": 17,
+    "type": "motivation",
+    "message": "Fais simple, fais réaliste, fais répétable."
+  },
+  {
+    "id": 18,
+    "type": "motivation",
+    "message": "Le progrès n'a pas besoin d'être spectaculaire pour être réel."
+  },
+  {
+    "id": 19,
+    "type": "training_success",
+    "message": "Séance enregistrée 💪 Maintenant, place à la récupération."
+  },
+  {
+    "id": 20,
+    "type": "training_success",
+    "message": "Belle séance. Mes petites pattes approuvent 🐾"
+  },
+  {
+    "id": 21,
+    "type": "training_success",
+    "message": "Entraînement fait ✅ Tu peux être contente de l'avoir fait."
+  },
+  {
+    "id": 22,
+    "type": "training_success",
+    "message": "Une séance de plus dans le carnet. C'est comme ça que ça se construit."
+  },
+  {
+    "id": 23,
+    "type": "training_success",
+    "message": "Le travail est fait 💙 Pas besoin d'en rajouter pour que ça compte."
+  },
+  {
+    "id": 24,
+    "type": "training_success",
+    "message": "Séance terminée ! Mange, bois, récupère… ordre de NEHA 😼"
+  },
+  {
+    "id": 25,
+    "type": "training_success",
+    "message": "Tu viens d'ajouter une vraie brique à ta progression 🧱"
+  },
+  {
+    "id": 26,
+    "type": "training_success",
+    "message": "Aujourd'hui tu t'es entraînée. Demain, ton corps fera aussi sa part."
+  },
+  {
+    "id": 27,
+    "type": "rest",
+    "message": "Le repos fait aussi partie du programme 😴"
+  },
+  {
+    "id": 28,
+    "type": "rest",
+    "message": "Récupérer n'est pas ne rien faire. C'est laisser le corps travailler."
+  },
+  {
+    "id": 29,
+    "type": "rest",
+    "message": "Une journée plus calme peut être exactement ce qu'il te faut 🌿"
+  },
+  {
+    "id": 30,
+    "type": "rest",
+    "message": "Tu n'as rien à rattraper demain. Continue simplement."
+  },
+  {
+    "id": 31,
+    "type": "rest",
+    "message": "Le corps progresse aussi quand on lui laisse le temps de récupérer."
+  },
+  {
+    "id": 32,
+    "type": "rest",
+    "message": "Pas de séance aujourd'hui ? Ce n'est pas un problème. La semaine ne se joue pas en un jour."
+  },
+  {
+    "id": 33,
+    "type": "rest",
+    "message": "Dormir, manger, récupérer : ça compte aussi."
+  },
+  {
+    "id": 34,
+    "type": "protein_success",
+    "message": "Objectif protéines atteint 💪 Mission accomplie."
+  },
+  {
+    "id": 35,
+    "type": "protein_success",
+    "message": "Protéines au rendez-vous aujourd'hui ✅"
+  },
+  {
+    "id": 36,
+    "type": "protein_success",
+    "message": "Ton objectif protéines est atteint. NEHA valide le repas 😼"
+  },
+  {
+    "id": 37,
+    "type": "protein_success",
+    "message": "Belle régularité côté protéines 💙"
+  },
+  {
+    "id": 38,
+    "type": "protein_success",
+    "message": "Objectif protéines : fait ! Une case de moins à penser."
+  },
+  {
+    "id": 39,
+    "type": "water_success",
+    "message": "Hydratation au top aujourd'hui 💧"
+  },
+  {
+    "id": 40,
+    "type": "water_success",
+    "message": "Objectif eau atteint ✅ Tes petites cellules disent merci."
+  },
+  {
+    "id": 41,
+    "type": "water_success",
+    "message": "Bien hydratée aujourd'hui 💙"
+  },
+  {
+    "id": 42,
+    "type": "water_success",
+    "message": "Eau : mission accomplie 💧"
+  },
+  {
+    "id": 43,
+    "type": "water_reminder",
+    "message": "Petit rappel de NEHA : quelques gorgées d'eau 💧"
+  },
+  {
+    "id": 44,
+    "type": "water_reminder",
+    "message": "Ton verre d'eau t'attend 👀"
+  },
+  {
+    "id": 45,
+    "type": "water_reminder",
+    "message": "Une petite pause hydratation et on repart."
+  },
+  {
+    "id": 46,
+    "type": "water_reminder",
+    "message": "Pense à boire un peu, sans te forcer à tout rattraper d'un coup 💧"
+  },
+  {
+    "id": 47,
+    "type": "steps_success",
+    "message": "Objectif de pas atteint 🐾 Mes petites pattes approuvent."
+  },
+  {
+    "id": 48,
+    "type": "steps_success",
+    "message": "Tes pas sont faits pour aujourd'hui ✅"
+  },
+  {
+    "id": 49,
+    "type": "steps_success",
+    "message": "Belle journée active 🚶"
+  },
+  {
+    "id": 50,
+    "type": "steps_success",
+    "message": "Objectif marche validé 💙"
+  },
+  {
+    "id": 51,
+    "type": "steps_success",
+    "message": "Tu as bien bougé aujourd'hui. Ça compte."
+  },
+  {
+    "id": 52,
+    "type": "steps",
+    "message": "Une petite marche peut faire du bien au corps comme à la tête 🚶"
+  },
+  {
+    "id": 53,
+    "type": "steps",
+    "message": "Quelques pas de plus, seulement si tu en as envie 🐾"
+  },
+  {
+    "id": 54,
+    "type": "steps",
+    "message": "Bouger un peu vaut mieux que viser trop haut et ne rien faire."
+  },
+  {
+    "id": 55,
+    "type": "steps",
+    "message": "Un aller-retour, quelques minutes dehors… ça compte aussi."
+  },
+  {
+    "id": 56,
+    "type": "wellbeing_success",
+    "message": "Ton suivi bien-être est enregistré 🌿 Merci d'avoir pris ce moment pour toi."
+  },
+  {
+    "id": 57,
+    "type": "wellbeing_success",
+    "message": "Bien-être noté ✅ Quelques secondes qui donnent de vrais repères."
+  },
+  {
+    "id": 58,
+    "type": "wellbeing_success",
+    "message": "Tu as pris le temps de faire le point aujourd'hui 💙"
+  },
+  {
+    "id": 59,
+    "type": "wellbeing_success",
+    "message": "Journal bien-être rempli. NEHA garde un œil sur les tendances 🐈"
+  },
+  {
+    "id": 60,
+    "type": "gentle_day",
+    "message": "Énergie basse aujourd'hui ? Adapte la journée, pas besoin de lutter contre elle."
+  },
+  {
+    "id": 61,
+    "type": "gentle_day",
+    "message": "Journée difficile ≠ journée ratée 💙"
+  },
+  {
+    "id": 62,
+    "type": "gentle_day",
+    "message": "Aujourd'hui, fais ce que tu peux avec l'énergie que tu as."
+  },
+  {
+    "id": 63,
+    "type": "gentle_day",
+    "message": "Si ton corps demande plus de douceur, écoute-le 🌿"
+  },
+  {
+    "id": 64,
+    "type": "gentle_day",
+    "message": "Tu peux réduire le rythme sans abandonner."
+  },
+  {
+    "id": 65,
+    "type": "gentle_day",
+    "message": "Une petite journée reste une journée qui compte."
+  },
+  {
+    "id": 66,
+    "type": "gentle_day",
+    "message": "Le minimum réaliste vaut mieux que le maximum impossible."
+  },
+  {
+    "id": 67,
+    "type": "daily_success",
+    "message": "Belle journée Hana 💙 Plusieurs objectifs sont déjà cochés."
+  },
+  {
+    "id": 68,
+    "type": "daily_success",
+    "message": "Tu as accumulé plein de petits « fait » aujourd'hui ✅"
+  },
+  {
+    "id": 69,
+    "type": "daily_success",
+    "message": "Pas besoin d'une journée parfaite : celle-ci est déjà bien remplie."
+  },
+  {
+    "id": 70,
+    "type": "daily_success",
+    "message": "Tes habitudes commencent à former une vraie routine 🌸"
+  },
+  {
+    "id": 71,
+    "type": "daily_success",
+    "message": "Aujourd'hui, tu as pris soin de plusieurs choses à la fois. Bien joué."
+  },
+  {
+    "id": 72,
+    "type": "nutrition",
+    "message": "Un repas n'a pas besoin d'être parfait pour être nourrissant."
+  },
+  {
+    "id": 73,
+    "type": "nutrition",
+    "message": "L'équilibre se construit sur plusieurs repas, pas dans une seule assiette."
+  },
+  {
+    "id": 74,
+    "type": "nutrition",
+    "message": "Manger suffisamment fait aussi partie du plan."
+  },
+  {
+    "id": 75,
+    "type": "nutrition",
+    "message": "Protéines, fibres, plaisir : on peut faire simple."
+  },
+  {
+    "id": 76,
+    "type": "nutrition",
+    "message": "Pas de bon ou mauvais aliment ici. On regarde surtout l'ensemble."
+  },
+  {
+    "id": 77,
+    "type": "progress",
+    "message": "La balance n'est qu'un indicateur parmi d'autres."
+  },
+  {
+    "id": 78,
+    "type": "progress",
+    "message": "Regarde aussi l'énergie, les performances et les habitudes que tu construis."
+  },
+  {
+    "id": 79,
+    "type": "progress",
+    "message": "Les tendances comptent plus que les variations d'un seul jour."
+  },
+  {
+    "id": 80,
+    "type": "progress",
+    "message": "Ton parcours ne se résume pas à un chiffre 💙"
+  },
+  {
+    "id": 81,
+    "type": "progress",
+    "message": "Une progression peut être visible dans tes habitudes avant de l'être ailleurs."
+  },
+  {
+    "id": 82,
+    "type": "evening",
+    "message": "La journée touche à sa fin 🌙 Ce qui n'est pas fait aujourd'hui pourra attendre."
+  },
+  {
+    "id": 83,
+    "type": "evening",
+    "message": "Pas besoin de finir la journée avec toutes les cases cochées."
+  },
+  {
+    "id": 84,
+    "type": "evening",
+    "message": "Ce soir, récupération et tranquillité 😴"
+  },
+  {
+    "id": 85,
+    "type": "evening",
+    "message": "La journée est presque terminée. Tu peux laisser le reste pour demain."
   }
 ]

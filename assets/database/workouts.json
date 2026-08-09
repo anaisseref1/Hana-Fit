@@ -874,5 +874,556 @@
     "aliases": [
       "bird dog"
     ]
+  },
+  {
+    "id": "wall-sit",
+    "name": "Chaise au mur",
+    "emoji": "🦵",
+    "category": "Jambes",
+    "muscles": [
+      "Quadriceps"
+    ],
+    "equipment": "Poids du corps",
+    "aliases": [
+      "chaise",
+      "wall sit",
+      "gainage chaise"
+    ]
+  },
+  {
+    "id": "leg-raise",
+    "name": "Relevé de jambes",
+    "emoji": "🔥",
+    "category": "Abdos",
+    "muscles": [
+      "Abdominaux",
+      "Fléchisseurs de hanche"
+    ],
+    "equipment": "Poids du corps / banc",
+    "aliases": [
+      "leve de jambes",
+      "leg raise",
+      "relevé jambes"
+    ]
+  },
+  {
+    "id": "sit-up",
+    "name": "Sit-up",
+    "emoji": "🔥",
+    "category": "Abdos",
+    "muscles": [
+      "Abdominaux"
+    ],
+    "equipment": "Poids du corps",
+    "aliases": [
+      "sit up",
+      "abdos sit up"
+    ]
+  },
+  {
+    "id": "scissor-kicks",
+    "name": "Ciseaux au sol",
+    "emoji": "🔥",
+    "category": "Abdos",
+    "muscles": [
+      "Abdominaux",
+      "Fléchisseurs de hanche"
+    ],
+    "equipment": "Poids du corps",
+    "aliases": [
+      "ciseaux",
+      "scissor kicks"
+    ]
+  },
+  {
+    "id": "jumping-jack",
+    "name": "Jumping Jacks",
+    "emoji": "⚡",
+    "category": "Cardio / Full Body",
+    "muscles": [
+      "Full Body"
+    ],
+    "equipment": "Poids du corps",
+    "aliases": [
+      "jumping jack",
+      "jumping jacks"
+    ]
+  },
+  {
+    "id": "burpee",
+    "name": "Burpees",
+    "emoji": "🔥",
+    "category": "Cardio / Full Body",
+    "muscles": [
+      "Full Body"
+    ],
+    "equipment": "Poids du corps",
+    "aliases": [
+      "burpee",
+      "burpees"
+    ]
+  },
+  {
+    "id": "spider-coach",
+    "name": "Araignée (circuit coach)",
+    "emoji": "🕷️",
+    "category": "Cardio / Full Body",
+    "muscles": [
+      "Full Body",
+      "Abdominaux"
+    ],
+    "equipment": "Poids du corps",
+    "aliases": [
+      "araignée",
+      "araignee",
+      "spider"
+    ]
+  },
+  {
+    "id": "thruster-dumbbells",
+    "name": "Thrusters haltères",
+    "emoji": "🏋️",
+    "category": "Full Body",
+    "muscles": [
+      "Quadriceps",
+      "Fessiers",
+      "Épaules",
+      "Triceps"
+    ],
+    "equipment": "Haltères",
+    "aliases": [
+      "thruster",
+      "thrusters",
+      "squat developpe militaire"
+    ]
+  },
+  {
+    "id": "inchworm",
+    "name": "Inchworm",
+    "emoji": "🐛",
+    "category": "Full Body",
+    "muscles": [
+      "Abdominaux",
+      "Épaules",
+      "Ischio-jambiers"
+    ],
+    "equipment": "Poids du corps",
+    "aliases": [
+      "inch worm",
+      "inchworm"
+    ]
+  },
+  {
+    "id": "skater",
+    "name": "Patineur",
+    "emoji": "⛸️",
+    "category": "Cardio / Jambes",
+    "muscles": [
+      "Fessiers",
+      "Quadriceps",
+      "Abducteurs"
+    ],
+    "equipment": "Poids du corps",
+    "aliases": [
+      "patineur",
+      "skater"
+    ]
+  },
+  {
+    "id": "jump-squat",
+    "name": "Squat sauté",
+    "emoji": "🔥",
+    "category": "Jambes / Cardio",
+    "muscles": [
+      "Quadriceps",
+      "Fessiers"
+    ],
+    "equipment": "Poids du corps",
+    "aliases": [
+      "squat jump",
+      "jump squat",
+      "squat sauté"
+    ]
+  },
+  {
+    "id": "jump-lunge",
+    "name": "Fentes sautées",
+    "emoji": "🔥",
+    "category": "Jambes / Cardio",
+    "muscles": [
+      "Quadriceps",
+      "Fessiers"
+    ],
+    "equipment": "Poids du corps",
+    "aliases": [
+      "jump lunges",
+      "fentes sautees",
+      "fentes sautées"
+    ]
+  },
+  {
+    "id": "close-grip-push-up",
+    "name": "Pompes serrées / triceps",
+    "emoji": "💪",
+    "category": "Pectoraux / Bras",
+    "muscles": [
+      "Triceps",
+      "Pectoraux"
+    ],
+    "equipment": "Poids du corps",
+    "aliases": [
+      "pompes serrées",
+      "pompes triceps",
+      "close grip push up"
+    ]
+  },
+  {
+    "id": "good-morning",
+    "name": "Good Morning",
+    "emoji": "🏋️",
+    "category": "Jambes / Fessiers",
+    "muscles": [
+      "Ischio-jambiers",
+      "Fessiers",
+      "Lombaires"
+    ],
+    "equipment": "Barre / haltères / élastique",
+    "aliases": [
+      "good morning",
+      "good mornings"
+    ]
+  },
+  {
+    "id": "front-squat",
+    "name": "Front Squat",
+    "emoji": "🦵",
+    "category": "Jambes",
+    "muscles": [
+      "Quadriceps",
+      "Fessiers"
+    ],
+    "equipment": "Barre / haltère",
+    "aliases": [
+      "front squat",
+      "squat avant"
+    ]
+  },
+  {
+    "id": "sumo-squat",
+    "name": "Squat sumo",
+    "emoji": "🦵",
+    "category": "Jambes / Fessiers",
+    "muscles": [
+      "Fessiers",
+      "Quadriceps",
+      "Adducteurs"
+    ],
+    "equipment": "Haltère / kettlebell / poids du corps",
+    "aliases": [
+      "sumo squat",
+      "squat sumo"
+    ]
+  },
+  {
+    "id": "sumo-deadlift",
+    "name": "Soulevé de terre sumo",
+    "emoji": "🏋️",
+    "category": "Jambes / Fessiers",
+    "muscles": [
+      "Fessiers",
+      "Ischio-jambiers",
+      "Adducteurs"
+    ],
+    "equipment": "Barre",
+    "aliases": [
+      "sd t sumo",
+      "sdt sumo",
+      "sumo deadlift"
+    ]
+  },
+  {
+    "id": "arnold-press",
+    "name": "Développé Arnold",
+    "emoji": "💪",
+    "category": "Épaules",
+    "muscles": [
+      "Épaules",
+      "Triceps"
+    ],
+    "equipment": "Haltères",
+    "aliases": [
+      "arnold press",
+      "développé arnold",
+      "developpe arnold"
+    ]
+  },
+  {
+    "id": "dumbbell-fly",
+    "name": "Écarté haltères",
+    "emoji": "💪",
+    "category": "Pectoraux",
+    "muscles": [
+      "Pectoraux"
+    ],
+    "equipment": "Haltères / banc",
+    "aliases": [
+      "dumbbell fly",
+      "ecarte halteres",
+      "écarté haltères"
+    ]
+  },
+  {
+    "id": "reverse-glute-raise",
+    "name": "Reverse Glute Raise",
+    "emoji": "🍑",
+    "category": "Fessiers",
+    "muscles": [
+      "Fessiers",
+      "Ischio-jambiers"
+    ],
+    "equipment": "Banc / machine",
+    "aliases": [
+      "reverse glute raise",
+      "reverse glutes raise"
+    ]
+  },
+  {
+    "id": "cable-stiff-leg-deadlift",
+    "name": "Soulevé de terre jambes tendues à la poulie",
+    "emoji": "🍑",
+    "category": "Jambes / Fessiers",
+    "muscles": [
+      "Ischio-jambiers",
+      "Fessiers"
+    ],
+    "equipment": "Poulie",
+    "aliases": [
+      "sdt jambes tendues poulie",
+      "stiff leg cable deadlift"
+    ]
+  },
+  {
+    "id": "military-press-barbell",
+    "name": "Développé militaire barre",
+    "emoji": "💪",
+    "category": "Épaules",
+    "muscles": [
+      "Épaules",
+      "Triceps"
+    ],
+    "equipment": "Barre",
+    "aliases": [
+      "developpe militaire barre",
+      "développé militaire barre",
+      "barbell military press"
+    ]
+  },
+  {
+    "id": "behind-neck-lat-pulldown",
+    "name": "Tirage nuque à la poulie",
+    "emoji": "💪",
+    "category": "Dos",
+    "muscles": [
+      "Grand dorsal",
+      "Haut du dos",
+      "Biceps"
+    ],
+    "equipment": "Poulie",
+    "aliases": [
+      "tirage nuque",
+      "behind neck pulldown"
+    ]
+  },
+  {
+    "id": "torso-rotation-cable",
+    "name": "Rotation du buste à la poulie",
+    "emoji": "🔥",
+    "category": "Abdos",
+    "muscles": [
+      "Obliques",
+      "Abdominaux"
+    ],
+    "equipment": "Poulie",
+    "aliases": [
+      "rotation buste poulie",
+      "cable torso rotation"
+    ]
+  },
+  {
+    "id": "floor-crunch",
+    "name": "Crunch au sol",
+    "emoji": "🔥",
+    "category": "Abdos",
+    "muscles": [
+      "Abdominaux"
+    ],
+    "equipment": "Poids du corps / swiss ball",
+    "aliases": [
+      "crunch sol",
+      "crunch swiss ball"
+    ]
+  },
+  {
+    "id": "rotation-crunch",
+    "name": "Crunch avec rotation",
+    "emoji": "🔥",
+    "category": "Abdos",
+    "muscles": [
+      "Abdominaux",
+      "Obliques"
+    ],
+    "equipment": "Poids du corps",
+    "aliases": [
+      "crunch rotation",
+      "rotation crunch"
+    ]
+  },
+  {
+    "id": "cable-side-bend",
+    "name": "Flexion latérale à la poulie basse",
+    "emoji": "🔥",
+    "category": "Abdos",
+    "muscles": [
+      "Obliques"
+    ],
+    "equipment": "Poulie",
+    "aliases": [
+      "flexion laterale poulie",
+      "cable side bend"
+    ]
+  },
+  {
+    "id": "dumbbell-floor-press",
+    "name": "Floor Press haltères",
+    "emoji": "💪",
+    "category": "Pectoraux",
+    "muscles": [
+      "Pectoraux",
+      "Triceps"
+    ],
+    "equipment": "Haltères",
+    "aliases": [
+      "floor press",
+      "developpe au sol halteres"
+    ]
+  },
+  {
+    "id": "donkey-kick",
+    "name": "Donkey Kick",
+    "emoji": "🍑",
+    "category": "Fessiers",
+    "muscles": [
+      "Fessiers"
+    ],
+    "equipment": "Poids du corps / élastique",
+    "aliases": [
+      "donkey kick",
+      "extension hanche sol"
+    ]
+  },
+  {
+    "id": "fire-hydrant",
+    "name": "Fire Hydrant",
+    "emoji": "🍑",
+    "category": "Fessiers",
+    "muscles": [
+      "Moyen fessier",
+      "Abducteurs"
+    ],
+    "equipment": "Poids du corps / élastique",
+    "aliases": [
+      "fire hydrant",
+      "abduction quatre pattes"
+    ]
+  },
+  {
+    "id": "band-row",
+    "name": "Rowing avec élastique",
+    "emoji": "💪",
+    "category": "Dos",
+    "muscles": [
+      "Dos",
+      "Biceps"
+    ],
+    "equipment": "Élastique",
+    "aliases": [
+      "band row",
+      "rowing elastique",
+      "rowing élastique"
+    ]
+  },
+  {
+    "id": "band-chest-press",
+    "name": "Chest Press avec élastique",
+    "emoji": "💪",
+    "category": "Pectoraux",
+    "muscles": [
+      "Pectoraux",
+      "Triceps"
+    ],
+    "equipment": "Élastique",
+    "aliases": [
+      "band chest press",
+      "chest press elastique"
+    ]
+  },
+  {
+    "id": "band-shoulder-press",
+    "name": "Shoulder Press avec élastique",
+    "emoji": "💪",
+    "category": "Épaules",
+    "muscles": [
+      "Épaules",
+      "Triceps"
+    ],
+    "equipment": "Élastique",
+    "aliases": [
+      "band shoulder press",
+      "shoulder press elastique"
+    ]
+  },
+  {
+    "id": "band-squat",
+    "name": "Squat avec élastique",
+    "emoji": "🦵",
+    "category": "Jambes / Fessiers",
+    "muscles": [
+      "Quadriceps",
+      "Fessiers"
+    ],
+    "equipment": "Élastique",
+    "aliases": [
+      "band squat",
+      "squat elastique"
+    ]
+  },
+  {
+    "id": "band-kickback",
+    "name": "Kickback avec élastique",
+    "emoji": "🍑",
+    "category": "Fessiers",
+    "muscles": [
+      "Fessiers"
+    ],
+    "equipment": "Élastique",
+    "aliases": [
+      "band kickback",
+      "kickback elastique"
+    ]
+  },
+  {
+    "id": "band-abduction",
+    "name": "Abduction avec élastique",
+    "emoji": "🍑",
+    "category": "Fessiers",
+    "muscles": [
+      "Moyen fessier",
+      "Abducteurs"
+    ],
+    "equipment": "Élastique",
+    "aliases": [
+      "band abduction",
+      "abduction elastique"
+    ]
   }
 ]

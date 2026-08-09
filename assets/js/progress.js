@@ -569,6 +569,788 @@ function renderJourneyStats() {
 }
 
 
+
+
+/* =========================================
+   TENDANCE HEBDOMADAIRE
+========================================= */
+
+function parseDateKey(
+    dateString
+) {
+
+    const parts =
+        String(
+            dateString || ""
+        )
+            .split("-")
+            .map(
+                Number
+            );
+
+
+    if (
+        parts.length !== 3 ||
+        parts.some(
+            value =>
+                !Number.isFinite(
+                    value
+                )
+        )
+    ) {
+
+        return null;
+
+    }
+
+
+    const [
+        year,
+        month,
+        day
+    ] =
+        parts;
+
+
+    return new Date(
+        year,
+        month - 1,
+        day,
+        12,
+        0,
+        0,
+        0
+    );
+
+}
+
+
+function addDays(
+    date,
+    numberOfDays
+) {
+
+    const result =
+        new Date(
+            date
+        );
+
+
+    result.setDate(
+        result.getDate() +
+        numberOfDays
+    );
+
+
+    return result;
+
+}
+
+
+function getMonday(
+    date
+) {
+
+    const result =
+        new Date(
+            date
+        );
+
+
+    result.setHours(
+        12,
+        0,
+        0,
+        0
+    );
+
+
+    const day =
+        result.getDay();
+
+
+    const distance =
+        day === 0
+            ? -6
+            : 1 - day;
+
+
+    result.setDate(
+        result.getDate() +
+        distance
+    );
+
+
+    return result;
+
+}
+
+
+function averageWeightEntries(
+    entries
+) {
+
+    if (
+        !Array.isArray(
+            entries
+        ) ||
+        entries.length === 0
+    ) {
+
+        return null;
+
+    }
+
+
+    const values =
+        entries
+            .map(
+                entry =>
+                    Number(
+                        entry.weight
+                    )
+            )
+            .filter(
+                value =>
+                    Number.isFinite(
+                        value
+                    )
+            );
+
+
+    if (
+        values.length === 0
+    ) {
+
+        return null;
+
+    }
+
+
+    return (
+        values.reduce(
+            (total, value) =>
+                total + value,
+            0
+        ) /
+        values.length
+    );
+
+}
+
+
+function getValidWeightEntries() {
+
+    const data =
+        getProgressData();
+
+
+    return data.weights
+        .filter(
+            entry =>
+                entry.date &&
+                parseDateKey(
+                    entry.date
+                ) &&
+                Number.isFinite(
+                    Number(
+                        entry.weight
+                    )
+                )
+        )
+        .map(
+            entry => ({
+                ...entry,
+                weight:
+                    Number(
+                        entry.weight
+                    )
+            })
+        );
+
+}
+
+
+function getEntriesForWeek(
+    weekStart,
+    entries
+) {
+
+    const startKey =
+        localDateKey(
+            weekStart
+        );
+
+
+    const endKey =
+        localDateKey(
+            addDays(
+                weekStart,
+                6
+            )
+        );
+
+
+    return entries
+        .filter(
+            entry =>
+                entry.date >=
+                    startKey &&
+                entry.date <=
+                    endKey
+        )
+        .sort(
+            (a, b) =>
+                String(
+                    a.date
+                )
+                    .localeCompare(
+                        String(
+                            b.date
+                        )
+                    )
+        );
+
+}
+
+
+function formatWeekRange(
+    weekStart
+) {
+
+    const weekEnd =
+        addDays(
+            weekStart,
+            6
+        );
+
+
+    return (
+        `${String(
+            weekStart.getDate()
+        ).padStart(2, "0")}/${String(
+            weekStart.getMonth() + 1
+        ).padStart(2, "0")}` +
+        " au " +
+        `${String(
+            weekEnd.getDate()
+        ).padStart(2, "0")}/${String(
+            weekEnd.getMonth() + 1
+        ).padStart(2, "0")}`
+    );
+
+}
+
+
+function getWeeklySummaries(
+    limit = 8
+) {
+
+    const entries =
+        getValidWeightEntries();
+
+
+    const groups =
+        new Map();
+
+
+    entries.forEach(
+        entry => {
+
+            const date =
+                parseDateKey(
+                    entry.date
+                );
+
+
+            if (!date) {
+                return;
+            }
+
+
+            const monday =
+                getMonday(
+                    date
+                );
+
+
+            const key =
+                localDateKey(
+                    monday
+                );
+
+
+            if (
+                !groups.has(
+                    key
+                )
+            ) {
+
+                groups.set(
+                    key,
+                    {
+                        weekStart:
+                            monday,
+
+                        entries:
+                            []
+                    }
+                );
+
+            }
+
+
+            groups
+                .get(
+                    key
+                )
+                .entries
+                .push(
+                    entry
+                );
+
+        }
+    );
+
+
+    return [...groups.values()]
+        .map(
+            group => ({
+                weekStart:
+                    group.weekStart,
+
+                count:
+                    group.entries.length,
+
+                average:
+                    averageWeightEntries(
+                        group.entries
+                    ),
+
+                entries:
+                    group.entries
+            })
+        )
+        .filter(
+            summary =>
+                Number.isFinite(
+                    summary.average
+                )
+        )
+        .sort(
+            (a, b) =>
+                b.weekStart -
+                a.weekStart
+        )
+        .slice(
+            0,
+            limit
+        );
+
+}
+
+
+function renderWeeklyAverageHistory() {
+
+    const container =
+        document.getElementById(
+            "weeklyAverageHistory"
+        );
+
+
+    if (!container) {
+        return;
+    }
+
+
+    const summaries =
+        getWeeklySummaries(
+            8
+        );
+
+
+    container.innerHTML =
+        "";
+
+
+    if (
+        summaries.length === 0
+    ) {
+
+        container.innerHTML = `
+
+            <p class="empty-message">
+                Pas encore de moyenne hebdomadaire.
+            </p>
+
+        `;
+
+
+        return;
+
+    }
+
+
+    summaries.forEach(
+        summary => {
+
+            const row =
+                document.createElement(
+                    "article"
+                );
+
+
+            row.className =
+                "weekly-average-item";
+
+
+            const info =
+                document.createElement(
+                    "div"
+                );
+
+
+            const title =
+                document.createElement(
+                    "strong"
+                );
+
+
+            title.textContent =
+                `Semaine du ${formatWeekRange(
+                    summary.weekStart
+                )}`;
+
+
+            const meta =
+                document.createElement(
+                    "span"
+                );
+
+
+            meta.textContent =
+                `${summary.count} pesée${
+                    summary.count > 1
+                        ? "s"
+                        : ""
+                }`;
+
+
+            const value =
+                document.createElement(
+                    "span"
+                );
+
+
+            value.className =
+                "weekly-average-value";
+
+
+            value.textContent =
+                formatWeight(
+                    summary.average
+                );
+
+
+            info.appendChild(
+                title
+            );
+
+
+            info.appendChild(
+                meta
+            );
+
+
+            row.appendChild(
+                info
+            );
+
+
+            row.appendChild(
+                value
+            );
+
+
+            container.appendChild(
+                row
+            );
+
+        }
+    );
+
+}
+
+
+function renderWeeklyTrend() {
+
+    const currentAverageElement =
+        document.getElementById(
+            "currentWeekAverage"
+        );
+
+    const previousAverageElement =
+        document.getElementById(
+            "previousWeekAverage"
+        );
+
+    const differenceElement =
+        document.getElementById(
+            "weeklyDifference"
+        );
+
+    const countElement =
+        document.getElementById(
+            "currentWeekCount"
+        );
+
+    const iconElement =
+        document.getElementById(
+            "weeklyTrendIcon"
+        );
+
+    const titleElement =
+        document.getElementById(
+            "weeklyTrendTitle"
+        );
+
+    const messageElement =
+        document.getElementById(
+            "weeklyTrendMessage"
+        );
+
+
+    if (
+        !currentAverageElement ||
+        !previousAverageElement ||
+        !differenceElement ||
+        !countElement ||
+        !iconElement ||
+        !titleElement ||
+        !messageElement
+    ) {
+
+        renderWeeklyAverageHistory();
+
+        return;
+
+    }
+
+
+    const today =
+        new Date();
+
+
+    const currentWeekStart =
+        getMonday(
+            today
+        );
+
+
+    const previousWeekStart =
+        addDays(
+            currentWeekStart,
+            -7
+        );
+
+
+    const entries =
+        getValidWeightEntries();
+
+
+    const currentEntries =
+        getEntriesForWeek(
+            currentWeekStart,
+            entries
+        );
+
+
+    const previousEntries =
+        getEntriesForWeek(
+            previousWeekStart,
+            entries
+        );
+
+
+    const currentAverage =
+        averageWeightEntries(
+            currentEntries
+        );
+
+
+    const previousAverage =
+        averageWeightEntries(
+            previousEntries
+        );
+
+
+    currentAverageElement.textContent =
+        Number.isFinite(
+            currentAverage
+        )
+            ? formatWeight(
+                currentAverage
+            )
+            : "—";
+
+
+    previousAverageElement.textContent =
+        Number.isFinite(
+            previousAverage
+        )
+            ? formatWeight(
+                previousAverage
+            )
+            : "—";
+
+
+    countElement.textContent =
+        String(
+            currentEntries.length
+        );
+
+
+    if (
+        !Number.isFinite(
+            currentAverage
+        )
+    ) {
+
+        differenceElement.textContent =
+            "—";
+
+        iconElement.textContent =
+            "…";
+
+        titleElement.textContent =
+            "Pas encore de moyenne cette semaine";
+
+        messageElement.textContent =
+            "Ajoute au moins une pesée cette semaine pour commencer le calcul.";
+
+
+        renderWeeklyAverageHistory();
+
+        return;
+
+    }
+
+
+    if (
+        !Number.isFinite(
+            previousAverage
+        )
+    ) {
+
+        differenceElement.textContent =
+            "—";
+
+        iconElement.textContent =
+            "•";
+
+        titleElement.textContent =
+            "Première moyenne disponible";
+
+        messageElement.textContent =
+            `Moyenne actuelle : ${formatWeight(
+                currentAverage
+            )} à partir de ${currentEntries.length} pesée${
+                currentEntries.length > 1
+                    ? "s"
+                    : ""
+            }. La comparaison apparaîtra dès qu'une semaine précédente sera disponible.`;
+
+
+        renderWeeklyAverageHistory();
+
+        return;
+
+    }
+
+
+    const difference =
+        currentAverage -
+        previousAverage;
+
+
+    const roundedDifference =
+        Math.round(
+            difference *
+            100
+        ) /
+        100;
+
+
+    differenceElement.textContent =
+        `${roundedDifference > 0 ? "+" : ""}${formatNumber(
+            roundedDifference
+        )} kg`;
+
+
+    const absoluteDifference =
+        Math.abs(
+            difference
+        );
+
+
+    const provisionalText =
+        currentEntries.length < 3
+            ? " Tendance encore provisoire avec peu de pesées cette semaine."
+            : "";
+
+
+    if (
+        difference <= -0.15
+    ) {
+
+        iconElement.textContent =
+            "↘";
+
+        titleElement.textContent =
+            "Tendance en baisse";
+
+        messageElement.textContent =
+            `La moyenne de cette semaine est ${formatNumber(
+                absoluteDifference
+            )} kg plus basse que celle de la semaine précédente.${provisionalText}`;
+
+    } else if (
+        difference >= 0.15
+    ) {
+
+        iconElement.textContent =
+            "↗";
+
+        titleElement.textContent =
+            "Tendance en hausse";
+
+        messageElement.textContent =
+            `La moyenne de cette semaine est ${formatNumber(
+                absoluteDifference
+            )} kg plus haute que celle de la semaine précédente.${provisionalText}`;
+
+    } else {
+
+        iconElement.textContent =
+            "→";
+
+        titleElement.textContent =
+            "Tendance stable";
+
+        messageElement.textContent =
+            `Les deux moyennes sont très proches : ${formatNumber(
+                absoluteDifference
+            )} kg d'écart.${provisionalText}`;
+
+    }
+
+
+    renderWeeklyAverageHistory();
+
+}
+
+
+
 /* =========================================
    AJOUT / MODIFICATION PESÉE
 ========================================= */
@@ -907,6 +1689,41 @@ function renderMilestones(
     }
 
 
+    const data =
+        getProgressData();
+
+
+    const recordedWeights = [
+        Number(
+            currentWeight
+        ),
+        ...data.weights
+            .map(
+                entry =>
+                    Number(
+                        entry.weight
+                    )
+            )
+    ]
+        .filter(
+            value =>
+                Number.isFinite(
+                    value
+                ) &&
+                value > 0
+        );
+
+
+    const lowestRecordedWeight =
+        recordedWeights.length > 0
+            ? Math.min(
+                ...recordedWeights
+            )
+            : Number(
+                currentWeight
+            );
+
+
     milestoneGrid
         .querySelectorAll(
             ".milestone"
@@ -924,7 +1741,7 @@ function renderMilestones(
                     Number.isFinite(
                         target
                     ) &&
-                    currentWeight <=
+                    lowestRecordedWeight <=
                     target;
 
 
@@ -3706,6 +4523,8 @@ function initPhotoComparison() {
 function renderAll() {
 
     renderJourneyStats();
+
+    renderWeeklyTrend();
 
     renderWeightHistory();
 

@@ -1,0 +1,2564 @@
+[
+  {
+    "id": "hana-glutes-gym",
+    "title": "Fessiers — Hip Thrust & ischios",
+    "emoji": "🍑",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Fessiers",
+    "tags": [
+      "Fessiers",
+      "Jambes",
+      "Salle"
+    ],
+    "duration": "55–65 min",
+    "level": "Modérée",
+    "equipment": "Barre / machines",
+    "summary": "Une séance centrée sur l’extension de hanche, les ischios et le moyen fessier.",
+    "sessionType": "Fessiers",
+    "techniques": [
+      "Hypertrophie"
+    ],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "hip-thrust",
+        "sets": 4,
+        "target": "8–12 reps",
+        "rest": 120
+      },
+      {
+        "libraryId": "rdl",
+        "sets": 3,
+        "target": "8–12 reps",
+        "rest": 120
+      },
+      {
+        "libraryId": "leg-press",
+        "sets": 3,
+        "target": "10–15 reps",
+        "rest": 90,
+        "note": "Placement de pieds confortable, amplitude maîtrisée."
+      },
+      {
+        "libraryId": "hip-abduction",
+        "sets": 3,
+        "target": "15–20 reps",
+        "rest": 60
+      },
+      {
+        "libraryId": "cable-kickback",
+        "sets": 3,
+        "target": "12–15 reps / jambe",
+        "rest": 60
+      }
+    ]
+  },
+  {
+    "id": "hana-quads-gym",
+    "title": "Quadriceps — Presse & Leg Extension",
+    "emoji": "🦵",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Jambes",
+    "tags": [
+      "Jambes",
+      "Salle"
+    ],
+    "duration": "50–60 min",
+    "level": "Modérée",
+    "equipment": "Machines / haltères",
+    "summary": "Une séance simple pour mettre l’accent sur les quadriceps sans oublier les fessiers.",
+    "sessionType": "Jambes",
+    "techniques": [],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "leg-press",
+        "sets": 4,
+        "target": "8–12 reps",
+        "rest": 120
+      },
+      {
+        "libraryId": "bulgarian-split-squat",
+        "sets": 3,
+        "target": "8–12 reps / jambe",
+        "rest": 90
+      },
+      {
+        "libraryId": "leg-extension",
+        "sets": 3,
+        "target": "12–15 reps",
+        "rest": 75
+      },
+      {
+        "libraryId": "static-lunges",
+        "sets": 3,
+        "target": "10–12 reps / jambe",
+        "rest": 75
+      },
+      {
+        "libraryId": "calf-raise-standing",
+        "sets": 3,
+        "target": "12–20 reps",
+        "rest": 60
+      }
+    ]
+  },
+  {
+    "id": "hana-legs-complete",
+    "title": "Jambes — Complet",
+    "emoji": "🔥",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Jambes",
+    "tags": [
+      "Jambes",
+      "Fessiers",
+      "Salle"
+    ],
+    "duration": "60–70 min",
+    "level": "Modérée",
+    "equipment": "Barre / haltères / machines",
+    "summary": "Quadriceps, ischios et fessiers dans une même séance.",
+    "sessionType": "Jambes",
+    "techniques": [],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "squat",
+        "sets": 3,
+        "target": "6–10 reps",
+        "rest": 120
+      },
+      {
+        "libraryId": "rdl",
+        "sets": 3,
+        "target": "8–12 reps",
+        "rest": 120
+      },
+      {
+        "libraryId": "leg-press",
+        "sets": 3,
+        "target": "10–15 reps",
+        "rest": 90
+      },
+      {
+        "libraryId": "leg-curl-seated",
+        "sets": 3,
+        "target": "10–15 reps",
+        "rest": 75
+      },
+      {
+        "libraryId": "hip-abduction",
+        "sets": 3,
+        "target": "15–20 reps",
+        "rest": 60
+      }
+    ]
+  },
+  {
+    "id": "hana-upper-gym",
+    "title": "Haut du corps — Dos, épaules & bras",
+    "emoji": "💪",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Haut du corps",
+    "tags": [
+      "Haut du corps",
+      "Salle"
+    ],
+    "duration": "50–60 min",
+    "level": "Modérée",
+    "equipment": "Machines / poulies / haltères",
+    "summary": "Une séance équilibrée avec tirages, poussée, épaules et bras.",
+    "sessionType": "Haut du corps",
+    "techniques": [],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "lat-pulldown",
+        "sets": 3,
+        "target": "8–12 reps",
+        "rest": 90
+      },
+      {
+        "libraryId": "seated-row",
+        "sets": 3,
+        "target": "8–12 reps",
+        "rest": 90
+      },
+      {
+        "libraryId": "chest-press",
+        "sets": 3,
+        "target": "8–12 reps",
+        "rest": 90
+      },
+      {
+        "libraryId": "shoulder-press",
+        "sets": 3,
+        "target": "8–12 reps",
+        "rest": 90
+      },
+      {
+        "libraryId": "biceps-curl",
+        "sets": 2,
+        "target": "10–15 reps",
+        "rest": 60
+      },
+      {
+        "libraryId": "triceps-pushdown",
+        "sets": 2,
+        "target": "10–15 reps",
+        "rest": 60
+      }
+    ]
+  },
+  {
+    "id": "hana-full-gym",
+    "title": "Full Body — Salle",
+    "emoji": "🏋️",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Full Body",
+    "tags": [
+      "Full Body",
+      "Jambes",
+      "Haut du corps",
+      "Salle"
+    ],
+    "duration": "55–65 min",
+    "level": "Modérée",
+    "equipment": "Machines / haltères",
+    "summary": "Un mouvement jambes, un hip hinge, un tirage, une poussée et du gainage.",
+    "sessionType": "Full Body",
+    "techniques": [],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "leg-press",
+        "sets": 3,
+        "target": "8–12 reps",
+        "rest": 120
+      },
+      {
+        "libraryId": "rdl",
+        "sets": 3,
+        "target": "8–12 reps",
+        "rest": 120
+      },
+      {
+        "libraryId": "lat-pulldown",
+        "sets": 3,
+        "target": "8–12 reps",
+        "rest": 90
+      },
+      {
+        "libraryId": "chest-press",
+        "sets": 3,
+        "target": "8–12 reps",
+        "rest": 90
+      },
+      {
+        "libraryId": "lateral-raise",
+        "sets": 2,
+        "target": "12–20 reps",
+        "rest": 60
+      },
+      {
+        "libraryId": "plank",
+        "sets": 3,
+        "target": "30–45 sec",
+        "rest": 60
+      }
+    ]
+  },
+  {
+    "id": "hana-full-restart",
+    "title": "Full Body — Reprise",
+    "emoji": "🌱",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Full Body",
+    "tags": [
+      "Full Body",
+      "Salle"
+    ],
+    "duration": "40–50 min",
+    "level": "Reprise",
+    "equipment": "Machines",
+    "summary": "Volume volontairement simple pour reprendre sans multiplier les exercices.",
+    "sessionType": "Full Body",
+    "techniques": [],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "leg-press",
+        "sets": 2,
+        "target": "10–12 reps",
+        "rest": 90
+      },
+      {
+        "libraryId": "hip-thrust",
+        "sets": 2,
+        "target": "10–12 reps",
+        "rest": 90
+      },
+      {
+        "libraryId": "seated-row",
+        "sets": 2,
+        "target": "10–12 reps",
+        "rest": 75
+      },
+      {
+        "libraryId": "chest-press",
+        "sets": 2,
+        "target": "10–12 reps",
+        "rest": 75
+      },
+      {
+        "libraryId": "shoulder-press",
+        "sets": 2,
+        "target": "10–12 reps",
+        "rest": 75
+      }
+    ]
+  },
+  {
+    "id": "hana-express-gym",
+    "title": "Express — Salle 30 min",
+    "emoji": "⏱️",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Full Body",
+    "tags": [
+      "Full Body",
+      "Salle"
+    ],
+    "duration": "≈ 30 min",
+    "level": "Modérée",
+    "equipment": "Machines",
+    "summary": "Quatre exercices principaux pour les jours où le temps est compté.",
+    "sessionType": "Full Body",
+    "techniques": [
+      "Express"
+    ],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "leg-press",
+        "sets": 3,
+        "target": "8–12 reps",
+        "rest": 75
+      },
+      {
+        "libraryId": "hip-thrust",
+        "sets": 3,
+        "target": "8–12 reps",
+        "rest": 75
+      },
+      {
+        "libraryId": "seated-row",
+        "sets": 3,
+        "target": "8–12 reps",
+        "rest": 60
+      },
+      {
+        "libraryId": "chest-press",
+        "sets": 3,
+        "target": "8–12 reps",
+        "rest": 60
+      }
+    ]
+  },
+  {
+    "id": "hana-home-bodyweight",
+    "title": "Full Body maison — Sans matériel",
+    "emoji": "🏠",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Maison",
+    "category": "Full Body",
+    "tags": [
+      "Full Body",
+      "Maison",
+      "Jambes",
+      "Haut du corps"
+    ],
+    "duration": "30–40 min",
+    "level": "Modérée",
+    "equipment": "Aucun",
+    "summary": "Une séance corps entier faisable dans peu d’espace.",
+    "sessionType": "Full Body",
+    "techniques": [],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "bodyweight-squat",
+        "sets": 3,
+        "target": "15–20 reps",
+        "rest": 45
+      },
+      {
+        "libraryId": "reverse-lunges",
+        "sets": 3,
+        "target": "10–12 reps / jambe",
+        "rest": 45
+      },
+      {
+        "libraryId": "glute-bridge",
+        "sets": 3,
+        "target": "15–20 reps",
+        "rest": 45
+      },
+      {
+        "libraryId": "push-up",
+        "sets": 3,
+        "target": "6–15 reps",
+        "rest": 60
+      },
+      {
+        "libraryId": "bird-dog",
+        "sets": 3,
+        "target": "8–12 reps / côté",
+        "rest": 45
+      },
+      {
+        "libraryId": "plank",
+        "sets": 3,
+        "target": "30–45 sec",
+        "rest": 45
+      }
+    ]
+  },
+  {
+    "id": "hana-home-glutes",
+    "title": "Fessiers maison — Sans matériel",
+    "emoji": "🍑",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Maison",
+    "category": "Fessiers",
+    "tags": [
+      "Fessiers",
+      "Jambes",
+      "Maison"
+    ],
+    "duration": "25–35 min",
+    "level": "Modérée",
+    "equipment": "Aucun",
+    "summary": "Fessiers et jambes avec des mouvements simples au poids du corps.",
+    "sessionType": "Fessiers",
+    "techniques": [],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "glute-bridge",
+        "sets": 4,
+        "target": "15–20 reps",
+        "rest": 45
+      },
+      {
+        "libraryId": "static-lunges",
+        "sets": 3,
+        "target": "10–15 reps / jambe",
+        "rest": 45
+      },
+      {
+        "libraryId": "donkey-kick",
+        "sets": 3,
+        "target": "15–20 reps / jambe",
+        "rest": 30
+      },
+      {
+        "libraryId": "fire-hydrant",
+        "sets": 3,
+        "target": "15–20 reps / jambe",
+        "rest": 30
+      },
+      {
+        "libraryId": "wall-sit",
+        "sets": 3,
+        "target": "30–45 sec",
+        "rest": 45
+      }
+    ]
+  },
+  {
+    "id": "hana-home-dumbbells-full",
+    "title": "Full Body maison — Haltères",
+    "emoji": "🏠",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Maison",
+    "category": "Full Body",
+    "tags": [
+      "Full Body",
+      "Maison",
+      "Jambes",
+      "Haut du corps"
+    ],
+    "duration": "40–50 min",
+    "level": "Modérée",
+    "equipment": "Haltères",
+    "summary": "Une séance complète avec une paire d’haltères.",
+    "sessionType": "Full Body",
+    "techniques": [],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "goblet-squat",
+        "sets": 3,
+        "target": "10–15 reps",
+        "rest": 75
+      },
+      {
+        "libraryId": "rdl",
+        "sets": 3,
+        "target": "10–15 reps",
+        "rest": 75
+      },
+      {
+        "libraryId": "one-arm-row",
+        "sets": 3,
+        "target": "10–15 reps / bras",
+        "rest": 60
+      },
+      {
+        "libraryId": "dumbbell-floor-press",
+        "sets": 3,
+        "target": "10–15 reps",
+        "rest": 60
+      },
+      {
+        "libraryId": "shoulder-press",
+        "sets": 2,
+        "target": "10–15 reps",
+        "rest": 60
+      },
+      {
+        "libraryId": "plank",
+        "sets": 3,
+        "target": "30–45 sec",
+        "rest": 45
+      }
+    ]
+  },
+  {
+    "id": "hana-home-dumbbells-upper",
+    "title": "Haut du corps maison — Haltères",
+    "emoji": "💪",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Maison",
+    "category": "Haut du corps",
+    "tags": [
+      "Haut du corps",
+      "Maison"
+    ],
+    "duration": "35–45 min",
+    "level": "Modérée",
+    "equipment": "Haltères",
+    "summary": "Dos, pectoraux, épaules et bras sans machines.",
+    "sessionType": "Haut du corps",
+    "techniques": [],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "one-arm-row",
+        "sets": 3,
+        "target": "10–15 reps / bras",
+        "rest": 60
+      },
+      {
+        "libraryId": "dumbbell-floor-press",
+        "sets": 3,
+        "target": "10–15 reps",
+        "rest": 60
+      },
+      {
+        "libraryId": "shoulder-press",
+        "sets": 3,
+        "target": "8–12 reps",
+        "rest": 60
+      },
+      {
+        "libraryId": "lateral-raise",
+        "sets": 3,
+        "target": "12–20 reps",
+        "rest": 45
+      },
+      {
+        "libraryId": "biceps-curl",
+        "sets": 2,
+        "target": "10–15 reps",
+        "rest": 45
+      },
+      {
+        "libraryId": "overhead-triceps",
+        "sets": 2,
+        "target": "10–15 reps",
+        "rest": 45
+      }
+    ]
+  },
+  {
+    "id": "hana-home-bands-full",
+    "title": "Full Body maison — Élastiques",
+    "emoji": "🟣",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Maison",
+    "category": "Full Body",
+    "tags": [
+      "Full Body",
+      "Maison",
+      "Jambes",
+      "Haut du corps"
+    ],
+    "duration": "35–45 min",
+    "level": "Modérée",
+    "equipment": "Élastique",
+    "summary": "Une séance complète avec un élastique de résistance.",
+    "sessionType": "Full Body",
+    "techniques": [],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "band-squat",
+        "sets": 3,
+        "target": "12–20 reps",
+        "rest": 60
+      },
+      {
+        "libraryId": "band-kickback",
+        "sets": 3,
+        "target": "12–20 reps / jambe",
+        "rest": 45
+      },
+      {
+        "libraryId": "band-row",
+        "sets": 3,
+        "target": "10–15 reps",
+        "rest": 60
+      },
+      {
+        "libraryId": "band-chest-press",
+        "sets": 3,
+        "target": "10–15 reps",
+        "rest": 60
+      },
+      {
+        "libraryId": "band-shoulder-press",
+        "sets": 2,
+        "target": "10–15 reps",
+        "rest": 45
+      },
+      {
+        "libraryId": "band-abduction",
+        "sets": 3,
+        "target": "15–25 reps",
+        "rest": 45
+      }
+    ]
+  },
+  {
+    "id": "hana-home-bands-glutes",
+    "title": "Fessiers maison — Élastiques",
+    "emoji": "🍑",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Maison",
+    "category": "Fessiers",
+    "tags": [
+      "Fessiers",
+      "Jambes",
+      "Maison"
+    ],
+    "duration": "25–35 min",
+    "level": "Modérée",
+    "equipment": "Mini-band / élastique",
+    "summary": "Une séance courte orientée fessiers avec résistance élastique.",
+    "sessionType": "Fessiers",
+    "techniques": [],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "band-squat",
+        "sets": 3,
+        "target": "15–20 reps",
+        "rest": 45
+      },
+      {
+        "libraryId": "glute-bridge",
+        "sets": 4,
+        "target": "15–20 reps",
+        "rest": 45,
+        "note": "Élastique au-dessus des genoux si possible."
+      },
+      {
+        "libraryId": "band-kickback",
+        "sets": 3,
+        "target": "15–20 reps / jambe",
+        "rest": 30
+      },
+      {
+        "libraryId": "band-abduction",
+        "sets": 3,
+        "target": "20–25 reps",
+        "rest": 30
+      },
+      {
+        "libraryId": "fire-hydrant",
+        "sets": 3,
+        "target": "15–20 reps / jambe",
+        "rest": 30,
+        "note": "Avec ou sans mini-band."
+      }
+    ]
+  },
+  {
+    "id": "hana-home-express",
+    "title": "Express maison — 20 min",
+    "emoji": "⚡",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Maison",
+    "category": "Full Body",
+    "tags": [
+      "Full Body",
+      "Maison"
+    ],
+    "duration": "≈ 20 min",
+    "level": "Modérée",
+    "equipment": "Aucun",
+    "summary": "Un circuit rapide à répéter 3 à 4 fois selon le temps disponible.",
+    "sessionType": "Full Body",
+    "techniques": [
+      "Circuit"
+    ],
+    "instructions": [
+      "Réalise les exercices à la suite, puis récupère avant de repartir sur un tour."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "bodyweight-squat",
+        "sets": 3,
+        "target": "15 reps",
+        "rest": 30
+      },
+      {
+        "libraryId": "push-up",
+        "sets": 3,
+        "target": "6–12 reps",
+        "rest": 30
+      },
+      {
+        "libraryId": "reverse-lunges",
+        "sets": 3,
+        "target": "10 reps / jambe",
+        "rest": 30
+      },
+      {
+        "libraryId": "mountain-climber",
+        "sets": 3,
+        "target": "30 sec",
+        "rest": 30
+      },
+      {
+        "libraryId": "glute-bridge",
+        "sets": 3,
+        "target": "15 reps",
+        "rest": 30
+      }
+    ]
+  },
+  {
+    "id": "coach-legs-tempo-deadlift",
+    "title": "Jambes — Tempo lent + Stairmaster",
+    "emoji": "🦵",
+    "source": "Coach",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Jambes",
+    "tags": [
+      "Jambes",
+      "Fessiers",
+      "Coach",
+      "Salle"
+    ],
+    "duration": "60–75 min",
+    "level": "Intense",
+    "equipment": "Barre / presse / poulie",
+    "summary": "Trois mouvements jambes avec tempo lent, puis cardio.",
+    "sessionType": "Jambes",
+    "techniques": [
+      "Tempo"
+    ],
+    "instructions": [
+      "Ancienne séance coach : garde le format comme repère et adapte les charges à ton niveau actuel."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "deadlift",
+        "sets": 5,
+        "target": "8 reps · 8 sec descente / 2 sec montée",
+        "rest": 90,
+        "note": "Pendant la récupération : 60 sec de relevés de jambes."
+      },
+      {
+        "libraryId": "leg-press",
+        "sets": 5,
+        "target": "8 reps · 8 sec descente / 2 sec montée",
+        "rest": 90,
+        "note": "Pendant la récupération : 60 sec de sit-up."
+      },
+      {
+        "libraryId": "sumo-squat",
+        "sets": 5,
+        "target": "8 reps · 8 sec descente / 2 sec montée",
+        "rest": 90,
+        "note": "Version à la poulie dans le document d'origine. Pendant la récupération : 60 sec de ciseaux."
+      },
+      {
+        "libraryId": "stair-climber",
+        "sets": 0,
+        "target": "20 min",
+        "rest": 0,
+        "mode": "cardio",
+        "duration": 20
+      }
+    ]
+  },
+  {
+    "id": "coach-upper-9reps",
+    "title": "Upper — Supersets 9 reps",
+    "emoji": "💪",
+    "source": "Coach",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Haut du corps",
+    "tags": [
+      "Haut du corps",
+      "Coach",
+      "Salle"
+    ],
+    "duration": "45–60 min",
+    "level": "Intense",
+    "equipment": "Poulies / haltères / barre EZ",
+    "summary": "Quatre associations haut du corps avec cardio court pendant les récupérations.",
+    "sessionType": "Haut du corps",
+    "techniques": [
+      "Superset"
+    ],
+    "instructions": [
+      "Le document d'origine décrit 4 blocs de 2 exercices, sans préciser un nombre de tours.",
+      "Récupération active indiquée : jumping jacks, burpees ou « araignée » selon le bloc."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "seated-row",
+        "sets": 1,
+        "target": "9 reps",
+        "rest": 60,
+        "note": "À enchaîner avec curl biceps barre EZ."
+      },
+      {
+        "libraryId": "biceps-curl",
+        "sets": 1,
+        "target": "9 reps",
+        "rest": 60,
+        "note": "Superset 1."
+      },
+      {
+        "libraryId": "lat-pulldown",
+        "sets": 1,
+        "target": "9 reps",
+        "rest": 60,
+        "note": "À enchaîner avec curl biceps haltères."
+      },
+      {
+        "libraryId": "biceps-curl",
+        "sets": 1,
+        "target": "9 reps",
+        "rest": 60,
+        "note": "Superset 2."
+      },
+      {
+        "libraryId": "triceps-pushdown",
+        "sets": 1,
+        "target": "9 reps",
+        "rest": 60,
+        "note": "À enchaîner avec élévations frontales."
+      },
+      {
+        "libraryId": "front-raise",
+        "sets": 1,
+        "target": "9 reps",
+        "rest": 60,
+        "note": "Superset 3."
+      },
+      {
+        "libraryId": "triceps-pushdown",
+        "sets": 1,
+        "target": "9 reps",
+        "rest": 60,
+        "note": "Variante barre poulie dans le document."
+      },
+      {
+        "libraryId": "front-raise",
+        "sets": 1,
+        "target": "9 reps",
+        "rest": 60,
+        "note": "Variante diagonale haltères dans le document."
+      }
+    ]
+  },
+  {
+    "id": "coach-legs-squat-tempo",
+    "title": "Jambes — Squat & fentes tempo",
+    "emoji": "🦵",
+    "source": "Coach",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Jambes",
+    "tags": [
+      "Jambes",
+      "Fessiers",
+      "Coach",
+      "Salle"
+    ],
+    "duration": "60–75 min",
+    "level": "Intense",
+    "equipment": "Barre / Smith / box",
+    "summary": "Squats et fentes avec phase descendante lente.",
+    "sessionType": "Jambes",
+    "techniques": [
+      "Tempo"
+    ],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "smith-squat",
+        "sets": 5,
+        "target": "8 reps · 5 sec descente / 1 sec montée",
+        "rest": 90,
+        "note": "Version surélevée dans le document. Récup : 60 sec gainage."
+      },
+      {
+        "libraryId": "bulgarian-split-squat",
+        "sets": 5,
+        "target": "8 reps / jambe · 5 sec descente / 1 sec montée",
+        "rest": 90,
+        "note": "Récup : 30 sec gainage latéral de chaque côté."
+      },
+      {
+        "libraryId": "smith-squat",
+        "sets": 5,
+        "target": "8 reps · 5 sec descente / 1 sec montée",
+        "rest": 90,
+        "note": "Récup : 60 sec sit-up."
+      },
+      {
+        "libraryId": "stair-climber",
+        "sets": 0,
+        "target": "20 min",
+        "rest": 0,
+        "mode": "cardio",
+        "duration": 20
+      }
+    ]
+  },
+  {
+    "id": "coach-cardio-mix",
+    "title": "Cardio — Elliptique, stepper & marche",
+    "emoji": "❤️",
+    "source": "Coach",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Cardio",
+    "tags": [
+      "Coach",
+      "Salle"
+    ],
+    "duration": "50 min",
+    "level": "Modérée",
+    "equipment": "Cardio",
+    "summary": "Une séance cardio simple en trois blocs.",
+    "sessionType": "Cardio",
+    "techniques": [],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "elliptical",
+        "sets": 0,
+        "target": "20 min",
+        "rest": 0,
+        "mode": "cardio",
+        "duration": 20
+      },
+      {
+        "libraryId": "stair-climber",
+        "sets": 0,
+        "target": "20 min",
+        "rest": 0,
+        "mode": "cardio",
+        "duration": 20
+      },
+      {
+        "libraryId": "treadmill-walk",
+        "sets": 0,
+        "target": "10 min",
+        "rest": 0,
+        "mode": "cardio",
+        "duration": 10
+      }
+    ]
+  },
+  {
+    "id": "coach-quads-trisets",
+    "title": "Quadriceps — Trisets & Stairmaster",
+    "emoji": "🦵",
+    "source": "Coach",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Jambes",
+    "tags": [
+      "Jambes",
+      "Coach",
+      "Salle"
+    ],
+    "duration": "60–75 min",
+    "level": "Intense",
+    "equipment": "Machines / barre / haltère",
+    "summary": "Trois blocs jambes enchaînés avec un accent quadriceps.",
+    "sessionType": "Jambes",
+    "techniques": [
+      "Triset"
+    ],
+    "instructions": [
+      "Le document d'origine prévoit 5 séries par bloc."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "leg-extension",
+        "sets": 5,
+        "target": "12 reps",
+        "rest": 30,
+        "note": "Bloc 1 : enchaîner avec leg curl unilatéral et squat à vide."
+      },
+      {
+        "libraryId": "leg-curl-seated",
+        "sets": 5,
+        "target": "12 reps / jambe",
+        "rest": 30,
+        "note": "Le document utilisait une variante debout unilatérale."
+      },
+      {
+        "libraryId": "bodyweight-squat",
+        "sets": 5,
+        "target": "12 reps",
+        "rest": 30
+      },
+      {
+        "libraryId": "squat",
+        "sets": 5,
+        "target": "8 reps · pieds plus larges que les hanches",
+        "rest": 90,
+        "note": "Bloc 2."
+      },
+      {
+        "libraryId": "front-squat",
+        "sets": 5,
+        "target": "6 reps · talons surélevés",
+        "rest": 90
+      },
+      {
+        "libraryId": "leg-press",
+        "sets": 5,
+        "target": "8 reps",
+        "rest": 90,
+        "note": "Bloc 3."
+      },
+      {
+        "libraryId": "sumo-squat",
+        "sets": 5,
+        "target": "6 reps",
+        "rest": 90
+      },
+      {
+        "libraryId": "stair-climber",
+        "sets": 0,
+        "target": "20 min",
+        "rest": 0,
+        "mode": "cardio",
+        "duration": 20
+      }
+    ]
+  },
+  {
+    "id": "coach-upper-trisets",
+    "title": "Upper — Trisets & bisets",
+    "emoji": "💪",
+    "source": "Coach",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Haut du corps",
+    "tags": [
+      "Haut du corps",
+      "Coach",
+      "Salle"
+    ],
+    "duration": "55–70 min",
+    "level": "Intense",
+    "equipment": "Barre / haltères / poulie",
+    "summary": "Dos, épaules, bras et pompes organisés en blocs.",
+    "sessionType": "Haut du corps",
+    "techniques": [
+      "Triset",
+      "Biset"
+    ],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "seated-row",
+        "sets": 5,
+        "target": "12 reps · prise supination",
+        "rest": 30,
+        "note": "Triset 1."
+      },
+      {
+        "libraryId": "triceps-pushdown",
+        "sets": 5,
+        "target": "12 reps",
+        "rest": 30
+      },
+      {
+        "libraryId": "push-up",
+        "sets": 5,
+        "target": "12 reps",
+        "rest": 30
+      },
+      {
+        "libraryId": "seated-row",
+        "sets": 5,
+        "target": "12 reps · prise pronation large",
+        "rest": 30,
+        "note": "Triset 2."
+      },
+      {
+        "libraryId": "overhead-triceps",
+        "sets": 5,
+        "target": "12 reps",
+        "rest": 30
+      },
+      {
+        "libraryId": "dumbbell-fly",
+        "sets": 5,
+        "target": "12 reps",
+        "rest": 30
+      },
+      {
+        "libraryId": "arnold-press",
+        "sets": 4,
+        "target": "12 reps",
+        "rest": 30,
+        "note": "Triset 3."
+      },
+      {
+        "libraryId": "close-grip-push-up",
+        "sets": 4,
+        "target": "8 reps",
+        "rest": 30
+      },
+      {
+        "libraryId": "biceps-curl",
+        "sets": 4,
+        "target": "12 reps · barre EZ",
+        "rest": 30
+      },
+      {
+        "libraryId": "lateral-raise",
+        "sets": 4,
+        "target": "9 reps",
+        "rest": 30,
+        "note": "Biset final avec curl alternant prise pronation/supination."
+      },
+      {
+        "libraryId": "biceps-curl",
+        "sets": 4,
+        "target": "12 reps",
+        "rest": 30
+      }
+    ]
+  },
+  {
+    "id": "coach-home-20-10",
+    "title": "Full Body maison — Circuit 20/10",
+    "emoji": "🏠",
+    "source": "Coach",
+    "sourceDetail": "",
+    "location": "Maison",
+    "category": "Full Body",
+    "tags": [
+      "Full Body",
+      "Maison",
+      "Coach"
+    ],
+    "duration": "25–35 min",
+    "level": "Intense",
+    "equipment": "Poids du corps + haltères / barre",
+    "summary": "Circuit de 10 exercices : 20 sec de travail, 10 sec de récupération.",
+    "sessionType": "Full Body",
+    "techniques": [
+      "Circuit",
+      "20/10"
+    ],
+    "instructions": [
+      "Le document indique 3 tours."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "squat",
+        "sets": 3,
+        "target": "20 sec",
+        "rest": 10,
+        "note": "Barre sur le dos dans le document."
+      },
+      {
+        "libraryId": "push-up",
+        "sets": 3,
+        "target": "20 sec",
+        "rest": 10,
+        "note": "Pompes larges."
+      },
+      {
+        "libraryId": "skater",
+        "sets": 3,
+        "target": "20 sec",
+        "rest": 10
+      },
+      {
+        "libraryId": "jump-squat",
+        "sets": 3,
+        "target": "20 sec",
+        "rest": 10
+      },
+      {
+        "libraryId": "biceps-curl",
+        "sets": 3,
+        "target": "20 sec",
+        "rest": 10,
+        "note": "Haltères."
+      },
+      {
+        "libraryId": "spider-coach",
+        "sets": 3,
+        "target": "20 sec",
+        "rest": 10
+      },
+      {
+        "libraryId": "good-morning",
+        "sets": 3,
+        "target": "20 sec",
+        "rest": 10,
+        "note": "Haltères."
+      },
+      {
+        "libraryId": "burpee",
+        "sets": 3,
+        "target": "20 sec",
+        "rest": 10
+      },
+      {
+        "libraryId": "close-grip-push-up",
+        "sets": 3,
+        "target": "20 sec",
+        "rest": 10
+      },
+      {
+        "libraryId": "jumping-jack",
+        "sets": 3,
+        "target": "20 sec",
+        "rest": 10
+      }
+    ]
+  },
+  {
+    "id": "coach-home-countdown",
+    "title": "Maison — Countdown 10 → 3",
+    "emoji": "🔥",
+    "source": "Coach",
+    "sourceDetail": "",
+    "location": "Maison",
+    "category": "Full Body",
+    "tags": [
+      "Full Body",
+      "Maison",
+      "Coach"
+    ],
+    "duration": "20–30 min",
+    "level": "Intense",
+    "equipment": "Poids du corps",
+    "summary": "Un circuit dégressif en répétitions sans récupération entre les mouvements.",
+    "sessionType": "Full Body",
+    "techniques": [
+      "Pyramide descendante"
+    ],
+    "instructions": [
+      "Faire 10 reps de chaque, puis 9, 8, 7… jusqu’à 3, sans récupération indiquée entre les exercices."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "bodyweight-squat",
+        "sets": 1,
+        "target": "10 → 3 reps",
+        "rest": 30
+      },
+      {
+        "libraryId": "spider-coach",
+        "sets": 1,
+        "target": "10 → 3 reps",
+        "rest": 30
+      },
+      {
+        "libraryId": "reverse-lunges",
+        "sets": 1,
+        "target": "10 → 3 reps / jambe",
+        "rest": 30
+      },
+      {
+        "libraryId": "sit-up",
+        "sets": 1,
+        "target": "10 → 3 reps",
+        "rest": 30
+      }
+    ]
+  },
+  {
+    "id": "coach-legs-three-loads",
+    "title": "Jambes — 3 charges",
+    "emoji": "🏋️",
+    "source": "Coach",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Jambes",
+    "tags": [
+      "Jambes",
+      "Fessiers",
+      "Coach",
+      "Salle"
+    ],
+    "duration": "60–75 min",
+    "level": "Intense",
+    "equipment": "Barre / haltères",
+    "summary": "Chaque mouvement est réalisé avec trois charges différentes.",
+    "sessionType": "Jambes",
+    "techniques": [
+      "Charges dégressives"
+    ],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "squat",
+        "sets": 5,
+        "target": "3 × 10 reps avec charges décroissantes",
+        "rest": 90,
+        "note": "Exemple du document : 45 kg, 40 kg, 30 kg. Puis 1 min gainage + 30 sec récup."
+      },
+      {
+        "libraryId": "good-morning",
+        "sets": 5,
+        "target": "3 × 10 reps avec charges différentes",
+        "rest": 90
+      },
+      {
+        "libraryId": "bulgarian-split-squat",
+        "sets": 5,
+        "target": "3 × 10 reps / jambe avec charges différentes",
+        "rest": 90
+      },
+      {
+        "libraryId": "stair-climber",
+        "sets": 0,
+        "target": "20 min",
+        "rest": 0,
+        "mode": "cardio",
+        "duration": 20
+      }
+    ]
+  },
+  {
+    "id": "coach-upper-three-loads",
+    "title": "Upper — 3 charges",
+    "emoji": "💪",
+    "source": "Coach",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Haut du corps",
+    "tags": [
+      "Haut du corps",
+      "Coach",
+      "Salle"
+    ],
+    "duration": "50–65 min",
+    "level": "Intense",
+    "equipment": "Barre / haltères / poulie",
+    "summary": "Trois exercices réalisés avec trois niveaux de charge.",
+    "sessionType": "Haut du corps",
+    "techniques": [
+      "Charges dégressives"
+    ],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "biceps-curl",
+        "sets": 5,
+        "target": "3 × 10 reps avec charges décroissantes",
+        "rest": 90,
+        "note": "Exemple du document : 15 kg, 10 kg, 7 kg. Puis 1 min relevés de jambes + 30 sec récup."
+      },
+      {
+        "libraryId": "shoulder-press",
+        "sets": 5,
+        "target": "3 × 10 reps avec charges différentes",
+        "rest": 90,
+        "note": "Développé militaire haltères."
+      },
+      {
+        "libraryId": "triceps-pushdown",
+        "sets": 5,
+        "target": "3 × 10 reps avec charges différentes",
+        "rest": 90,
+        "note": "Corde à la poulie."
+      }
+    ]
+  },
+  {
+    "id": "coach-home-45-15",
+    "title": "Full Body maison — Circuit 45/15",
+    "emoji": "🔥",
+    "source": "Coach",
+    "sourceDetail": "",
+    "location": "Maison",
+    "category": "Full Body",
+    "tags": [
+      "Full Body",
+      "Maison",
+      "Coach"
+    ],
+    "duration": "35–45 min",
+    "level": "Intense",
+    "equipment": "Poids du corps",
+    "summary": "Trois mini-circuits : 45 sec de travail et 15 sec de récupération.",
+    "sessionType": "Full Body",
+    "techniques": [
+      "Circuit",
+      "45/15"
+    ],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "jump-squat",
+        "sets": 4,
+        "target": "45 sec",
+        "rest": 15,
+        "note": "Bloc jambes."
+      },
+      {
+        "libraryId": "jump-lunge",
+        "sets": 4,
+        "target": "45 sec",
+        "rest": 15
+      },
+      {
+        "libraryId": "spider-coach",
+        "sets": 4,
+        "target": "45 sec",
+        "rest": 15
+      },
+      {
+        "libraryId": "burpee",
+        "sets": 4,
+        "target": "45 sec",
+        "rest": 15,
+        "note": "Bloc haut du corps/cardio."
+      },
+      {
+        "libraryId": "push-up",
+        "sets": 4,
+        "target": "45 sec",
+        "rest": 15,
+        "note": "Pompes larges."
+      },
+      {
+        "libraryId": "close-grip-push-up",
+        "sets": 4,
+        "target": "45 sec",
+        "rest": 15
+      },
+      {
+        "libraryId": "jumping-jack",
+        "sets": 4,
+        "target": "45 sec",
+        "rest": 15,
+        "note": "Bloc cardio/abdos."
+      },
+      {
+        "libraryId": "leg-raise",
+        "sets": 4,
+        "target": "45 sec",
+        "rest": 15
+      },
+      {
+        "libraryId": "plank",
+        "sets": 4,
+        "target": "45 sec",
+        "rest": 15
+      },
+      {
+        "libraryId": "treadmill-walk",
+        "sets": 0,
+        "target": "30 min marche rapide",
+        "rest": 0,
+        "mode": "cardio",
+        "duration": 30
+      }
+    ]
+  },
+  {
+    "id": "coach-home-cardio-45-15",
+    "title": "Maison — Cardio Full Body 45/15",
+    "emoji": "⚡",
+    "source": "Coach",
+    "sourceDetail": "",
+    "location": "Maison",
+    "category": "Full Body",
+    "tags": [
+      "Full Body",
+      "Maison",
+      "Coach"
+    ],
+    "duration": "35–50 min",
+    "level": "Intense",
+    "equipment": "Poids du corps",
+    "summary": "Circuit cardio avec mouvements jambes, burpees, gainage et patineur.",
+    "sessionType": "Full Body",
+    "techniques": [
+      "Circuit",
+      "45/15"
+    ],
+    "instructions": [
+      "Le document annonce « 3 exercices » mais en liste 5 ; les 5 mouvements sont conservés."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "burpee",
+        "sets": 6,
+        "target": "45 sec · option sans pompe",
+        "rest": 15
+      },
+      {
+        "libraryId": "walking-lunges",
+        "sets": 6,
+        "target": "45 sec",
+        "rest": 15
+      },
+      {
+        "libraryId": "spider-coach",
+        "sets": 6,
+        "target": "45 sec",
+        "rest": 15
+      },
+      {
+        "libraryId": "skater",
+        "sets": 6,
+        "target": "45 sec",
+        "rest": 15
+      },
+      {
+        "libraryId": "plank",
+        "sets": 6,
+        "target": "45 sec · rotation du buste",
+        "rest": 15,
+        "note": "Le document parle de gainage actif avec rotation."
+      },
+      {
+        "libraryId": "treadmill-walk",
+        "sets": 0,
+        "target": "30 min marche rapide",
+        "rest": 0,
+        "mode": "cardio",
+        "duration": 30
+      }
+    ]
+  },
+  {
+    "id": "coach-legs-no-rest",
+    "title": "Jambes — Circuits sans récupération",
+    "emoji": "🦵",
+    "source": "Coach",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Jambes",
+    "tags": [
+      "Jambes",
+      "Fessiers",
+      "Coach",
+      "Salle"
+    ],
+    "duration": "50–65 min",
+    "level": "Intense",
+    "equipment": "Smith / barre assistée",
+    "summary": "Trois blocs jambes avec gainage/cardio entre les mouvements.",
+    "sessionType": "Jambes",
+    "techniques": [
+      "Circuit"
+    ],
+    "instructions": [
+      "Nombre de tours non indiqué dans le document d'origine."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "smith-squat",
+        "sets": 1,
+        "target": "12 reps",
+        "rest": 45,
+        "note": "Bloc 1."
+      },
+      {
+        "libraryId": "static-lunges",
+        "sets": 1,
+        "target": "8 reps / jambe",
+        "rest": 45,
+        "note": "Barre assistée dans le document."
+      },
+      {
+        "libraryId": "spider-coach",
+        "sets": 1,
+        "target": "45 sec",
+        "rest": 45
+      },
+      {
+        "libraryId": "plank",
+        "sets": 1,
+        "target": "45 sec",
+        "rest": 45
+      },
+      {
+        "libraryId": "good-morning",
+        "sets": 1,
+        "target": "12 reps",
+        "rest": 45,
+        "note": "Bloc 2 · barre assistée."
+      },
+      {
+        "libraryId": "deadlift",
+        "sets": 1,
+        "target": "8 reps",
+        "rest": 45,
+        "note": "Barre assistée dans le document."
+      },
+      {
+        "libraryId": "spider-coach",
+        "sets": 1,
+        "target": "45 sec",
+        "rest": 45
+      },
+      {
+        "libraryId": "plank",
+        "sets": 1,
+        "target": "45 sec",
+        "rest": 45
+      },
+      {
+        "libraryId": "bulgarian-split-squat",
+        "sets": 1,
+        "target": "12 reps",
+        "rest": 45,
+        "note": "Bloc 3 · barre assistée."
+      },
+      {
+        "libraryId": "smith-squat",
+        "sets": 1,
+        "target": "8 reps",
+        "rest": 45
+      },
+      {
+        "libraryId": "spider-coach",
+        "sets": 1,
+        "target": "45 sec",
+        "rest": 45
+      },
+      {
+        "libraryId": "plank",
+        "sets": 1,
+        "target": "45 sec",
+        "rest": 45
+      },
+      {
+        "libraryId": "stair-climber",
+        "sets": 0,
+        "target": "15 min",
+        "rest": 0,
+        "mode": "cardio",
+        "duration": 15
+      }
+    ]
+  },
+  {
+    "id": "coach-upper-no-rest",
+    "title": "Upper — Circuits sans récupération",
+    "emoji": "💪",
+    "source": "Coach",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Haut du corps",
+    "tags": [
+      "Haut du corps",
+      "Coach",
+      "Salle"
+    ],
+    "duration": "45–60 min",
+    "level": "Intense",
+    "equipment": "Barre / haltères / machine",
+    "summary": "Trois blocs haut du corps avec abdos intégrés.",
+    "sessionType": "Haut du corps",
+    "techniques": [
+      "Circuit"
+    ],
+    "instructions": [
+      "Nombre de tours non indiqué dans le document d'origine."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "military-press-barbell",
+        "sets": 1,
+        "target": "12 reps",
+        "rest": 45,
+        "note": "Bloc 1."
+      },
+      {
+        "libraryId": "push-up",
+        "sets": 1,
+        "target": "8 reps · pompes larges",
+        "rest": 45
+      },
+      {
+        "libraryId": "leg-raise",
+        "sets": 1,
+        "target": "30 sec",
+        "rest": 45
+      },
+      {
+        "libraryId": "plank",
+        "sets": 1,
+        "target": "30 sec",
+        "rest": 45
+      },
+      {
+        "libraryId": "reverse-fly",
+        "sets": 1,
+        "target": "12 reps",
+        "rest": 45,
+        "note": "Bloc 2."
+      },
+      {
+        "libraryId": "dumbbell-fly",
+        "sets": 1,
+        "target": "8 reps",
+        "rest": 45
+      },
+      {
+        "libraryId": "leg-raise",
+        "sets": 1,
+        "target": "30 sec",
+        "rest": 45
+      },
+      {
+        "libraryId": "plank",
+        "sets": 1,
+        "target": "30 sec",
+        "rest": 45
+      },
+      {
+        "libraryId": "arnold-press",
+        "sets": 1,
+        "target": "12 reps",
+        "rest": 45,
+        "note": "Bloc 3."
+      },
+      {
+        "libraryId": "pec-deck",
+        "sets": 1,
+        "target": "8 reps",
+        "rest": 45
+      },
+      {
+        "libraryId": "leg-raise",
+        "sets": 1,
+        "target": "30 sec",
+        "rest": 45
+      },
+      {
+        "libraryId": "plank",
+        "sets": 1,
+        "target": "30 sec",
+        "rest": 45
+      },
+      {
+        "libraryId": "rowing-machine",
+        "sets": 0,
+        "target": "15 min",
+        "rest": 0,
+        "mode": "cardio",
+        "duration": 15
+      }
+    ]
+  },
+  {
+    "id": "coach-arms-stairmaster",
+    "title": "Bras — Supersets + Stairmaster",
+    "emoji": "💪",
+    "source": "Coach",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Haut du corps",
+    "tags": [
+      "Haut du corps",
+      "Coach",
+      "Salle"
+    ],
+    "duration": "40–55 min",
+    "level": "Modérée",
+    "equipment": "Poulie / barre EZ",
+    "summary": "Deux associations biceps/triceps suivies de cardio.",
+    "sessionType": "Haut du corps",
+    "techniques": [
+      "Superset"
+    ],
+    "instructions": [
+      "Nombre de tours non indiqué dans le document d'origine."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "cable-curl",
+        "sets": 1,
+        "target": "12 reps",
+        "rest": 45,
+        "note": "Bloc 1."
+      },
+      {
+        "libraryId": "triceps-pushdown",
+        "sets": 1,
+        "target": "12 reps",
+        "rest": 45,
+        "note": "Barre poulie haute."
+      },
+      {
+        "libraryId": "plank",
+        "sets": 1,
+        "target": "45 sec",
+        "rest": 45
+      },
+      {
+        "libraryId": "biceps-curl",
+        "sets": 1,
+        "target": "12 reps · barre EZ",
+        "rest": 45,
+        "note": "Bloc 2."
+      },
+      {
+        "libraryId": "close-grip-push-up",
+        "sets": 1,
+        "target": "12 reps",
+        "rest": 45
+      },
+      {
+        "libraryId": "spider-coach",
+        "sets": 1,
+        "target": "45 sec",
+        "rest": 45
+      },
+      {
+        "libraryId": "stair-climber",
+        "sets": 0,
+        "target": "30 min",
+        "rest": 0,
+        "mode": "cardio",
+        "duration": 30
+      }
+    ]
+  },
+  {
+    "id": "coach-stepup-bulgarian",
+    "title": "Jambes — Step-up, bulgares & squat",
+    "emoji": "🦵",
+    "source": "Coach",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Jambes",
+    "tags": [
+      "Jambes",
+      "Fessiers",
+      "Coach",
+      "Salle"
+    ],
+    "duration": "55–70 min",
+    "level": "Intense",
+    "equipment": "Haltères / box / barre",
+    "summary": "Trois mouvements jambes, chacun associé à une minute d'abdos.",
+    "sessionType": "Jambes",
+    "techniques": [],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "step-up",
+        "sets": 3,
+        "target": "12 reps / jambe",
+        "rest": 60,
+        "note": "Puis 1 min relevés de jambes."
+      },
+      {
+        "libraryId": "bulgarian-split-squat",
+        "sets": 3,
+        "target": "12 reps / jambe",
+        "rest": 60,
+        "note": "Sur box avec haltères dans le document. Puis 1 min relevés de jambes."
+      },
+      {
+        "libraryId": "squat",
+        "sets": 3,
+        "target": "12 reps",
+        "rest": 60,
+        "note": "Puis 1 min relevés de jambes."
+      },
+      {
+        "libraryId": "stair-climber",
+        "sets": 0,
+        "target": "20 min",
+        "rest": 0,
+        "mode": "cardio",
+        "duration": 20
+      }
+    ]
+  },
+  {
+    "id": "coach-upper-back-arms-core",
+    "title": "Upper — Dos, bras & gainage",
+    "emoji": "💪",
+    "source": "Coach",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Haut du corps",
+    "tags": [
+      "Haut du corps",
+      "Coach",
+      "Salle"
+    ],
+    "duration": "50–65 min",
+    "level": "Intense",
+    "equipment": "Poulies / haltères",
+    "summary": "Trois supersets haut du corps avec 60 sec de gainage après chaque bloc.",
+    "sessionType": "Haut du corps",
+    "techniques": [
+      "Superset"
+    ],
+    "instructions": [
+      "Nombre de tours non indiqué dans le document d'origine."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "behind-neck-lat-pulldown",
+        "sets": 1,
+        "target": "12 reps",
+        "rest": 60,
+        "note": "À enchaîner avec curl biceps."
+      },
+      {
+        "libraryId": "biceps-curl",
+        "sets": 1,
+        "target": "12 reps",
+        "rest": 60
+      },
+      {
+        "libraryId": "plank",
+        "sets": 1,
+        "target": "60 sec",
+        "rest": 60
+      },
+      {
+        "libraryId": "seated-row",
+        "sets": 1,
+        "target": "12 reps",
+        "rest": 60,
+        "note": "À enchaîner avec pompes."
+      },
+      {
+        "libraryId": "push-up",
+        "sets": 1,
+        "target": "12 reps",
+        "rest": 60
+      },
+      {
+        "libraryId": "plank",
+        "sets": 1,
+        "target": "60 sec",
+        "rest": 60
+      },
+      {
+        "libraryId": "arnold-press",
+        "sets": 1,
+        "target": "12 reps",
+        "rest": 60,
+        "note": "À enchaîner avec extension triceps corde."
+      },
+      {
+        "libraryId": "triceps-pushdown",
+        "sets": 1,
+        "target": "12 reps",
+        "rest": 60
+      },
+      {
+        "libraryId": "plank",
+        "sets": 1,
+        "target": "60 sec",
+        "rest": 60
+      },
+      {
+        "libraryId": "stair-climber",
+        "sets": 0,
+        "target": "20 min",
+        "rest": 0,
+        "mode": "cardio",
+        "duration": 20
+      }
+    ]
+  },
+  {
+    "id": "coach-home-pyramid",
+    "title": "Full Body maison — Pyramide 1 → 10 → 1",
+    "emoji": "🔥",
+    "source": "Coach",
+    "sourceDetail": "",
+    "location": "Maison",
+    "category": "Full Body",
+    "tags": [
+      "Full Body",
+      "Maison",
+      "Coach"
+    ],
+    "duration": "30–45 min",
+    "level": "Intense",
+    "equipment": "Poids du corps + haltères",
+    "summary": "Une pyramide complète sur six mouvements.",
+    "sessionType": "Full Body",
+    "techniques": [
+      "Pyramide"
+    ],
+    "instructions": [
+      "Commencer à 1 rep de chaque exercice, puis 2, 3… jusqu'à 10, puis redescendre 9…1.",
+      "Le document prévoit 30 sec de récupération après certains tours et 1 min 30 après le tour de 10."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "burpee",
+        "sets": 1,
+        "target": "Pyramide 1 → 10 → 1",
+        "rest": 30
+      },
+      {
+        "libraryId": "thruster-dumbbells",
+        "sets": 1,
+        "target": "Pyramide 1 → 10 → 1",
+        "rest": 30
+      },
+      {
+        "libraryId": "push-up",
+        "sets": 1,
+        "target": "Pyramide 1 → 10 → 1",
+        "rest": 30
+      },
+      {
+        "libraryId": "inchworm",
+        "sets": 1,
+        "target": "Pyramide 1 → 10 → 1",
+        "rest": 30
+      },
+      {
+        "libraryId": "static-lunges",
+        "sets": 1,
+        "target": "Pyramide 1 → 10 → 1 / jambe",
+        "rest": 30
+      }
+    ]
+  },
+  {
+    "id": "coach-quad-glutes-supersets",
+    "title": "Quadriceps & fessiers — Supersets",
+    "emoji": "🦵",
+    "source": "Coach",
+    "sourceDetail": "Yo_Nutri",
+    "location": "Salle",
+    "category": "Jambes",
+    "tags": [
+      "Jambes",
+      "Fessiers",
+      "Coach",
+      "Salle"
+    ],
+    "duration": "60–75 min",
+    "level": "Intense",
+    "equipment": "Barre / hack squat / haltères",
+    "summary": "Lower orienté quadriceps/fessiers avec deux supersets.",
+    "sessionType": "Jambes",
+    "techniques": [
+      "Superset",
+      "Dégressif"
+    ],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "front-squat",
+        "sets": 4,
+        "target": "10–15 reps",
+        "rest": 120,
+        "note": "Front squat ou Hack Squat."
+      },
+      {
+        "libraryId": "leg-extension",
+        "sets": 4,
+        "target": "10–15 reps",
+        "rest": 75,
+        "note": "Deux séries dégressives sur la dernière série."
+      },
+      {
+        "libraryId": "wall-sit",
+        "sets": 4,
+        "target": "30 sec lesté",
+        "rest": 75,
+        "note": "Superset avec Leg Extension."
+      },
+      {
+        "libraryId": "static-lunges",
+        "sets": 4,
+        "target": "15–20 reps",
+        "rest": 90,
+        "note": "Fentes entre deux steps dans le document."
+      },
+      {
+        "libraryId": "glute-bridge",
+        "sets": 4,
+        "target": "10–15 reps",
+        "rest": 75,
+        "note": "Relevé de bassin au sol avec barre."
+      },
+      {
+        "libraryId": "glute-bridge",
+        "sets": 4,
+        "target": "15–20 reps",
+        "rest": 75,
+        "note": "Pieds joints avec haltère · superset."
+      }
+    ]
+  },
+  {
+    "id": "coach-upper-pull-shoulders-arms",
+    "title": "Upper — Dos, épaules & bras",
+    "emoji": "💪",
+    "source": "Coach",
+    "sourceDetail": "Yo_Nutri",
+    "location": "Salle",
+    "category": "Haut du corps",
+    "tags": [
+      "Haut du corps",
+      "Coach",
+      "Salle"
+    ],
+    "duration": "55–70 min",
+    "level": "Intense",
+    "equipment": "Poulies / haltères",
+    "summary": "Tirages, épaules et bras avec un superset biceps/triceps.",
+    "sessionType": "Haut du corps",
+    "techniques": [
+      "Superset",
+      "Dégressif"
+    ],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "lat-pulldown",
+        "sets": 4,
+        "target": "10–15 reps · prise neutre",
+        "rest": 90
+      },
+      {
+        "libraryId": "one-arm-row",
+        "sets": 4,
+        "target": "10–15 reps",
+        "rest": 90,
+        "note": "Rowing haltères."
+      },
+      {
+        "libraryId": "shoulder-press",
+        "sets": 4,
+        "target": "10–15 reps",
+        "rest": 90
+      },
+      {
+        "libraryId": "reverse-fly",
+        "sets": 4,
+        "target": "15–20 reps",
+        "rest": 75,
+        "note": "Buste penché sur banc incliné."
+      },
+      {
+        "libraryId": "overhead-triceps",
+        "sets": 4,
+        "target": "15–20 reps",
+        "rest": 75,
+        "note": "Deux séries dégressives sur la dernière."
+      },
+      {
+        "libraryId": "cable-curl",
+        "sets": 4,
+        "target": "15–20 reps",
+        "rest": 75,
+        "note": "Superset · deux séries dégressives sur la dernière."
+      }
+    ]
+  },
+  {
+    "id": "coach-ham-glutes",
+    "title": "Ischios & fessiers — Sumo, bulgares & kickback",
+    "emoji": "🍑",
+    "source": "Coach",
+    "sourceDetail": "Yo_Nutri",
+    "location": "Salle",
+    "category": "Fessiers",
+    "tags": [
+      "Fessiers",
+      "Jambes",
+      "Coach",
+      "Salle"
+    ],
+    "duration": "60–75 min",
+    "level": "Intense",
+    "equipment": "Barre / haltères / poulie",
+    "summary": "Lower orienté chaîne postérieure avec un superset explosif.",
+    "sessionType": "Fessiers",
+    "techniques": [
+      "Superset",
+      "Dégressif"
+    ],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "sumo-deadlift",
+        "sets": 4,
+        "target": "10–15 reps",
+        "rest": 120
+      },
+      {
+        "libraryId": "leg-curl-seated",
+        "sets": 4,
+        "target": "10–15 reps",
+        "rest": 75,
+        "note": "Deux séries dégressives sur la dernière."
+      },
+      {
+        "libraryId": "jump-squat",
+        "sets": 4,
+        "target": "10–15 reps",
+        "rest": 75,
+        "note": "Superset avec Leg Curl."
+      },
+      {
+        "libraryId": "bulgarian-split-squat",
+        "sets": 4,
+        "target": "15–20 reps",
+        "rest": 90
+      },
+      {
+        "libraryId": "good-morning",
+        "sets": 4,
+        "target": "15–20 reps",
+        "rest": 90
+      },
+      {
+        "libraryId": "cable-kickback",
+        "sets": 4,
+        "target": "15–20 reps / jambe",
+        "rest": 60,
+        "note": "Jambe tendue."
+      }
+    ]
+  },
+  {
+    "id": "coach-upper-back-chest-arms",
+    "title": "Upper — Dos, pecs & bras",
+    "emoji": "💪",
+    "source": "Coach",
+    "sourceDetail": "Yo_Nutri",
+    "location": "Salle",
+    "category": "Haut du corps",
+    "tags": [
+      "Haut du corps",
+      "Coach",
+      "Salle"
+    ],
+    "duration": "55–70 min",
+    "level": "Intense",
+    "equipment": "Poulies / haltères",
+    "summary": "Dos, pectoraux, épaules et bras avec rest-pause sur certaines finitions.",
+    "sessionType": "Haut du corps",
+    "techniques": [
+      "Rest-pause"
+    ],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "lat-pulldown",
+        "sets": 4,
+        "target": "10–15 reps · prise supination",
+        "rest": 90
+      },
+      {
+        "libraryId": "seated-row",
+        "sets": 4,
+        "target": "15–20 reps · prise pronation",
+        "rest": 90
+      },
+      {
+        "libraryId": "incline-press",
+        "sets": 4,
+        "target": "10–15 reps",
+        "rest": 90
+      },
+      {
+        "libraryId": "lateral-raise",
+        "sets": 4,
+        "target": "15–20 reps",
+        "rest": 60,
+        "note": "Deux rest-pause sur la dernière série."
+      },
+      {
+        "libraryId": "overhead-triceps",
+        "sets": 4,
+        "target": "10–15 reps",
+        "rest": 60
+      },
+      {
+        "libraryId": "hammer-curl",
+        "sets": 4,
+        "target": "10–15 reps",
+        "rest": 60,
+        "note": "Deux rest-pause sur la dernière série."
+      }
+    ]
+  },
+  {
+    "id": "coach-glutes-hipthrust-press",
+    "title": "Fessiers — Hip Thrust & presse profonde",
+    "emoji": "🍑",
+    "source": "Coach",
+    "sourceDetail": "Yo_Nutri",
+    "location": "Salle",
+    "category": "Fessiers",
+    "tags": [
+      "Fessiers",
+      "Jambes",
+      "Coach",
+      "Salle"
+    ],
+    "duration": "55–70 min",
+    "level": "Intense",
+    "equipment": "Barre / presse / poulie",
+    "summary": "Une séance fessiers avec hip thrust, presse et travail à la poulie.",
+    "sessionType": "Fessiers",
+    "techniques": [
+      "PE LOW",
+      "MSC"
+    ],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "hip-thrust",
+        "sets": 4,
+        "target": "10–15 reps",
+        "rest": 120
+      },
+      {
+        "libraryId": "leg-press",
+        "sets": 4,
+        "target": "15–20 reps",
+        "rest": 120,
+        "note": "Amplitude profonde · PE LOW sur les 5 premières reps."
+      },
+      {
+        "libraryId": "reverse-glute-raise",
+        "sets": 3,
+        "target": "10–15 reps",
+        "rest": 75
+      },
+      {
+        "libraryId": "cable-stiff-leg-deadlift",
+        "sets": 3,
+        "target": "15–20 reps",
+        "rest": 75,
+        "note": "MSC : maintien de contraction environ 2 sec."
+      },
+      {
+        "libraryId": "cable-kickback",
+        "sets": 3,
+        "target": "15–20 reps / jambe",
+        "rest": 60,
+        "note": "Sur banc dans le document."
+      },
+      {
+        "libraryId": "cable-abduction",
+        "sets": 3,
+        "target": "15–20 reps / jambe",
+        "rest": 60
+      }
+    ]
+  },
+  {
+    "id": "coach-abs-1",
+    "title": "Abdos — Routine 1",
+    "emoji": "🔥",
+    "source": "Coach",
+    "sourceDetail": "Yo_Nutri",
+    "location": "Salle",
+    "category": "Abdos",
+    "tags": [
+      "Coach",
+      "Salle"
+    ],
+    "duration": "15–20 min",
+    "level": "Modérée",
+    "equipment": "Poids du corps / poulie",
+    "summary": "Une routine abdos indépendante à ajouter en fin de séance si souhaité.",
+    "sessionType": "Autre",
+    "techniques": [],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "floor-crunch",
+        "sets": 3,
+        "target": "15–20 reps",
+        "rest": 45
+      },
+      {
+        "libraryId": "leg-raise",
+        "sets": 3,
+        "target": "15–20 reps",
+        "rest": 45
+      },
+      {
+        "libraryId": "torso-rotation-cable",
+        "sets": 4,
+        "target": "15–20 reps / côté",
+        "rest": 45
+      },
+      {
+        "libraryId": "side-plank",
+        "sets": 3,
+        "target": "Max contrôlé",
+        "rest": 45
+      }
+    ]
+  },
+  {
+    "id": "coach-abs-2",
+    "title": "Abdos — Routine 2",
+    "emoji": "🔥",
+    "source": "Coach",
+    "sourceDetail": "Yo_Nutri",
+    "location": "Salle",
+    "category": "Abdos",
+    "tags": [
+      "Coach",
+      "Salle"
+    ],
+    "duration": "15–20 min",
+    "level": "Modérée",
+    "equipment": "Poulie / poids du corps",
+    "summary": "Une deuxième routine abdos indépendante.",
+    "sessionType": "Autre",
+    "techniques": [],
+    "instructions": [],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "cable-crunch",
+        "sets": 3,
+        "target": "10–15 reps",
+        "rest": 45
+      },
+      {
+        "libraryId": "rotation-crunch",
+        "sets": 3,
+        "target": "15–20 reps",
+        "rest": 45
+      },
+      {
+        "libraryId": "cable-side-bend",
+        "sets": 4,
+        "target": "15–20 reps / côté",
+        "rest": 45
+      },
+      {
+        "libraryId": "plank",
+        "sets": 3,
+        "target": "Max contrôlé",
+        "rest": 45
+      }
+    ]
+  }
+]

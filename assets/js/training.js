@@ -12,6 +12,12 @@
 
     let exerciseLibrary = [];
 
+    let trainingProgramLibrary = [];
+
+    let trainingProgramFilter = "all";
+
+    let activeTrainingProgram = null;
+
     let activeExercises = [];
 
     let restTimerTicker = null;
@@ -439,6 +445,1159 @@
         renderExerciseResults("");
 
     }
+
+
+
+    /* =========================================
+       PROGRAMMES TRAINING PRÊTS À L'EMPLOI
+    ========================================= */
+
+    async function loadTrainingProgramLibrary() {
+
+        const container =
+            document.getElementById(
+                "trainingProgramList"
+            );
+
+
+        try {
+
+            const response =
+                await fetch(
+                    "../assets/database/training-programs.json"
+                );
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "Impossible de charger training-programs.json"
+                );
+
+            }
+
+
+            const data =
+                await response.json();
+
+
+            trainingProgramLibrary =
+                Array.isArray(data)
+                    ? data
+                    : [];
+
+
+        } catch (error) {
+
+            console.error(
+                "Erreur programmes Training :",
+                error
+            );
+
+
+            trainingProgramLibrary =
+                [];
+
+
+            if (container) {
+
+                container.innerHTML = `
+                    <p class="empty-message">
+                        Impossible de charger les programmes Training.
+                    </p>
+                `;
+
+            }
+
+
+            return;
+
+        }
+
+
+        renderTrainingProgramLibrary();
+
+    }
+
+
+    function getTrainingProgramExerciseName(
+        exerciseSpec
+    ) {
+
+        const libraryExercise =
+            exerciseLibrary.find(
+                exercise =>
+                    exercise.id ===
+                    exerciseSpec.libraryId
+            );
+
+
+        return (
+            libraryExercise?.name ||
+            exerciseSpec.name ||
+            "Exercice"
+        );
+
+    }
+
+
+    function trainingProgramMatchesFilter(
+        program
+    ) {
+
+        if (
+            trainingProgramFilter ===
+            "all"
+        ) {
+
+            return true;
+
+        }
+
+
+        const filter =
+            normalizeText(
+                trainingProgramFilter
+            );
+
+
+        const values = [
+            program.category,
+            program.location,
+            program.source,
+            ...(program.tags || [])
+        ]
+            .map(
+                normalizeText
+            );
+
+
+        return values.some(
+            value =>
+                value.includes(
+                    filter
+                )
+        );
+
+    }
+
+
+    function trainingProgramMatchesSearch(
+        program,
+        query
+    ) {
+
+        const normalizedQuery =
+            normalizeText(
+                query
+            );
+
+
+        if (!normalizedQuery) {
+            return true;
+        }
+
+
+        const exerciseNames =
+            Array.isArray(
+                program.exercises
+            )
+                ? program.exercises
+                    .map(
+                        getTrainingProgramExerciseName
+                    )
+                    .join(" ")
+                : "";
+
+
+        const haystack =
+            normalizeText(
+                [
+                    program.title,
+                    program.summary,
+                    program.category,
+                    program.location,
+                    program.source,
+                    program.sourceDetail,
+                    program.equipment,
+                    program.level,
+                    ...(program.tags || []),
+                    ...(program.techniques || []),
+                    exerciseNames
+                ].join(" ")
+            );
+
+
+        return haystack.includes(
+            normalizedQuery
+        );
+
+    }
+
+
+    function getTrainingProgramExerciseMeta(
+        spec
+    ) {
+
+        const pieces = [];
+
+
+        if (
+            Number(spec.sets) > 0
+        ) {
+
+            pieces.push(
+                `${Number(spec.sets)} série${Number(spec.sets) > 1 ? "s" : ""}`
+            );
+
+        }
+
+
+        if (spec.target) {
+
+            pieces.push(
+                spec.target
+            );
+
+        }
+
+
+        if (
+            Number(spec.rest) > 0
+        ) {
+
+            pieces.push(
+                `${Number(spec.rest)} sec repos`
+            );
+
+        }
+
+
+        return pieces.join(
+            " · "
+        );
+
+    }
+
+
+    function createTrainingProgramCard(
+        program
+    ) {
+
+        const details =
+            document.createElement(
+                "details"
+            );
+
+
+        details.className =
+            "training-program-card";
+
+
+        const summary =
+            document.createElement(
+                "summary"
+            );
+
+
+        const emoji =
+            document.createElement(
+                "span"
+            );
+
+
+        emoji.className =
+            "training-program-emoji";
+
+
+        emoji.textContent =
+            program.emoji ||
+            "🏋️";
+
+
+        const title =
+            document.createElement(
+                "span"
+            );
+
+
+        title.className =
+            "training-program-title";
+
+
+        const titleStrong =
+            document.createElement(
+                "strong"
+            );
+
+
+        titleStrong.textContent =
+            program.title ||
+            "Séance Training";
+
+
+        const titleMeta =
+            document.createElement(
+                "span"
+            );
+
+
+        titleMeta.textContent =
+            [
+                program.location,
+                program.duration,
+                program.source === "Coach"
+                    ? "Séance coach"
+                    : "Hana Fit"
+            ]
+                .filter(Boolean)
+                .join(" · ");
+
+
+        title.appendChild(
+            titleStrong
+        );
+
+
+        title.appendChild(
+            titleMeta
+        );
+
+
+        const chevron =
+            document.createElement(
+                "span"
+            );
+
+
+        chevron.className =
+            "training-program-chevron";
+
+
+        chevron.textContent =
+            "›";
+
+
+        summary.appendChild(
+            emoji
+        );
+
+
+        summary.appendChild(
+            title
+        );
+
+
+        summary.appendChild(
+            chevron
+        );
+
+
+        details.appendChild(
+            summary
+        );
+
+
+        const content =
+            document.createElement(
+                "div"
+            );
+
+
+        content.className =
+            "training-program-content";
+
+
+        const badges =
+            document.createElement(
+                "div"
+            );
+
+
+        badges.className =
+            "training-program-badges";
+
+
+        [
+            program.category,
+            program.location,
+            program.source === "Coach"
+                ? "🏅 Coach"
+                : "✨ Hana Fit",
+            ...(program.techniques || [])
+        ]
+            .filter(Boolean)
+            .forEach(
+                text => {
+
+                    const badge =
+                        document.createElement(
+                            "span"
+                        );
+
+
+                    badge.className =
+                        "training-program-badge";
+
+
+                    badge.textContent =
+                        text;
+
+
+                    badges.appendChild(
+                        badge
+                    );
+
+                }
+            );
+
+
+        content.appendChild(
+            badges
+        );
+
+
+        const description =
+            document.createElement(
+                "p"
+            );
+
+
+        description.className =
+            "training-program-summary";
+
+
+        description.textContent =
+            program.summary ||
+            "Séance prête à utiliser.";
+
+
+        content.appendChild(
+            description
+        );
+
+
+        const meta =
+            document.createElement(
+                "div"
+            );
+
+
+        meta.className =
+            "training-program-meta";
+
+
+        [
+            [
+                "DURÉE",
+                program.duration || "—"
+            ],
+            [
+                "NIVEAU",
+                program.level || "—"
+            ],
+            [
+                "MATÉRIEL",
+                program.equipment || "—"
+            ]
+        ]
+            .forEach(
+                ([label, value]) => {
+
+                    const box =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    const labelElement =
+                        document.createElement(
+                            "span"
+                        );
+
+
+                    labelElement.textContent =
+                        label;
+
+
+                    const valueElement =
+                        document.createElement(
+                            "strong"
+                        );
+
+
+                    valueElement.textContent =
+                        value;
+
+
+                    box.appendChild(
+                        labelElement
+                    );
+
+
+                    box.appendChild(
+                        valueElement
+                    );
+
+
+                    meta.appendChild(
+                        box
+                    );
+
+                }
+            );
+
+
+        content.appendChild(
+            meta
+        );
+
+
+        const exerciseList =
+            document.createElement(
+                "div"
+            );
+
+
+        exerciseList.className =
+            "training-program-exercises";
+
+
+        (program.exercises || [])
+            .forEach(
+                (spec, index) => {
+
+                    const line =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    line.className =
+                        "training-program-exercise";
+
+
+                    const number =
+                        document.createElement(
+                            "span"
+                        );
+
+
+                    number.className =
+                        "training-program-exercise-index";
+
+
+                    number.textContent =
+                        String(index + 1);
+
+
+                    const info =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    const name =
+                        document.createElement(
+                            "strong"
+                        );
+
+
+                    name.textContent =
+                        getTrainingProgramExerciseName(
+                            spec
+                        );
+
+
+                    const exerciseMeta =
+                        document.createElement(
+                            "span"
+                        );
+
+
+                    exerciseMeta.textContent =
+                        getTrainingProgramExerciseMeta(
+                            spec
+                        );
+
+
+                    info.appendChild(
+                        name
+                    );
+
+
+                    info.appendChild(
+                        exerciseMeta
+                    );
+
+
+                    if (spec.note) {
+
+                        const note =
+                            document.createElement(
+                                "span"
+                            );
+
+
+                        note.textContent =
+                            spec.note;
+
+
+                        info.appendChild(
+                            note
+                        );
+
+                    }
+
+
+                    line.appendChild(
+                        number
+                    );
+
+
+                    line.appendChild(
+                        info
+                    );
+
+
+                    exerciseList.appendChild(
+                        line
+                    );
+
+                }
+            );
+
+
+        content.appendChild(
+            exerciseList
+        );
+
+
+        const instructions =
+            Array.isArray(
+                program.instructions
+            )
+                ? program.instructions
+                : [];
+
+
+        if (
+            instructions.length > 0 ||
+            program.source === "Coach"
+        ) {
+
+            const note =
+                document.createElement(
+                    "div"
+                );
+
+
+            note.className =
+                "training-program-note";
+
+
+            const messages = [
+                ...instructions
+            ];
+
+
+            if (
+                program.source === "Coach" &&
+                !messages.some(
+                    message =>
+                        normalizeText(message)
+                            .includes(
+                                "ancien"
+                            )
+                )
+            ) {
+
+                messages.unshift(
+                    "Ancienne séance coach : adapte le volume, les charges et les variantes à ton niveau actuel."
+                );
+
+            }
+
+
+            note.innerHTML =
+                messages
+                    .map(
+                        message =>
+                            `• ${message}`
+                    )
+                    .join("<br>");
+
+
+            content.appendChild(
+                note
+            );
+
+        }
+
+
+        const button =
+            document.createElement(
+                "button"
+            );
+
+
+        button.type =
+            "button";
+
+
+        button.className =
+            "training-program-load";
+
+
+        button.textContent =
+            "▶ Charger cette séance";
+
+
+        button.addEventListener(
+            "click",
+            event => {
+
+                event.preventDefault();
+
+                event.stopPropagation();
+
+                startTrainingProgram(
+                    program
+                );
+
+            }
+        );
+
+
+        content.appendChild(
+            button
+        );
+
+
+        details.appendChild(
+            content
+        );
+
+
+        return details;
+
+    }
+
+
+    function renderTrainingProgramLibrary() {
+
+        const container =
+            document.getElementById(
+                "trainingProgramList"
+            );
+
+
+        const count =
+            document.getElementById(
+                "trainingProgramCount"
+            );
+
+
+        if (!container) {
+            return;
+        }
+
+
+        const query =
+            document.getElementById(
+                "trainingProgramSearch"
+            )?.value ||
+            "";
+
+
+        const programs =
+            trainingProgramLibrary
+                .filter(
+                    trainingProgramMatchesFilter
+                )
+                .filter(
+                    program =>
+                        trainingProgramMatchesSearch(
+                            program,
+                            query
+                        )
+                );
+
+
+        container.innerHTML =
+            "";
+
+
+        if (count) {
+
+            count.textContent =
+                `${programs.length} séance${programs.length > 1 ? "s" : ""} affichée${programs.length > 1 ? "s" : ""}`;
+
+        }
+
+
+        if (
+            programs.length === 0
+        ) {
+
+            container.innerHTML = `
+                <p class="empty-message">
+                    Aucune séance ne correspond à cette recherche.
+                </p>
+            `;
+
+            return;
+
+        }
+
+
+        programs.forEach(
+            program => {
+
+                container.appendChild(
+                    createTrainingProgramCard(
+                        program
+                    )
+                );
+
+            }
+        );
+
+    }
+
+
+    function startTrainingProgram(
+        program
+    ) {
+
+        if (
+            !program ||
+            !Array.isArray(
+                program.exercises
+            ) ||
+            program.exercises.length === 0
+        ) {
+
+            showSaveMessage(
+                "Cette séance ne contient aucun exercice.",
+                true
+            );
+
+            return;
+
+        }
+
+
+        if (
+            activeExercises.length > 0
+        ) {
+
+            const replace =
+                window.confirm(
+                    "Une séance est déjà en cours. Charger ce programme remplacera les exercices non enregistrés. Continuer ?"
+                );
+
+
+            if (!replace) {
+                return;
+            }
+
+        }
+
+
+        if (restTimerTicker) {
+
+            clearInterval(
+                restTimerTicker
+            );
+
+
+            restTimerTicker =
+                null;
+
+        }
+
+
+        activeTrainingProgram =
+            program;
+
+
+        activeExercises =
+            program.exercises.map(
+                spec => {
+
+                    const libraryExercise =
+                        exerciseLibrary.find(
+                            exercise =>
+                                exercise.id ===
+                                spec.libraryId
+                        );
+
+
+                    const baseExercise =
+                        libraryExercise ||
+                        {
+                            id:
+                                spec.libraryId ||
+                                `program-${makeId()}`,
+                            name:
+                                spec.name ||
+                                "Exercice",
+                            emoji:
+                                spec.emoji ||
+                                "🏋️",
+                            category:
+                                spec.category ||
+                                "",
+                            equipment:
+                                spec.equipment ||
+                                "",
+                            mode:
+                                spec.mode ||
+                                "strength"
+                        };
+
+
+                    const mode =
+                        spec.mode === "cardio"
+                            ? "cardio"
+                            : getExerciseMode(
+                                baseExercise
+                            );
+
+
+                    const setCount =
+                        Math.max(
+                            1,
+                            Number(
+                                spec.sets
+                            ) || 1
+                        );
+
+
+                    const restDuration =
+                        mode === "strength"
+                            ? (
+                                Number(
+                                    spec.rest
+                                ) || 90
+                            )
+                            : 0;
+
+
+                    return {
+
+                        instanceId:
+                            makeId(),
+
+                        libraryId:
+                            baseExercise.id,
+
+                        name:
+                            baseExercise.name,
+
+                        emoji:
+                            baseExercise.emoji ||
+                            (
+                                mode === "cardio"
+                                    ? "❤️"
+                                    : "🏋️"
+                            ),
+
+                        category:
+                            baseExercise.category ||
+                            "",
+
+                        equipment:
+                            baseExercise.equipment ||
+                            "",
+
+                        custom:
+                            !libraryExercise,
+
+                        mode,
+
+                        programTarget:
+                            spec.target ||
+                            "",
+
+                        programNote:
+                            spec.note ||
+                            "",
+
+                        restDuration,
+
+                        restRemaining:
+                            restDuration,
+
+                        restRunning:
+                            false,
+
+                        restEndAt:
+                            null,
+
+                        sets:
+                            mode === "strength"
+                                ? Array.from(
+                                    {
+                                        length:
+                                            setCount
+                                    },
+                                    () =>
+                                        makeEmptySet()
+                                )
+                                : [],
+
+                        cardio:
+                            mode === "cardio"
+                                ? {
+                                    duration:
+                                        Number(
+                                            spec.duration
+                                        ) || "",
+                                    speed:
+                                        "",
+                                    intensity:
+                                        "",
+                                    calories:
+                                        ""
+                                }
+                                : null
+
+                    };
+
+                }
+            );
+
+
+        const dateInput =
+            document.getElementById(
+                "sessionDate"
+            );
+
+
+        const typeInput =
+            document.getElementById(
+                "sessionType"
+            );
+
+
+        const durationInput =
+            document.getElementById(
+                "sessionDuration"
+            );
+
+
+        const notesInput =
+            document.getElementById(
+                "sessionNotes"
+            );
+
+
+        if (dateInput) {
+
+            dateInput.value =
+                localDateKey();
+
+        }
+
+
+        if (
+            typeInput &&
+            program.sessionType
+        ) {
+
+            const optionExists =
+                [...typeInput.options]
+                    .some(
+                        option =>
+                            option.value ===
+                            program.sessionType
+                    );
+
+
+            if (optionExists) {
+
+                typeInput.value =
+                    program.sessionType;
+
+            } else {
+
+                typeInput.value =
+                    "Autre";
+
+            }
+
+        }
+
+
+        if (durationInput) {
+
+            const durationMatch =
+                String(
+                    program.duration ||
+                    ""
+                )
+                    .match(
+                        /\d+/
+                    );
+
+
+            durationInput.value =
+                durationMatch
+                    ? durationMatch[0]
+                    : "";
+
+        }
+
+
+        if (notesInput) {
+
+            const notes = [
+                `Programme : ${program.title}`,
+                program.source === "Coach"
+                    ? "Source : ancien coaching"
+                    : "Source : Hana Fit",
+                program.sessionNote ||
+                    "",
+                ...(program.instructions || [])
+            ]
+                .filter(Boolean);
+
+
+            notesInput.value =
+                notes.join(
+                    "\n"
+                );
+
+        }
+
+
+        renderActiveExercises();
+
+
+        showSaveMessage(
+            `✨ « ${program.title} » chargé dans Ma séance.`
+        );
+
+
+        const activeContainer =
+            document.getElementById(
+                "activeExercises"
+            );
+
+
+        if (activeContainer) {
+
+            activeContainer.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
+
+    }
+
 
 
     function searchExercises(query) {
@@ -3464,6 +4623,40 @@
                 );
 
 
+                if (
+                    exercise.programTarget ||
+                    exercise.programNote
+                ) {
+
+                    const programGuide =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    programGuide.className =
+                        "program-exercise-guide";
+
+
+                    programGuide.textContent =
+                        [
+                            exercise.programTarget
+                                ? `Repère : ${exercise.programTarget}`
+                                : "",
+                            exercise.programNote ||
+                                ""
+                        ]
+                            .filter(Boolean)
+                            .join(" · ");
+
+
+                    textWrap.appendChild(
+                        programGuide
+                    );
+
+                }
+
+
                 titleWrap.appendChild(
                     emoji
                 );
@@ -4430,6 +5623,8 @@
 
 
     function resetCurrentSession() {
+
+        activeTrainingProgram = null;
 
         activeExercises = [];
 
@@ -7386,6 +8581,65 @@
         }
 
 
+
+        const trainingProgramSearch =
+            document.getElementById(
+                "trainingProgramSearch"
+            );
+
+
+        if (trainingProgramSearch) {
+
+            trainingProgramSearch.addEventListener(
+                "input",
+                renderTrainingProgramLibrary
+            );
+
+        }
+
+
+        document
+            .querySelectorAll(
+                ".training-program-filter"
+            )
+            .forEach(
+                button => {
+
+                    button.addEventListener(
+                        "click",
+                        () => {
+
+                            trainingProgramFilter =
+                                button.dataset.filter ||
+                                "all";
+
+
+                            document
+                                .querySelectorAll(
+                                    ".training-program-filter"
+                                )
+                                .forEach(
+                                    item =>
+                                        item.classList.remove(
+                                            "active"
+                                        )
+                                );
+
+
+                            button.classList.add(
+                                "active"
+                            );
+
+
+                            renderTrainingProgramLibrary();
+
+                        }
+                    );
+
+                }
+            );
+
+
         const saveButton =
             document.getElementById(
                 "saveSessionButton"
@@ -7451,6 +8705,8 @@
         initExerciseProgress();
 
         await loadExerciseLibrary();
+
+        await loadTrainingProgramLibrary();
 
     }
 
