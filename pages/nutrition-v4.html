@@ -577,15 +577,13 @@
             gap: 10px;
         }
 
-        .scan-photo-button {
-            position: relative;
+        .scan-camera-button {
             min-height: 52px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 9px;
             padding: 13px 16px;
-            overflow: hidden;
             border: 0;
             border-radius: 15px;
             background: linear-gradient(135deg,#2563eb,#60a5fa);
@@ -597,14 +595,10 @@
             box-shadow: 0 12px 25px rgba(37,99,235,.16);
         }
 
-        .scan-photo-button input {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            cursor: pointer;
+        .scan-camera-button:active {
+            transform: scale(.99);
         }
+
 
         .barcode-manual {
             display: grid;
@@ -660,20 +654,159 @@
             color: #991b1b;
         }
 
-        .barcode-preview {
-            display: block;
-            width: min(100%, 420px);
-            max-height: 260px;
-            margin: 12px auto 0;
-            border: 1px solid #dbeafe;
-            border-radius: 16px;
-            object-fit: contain;
-            background: #f8fbff;
+        body.barcode-scanner-open {
+            overflow: hidden;
         }
 
-        .barcode-preview[hidden] {
+        .barcode-scanner-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            background: #020617;
+            color: #fff;
+        }
+
+        .barcode-scanner-overlay[hidden] {
             display: none;
         }
+
+        .barcode-scanner-header {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding:
+                max(16px, env(safe-area-inset-top))
+                18px
+                14px;
+            background: rgba(2,6,23,.92);
+            backdrop-filter: blur(12px);
+        }
+
+        .barcode-scanner-header strong {
+            font-size: 17px;
+        }
+
+        .barcode-scanner-close {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(255,255,255,.22);
+            border-radius: 50%;
+            background: rgba(255,255,255,.12);
+            color: #fff;
+            font: inherit;
+            font-size: 18px;
+            font-weight: 900;
+            cursor: pointer;
+        }
+
+        .barcode-scanner-video-wrap {
+            position: relative;
+            flex: 1;
+            min-height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        #barcodeScannerVideo {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            background: #000;
+        }
+
+        .barcode-scanner-frame {
+            position: absolute;
+            left: 7%;
+            right: 7%;
+            top: 50%;
+            height: min(34vw, 190px);
+            min-height: 130px;
+            max-height: 190px;
+            transform: translateY(-50%);
+            border: 3px solid rgba(255,255,255,.96);
+            border-radius: 22px;
+            box-shadow:
+                0 0 0 9999px rgba(2,6,23,.42),
+                0 0 24px rgba(96,165,250,.32);
+            pointer-events: none;
+        }
+
+        .barcode-scanner-frame::before,
+        .barcode-scanner-frame::after {
+            content: "";
+            position: absolute;
+            width: 34px;
+            height: 34px;
+            border-color: #60a5fa;
+            border-style: solid;
+        }
+
+        .barcode-scanner-frame::before {
+            top: -4px;
+            left: -4px;
+            border-width: 5px 0 0 5px;
+            border-radius: 20px 0 0 0;
+        }
+
+        .barcode-scanner-frame::after {
+            right: -4px;
+            bottom: -4px;
+            border-width: 0 5px 5px 0;
+            border-radius: 0 0 20px 0;
+        }
+
+        .barcode-scanner-frame span {
+            position: absolute;
+            left: 6%;
+            right: 6%;
+            top: 50%;
+            height: 2px;
+            border-radius: 999px;
+            background: #60a5fa;
+            box-shadow: 0 0 14px rgba(96,165,250,.9);
+            animation: barcodeScanLine 1.6s ease-in-out infinite alternate;
+        }
+
+        @keyframes barcodeScanLine {
+            from {
+                transform: translateY(-52px);
+            }
+
+            to {
+                transform: translateY(52px);
+            }
+        }
+
+        .barcode-live-status {
+            margin: 0;
+            padding:
+                16px
+                20px
+                max(20px, env(safe-area-inset-bottom));
+            background: #020617;
+            color: #e2e8f0;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 750;
+            line-height: 1.45;
+        }
+
+        .barcode-live-status.success {
+            color: #86efac;
+        }
+
+        .barcode-live-status.error {
+            color: #fca5a5;
+        }
+
 
         .scanned-product {
             margin-top: 14px;
@@ -1005,8 +1138,8 @@
                 <h2>📷 Scanner un produit</h2>
 
                 <p>
-                    Prends une photo du code-barres : Hana Fit récupère
-                    les informations du produit puis l'enregistre dans ta base personnelle.
+                    Ouvre le scanner, vise le code-barres et Hana Fit le reconnaît
+                    automatiquement en direct.
                 </p>
             </div>
 
@@ -1019,17 +1152,13 @@
 
         <div class="barcode-actions">
 
-            <label class="scan-photo-button">
-                📷 Prendre une photo du code-barres
-
-                <input
-                    type="file"
-                    id="barcodePhotoInput"
-                    accept="image/*"
-                    capture="environment"
-                    aria-label="Prendre une photo du code-barres"
-                >
-            </label>
+            <button
+                type="button"
+                id="barcodeScanButton"
+                class="scan-camera-button"
+            >
+                📷 Ouvrir le scanner
+            </button>
 
 
             <div class="barcode-manual">
@@ -1061,17 +1190,59 @@
             id="barcodeStatus"
             class="barcode-status"
         >
-            La photo sert uniquement à lire le code-barres sur ton appareil.
-            Elle n'est pas enregistrée dans Hana Fit.
+            Le scanner analyse l'image de la caméra en direct.
+            Aucune photo n'est enregistrée dans Hana Fit.
         </p>
 
 
-        <img
-            id="barcodePreview"
-            class="barcode-preview"
-            alt="Aperçu de la photo du code-barres"
+        <div
+            id="barcodeScannerOverlay"
+            class="barcode-scanner-overlay"
             hidden
+            role="dialog"
+            aria-modal="true"
+            aria-label="Scanner un code-barres"
         >
+
+            <div class="barcode-scanner-header">
+                <strong>📷 Scanner un produit</strong>
+
+                <button
+                    type="button"
+                    id="barcodeScannerCloseButton"
+                    class="barcode-scanner-close"
+                    aria-label="Fermer le scanner"
+                >
+                    ✕
+                </button>
+            </div>
+
+            <div class="barcode-scanner-video-wrap">
+
+                <video
+                    id="barcodeScannerVideo"
+                    autoplay
+                    muted
+                    playsinline
+                ></video>
+
+                <div
+                    class="barcode-scanner-frame"
+                    aria-hidden="true"
+                >
+                    <span></span>
+                </div>
+
+            </div>
+
+            <p
+                id="barcodeLiveStatus"
+                class="barcode-live-status"
+            >
+                Place le code-barres dans le cadre.
+            </p>
+
+        </div>
 
 
         <div
@@ -1569,7 +1740,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@zxing/browser@0.2.1/umd/zxing-browser.min.js"></script>
 
-<script src="../assets/js/nutrition-v4.js"></script>
+<script src="../assets/js/nutrition-live-v6.js"></script>
 </body>
 
 </html>
