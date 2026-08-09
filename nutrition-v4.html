@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
+
+    <meta
+        name="theme-color"
+        content="#2563eb"
+    >
+
+    <title>
+        Nutrition — Hana Fit
+    </title>
+
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
+
+
+    <style>
+
+        /* =========================================
+           PAGE
+        ========================================= */
+
+        .nutrition-page {
+            width: min(calc(100% - 28px), 950px);
+            margin: 0 auto;
+            padding: 28px 0 120px;
+        }
+
+
+        /* =========================================
+           HEADER
+        ========================================= */
+
+        .page-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 22px;
+        }
+
+        .back-button {
+            width: 46px;
+            height: 46px;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+            border: 1px solid #dbeafe;
+            border-radius: 15px;
+            background: rgba(255,255,255,.92);
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 800;
+            box-shadow: 0 12px 30px rgba(37,99,235,.12);
+        }
+
+        .page-header h1 {
+            margin: 4px 0;
+            font-size: clamp(30px,7vw,42px);
+        }
+
+        .page-subtitle {
+            margin: 0;
+            color: #64748b;
+        }
+
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
+
+        .nutrition-nav {
+            display: grid;
+            grid-template-columns: repeat(3,minmax(0,1fr));
+            gap: 14px;
+            margin-bottom: 22px;
+        }
+
+        .nutrition-nav-card {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            min-height: 92px;
+            padding: 17px;
+            border: 1px solid #dbeafe;
+            border-radius: 21px;
+            background: rgba(255,255,255,.92);
+            color: inherit;
+            text-decoration: none;
+            box-shadow: 0 14px 32px rgba(37,99,235,.09);
+            transition: .2s ease;
+        }
+
+        .nutrition-nav-card:hover {
+            transform: translateY(-2px);
+            border-color: #93c5fd;
+        }
+
+        .nutrition-nav-card.active {
+            border-color: #60a5fa;
+            background: linear-gradient(135deg,#eff6ff,#fff);
+        }
+
+        .nutrition-nav-icon {
+            width: 50px;
+            height: 50px;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+            border-radius: 16px;
+            background: #eff6ff;
+            font-size: 24px;
+        }
+
+        .nutrition-nav-card.active .nutrition-nav-icon {
+            background: linear-gradient(135deg,#2563eb,#60a5fa);
+        }
+
+        .nutrition-nav-text strong {
+            display: block;
+            margin-bottom: 4px;
+            color: #172554;
+            font-size: 15px;
+        }
+
+        .nutrition-nav-text span {
+            display: block;
+            color: #64748b;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+
+        /* =========================================
+           RÉSUMÉ
+        ========================================= */
+
+        .nutrition-summary {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .summary-card,
+        .nutrition-card {
+            border: 1px solid rgba(255,255,255,.96);
+            background: rgba(255,255,255,.9);
+            box-shadow: 0 18px 45px rgba(37,99,235,.12);
+        }
+
+        .summary-card {
+            padding: 18px;
+            border-radius: 22px;
+        }
+
+        .summary-card span {
+            font-size: 25px;
+        }
+
+        .summary-card p {
+            margin: 10px 0 6px;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .summary-card strong {
+            display: block;
+            color: #0d47a1;
+            font-size: 21px;
+        }
+
+
+        /* =========================================
+           CARTES
+        ========================================= */
+
+        .nutrition-card {
+            margin-top: 18px;
+            padding: 24px;
+            border-radius: 26px;
+        }
+
+        .card-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 18px;
+        }
+
+        .card-heading h2 {
+            margin: 0;
+            font-size: 23px;
+        }
+
+        .card-heading p {
+            margin: 5px 0 0;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        .meal-icon {
+            font-size: 28px;
+        }
+
+
+        /* =========================================
+           RECHERCHE BASE ALIMENTAIRE
+        ========================================= */
+
+        .database-search {
+            position: relative;
+        }
+
+        .database-search input {
+            width: 100%;
+            padding: 15px 16px;
+            border: 1px solid #bfdbfe;
+            border-radius: 15px;
+            background: #f8fbff;
+            color: #1e293b;
+            font: inherit;
+        }
+
+        .database-search input:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 4px rgba(37,99,235,.1);
+        }
+
+        .food-search-results {
+            display: grid;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .food-search-result {
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 14px;
+            border: 1px solid #dbeafe;
+            border-radius: 14px;
+            background: #fff;
+            color: inherit;
+            text-align: left;
+            cursor: pointer;
+            transition: .2s ease;
+        }
+
+        .food-search-result:hover {
+            border-color: #93c5fd;
+            background: #f8fbff;
+        }
+
+        .food-result-emoji {
+            font-size: 24px;
+        }
+
+        .food-result-info strong {
+            display: block;
+            color: #172554;
+            font-size: 14px;
+        }
+
+        .food-result-info span {
+            display: block;
+            margin-top: 3px;
+            color: #64748b;
+            font-size: 12px;
+        }
+
+        .food-result-calories {
+            color: #2563eb;
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+
+        /* =========================================
+           ALIMENT SÉLECTIONNÉ
+        ========================================= */
+
+        .selected-food {
+            margin-top: 16px;
+            padding: 18px;
+            border: 1px solid #bfdbfe;
+            border-radius: 18px;
+            background: linear-gradient(135deg,#eff6ff,#fff);
+        }
+
+        .selected-food[hidden] {
+            display: none;
+        }
+
+        .selected-food-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .selected-food-emoji {
+            width: 46px;
+            height: 46px;
+            display: grid;
+            place-items: center;
+            border-radius: 14px;
+            background: #fff;
+            font-size: 24px;
+        }
+
+        .selected-food-header strong {
+            display: block;
+            color: #172554;
+        }
+
+        .selected-food-header span {
+            display: block;
+            margin-top: 3px;
+            color: #64748b;
+            font-size: 12px;
+        }
+
+        .selected-food-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .quantity-field {
+            position: relative;
+        }
+
+        .quantity-field input {
+            width: 100%;
+            padding: 13px 52px 13px 14px;
+            border: 1px solid #bfdbfe;
+            border-radius: 14px;
+            background: #fff;
+            font: inherit;
+        }
+
+        .quantity-field span {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #64748b;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .selected-food-form select {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #bfdbfe;
+            border-radius: 14px;
+            background: #fff;
+            color: #1e293b;
+            font: inherit;
+        }
+
+        .selected-food-macros {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .selected-food-macros div {
+            padding: 10px;
+            border-radius: 12px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .selected-food-macros span {
+            display: block;
+            color: #64748b;
+            font-size: 11px;
+        }
+
+        .selected-food-macros strong {
+            display: block;
+            margin-top: 3px;
+            color: #0d47a1;
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           BOUTONS
+        ========================================= */
+
+        .add-button {
+            width: 100%;
+            margin-top: 14px;
+            padding: 14px;
+            border: 0;
+            border-radius: 15px;
+            background: linear-gradient(135deg,#2563eb,#60a5fa);
+            color: white;
+            font-size: 15px;
+            font-weight: 850;
+            cursor: pointer;
+        }
+
+
+        /* =========================================
+           AJOUT MANUEL
+        ========================================= */
+
+        .manual-details {
+            margin-top: 18px;
+            border: 1px solid #dbeafe;
+            border-radius: 18px;
+            background: #f8fbff;
+            overflow: hidden;
+        }
+
+        .manual-details summary {
+            padding: 16px 18px;
+            color: #2563eb;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .manual-content {
+            padding: 0 18px 18px;
+        }
+
+        .food-form {
+            display: grid;
+            grid-template-columns: 2fr repeat(4,1fr);
+            gap: 10px;
+        }
+
+        .food-form input,
+        .food-form select {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #bfdbfe;
+            border-radius: 14px;
+            background: #fff;
+            color: #1e293b;
+            font: inherit;
+        }
+
+        .food-form input:focus,
+        .food-form select:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 4px rgba(37,99,235,.1);
+        }
+
+        .food-form .add-button {
+            grid-column: 1 / -1;
+        }
+
+
+        /* =========================================
+           REPAS
+        ========================================= */
+
+        .meal-list {
+            display: grid;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .empty-message {
+            margin: 0;
+            padding: 15px;
+            border-radius: 14px;
+            background: #eff6ff;
+            color: #64748b;
+            text-align: center;
+        }
+
+        .food-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 14px;
+            align-items: center;
+            padding: 14px 15px;
+            border: 1px solid #dbeafe;
+            border-radius: 16px;
+            background: #f8fbff;
+        }
+
+        .food-item h3 {
+            margin: 0 0 6px;
+            font-size: 16px;
+        }
+
+        .food-item p {
+            margin: 0;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        .food-item strong {
+            display: block;
+            margin-top: 5px;
+            color: #0d47a1;
+        }
+
+        .delete-button {
+            width: 38px;
+            height: 38px;
+            display: grid;
+            place-items: center;
+            border: 0;
+            border-radius: 12px;
+            background: #fee2e2;
+            color: #b91c1c;
+            cursor: pointer;
+            font-size: 17px;
+        }
+
+
+        /* =========================================
+           TOTAL
+        ========================================= */
+
+        .day-total {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 12px;
+        }
+
+        .total-box {
+            padding: 15px;
+            border-radius: 16px;
+            background: #eff6ff;
+        }
+
+        .total-box span {
+            display: block;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        .total-box strong {
+            display: block;
+            margin-top: 5px;
+            color: #0d47a1;
+            font-size: 20px;
+        }
+
+
+
+
+        /* =========================================
+           SCANNER CODE-BARRES
+        ========================================= */
+
+        .barcode-actions {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 10px;
+        }
+
+        .scan-photo-button {
+            position: relative;
+            min-height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 13px 16px;
+            overflow: hidden;
+            border: 0;
+            border-radius: 15px;
+            background: linear-gradient(135deg,#2563eb,#60a5fa);
+            color: #fff;
+            font: inherit;
+            font-weight: 850;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 12px 25px rgba(37,99,235,.16);
+        }
+
+        .scan-photo-button input {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .barcode-manual {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 8px;
+        }
+
+        .barcode-manual input {
+            min-width: 0;
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #bfdbfe;
+            border-radius: 14px;
+            background: #f8fbff;
+            color: #1e293b;
+            font: inherit;
+        }
+
+        .barcode-manual input:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 4px rgba(37,99,235,.1);
+        }
+
+        .barcode-lookup-button {
+            padding: 13px 15px;
+            border: 1px solid #bfdbfe;
+            border-radius: 14px;
+            background: #eff6ff;
+            color: #2563eb;
+            font: inherit;
+            font-weight: 850;
+            cursor: pointer;
+        }
+
+        .barcode-status {
+            margin: 12px 0 0;
+            padding: 12px 14px;
+            border-radius: 14px;
+            background: #eff6ff;
+            color: #475569;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .barcode-status.success {
+            background: #f0fdf4;
+            color: #166534;
+        }
+
+        .barcode-status.error {
+            background: #fff7f7;
+            color: #991b1b;
+        }
+
+        .barcode-preview {
+            display: block;
+            width: min(100%, 420px);
+            max-height: 260px;
+            margin: 12px auto 0;
+            border: 1px solid #dbeafe;
+            border-radius: 16px;
+            object-fit: contain;
+            background: #f8fbff;
+        }
+
+        .barcode-preview[hidden] {
+            display: none;
+        }
+
+        .scanned-product {
+            margin-top: 14px;
+            padding: 17px;
+            border: 1px solid #bfdbfe;
+            border-radius: 18px;
+            background: linear-gradient(135deg,#eff6ff,#fff);
+        }
+
+        .scanned-product[hidden] {
+            display: none;
+        }
+
+        .scanned-product-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .scanned-product-header strong {
+            display: block;
+            color: #172554;
+        }
+
+        .scanned-product-header span {
+            display: block;
+            margin-top: 4px;
+            color: #64748b;
+            font-size: 12px;
+        }
+
+        .scanned-product-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 10px;
+        }
+
+        .scanned-product-grid label {
+            display: block;
+            color: #475569;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .scanned-product-grid label.wide {
+            grid-column: span 2;
+        }
+
+        .scanned-product-grid input,
+        .scanned-product-grid select {
+            width: 100%;
+            margin-top: 6px;
+            padding: 12px 13px;
+            border: 1px solid #bfdbfe;
+            border-radius: 13px;
+            background: #fff;
+            color: #1e293b;
+            font: inherit;
+        }
+
+        .scanned-product-grid input:focus,
+        .scanned-product-grid select:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 4px rgba(37,99,235,.1);
+        }
+
+        .scanned-product-actions {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 9px;
+            margin-top: 13px;
+        }
+
+        .scanner-secondary-button {
+            padding: 13px 15px;
+            border: 1px solid #bfdbfe;
+            border-radius: 14px;
+            background: #fff;
+            color: #2563eb;
+            font: inherit;
+            font-weight: 850;
+            cursor: pointer;
+        }
+
+        .off-attribution {
+            margin: 12px 0 0;
+            color: #64748b;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .off-attribution a {
+            color: #2563eb;
+            font-weight: 750;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media(max-width:760px) {
+
+            .nutrition-nav {
+                grid-template-columns: 1fr;
+            }
+
+            .barcode-actions {
+                grid-template-columns: 1fr;
+            }
+
+            .scanned-product-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .nutrition-summary,
+            .day-total {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .selected-food-form {
+                grid-template-columns: 1fr;
+            }
+
+            .food-form {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .food-form input:first-child,
+            .food-form select,
+            .food-form .add-button {
+                grid-column: 1 / -1;
+            }
+
+        }
+
+        @media(max-width:430px) {
+
+            .nutrition-summary,
+            .day-total {
+                grid-template-columns: 1fr;
+            }
+
+            .barcode-manual,
+            .scanned-product-grid,
+            .scanned-product-actions {
+                grid-template-columns: 1fr;
+            }
+
+            .scanned-product-grid label.wide {
+                grid-column: 1;
+            }
+
+            .selected-food-macros {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .food-form {
+                grid-template-columns: 1fr;
+            }
+
+            .food-form input,
+            .food-form select,
+            .food-form .add-button {
+                grid-column: 1;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<main class="nutrition-page">
+
+
+    <!-- HEADER -->
+
+    <header class="page-header">
+
+        <a
+            href="../index.html"
+            class="back-button"
+            aria-label="Retour à l'accueil"
+        >
+            ←
+        </a>
+
+        <div>
+
+            <p class="section-label">
+                JOURNAL ALIMENTAIRE
+            </p>
+
+            <h1>
+                🥗 Nutrition
+            </h1>
+
+            <p class="page-subtitle">
+                Ton journal, tes recettes et tes programmes au même endroit.
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+
+    <nav
+        class="nutrition-nav"
+        aria-label="Navigation Nutrition"
+    >
+
+        <a
+            href="nutrition-guide.html"
+            class="nutrition-nav-card"
+        >
+
+            <div class="nutrition-nav-icon">
+                📚
+            </div>
+
+            <div class="nutrition-nav-text">
+                <strong>Repères nutrition</strong>
+                <span>Comprendre, associer et équilibrer</span>
+            </div>
+
+        </a>
+
+
+        <a
+            href="recipes.html"
+            class="nutrition-nav-card"
+        >
+
+            <div class="nutrition-nav-icon">
+                🥗
+            </div>
+
+            <div class="nutrition-nav-text">
+                <strong>Mes recettes</strong>
+                <span>Parcourir la bibliothèque</span>
+            </div>
+
+        </a>
+
+
+        <a
+            href="programs.html"
+            class="nutrition-nav-card"
+        >
+
+            <div class="nutrition-nav-icon">
+                📅
+            </div>
+
+            <div class="nutrition-nav-text">
+                <strong>Mes programmes</strong>
+                <span>Menus sur 4 semaines</span>
+            </div>
+
+        </a>
+
+    </nav>
+
+
+    <!-- RÉSUMÉ -->
+
+    <section
+        id="journal"
+        class="nutrition-summary"
+    >
+
+        <article class="summary-card">
+            <span>🔥</span>
+            <p>Calories</p>
+            <strong id="summaryCalories">
+                0 / 1550
+            </strong>
+        </article>
+
+
+        <article class="summary-card">
+            <span>🥩</span>
+            <p>Protéines</p>
+            <strong id="summaryProtein">
+                0 / 110 g
+            </strong>
+        </article>
+
+
+        <article class="summary-card">
+            <span>🍞</span>
+            <p>Glucides</p>
+            <strong id="summaryCarbs">
+                0 g
+            </strong>
+        </article>
+
+
+        <article class="summary-card">
+            <span>🥑</span>
+            <p>Lipides</p>
+            <strong id="summaryFat">
+                0 g
+            </strong>
+        </article>
+
+    </section>
+
+
+
+
+    <!-- SCANNER CODE-BARRES -->
+
+    <section class="nutrition-card">
+
+        <div class="card-heading">
+
+            <div>
+                <h2>📷 Scanner un produit</h2>
+
+                <p>
+                    Prends une photo du code-barres : Hana Fit récupère
+                    les informations du produit puis l'enregistre dans ta base personnelle.
+                </p>
+            </div>
+
+            <span class="meal-icon">
+                🛒
+            </span>
+
+        </div>
+
+
+        <div class="barcode-actions">
+
+            <label class="scan-photo-button">
+                📷 Prendre une photo du code-barres
+
+                <input
+                    type="file"
+                    id="barcodePhotoInput"
+                    accept="image/*"
+                    capture="environment"
+                    aria-label="Prendre une photo du code-barres"
+                >
+            </label>
+
+
+            <div class="barcode-manual">
+
+                <input
+                    type="text"
+                    id="barcodeManualInput"
+                    inputmode="numeric"
+                    autocomplete="off"
+                    maxlength="18"
+                    placeholder="Ou saisir le code"
+                    aria-label="Code-barres"
+                >
+
+                <button
+                    type="button"
+                    id="barcodeLookupButton"
+                    class="barcode-lookup-button"
+                >
+                    Chercher
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <p
+            id="barcodeStatus"
+            class="barcode-status"
+        >
+            La photo sert uniquement à lire le code-barres sur ton appareil.
+            Elle n'est pas enregistrée dans Hana Fit.
+        </p>
+
+
+        <img
+            id="barcodePreview"
+            class="barcode-preview"
+            alt="Aperçu de la photo du code-barres"
+            hidden
+        >
+
+
+        <div
+            id="scannedProductCard"
+            class="scanned-product"
+            hidden
+        >
+
+            <div class="scanned-product-header">
+
+                <div>
+                    <strong>
+                        Produit trouvé
+                    </strong>
+
+                    <span id="scannedProductMeta">
+                        Vérifie les valeurs avant de l'enregistrer.
+                    </span>
+                </div>
+
+                <span>
+                    📦
+                </span>
+
+            </div>
+
+
+            <div class="scanned-product-grid">
+
+                <label class="wide">
+                    Nom du produit
+
+                    <input
+                        type="text"
+                        id="scannedProductName"
+                        autocomplete="off"
+                    >
+                </label>
+
+
+                <label>
+                    Unité de référence
+
+                    <select id="scannedProductUnit">
+                        <option value="g">100 g</option>
+                        <option value="ml">100 ml</option>
+                    </select>
+                </label>
+
+
+                <label>
+                    Calories
+
+                    <input
+                        type="number"
+                        id="scannedProductCalories"
+                        min="0"
+                        step="0.1"
+                    >
+                </label>
+
+
+                <label>
+                    Protéines (g)
+
+                    <input
+                        type="number"
+                        id="scannedProductProtein"
+                        min="0"
+                        step="0.1"
+                    >
+                </label>
+
+
+                <label>
+                    Glucides (g)
+
+                    <input
+                        type="number"
+                        id="scannedProductCarbs"
+                        min="0"
+                        step="0.1"
+                    >
+                </label>
+
+
+                <label>
+                    Lipides (g)
+
+                    <input
+                        type="number"
+                        id="scannedProductFat"
+                        min="0"
+                        step="0.1"
+                    >
+                </label>
+
+
+                <label>
+                    Fibres (g)
+
+                    <input
+                        type="number"
+                        id="scannedProductFiber"
+                        min="0"
+                        step="0.1"
+                    >
+                </label>
+
+            </div>
+
+
+            <div class="scanned-product-actions">
+
+                <button
+                    type="button"
+                    id="saveScannedProductButton"
+                    class="add-button"
+                >
+                    ✓ Enregistrer dans ma base Hana Fit
+                </button>
+
+                <button
+                    type="button"
+                    id="cancelScannedProductButton"
+                    class="scanner-secondary-button"
+                >
+                    Annuler
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <p class="off-attribution">
+            Données produit :
+            <a
+                href="https://world.openfoodfacts.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Open Food Facts
+            </a>.
+            Base collaborative : vérifie toujours les valeurs de l'étiquette avant l'enregistrement.
+        </p>
+
+    </section>
+
+
+    <!-- RECHERCHE DANS FOODS.JSON -->
+
+    <section class="nutrition-card">
+
+        <div class="card-heading">
+
+            <div>
+                <h2>🔎 Rechercher un aliment</h2>
+
+                <p>
+                    Hana Fit calcule automatiquement les calories et macros.
+                </p>
+            </div>
+
+            <span class="meal-icon">
+                🥣
+            </span>
+
+        </div>
+
+
+        <div class="database-search">
+
+            <input
+                type="search"
+                id="foodDatabaseSearch"
+                placeholder="Ex : skyr, poulet, quinoa, mantı..."
+                autocomplete="off"
+            >
+
+            <div
+                id="foodDatabaseResults"
+                class="food-search-results"
+            >
+            </div>
+
+        </div>
+
+
+        <!-- ALIMENT SÉLECTIONNÉ -->
+
+        <div
+            id="selectedFoodCard"
+            class="selected-food"
+            hidden
+        >
+
+            <div class="selected-food-header">
+
+                <div
+                    id="selectedFoodEmoji"
+                    class="selected-food-emoji"
+                >
+                    🥣
+                </div>
+
+                <div>
+
+                    <strong id="selectedFoodName">
+                        Aliment
+                    </strong>
+
+                    <span id="selectedFoodReference">
+                        Valeurs pour 100 g
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="selected-food-form">
+
+                <div class="quantity-field">
+
+                    <input
+                        type="number"
+                        id="selectedFoodQuantity"
+                        min="0.1"
+                        step="0.1"
+                        value="100"
+                        placeholder="Quantité"
+                    >
+
+                    <span id="selectedFoodUnit">
+                        g
+                    </span>
+
+                </div>
+
+
+                <select id="databaseMealType">
+
+                    <option value="Petit-déjeuner">
+                        Petit-déjeuner
+                    </option>
+
+                    <option value="Déjeuner">
+                        Déjeuner
+                    </option>
+
+                    <option value="Collation">
+                        Collation
+                    </option>
+
+                    <option value="Dîner">
+                        Dîner
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- CALCUL EN DIRECT -->
+
+            <div class="selected-food-macros">
+
+                <div>
+                    <span>Calories</span>
+                    <strong id="selectedFoodCalories">
+                        0 kcal
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Protéines</span>
+                    <strong id="selectedFoodProtein">
+                        0 g
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Glucides</span>
+                    <strong id="selectedFoodCarbs">
+                        0 g
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Lipides</span>
+                    <strong id="selectedFoodFat">
+                        0 g
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="addDatabaseFoodButton"
+                class="add-button"
+            >
+                ＋ Ajouter à ma journée
+            </button>
+
+        </div>
+
+
+        <!-- AJOUT MANUEL CONSERVÉ -->
+
+        <details class="manual-details">
+
+            <summary>
+                ✏️ Aliment absent ? Ajout manuel
+            </summary>
+
+            <div class="manual-content">
+
+                <form
+                    id="foodForm"
+                    class="food-form"
+                >
+
+                    <input
+                        type="text"
+                        id="foodName"
+                        placeholder="Nom de l'aliment ou du repas"
+                        required
+                    >
+
+
+                    <select id="mealType">
+
+                        <option value="Petit-déjeuner">
+                            Petit-déjeuner
+                        </option>
+
+                        <option value="Déjeuner">
+                            Déjeuner
+                        </option>
+
+                        <option value="Collation">
+                            Collation
+                        </option>
+
+                        <option value="Dîner">
+                            Dîner
+                        </option>
+
+                    </select>
+
+
+                    <input
+                        type="number"
+                        id="foodCalories"
+                        placeholder="kcal"
+                        min="0"
+                        required
+                    >
+
+
+                    <input
+                        type="number"
+                        id="foodProtein"
+                        placeholder="Protéines"
+                        min="0"
+                        step="0.1"
+                        required
+                    >
+
+
+                    <input
+                        type="number"
+                        id="foodCarbs"
+                        placeholder="Glucides"
+                        min="0"
+                        step="0.1"
+                        required
+                    >
+
+
+                    <input
+                        type="number"
+                        id="foodFat"
+                        placeholder="Lipides"
+                        min="0"
+                        step="0.1"
+                        required
+                    >
+
+
+                    <button
+                        type="submit"
+                        class="add-button"
+                    >
+                        Ajouter manuellement
+                    </button>
+
+                </form>
+
+            </div>
+
+        </details>
+
+    </section>
+
+
+    <!-- REPAS DU JOUR -->
+
+    <section class="nutrition-card">
+
+        <div class="card-heading">
+
+            <h2>
+                Mes repas du jour
+            </h2>
+
+            <span class="meal-icon">
+                🍽️
+            </span>
+
+        </div>
+
+
+        <div
+            id="mealList"
+            class="meal-list"
+        >
+        </div>
+
+    </section>
+
+
+    <!-- TOTAL -->
+
+    <section class="nutrition-card">
+
+        <div class="card-heading">
+
+            <h2>
+                Total de la journée
+            </h2>
+
+            <span class="meal-icon">
+                📊
+            </span>
+
+        </div>
+
+
+        <div class="day-total">
+
+            <div class="total-box">
+                <span>Calories</span>
+                <strong id="totalCalories">
+                    0 kcal
+                </strong>
+            </div>
+
+
+            <div class="total-box">
+                <span>Protéines</span>
+                <strong id="totalProtein">
+                    0 g
+                </strong>
+            </div>
+
+
+            <div class="total-box">
+                <span>Glucides</span>
+                <strong id="totalCarbs">
+                    0 g
+                </strong>
+            </div>
+
+
+            <div class="total-box">
+                <span>Lipides</span>
+                <strong id="totalFat">
+                    0 g
+                </strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<script src="../assets/js/storage.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@zxing/browser@0.2.1/umd/zxing-browser.min.js"></script>
+
+<script src="../assets/js/nutrition-v4.js"></script>
+</body>
+
+</html>
