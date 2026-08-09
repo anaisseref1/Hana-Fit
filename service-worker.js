@@ -4,7 +4,7 @@
 ========================================= */
 
 const CACHE_NAME =
-    "hana-fit-v3-2026-08-09";
+    "hana-fit-v4-2026-08-09";
 
 const APP_FILES = [
     "./",
@@ -54,7 +54,7 @@ const APP_FILES = [
 
     "./pages/daily.html",
     "./pages/nutrition-guide.html",
-    "./pages/nutrition.html",
+    "./pages/nutrition-v4.html",
     "./pages/profile.html",
     "./pages/program-detail.html",
     "./pages/programs.html",
