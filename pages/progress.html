@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#2563eb">
+
+    <title>Mon Voyage — Hana Fit</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        .progress-page{
+            width:min(calc(100% - 28px),950px);
+            margin:0 auto;
+            padding:28px 0 120px;
+        }
+
+        .page-header{
+            display:flex;
+            align-items:center;
+            gap:16px;
+            margin-bottom:22px;
+        }
+
+        .back-button{
+            width:46px;
+            height:46px;
+            display:grid;
+            place-items:center;
+            flex-shrink:0;
+            border:1px solid #dbeafe;
+            border-radius:15px;
+            background:rgba(255,255,255,.92);
+            color:#2563eb;
+            text-decoration:none;
+            font-size:24px;
+            font-weight:800;
+            box-shadow:0 12px 30px rgba(37,99,235,.12);
+        }
+
+        .page-header h1{
+            margin:4px 0;
+            font-size:clamp(30px,7vw,42px);
+        }
+
+        .page-subtitle{
+            margin:0;
+            color:#64748b;
+        }
+
+        .progress-grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:14px;
+            margin-bottom:18px;
+        }
+
+        .stat-card,
+        .journey-card{
+            border:1px solid rgba(255,255,255,.96);
+            background:rgba(255,255,255,.92);
+            box-shadow:0 18px 45px rgba(37,99,235,.10);
+        }
+
+        .stat-card{
+            padding:18px;
+            border-radius:22px;
+        }
+
+        .stat-card span{
+            font-size:26px;
+        }
+
+        .stat-card p{
+            margin:10px 0 5px;
+            color:#64748b;
+            font-size:13px;
+        }
+
+        .stat-card strong{
+            display:block;
+            color:#0d47a1;
+            font-size:22px;
+        }
+
+        .journey-card{
+            margin-top:18px;
+            padding:24px;
+            border-radius:26px;
+        }
+
+        .card-heading{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:14px;
+            margin-bottom:18px;
+        }
+
+        .card-heading h2{
+            margin:0;
+            font-size:23px;
+        }
+
+        .card-heading p{
+            margin:5px 0 0;
+            color:#64748b;
+            font-size:13px;
+        }
+
+        .card-icon{
+            font-size:28px;
+        }
+
+        .journey-progress-track{
+            height:14px;
+            border-radius:999px;
+            background:#e5e7eb;
+            overflow:hidden;
+        }
+
+        .journey-progress-value{
+            width:0;
+            height:100%;
+            border-radius:inherit;
+            background:linear-gradient(90deg,#2563eb,#60a5fa);
+            transition:width .3s ease;
+        }
+
+        .journey-progress-info{
+            display:flex;
+            justify-content:space-between;
+            gap:12px;
+            margin-top:10px;
+            color:#64748b;
+            font-size:13px;
+        }
+
+        .journey-progress-info strong{
+            color:#2563eb;
+        }
+
+        .weight-form{
+            display:grid;
+            grid-template-columns:1fr 1fr auto;
+            gap:10px;
+        }
+
+        .weight-form input,
+        .measurement-grid input{
+            width:100%;
+            padding:14px 15px;
+            border:1px solid #bfdbfe;
+            border-radius:14px;
+            background:#f8fbff;
+            color:#1e293b;
+            font:inherit;
+        }
+
+        .weight-form input:focus,
+        .measurement-grid input:focus{
+            outline:none;
+            border-color:#2563eb;
+            box-shadow:0 0 0 4px rgba(37,99,235,.10);
+        }
+
+        .primary-button{
+            padding:14px 20px;
+            border:0;
+            border-radius:14px;
+            background:linear-gradient(135deg,#2563eb,#60a5fa);
+            color:white;
+            font-weight:800;
+            cursor:pointer;
+        }
+
+        .measurement-grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:10px;
+        }
+
+        .measurement-field label{
+            display:block;
+            margin:0 0 6px 3px;
+            color:#64748b;
+            font-size:12px;
+            font-weight:700;
+        }
+
+        .measurement-actions{
+            margin-top:14px;
+        }
+
+        .history-list{
+            display:grid;
+            gap:10px;
+        }
+
+        .history-item{
+            display:grid;
+            grid-template-columns:1fr auto auto;
+            align-items:center;
+            gap:12px;
+            padding:14px 15px;
+            border:1px solid #dbeafe;
+            border-radius:16px;
+            background:#f8fbff;
+        }
+
+        .history-item strong{
+            color:#172554;
+        }
+
+        .history-item span{
+            color:#64748b;
+            font-size:13px;
+        }
+
+        .history-weight{
+            color:#0d47a1 !important;
+            font-size:16px !important;
+            font-weight:800;
+        }
+
+        .delete-history{
+            width:36px;
+            height:36px;
+            display:grid;
+            place-items:center;
+            border:0;
+            border-radius:11px;
+            background:#fee2e2;
+            color:#b91c1c;
+            cursor:pointer;
+            font-size:17px;
+        }
+
+        .empty-message{
+            margin:0;
+            padding:15px;
+            border-radius:14px;
+            background:#eff6ff;
+            color:#64748b;
+            text-align:center;
+        }
+
+        .milestone-grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:12px;
+        }
+
+        .milestone{
+            padding:16px;
+            border:1px solid #dbeafe;
+            border-radius:18px;
+            background:#f8fbff;
+            text-align:center;
+        }
+
+        .milestone.reached{
+            border-color:#86efac;
+            background:#f0fdf4;
+        }
+
+        .milestone-emoji{
+            display:block;
+            font-size:28px;
+            margin-bottom:8px;
+        }
+
+        .milestone strong{
+            display:block;
+            color:#172554;
+        }
+
+        .milestone span{
+            display:block;
+            margin-top:4px;
+            color:#64748b;
+            font-size:12px;
+        }
+
+        .privacy-box{
+            display:flex;
+            gap:13px;
+            padding:17px;
+            border:1px solid #bfdbfe;
+            border-radius:18px;
+            background:linear-gradient(135deg,#eff6ff,#fff);
+        }
+
+        .privacy-box span{
+            font-size:25px;
+        }
+
+        .privacy-box strong{
+            display:block;
+            color:#172554;
+        }
+
+        .privacy-box p{
+            margin:5px 0 0;
+            color:#64748b;
+            font-size:13px;
+            line-height:1.5;
+        }
+
+
+        .chart-shell{
+            position:relative;
+            min-height:260px;
+            padding:18px;
+            border:1px solid #dbeafe;
+            border-radius:20px;
+            background:linear-gradient(180deg,#f8fbff,#ffffff);
+            overflow:hidden;
+        }
+
+        .weight-chart{
+            width:100%;
+            min-height:220px;
+        }
+
+        .chart-empty{
+            min-height:220px;
+            display:grid;
+            place-items:center;
+            color:#64748b;
+            text-align:center;
+            padding:20px;
+        }
+
+        .measurement-summary{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:10px;
+            margin-bottom:14px;
+        }
+
+        .measurement-summary-item{
+            padding:14px;
+            border:1px solid #dbeafe;
+            border-radius:16px;
+            background:#f8fbff;
+        }
+
+        .measurement-summary-item span{
+            display:block;
+            color:#64748b;
+            font-size:11px;
+        }
+
+        .measurement-summary-item strong{
+            display:block;
+            margin-top:5px;
+            color:#0d47a1;
+            font-size:17px;
+        }
+
+        .measurement-history{
+            display:grid;
+            gap:10px;
+        }
+
+        .measurement-entry{
+            padding:15px;
+            border:1px solid #dbeafe;
+            border-radius:17px;
+            background:#f8fbff;
+        }
+
+        .measurement-entry-header{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:12px;
+            margin-bottom:11px;
+        }
+
+        .measurement-entry-header strong{
+            color:#172554;
+        }
+
+        .measurement-entry-header span{
+            color:#64748b;
+            font-size:12px;
+        }
+
+        .measurement-values{
+            display:flex;
+            flex-wrap:wrap;
+            gap:8px;
+        }
+
+        .measurement-chip{
+            padding:7px 10px;
+            border-radius:999px;
+            background:#eff6ff;
+            color:#2563eb;
+            font-size:12px;
+            font-weight:750;
+        }
+
+        .measurement-entry-actions{
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+
+        .delete-measurement{
+            width:34px;
+            height:34px;
+            display:grid;
+            place-items:center;
+            border:0;
+            border-radius:10px;
+            background:#fee2e2;
+            color:#b91c1c;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+
+        .photo-form{
+            display:grid;
+            grid-template-columns:1fr 1fr 1.4fr auto;
+            gap:10px;
+            align-items:end;
+        }
+
+        .photo-field label{
+            display:block;
+            margin:0 0 6px 3px;
+            color:#64748b;
+            font-size:12px;
+            font-weight:700;
+        }
+
+        .photo-field input,
+        .photo-field select{
+            width:100%;
+            padding:13px 14px;
+            border:1px solid #bfdbfe;
+            border-radius:14px;
+            background:#f8fbff;
+            color:#1e293b;
+            font:inherit;
+        }
+
+        .photo-field input:focus,
+        .photo-field select:focus{
+            outline:none;
+            border-color:#2563eb;
+            box-shadow:0 0 0 4px rgba(37,99,235,.10);
+        }
+
+        .photo-privacy-note{
+            display:flex;
+            gap:10px;
+            align-items:flex-start;
+            margin-top:14px;
+            padding:13px 14px;
+            border-radius:15px;
+            background:#eff6ff;
+            color:#475569;
+            font-size:12px;
+            line-height:1.5;
+        }
+
+        .photo-gallery{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:12px;
+            margin-top:18px;
+        }
+
+        .progress-photo-card{
+            position:relative;
+            overflow:hidden;
+            border:1px solid #dbeafe;
+            border-radius:18px;
+            background:#f8fbff;
+        }
+
+        .progress-photo-card img{
+            display:block;
+            width:100%;
+            aspect-ratio:3 / 4;
+            object-fit:cover;
+            background:#e2e8f0;
+        }
+
+        .progress-photo-info{
+            padding:11px 12px 12px;
+        }
+
+        .progress-photo-info strong{
+            display:block;
+            color:#172554;
+            font-size:13px;
+        }
+
+        .progress-photo-info span{
+            display:block;
+            margin-top:3px;
+            color:#64748b;
+            font-size:11px;
+        }
+
+        .delete-photo{
+            position:absolute;
+            top:9px;
+            right:9px;
+            width:34px;
+            height:34px;
+            display:grid;
+            place-items:center;
+            border:0;
+            border-radius:11px;
+            background:rgba(255,255,255,.92);
+            color:#b91c1c;
+            box-shadow:0 8px 20px rgba(15,23,42,.12);
+            cursor:pointer;
+            font-size:18px;
+            font-weight:800;
+        }
+
+        .photo-empty{
+            grid-column:1 / -1;
+            margin:0;
+            padding:18px;
+            border-radius:16px;
+            background:#eff6ff;
+            color:#64748b;
+            text-align:center;
+        }
+
+
+        .comparison-controls{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:12px;
+            margin-bottom:16px;
+        }
+
+        .comparison-field label{
+            display:block;
+            margin:0 0 6px 3px;
+            color:#64748b;
+            font-size:12px;
+            font-weight:700;
+        }
+
+        .comparison-field select{
+            width:100%;
+            padding:13px 14px;
+            border:1px solid #bfdbfe;
+            border-radius:14px;
+            background:#f8fbff;
+            color:#1e293b;
+            font:inherit;
+        }
+
+        .comparison-field select:focus{
+            outline:none;
+            border-color:#2563eb;
+            box-shadow:0 0 0 4px rgba(37,99,235,.10);
+        }
+
+        .comparison-grid{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:12px;
+        }
+
+        .comparison-card{
+            overflow:hidden;
+            border:1px solid #dbeafe;
+            border-radius:20px;
+            background:#f8fbff;
+        }
+
+        .comparison-card img{
+            display:block;
+            width:100%;
+            aspect-ratio:3 / 4;
+            object-fit:cover;
+            background:#e2e8f0;
+        }
+
+        .comparison-placeholder{
+            min-height:280px;
+            display:grid;
+            place-items:center;
+            padding:20px;
+            color:#64748b;
+            text-align:center;
+        }
+
+        .comparison-caption{
+            padding:12px 14px 14px;
+        }
+
+        .comparison-caption strong{
+            display:block;
+            color:#172554;
+        }
+
+        .comparison-caption span{
+            display:block;
+            margin-top:4px;
+            color:#64748b;
+            font-size:12px;
+        }
+
+        @media(max-width:760px){
+            .progress-grid{
+                grid-template-columns:1fr;
+            }
+
+            .weight-form{
+                grid-template-columns:1fr;
+            }
+
+            .measurement-grid{
+                grid-template-columns:repeat(2,1fr);
+            }
+
+            .milestone-grid{
+                grid-template-columns:1fr;
+            }
+
+            .measurement-summary{
+                grid-template-columns:repeat(2,1fr);
+            }
+
+            .photo-form{
+                grid-template-columns:1fr 1fr;
+            }
+
+            .photo-form .primary-button{
+                grid-column:1 / -1;
+            }
+
+            .photo-gallery{
+                grid-template-columns:repeat(2,1fr);
+            }
+
+            .comparison-controls,
+            .comparison-grid{
+                grid-template-columns:1fr;
+            }
+        }
+
+        @media(max-width:430px){
+            .measurement-grid{
+                grid-template-columns:1fr;
+            }
+
+            .photo-form,
+            .photo-gallery{
+                grid-template-columns:1fr;
+            }
+
+            .history-item{
+                grid-template-columns:1fr auto;
+            }
+
+            .history-item .history-date{
+                grid-column:1 / -1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<main class="progress-page">
+
+    <header class="page-header">
+
+        <a
+            href="../index.html"
+            class="back-button"
+            aria-label="Retour à l'accueil"
+        >
+            ←
+        </a>
+
+        <div>
+            <p class="section-label">
+                PROGRESSION
+            </p>
+
+            <h1>
+                🌱 Mon Voyage
+            </h1>
+
+            <p class="page-subtitle">
+                Suis ton évolution sans réduire tes progrès à un seul chiffre.
+            </p>
+        </div>
+
+    </header>
+
+
+    <section class="progress-grid">
+
+        <article class="stat-card">
+            <span>⚖️</span>
+            <p>Poids actuel</p>
+            <strong id="currentWeight">
+                —
+            </strong>
+        </article>
+
+        <article class="stat-card">
+            <span>🏁</span>
+            <p>Poids de départ</p>
+            <strong id="startWeight">
+                68,6 kg
+            </strong>
+        </article>
+
+        <article class="stat-card">
+            <span>🎯</span>
+            <p>Premier objectif</p>
+            <strong id="goalWeight">
+                60 kg
+            </strong>
+        </article>
+
+    </section>
+
+
+    <section class="journey-card">
+
+        <div class="card-heading">
+            <div>
+                <h2>Ton chemin</h2>
+                <p>
+                    Progression entre ton point de départ et ton premier objectif.
+                </p>
+            </div>
+
+            <span class="card-icon">
+                🛤️
+            </span>
+        </div>
+
+        <div class="journey-progress-track">
+            <div
+                id="journeyProgressBar"
+                class="journey-progress-value"
+            ></div>
+        </div>
+
+        <div class="journey-progress-info">
+            <span id="journeyLost">
+                —
+            </span>
+
+            <strong id="journeyPercent">
+                0 %
+            </strong>
+
+            <span id="journeyRemaining">
+                —
+            </span>
+        </div>
+
+    </section>
+
+
+    <section class="journey-card">
+
+        <div class="card-heading">
+            <div>
+                <h2>⚖️ Ajouter une pesée</h2>
+                <p>
+                    Ton historique reste enregistré localement dans Hana Fit.
+                </p>
+            </div>
+        </div>
+
+        <form
+            id="weightForm"
+            class="weight-form"
+        >
+
+            <input
+                type="date"
+                id="weightDate"
+                required
+            >
+
+            <input
+                type="number"
+                id="weightValue"
+                min="30"
+                max="200"
+                step="0.1"
+                placeholder="Poids en kg"
+                required
+            >
+
+            <button
+                type="submit"
+                class="primary-button"
+            >
+                ＋ Ajouter
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <section class="journey-card">
+
+        <div class="card-heading">
+            <div>
+                <h2>📏 Mes mensurations</h2>
+                <p>
+                    Enregistre une nouvelle série lorsque tu souhaites comparer ton évolution.
+                </p>
+            </div>
+
+            <span class="card-icon">
+                📐
+            </span>
+        </div>
+
+        <div class="measurement-grid">
+
+            <div class="measurement-field">
+                <label for="measureChest">
+                    Poitrine
+                </label>
+                <input
+                    type="number"
+                    id="measureChest"
+                    step="0.1"
+                    placeholder="cm"
+                >
+            </div>
+
+            <div class="measurement-field">
+                <label for="measureWaist">
+                    Taille
+                </label>
+                <input
+                    type="number"
+                    id="measureWaist"
+                    step="0.1"
+                    placeholder="cm"
+                >
+            </div>
+
+            <div class="measurement-field">
+                <label for="measureNavel">
+                    Nombril
+                </label>
+                <input
+                    type="number"
+                    id="measureNavel"
+                    step="0.1"
+                    placeholder="cm"
+                >
+            </div>
+
+            <div class="measurement-field">
+                <label for="measureHips">
+                    Hanches
+                </label>
+                <input
+                    type="number"
+                    id="measureHips"
+                    step="0.1"
+                    placeholder="cm"
+                >
+            </div>
+
+            <div class="measurement-field">
+                <label for="measureThigh">
+                    Cuisse
+                </label>
+                <input
+                    type="number"
+                    id="measureThigh"
+                    step="0.1"
+                    placeholder="cm"
+                >
+            </div>
+
+            <div class="measurement-field">
+                <label for="measureArm">
+                    Bras
+                </label>
+                <input
+                    type="number"
+                    id="measureArm"
+                    step="0.1"
+                    placeholder="cm"
+                >
+            </div>
+
+            <div class="measurement-field">
+                <label for="measureShoulders">
+                    Épaules
+                </label>
+                <input
+                    type="number"
+                    id="measureShoulders"
+                    step="0.1"
+                    placeholder="cm"
+                >
+            </div>
+
+            <div class="measurement-field">
+                <label for="measurementDate">
+                    Date
+                </label>
+                <input
+                    type="date"
+                    id="measurementDate"
+                >
+            </div>
+
+        </div>
+
+        <div class="measurement-actions">
+            <button
+                type="button"
+                id="saveMeasurementsButton"
+                class="primary-button"
+            >
+                Enregistrer mes mensurations
+            </button>
+        </div>
+
+    </section>
+
+
+    <section class="journey-card">
+
+        <div class="card-heading">
+            <div>
+                <h2>🏆 Mes étapes</h2>
+                <p>
+                    Hana Fit les validera automatiquement selon ton poids enregistré.
+                </p>
+            </div>
+        </div>
+
+        <div
+            id="milestoneGrid"
+            class="milestone-grid"
+        >
+
+            <article
+                class="milestone"
+                data-weight="65"
+            >
+                <span class="milestone-emoji">
+                    🌱
+                </span>
+
+                <strong>
+                    Passer sous 65 kg
+                </strong>
+
+                <span>
+                    Premier palier
+                </span>
+            </article>
+
+            <article
+                class="milestone"
+                data-weight="62.5"
+            >
+                <span class="milestone-emoji">
+                    💙
+                </span>
+
+                <strong>
+                    Atteindre 62,5 kg
+                </strong>
+
+                <span>
+                    Cap intermédiaire
+                </span>
+            </article>
+
+            <article
+                class="milestone"
+                data-weight="60"
+            >
+                <span class="milestone-emoji">
+                    ✨
+                </span>
+
+                <strong>
+                    Atteindre 60 kg
+                </strong>
+
+                <span>
+                    Premier objectif
+                </span>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <section class="journey-card">
+
+        <div class="card-heading">
+            <div>
+                <h2>📖 Historique des pesées</h2>
+                <p>
+                    Tes dernières entrées apparaîtront ici.
+                </p>
+            </div>
+        </div>
+
+        <div
+            id="weightHistory"
+            class="history-list"
+        >
+            <p class="empty-message">
+                Aucune pesée enregistrée.
+            </p>
+        </div>
+
+    </section>
+
+
+
+    <section class="journey-card">
+
+        <div class="card-heading">
+            <div>
+                <h2>📈 Évolution du poids</h2>
+                <p>
+                    Ta courbe se construit automatiquement à partir de tes pesées.
+                </p>
+            </div>
+
+            <span class="card-icon">
+                📊
+            </span>
+        </div>
+
+        <div class="chart-shell">
+            <div
+                id="weightChart"
+                class="weight-chart"
+            >
+                <div class="chart-empty">
+                    Ajoute au moins deux pesées pour afficher ta courbe.
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="journey-card">
+
+        <div class="card-heading">
+            <div>
+                <h2>📐 Historique des mensurations</h2>
+                <p>
+                    Compare tes changements même lorsque le poids bouge peu.
+                </p>
+            </div>
+
+            <span class="card-icon">
+                📏
+            </span>
+        </div>
+
+        <div
+            id="latestMeasurements"
+            class="measurement-summary"
+        ></div>
+
+        <div
+            id="measurementHistory"
+            class="measurement-history"
+        >
+            <p class="empty-message">
+                Aucune mensuration enregistrée.
+            </p>
+        </div>
+
+    </section>
+
+
+
+    <section class="journey-card">
+
+        <div class="card-heading">
+            <div>
+                <h2>📸 Photos de progression</h2>
+                <p>
+                    Garde des repères visuels de ton évolution, directement dans Hana Fit.
+                </p>
+            </div>
+
+            <span class="card-icon">
+                🔒
+            </span>
+        </div>
+
+        <div class="photo-form">
+
+            <div class="photo-field">
+                <label for="photoDate">
+                    Date
+                </label>
+
+                <input
+                    type="date"
+                    id="photoDate"
+                >
+            </div>
+
+            <div class="photo-field">
+                <label for="photoPose">
+                    Vue
+                </label>
+
+                <select id="photoPose">
+                    <option value="Face">Face</option>
+                    <option value="Profil">Profil</option>
+                    <option value="Dos">Dos</option>
+                    <option value="Autre">Autre</option>
+                </select>
+            </div>
+
+            <div class="photo-field">
+                <label for="photoInput">
+                    Photo
+                </label>
+
+                <input
+                    type="file"
+                    id="photoInput"
+                    accept="image/*"
+                >
+            </div>
+
+            <button
+                type="button"
+                id="savePhotoButton"
+                class="primary-button"
+            >
+                ＋ Ajouter la photo
+            </button>
+
+        </div>
+
+        <div class="photo-privacy-note">
+            <span>🔒</span>
+
+            <div>
+                Les photos sont enregistrées dans le stockage privé du navigateur
+                sur cet appareil. Elles ne sont pas ajoutées à GitHub.
+            </div>
+        </div>
+
+        <div
+            id="photoGallery"
+            class="photo-gallery"
+        >
+            <p class="photo-empty">
+                Aucune photo de progression enregistrée.
+            </p>
+        </div>
+
+    </section>
+
+
+
+    <section class="journey-card">
+
+        <div class="card-heading">
+            <div>
+                <h2>↔️ Comparatif avant / après</h2>
+                <p>
+                    Choisis deux photos privées pour visualiser ton évolution côte à côte.
+                </p>
+            </div>
+
+            <span class="card-icon">
+                📸
+            </span>
+        </div>
+
+        <div class="comparison-controls">
+
+            <div class="comparison-field">
+                <label for="compareBeforeSelect">
+                    Photo avant
+                </label>
+
+                <select id="compareBeforeSelect">
+                    <option value="">
+                        Choisir une photo
+                    </option>
+                </select>
+            </div>
+
+            <div class="comparison-field">
+                <label for="compareAfterSelect">
+                    Photo après
+                </label>
+
+                <select id="compareAfterSelect">
+                    <option value="">
+                        Choisir une photo
+                    </option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="comparison-grid">
+
+            <article class="comparison-card">
+
+                <div
+                    id="compareBeforePreview"
+                    class="comparison-placeholder"
+                >
+                    Sélectionne ta photo « avant ».
+                </div>
+
+                <div class="comparison-caption">
+                    <strong id="compareBeforeTitle">
+                        Avant
+                    </strong>
+
+                    <span id="compareBeforeDate">
+                        —
+                    </span>
+                </div>
+
+            </article>
+
+            <article class="comparison-card">
+
+                <div
+                    id="compareAfterPreview"
+                    class="comparison-placeholder"
+                >
+                    Sélectionne ta photo « après ».
+                </div>
+
+                <div class="comparison-caption">
+                    <strong id="compareAfterTitle">
+                        Après
+                    </strong>
+
+                    <span id="compareAfterDate">
+                        —
+                    </span>
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <section class="journey-card">
+
+        <div class="privacy-box">
+
+            <span>
+                🔒
+            </span>
+
+            <div>
+                <strong>
+                    Tes données restent privées
+                </strong>
+
+                <p>
+                    Les pesées et mensurations de Mon Voyage seront conservées
+                    sur ton appareil. Les futures photos de progression ne seront
+                    pas envoyées sur ton dépôt GitHub public.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="../assets/js/progress.js"></script>
+
+</body>
+</html>

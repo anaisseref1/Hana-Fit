@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Mon programme | Hana Fit
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/components.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/programs.css"
+    >
+</head>
+
+
+<body>
+
+<main class="page">
+
+
+    <!-- RETOUR -->
+
+    <a
+        href="programs.html"
+        class="back-link"
+    >
+        ← Mes programmes
+    </a>
+
+
+
+    <!-- EN-TÊTE -->
+
+    <header class="programs-header">
+
+        <div class="header-icon">
+            🌸
+        </div>
+
+        <div>
+
+            <span class="badge">
+                PROGRAMME ACTIF
+            </span>
+
+            <h1
+                id="program-title"
+                class="section-title"
+            >
+                Mon programme
+            </h1>
+
+            <p
+                id="program-subtitle"
+                class="section-subtitle"
+            >
+                Chargement...
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- NEHA -->
+
+    <section class="neha-card card">
+
+        <div class="neha-avatar">
+            🐈
+        </div>
+
+        <div>
+
+            <span class="badge">
+                LE CONSEIL DE NEHA
+            </span>
+
+            <h2 id="neha-program-title">
+                Une semaine à la fois 💙
+            </h2>
+
+            <p id="neha-program-message">
+                Chaque journée terminée te rapproche
+                de la fin de ton programme.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PROGRESSION GLOBALE -->
+
+    <section
+        id="program-progress-card"
+        class="week-progress-card"
+    >
+
+        <div class="week-progress-header">
+
+            <div>
+
+                <span class="badge">
+                    ✨ MON PROGRAMME
+                </span>
+
+                <h3>
+                    Progression globale
+                </h3>
+
+                <p id="program-progress-text">
+                    0/28 jours terminés
+                </p>
+
+            </div>
+
+
+            <strong
+                id="program-progress-percent"
+                class="week-progress-percent"
+            >
+                0%
+            </strong>
+
+        </div>
+
+
+        <div class="week-progress-track">
+
+            <div
+                id="program-progress-bar"
+                class="week-progress-bar"
+            >
+            </div>
+
+        </div>
+
+
+        <div
+            id="program-weeks-summary"
+            class="program-weeks-summary"
+        >
+        </div>
+
+    </section>
+
+
+
+    <!-- PLANNING -->
+
+    <section class="program-planning">
+
+        <div class="section-heading">
+
+            <div>
+
+                <h2>
+                    Mon planning
+                </h2>
+
+                <p>
+                    Choisis une semaine pour afficher les repas.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SÉLECTEUR DES SEMAINES -->
+
+        <div
+            id="week-selector"
+            class="week-selector"
+        >
+        </div>
+
+
+
+        <!-- PROGRESSION SEMAINE -->
+
+        <div
+            id="week-progress-card"
+            class="week-progress-card"
+        >
+
+            <div class="week-progress-header">
+
+                <div>
+
+                    <span class="badge">
+                        🌸 MA SEMAINE
+                    </span>
+
+                    <h3 id="week-progress-title">
+                        Semaine 1
+                    </h3>
+
+                    <p id="week-progress-text">
+                        0/7 jours terminés
+                    </p>
+
+                </div>
+
+
+                <strong
+                    id="week-progress-percent"
+                    class="week-progress-percent"
+                >
+                    0%
+                </strong>
+
+            </div>
+
+
+            <div class="week-progress-track">
+
+                <div
+                    id="week-progress-bar"
+                    class="week-progress-bar"
+                >
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- JOURNÉES -->
+
+        <div
+            id="days-container"
+            class="days-container"
+        >
+
+            <div class="loading-card card">
+
+                <div class="loading-spinner">
+                </div>
+
+                <p>
+                    Chargement de ton programme...
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- LISTE DE COURSES -->
+
+    <section
+        class="shopping-section"
+        id="shopping-section"
+    >
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="badge">
+                    🛒 ORGANISATION
+                </span>
+
+                <h2>
+                    Liste de courses
+                </h2>
+
+                <p id="shopping-subtitle">
+                    Les ingrédients de ta semaine
+                    seront regroupés automatiquement.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="shopping-card card">
+
+            <div class="shopping-card-header">
+
+                <div>
+
+                    <h3 id="shopping-week-title">
+                        Courses de la semaine
+                    </h3>
+
+                    <p>
+                        Les quantités identiques sont
+                        additionnées automatiquement.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="generate-shopping-list"
+                    class="button button-primary"
+                >
+                    🛒 Générer ma liste
+                </button>
+
+            </div>
+
+
+
+            <div
+                id="shopping-list-container"
+                class="shopping-list-container"
+            >
+
+                <div class="shopping-empty">
+
+                    <span class="shopping-empty-icon">
+                        🛍️
+                    </span>
+
+                    <strong>
+                        Ta liste n'est pas encore générée
+                    </strong>
+
+                    <p>
+                        Clique sur « Générer ma liste »
+                        pour regrouper tous les ingrédients
+                        de la semaine sélectionnée.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<script src="../assets/js/store.js"></script>
+<script src="../assets/js/database.js"></script>
+<script src="../assets/js/program-detail.js"></script>
+
+
+</body>
+
+</html>

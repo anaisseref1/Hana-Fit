@@ -1,0 +1,3602 @@
+[
+  {
+    "id": 1,
+    "name": "1500-1550",
+    "title": "Programme Hana Fit 1500–1550 kcal",
+    "emoji": "🔥",
+    "goal": "Perte de gras",
+    "durationWeeks": 4,
+    "daysPerWeek": 7,
+    "targets": {
+      "caloriesMin": 1500,
+      "caloriesMax": 1550,
+      "protein": 110
+    },
+    "weeks": [
+      {
+        "week": 1,
+        "title": "Semaine 1",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": 1,
+              "lunch": 21,
+              "snack": 13,
+              "dinner": 37
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": 2,
+              "lunch": 24,
+              "snack": 15,
+              "dinner": 5
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": 48,
+              "lunch": 4,
+              "snack": 45,
+              "dinner": 28
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": 2,
+              "lunch": 33,
+              "snack": 14,
+              "dinner": 27
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": 6,
+              "lunch": 29,
+              "snack": 46,
+              "dinner": 19
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": 49,
+              "lunch": 32,
+              "snack": 42,
+              "dinner": 23
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": 52,
+              "lunch": 30,
+              "snack": 43,
+              "dinner": 40
+            }
+          }
+        ]
+      },
+      {
+        "week": 2,
+        "title": "Semaine 2",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": 47,
+              "lunch": 12,
+              "snack": 45,
+              "dinner": 18
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": 7,
+              "lunch": 21,
+              "snack": 16,
+              "dinner": 25
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": 51,
+              "lunch": 34,
+              "snack": 42,
+              "dinner": 39
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": 2,
+              "lunch": 30,
+              "snack": 44,
+              "dinner": 20
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": 50,
+              "lunch": 26,
+              "snack": 16,
+              "dinner": 28
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": 51,
+              "lunch": 33,
+              "snack": 46,
+              "dinner": 31
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": 47,
+              "lunch": 35,
+              "snack": 41,
+              "dinner": 23
+            }
+          }
+        ]
+      },
+      {
+        "week": 3,
+        "title": "Semaine 3",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": 2,
+              "lunch": 22,
+              "snack": 44,
+              "dinner": 17
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": 3,
+              "lunch": 36,
+              "snack": 42,
+              "dinner": 28
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": 48,
+              "lunch": 24,
+              "snack": 41,
+              "dinner": 19
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": 48,
+              "lunch": 11,
+              "snack": 46,
+              "dinner": 18
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": 52,
+              "lunch": 26,
+              "snack": 45,
+              "dinner": 40
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": 49,
+              "lunch": 10,
+              "snack": 42,
+              "dinner": 23
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": 47,
+              "lunch": 29,
+              "snack": 41,
+              "dinner": 19
+            }
+          }
+        ]
+      },
+      {
+        "week": 4,
+        "title": "Semaine 4",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": 51,
+              "lunch": 36,
+              "snack": 16,
+              "dinner": 5
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": 48,
+              "lunch": 11,
+              "snack": 41,
+              "dinner": 18
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": 49,
+              "lunch": 35,
+              "snack": 44,
+              "dinner": 38
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": 8,
+              "lunch": 22,
+              "snack": 44,
+              "dinner": 40
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": 51,
+              "lunch": 34,
+              "snack": 46,
+              "dinner": 39
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": 49,
+              "lunch": 9,
+              "snack": 16,
+              "dinner": 39
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": 47,
+              "lunch": 9,
+              "snack": 45,
+              "dinner": 5
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "1600-1650",
+    "title": "Programme Hana Fit 1600–1650 kcal",
+    "emoji": "🌱",
+    "goal": "Progression calorique",
+    "durationWeeks": 4,
+    "daysPerWeek": 7,
+    "targets": {
+      "caloriesMin": 1600,
+      "caloriesMax": 1650,
+      "protein": 110
+    },
+    "weeks": [
+      {
+        "week": 1,
+        "title": "Semaine 1",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 48,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 29,
+                "portion": 1.2
+              },
+              "snack": {
+                "recipeId": 45,
+                "portion": 1.2
+              },
+              "dinner": {
+                "recipeId": 19,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 2,
+                "portion": 1.1
+              },
+              "lunch": {
+                "recipeId": 32,
+                "portion": 1.1
+              },
+              "snack": {
+                "recipeId": 43,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 23,
+                "portion": 1.3
+              }
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 7,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 35,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 15,
+                "portion": 1.1
+              },
+              "dinner": {
+                "recipeId": 39,
+                "portion": 1.4
+              }
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 51,
+                "portion": 1.3
+              },
+              "lunch": {
+                "recipeId": 33,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 14,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 17,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 6,
+                "portion": 1.3
+              },
+              "lunch": {
+                "recipeId": 11,
+                "portion": 1.2
+              },
+              "snack": {
+                "recipeId": 42,
+                "portion": 1.1
+              },
+              "dinner": {
+                "recipeId": 25,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 50,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 24,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 16,
+                "portion": 1.4
+              },
+              "dinner": {
+                "recipeId": 53,
+                "portion": 1.2
+              }
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": {
+                "recipeId": 47,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 22,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 44,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 28,
+                "portion": 1.0
+              }
+            }
+          }
+        ]
+      },
+      {
+        "week": 2,
+        "title": "Semaine 2",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 51,
+                "portion": 1.4
+              },
+              "lunch": {
+                "recipeId": 4,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 13,
+                "portion": 1.1
+              },
+              "dinner": {
+                "recipeId": 40,
+                "portion": 1.1
+              }
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 49,
+                "portion": 1.3
+              },
+              "lunch": {
+                "recipeId": 26,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 14,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 31,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 8,
+                "portion": 1.3
+              },
+              "lunch": {
+                "recipeId": 12,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 43,
+                "portion": 1.5
+              },
+              "dinner": {
+                "recipeId": 37,
+                "portion": 1.1
+              }
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 3,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 21,
+                "portion": 1.1
+              },
+              "snack": {
+                "recipeId": 41,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 53,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 2,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 30,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 42,
+                "portion": 1.2
+              },
+              "dinner": {
+                "recipeId": 5,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 52,
+                "portion": 1.2
+              },
+              "lunch": {
+                "recipeId": 11,
+                "portion": 1.3
+              },
+              "snack": {
+                "recipeId": 16,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 20,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": {
+                "recipeId": 7,
+                "portion": 1.2
+              },
+              "lunch": {
+                "recipeId": 35,
+                "portion": 1.2
+              },
+              "snack": {
+                "recipeId": 44,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 18,
+                "portion": 1.0
+              }
+            }
+          }
+        ]
+      },
+      {
+        "week": 3,
+        "title": "Semaine 3",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 1,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 11,
+                "portion": 1.2
+              },
+              "snack": {
+                "recipeId": 46,
+                "portion": 1.2
+              },
+              "dinner": {
+                "recipeId": 31,
+                "portion": 1.2
+              }
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 50,
+                "portion": 1.6
+              },
+              "lunch": {
+                "recipeId": 9,
+                "portion": 1.1
+              },
+              "snack": {
+                "recipeId": 45,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 39,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 6,
+                "portion": 1.4
+              },
+              "lunch": {
+                "recipeId": 36,
+                "portion": 1.1
+              },
+              "snack": {
+                "recipeId": 14,
+                "portion": 1.2
+              },
+              "dinner": {
+                "recipeId": 19,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 2,
+                "portion": 1.2
+              },
+              "lunch": {
+                "recipeId": 35,
+                "portion": 1.1
+              },
+              "snack": {
+                "recipeId": 15,
+                "portion": 1.2
+              },
+              "dinner": {
+                "recipeId": 38,
+                "portion": 1.2
+              }
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 48,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 24,
+                "portion": 1.2
+              },
+              "snack": {
+                "recipeId": 43,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 40,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 49,
+                "portion": 1.3
+              },
+              "lunch": {
+                "recipeId": 10,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 41,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 53,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": {
+                "recipeId": 8,
+                "portion": 1.2
+              },
+              "lunch": {
+                "recipeId": 32,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 42,
+                "portion": 1.3
+              },
+              "dinner": {
+                "recipeId": 28,
+                "portion": 1.0
+              }
+            }
+          }
+        ]
+      },
+      {
+        "week": 4,
+        "title": "Semaine 4",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 47,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 4,
+                "portion": 1.3
+              },
+              "snack": {
+                "recipeId": 45,
+                "portion": 1.6
+              },
+              "dinner": {
+                "recipeId": 19,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 51,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 9,
+                "portion": 1.2
+              },
+              "snack": {
+                "recipeId": 46,
+                "portion": 1.2
+              },
+              "dinner": {
+                "recipeId": 39,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 2,
+                "portion": 1.2
+              },
+              "lunch": {
+                "recipeId": 26,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 16,
+                "portion": 1.1
+              },
+              "dinner": {
+                "recipeId": 5,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 3,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 21,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 43,
+                "portion": 1.2
+              },
+              "dinner": {
+                "recipeId": 18,
+                "portion": 1.1
+              }
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 8,
+                "portion": 1.2
+              },
+              "lunch": {
+                "recipeId": 35,
+                "portion": 1.3
+              },
+              "snack": {
+                "recipeId": 13,
+                "portion": 1.2
+              },
+              "dinner": {
+                "recipeId": 20,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 1,
+                "portion": 1.2
+              },
+              "lunch": {
+                "recipeId": 22,
+                "portion": 1.1
+              },
+              "snack": {
+                "recipeId": 14,
+                "portion": 1.3
+              },
+              "dinner": {
+                "recipeId": 37,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": {
+                "recipeId": 48,
+                "portion": 1.1
+              },
+              "lunch": {
+                "recipeId": 12,
+                "portion": 1.1
+              },
+              "snack": {
+                "recipeId": 42,
+                "portion": 1.3
+              },
+              "dinner": {
+                "recipeId": 40,
+                "portion": 1.0
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "1700-1750",
+    "title": "Programme Hana Fit 1700–1750 kcal",
+    "emoji": "⚡",
+    "goal": "Progression calorique",
+    "durationWeeks": 4,
+    "daysPerWeek": 7,
+    "targets": {
+      "caloriesMin": 1700,
+      "caloriesMax": 1750,
+      "protein": 110
+    },
+    "weeks": [
+      {
+        "week": 1,
+        "title": "Semaine 1",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 3,
+                "portion": 1.3
+              },
+              "lunch": {
+                "recipeId": 21,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 43,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 40,
+                "portion": 1.2
+              }
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 1,
+                "portion": 1.3
+              },
+              "lunch": {
+                "recipeId": 12,
+                "portion": 1.2
+              },
+              "snack": {
+                "recipeId": 42,
+                "portion": 1.2
+              },
+              "dinner": {
+                "recipeId": 19,
+                "portion": 1.2
+              }
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 51,
+                "portion": 1.2
+              },
+              "lunch": {
+                "recipeId": 32,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 41,
+                "portion": 1.1
+              },
+              "dinner": {
+                "recipeId": 28,
+                "portion": 1.2
+              }
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 52,
+                "portion": 1.2
+              },
+              "lunch": {
+                "recipeId": 35,
+                "portion": 1.4
+              },
+              "snack": {
+                "recipeId": 14,
+                "portion": 1.1
+              },
+              "dinner": {
+                "recipeId": 31,
+                "portion": 1.2
+              }
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 50,
+                "portion": 1.1
+              },
+              "lunch": {
+                "recipeId": 11,
+                "portion": 1.5
+              },
+              "snack": {
+                "recipeId": 45,
+                "portion": 1.1
+              },
+              "dinner": {
+                "recipeId": 18,
+                "portion": 1.1
+              }
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 2,
+                "portion": 1.4
+              },
+              "lunch": {
+                "recipeId": 33,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 13,
+                "portion": 1.4
+              },
+              "dinner": {
+                "recipeId": 53,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": {
+                "recipeId": 8,
+                "portion": 1.5
+              },
+              "lunch": {
+                "recipeId": 26,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 16,
+                "portion": 1.2
+              },
+              "dinner": {
+                "recipeId": 39,
+                "portion": 1.0
+              }
+            }
+          }
+        ]
+      },
+      {
+        "week": 2,
+        "title": "Semaine 2",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 49,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 29,
+                "portion": 1.2
+              },
+              "snack": {
+                "recipeId": 45,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 19,
+                "portion": 1.2
+              }
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 47,
+                "portion": 1.1
+              },
+              "lunch": {
+                "recipeId": 21,
+                "portion": 1.2
+              },
+              "snack": {
+                "recipeId": 43,
+                "portion": 1.3
+              },
+              "dinner": {
+                "recipeId": 25,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 7,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 11,
+                "portion": 1.5
+              },
+              "snack": {
+                "recipeId": 15,
+                "portion": 1.1
+              },
+              "dinner": {
+                "recipeId": 40,
+                "portion": 1.2
+              }
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 51,
+                "portion": 1.3
+              },
+              "lunch": {
+                "recipeId": 36,
+                "portion": 1.1
+              },
+              "snack": {
+                "recipeId": 46,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 28,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 6,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 30,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 42,
+                "portion": 1.1
+              },
+              "dinner": {
+                "recipeId": 53,
+                "portion": 1.3
+              }
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 2,
+                "portion": 1.2
+              },
+              "lunch": {
+                "recipeId": 35,
+                "portion": 1.5
+              },
+              "snack": {
+                "recipeId": 16,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 27,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": {
+                "recipeId": 50,
+                "portion": 1.2
+              },
+              "lunch": {
+                "recipeId": 24,
+                "portion": 1.3
+              },
+              "snack": {
+                "recipeId": 14,
+                "portion": 1.3
+              },
+              "dinner": {
+                "recipeId": 39,
+                "portion": 1.0
+              }
+            }
+          }
+        ]
+      },
+      {
+        "week": 3,
+        "title": "Semaine 3",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 48,
+                "portion": 1.2
+              },
+              "lunch": {
+                "recipeId": 11,
+                "portion": 1.2
+              },
+              "snack": {
+                "recipeId": 43,
+                "portion": 1.5
+              },
+              "dinner": {
+                "recipeId": 17,
+                "portion": 1.1
+              }
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 2,
+                "portion": 1.2
+              },
+              "lunch": {
+                "recipeId": 21,
+                "portion": 1.2
+              },
+              "snack": {
+                "recipeId": 44,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 37,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 8,
+                "portion": 1.2
+              },
+              "lunch": {
+                "recipeId": 4,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 45,
+                "portion": 1.4
+              },
+              "dinner": {
+                "recipeId": 19,
+                "portion": 1.5
+              }
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 1,
+                "portion": 1.3
+              },
+              "lunch": {
+                "recipeId": 35,
+                "portion": 1.1
+              },
+              "snack": {
+                "recipeId": 42,
+                "portion": 1.4
+              },
+              "dinner": {
+                "recipeId": 5,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 51,
+                "portion": 1.5
+              },
+              "lunch": {
+                "recipeId": 32,
+                "portion": 1.3
+              },
+              "snack": {
+                "recipeId": 14,
+                "portion": 1.1
+              },
+              "dinner": {
+                "recipeId": 20,
+                "portion": 1.1
+              }
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 47,
+                "portion": 1.3
+              },
+              "lunch": {
+                "recipeId": 12,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 46,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 53,
+                "portion": 1.2
+              }
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": {
+                "recipeId": 49,
+                "portion": 1.2
+              },
+              "lunch": {
+                "recipeId": 24,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 16,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 40,
+                "portion": 1.1
+              }
+            }
+          }
+        ]
+      },
+      {
+        "week": 4,
+        "title": "Semaine 4",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 2,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 22,
+                "portion": 1.3
+              },
+              "snack": {
+                "recipeId": 43,
+                "portion": 1.4
+              },
+              "dinner": {
+                "recipeId": 23,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 51,
+                "portion": 1.6
+              },
+              "lunch": {
+                "recipeId": 9,
+                "portion": 1.2
+              },
+              "snack": {
+                "recipeId": 41,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 31,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 7,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 11,
+                "portion": 1.3
+              },
+              "snack": {
+                "recipeId": 44,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 5,
+                "portion": 1.2
+              }
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 50,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 26,
+                "portion": 1.2
+              },
+              "snack": {
+                "recipeId": 14,
+                "portion": 1.4
+              },
+              "dinner": {
+                "recipeId": 28,
+                "portion": 1.1
+              }
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 48,
+                "portion": 1.2
+              },
+              "lunch": {
+                "recipeId": 35,
+                "portion": 1.5
+              },
+              "snack": {
+                "recipeId": 13,
+                "portion": 1.3
+              },
+              "dinner": {
+                "recipeId": 19,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 49,
+                "portion": 1.3
+              },
+              "lunch": {
+                "recipeId": 10,
+                "portion": 1.1
+              },
+              "snack": {
+                "recipeId": 45,
+                "portion": 1.4
+              },
+              "dinner": {
+                "recipeId": 53,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": {
+                "recipeId": 1,
+                "portion": 1.1
+              },
+              "lunch": {
+                "recipeId": 21,
+                "portion": 1.2
+              },
+              "snack": {
+                "recipeId": 42,
+                "portion": 1.1
+              },
+              "dinner": {
+                "recipeId": 20,
+                "portion": 1.0
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "1800-1850",
+    "title": "Programme Hana Fit 1800–1850 kcal",
+    "emoji": "💪",
+    "goal": "Progression calorique",
+    "durationWeeks": 4,
+    "daysPerWeek": 7,
+    "targets": {
+      "caloriesMin": 1800,
+      "caloriesMax": 1850,
+      "protein": 110
+    },
+    "weeks": [
+      {
+        "week": 1,
+        "title": "Semaine 1",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 2,
+                "portion": 1.4
+              },
+              "lunch": {
+                "recipeId": 35,
+                "portion": 1.4
+              },
+              "snack": {
+                "recipeId": 13,
+                "portion": 1.4
+              },
+              "dinner": {
+                "recipeId": 18,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 51,
+                "portion": 1.7
+              },
+              "lunch": {
+                "recipeId": 9,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 42,
+                "portion": 1.6
+              },
+              "dinner": {
+                "recipeId": 20,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 49,
+                "portion": 1.1
+              },
+              "lunch": {
+                "recipeId": 12,
+                "portion": 1.4
+              },
+              "snack": {
+                "recipeId": 43,
+                "portion": 1.2
+              },
+              "dinner": {
+                "recipeId": 19,
+                "portion": 1.3
+              }
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 48,
+                "portion": 1.5
+              },
+              "lunch": {
+                "recipeId": 11,
+                "portion": 1.3
+              },
+              "snack": {
+                "recipeId": 45,
+                "portion": 1.2
+              },
+              "dinner": {
+                "recipeId": 40,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 1,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 21,
+                "portion": 1.1
+              },
+              "snack": {
+                "recipeId": 14,
+                "portion": 1.3
+              },
+              "dinner": {
+                "recipeId": 39,
+                "portion": 1.3
+              }
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 7,
+                "portion": 1.7
+              },
+              "lunch": {
+                "recipeId": 32,
+                "portion": 1.1
+              },
+              "snack": {
+                "recipeId": 16,
+                "portion": 1.3
+              },
+              "dinner": {
+                "recipeId": 53,
+                "portion": 1.2
+              }
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": {
+                "recipeId": 47,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 21,
+                "portion": 1.2
+              },
+              "snack": {
+                "recipeId": 44,
+                "portion": 1.1
+              },
+              "dinner": {
+                "recipeId": 28,
+                "portion": 1.0
+              }
+            }
+          }
+        ]
+      },
+      {
+        "week": 2,
+        "title": "Semaine 2",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 50,
+                "portion": 1.4
+              },
+              "lunch": {
+                "recipeId": 11,
+                "portion": 1.4
+              },
+              "snack": {
+                "recipeId": 43,
+                "portion": 1.7
+              },
+              "dinner": {
+                "recipeId": 37,
+                "portion": 1.2
+              }
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 8,
+                "portion": 1.2
+              },
+              "lunch": {
+                "recipeId": 35,
+                "portion": 1.4
+              },
+              "snack": {
+                "recipeId": 46,
+                "portion": 1.6
+              },
+              "dinner": {
+                "recipeId": 19,
+                "portion": 1.1
+              }
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 51,
+                "portion": 1.5
+              },
+              "lunch": {
+                "recipeId": 36,
+                "portion": 1.2
+              },
+              "snack": {
+                "recipeId": 45,
+                "portion": 1.5
+              },
+              "dinner": {
+                "recipeId": 31,
+                "portion": 1.1
+              }
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 2,
+                "portion": 1.3
+              },
+              "lunch": {
+                "recipeId": 30,
+                "portion": 1.2
+              },
+              "snack": {
+                "recipeId": 14,
+                "portion": 1.4
+              },
+              "dinner": {
+                "recipeId": 5,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 1,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 26,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 42,
+                "portion": 1.1
+              },
+              "dinner": {
+                "recipeId": 53,
+                "portion": 1.6
+              }
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 6,
+                "portion": 1.4
+              },
+              "lunch": {
+                "recipeId": 21,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 41,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 40,
+                "portion": 1.1
+              }
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": {
+                "recipeId": 49,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 12,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 44,
+                "portion": 1.2
+              },
+              "dinner": {
+                "recipeId": 28,
+                "portion": 1.3
+              }
+            }
+          }
+        ]
+      },
+      {
+        "week": 3,
+        "title": "Semaine 3",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 8,
+                "portion": 1.4
+              },
+              "lunch": {
+                "recipeId": 24,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 43,
+                "portion": 1.1
+              },
+              "dinner": {
+                "recipeId": 19,
+                "portion": 1.5
+              }
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 51,
+                "portion": 1.5
+              },
+              "lunch": {
+                "recipeId": 11,
+                "portion": 1.3
+              },
+              "snack": {
+                "recipeId": 16,
+                "portion": 1.7
+              },
+              "dinner": {
+                "recipeId": 25,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 2,
+                "portion": 1.3
+              },
+              "lunch": {
+                "recipeId": 10,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 42,
+                "portion": 1.4
+              },
+              "dinner": {
+                "recipeId": 39,
+                "portion": 1.4
+              }
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 3,
+                "portion": 1.1
+              },
+              "lunch": {
+                "recipeId": 35,
+                "portion": 1.7
+              },
+              "snack": {
+                "recipeId": 15,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 53,
+                "portion": 1.3
+              }
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 52,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 22,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 14,
+                "portion": 1.4
+              },
+              "dinner": {
+                "recipeId": 28,
+                "portion": 1.3
+              }
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 7,
+                "portion": 1.4
+              },
+              "lunch": {
+                "recipeId": 21,
+                "portion": 1.2
+              },
+              "snack": {
+                "recipeId": 45,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 17,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": {
+                "recipeId": 51,
+                "portion": 1.5
+              },
+              "lunch": {
+                "recipeId": 26,
+                "portion": 1.1
+              },
+              "snack": {
+                "recipeId": 41,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 40,
+                "portion": 1.1
+              }
+            }
+          }
+        ]
+      },
+      {
+        "week": 4,
+        "title": "Semaine 4",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 47,
+                "portion": 1.3
+              },
+              "lunch": {
+                "recipeId": 11,
+                "portion": 1.3
+              },
+              "snack": {
+                "recipeId": 14,
+                "portion": 1.4
+              },
+              "dinner": {
+                "recipeId": 38,
+                "portion": 1.1
+              }
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 50,
+                "portion": 1.4
+              },
+              "lunch": {
+                "recipeId": 35,
+                "portion": 1.5
+              },
+              "snack": {
+                "recipeId": 43,
+                "portion": 1.7
+              },
+              "dinner": {
+                "recipeId": 23,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 2,
+                "portion": 1.3
+              },
+              "lunch": {
+                "recipeId": 29,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 13,
+                "portion": 1.3
+              },
+              "dinner": {
+                "recipeId": 39,
+                "portion": 1.3
+              }
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 7,
+                "portion": 1.5
+              },
+              "lunch": {
+                "recipeId": 9,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 42,
+                "portion": 1.1
+              },
+              "dinner": {
+                "recipeId": 19,
+                "portion": 1.5
+              }
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 51,
+                "portion": 1.4
+              },
+              "lunch": {
+                "recipeId": 24,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 46,
+                "portion": 1.2
+              },
+              "dinner": {
+                "recipeId": 31,
+                "portion": 1.3
+              }
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 1,
+                "portion": 1.2
+              },
+              "lunch": {
+                "recipeId": 32,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 45,
+                "portion": 1.6
+              },
+              "dinner": {
+                "recipeId": 53,
+                "portion": 1.5
+              }
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": {
+                "recipeId": 49,
+                "portion": 1.1
+              },
+              "lunch": {
+                "recipeId": 21,
+                "portion": 1.2
+              },
+              "snack": {
+                "recipeId": 16,
+                "portion": 1.1
+              },
+              "dinner": {
+                "recipeId": 20,
+                "portion": 1.1
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "1900-1950",
+    "title": "Programme Hana Fit 1900–1950 kcal",
+    "emoji": "🌿",
+    "goal": "Progression calorique",
+    "durationWeeks": 4,
+    "daysPerWeek": 7,
+    "targets": {
+      "caloriesMin": 1900,
+      "caloriesMax": 1950,
+      "protein": 110
+    },
+    "weeks": [
+      {
+        "week": 1,
+        "title": "Semaine 1",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 7,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 11,
+                "portion": 1.5
+              },
+              "snack": {
+                "recipeId": 45,
+                "portion": 1.5
+              },
+              "dinner": {
+                "recipeId": 39,
+                "portion": 1.3
+              }
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 2,
+                "portion": 1.6
+              },
+              "lunch": {
+                "recipeId": 21,
+                "portion": 1.2
+              },
+              "snack": {
+                "recipeId": 14,
+                "portion": 1.4
+              },
+              "dinner": {
+                "recipeId": 25,
+                "portion": 1.1
+              }
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 51,
+                "portion": 1.5
+              },
+              "lunch": {
+                "recipeId": 35,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 13,
+                "portion": 1.3
+              },
+              "dinner": {
+                "recipeId": 40,
+                "portion": 1.5
+              }
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 1,
+                "portion": 1.7
+              },
+              "lunch": {
+                "recipeId": 24,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 43,
+                "portion": 1.6
+              },
+              "dinner": {
+                "recipeId": 19,
+                "portion": 1.3
+              }
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 47,
+                "portion": 1.5
+              },
+              "lunch": {
+                "recipeId": 32,
+                "portion": 1.3
+              },
+              "snack": {
+                "recipeId": 42,
+                "portion": 1.6
+              },
+              "dinner": {
+                "recipeId": 53,
+                "portion": 1.1
+              }
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 49,
+                "portion": 1.2
+              },
+              "lunch": {
+                "recipeId": 11,
+                "portion": 1.4
+              },
+              "snack": {
+                "recipeId": 41,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 28,
+                "portion": 1.1
+              }
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": {
+                "recipeId": 8,
+                "portion": 1.2
+              },
+              "lunch": {
+                "recipeId": 12,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 16,
+                "portion": 1.4
+              },
+              "dinner": {
+                "recipeId": 53,
+                "portion": 1.7
+              }
+            }
+          }
+        ]
+      },
+      {
+        "week": 2,
+        "title": "Semaine 2",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 51,
+                "portion": 1.7
+              },
+              "lunch": {
+                "recipeId": 35,
+                "portion": 1.4
+              },
+              "snack": {
+                "recipeId": 44,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 5,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 2,
+                "portion": 1.5
+              },
+              "lunch": {
+                "recipeId": 10,
+                "portion": 1.6
+              },
+              "snack": {
+                "recipeId": 43,
+                "portion": 1.6
+              },
+              "dinner": {
+                "recipeId": 19,
+                "portion": 1.2
+              }
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 49,
+                "portion": 1.1
+              },
+              "lunch": {
+                "recipeId": 21,
+                "portion": 1.2
+              },
+              "snack": {
+                "recipeId": 14,
+                "portion": 1.4
+              },
+              "dinner": {
+                "recipeId": 31,
+                "portion": 1.3
+              }
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 48,
+                "portion": 1.2
+              },
+              "lunch": {
+                "recipeId": 11,
+                "portion": 1.6
+              },
+              "snack": {
+                "recipeId": 42,
+                "portion": 1.2
+              },
+              "dinner": {
+                "recipeId": 28,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 6,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 29,
+                "portion": 1.1
+              },
+              "snack": {
+                "recipeId": 45,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 53,
+                "portion": 1.7
+              }
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 50,
+                "portion": 1.2
+              },
+              "lunch": {
+                "recipeId": 35,
+                "portion": 1.6
+              },
+              "snack": {
+                "recipeId": 16,
+                "portion": 1.2
+              },
+              "dinner": {
+                "recipeId": 40,
+                "portion": 1.4
+              }
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": {
+                "recipeId": 2,
+                "portion": 1.7
+              },
+              "lunch": {
+                "recipeId": 9,
+                "portion": 1.1
+              },
+              "snack": {
+                "recipeId": 41,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 39,
+                "portion": 1.3
+              }
+            }
+          }
+        ]
+      },
+      {
+        "week": 3,
+        "title": "Semaine 3",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 7,
+                "portion": 1.2
+              },
+              "lunch": {
+                "recipeId": 26,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 43,
+                "portion": 1.7
+              },
+              "dinner": {
+                "recipeId": 19,
+                "portion": 1.7
+              }
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 51,
+                "portion": 1.4
+              },
+              "lunch": {
+                "recipeId": 21,
+                "portion": 1.3
+              },
+              "snack": {
+                "recipeId": 14,
+                "portion": 1.3
+              },
+              "dinner": {
+                "recipeId": 17,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 2,
+                "portion": 1.5
+              },
+              "lunch": {
+                "recipeId": 4,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 42,
+                "portion": 1.1
+              },
+              "dinner": {
+                "recipeId": 28,
+                "portion": 1.4
+              }
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 8,
+                "portion": 1.6
+              },
+              "lunch": {
+                "recipeId": 11,
+                "portion": 1.7
+              },
+              "snack": {
+                "recipeId": 45,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 20,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 1,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 35,
+                "portion": 1.3
+              },
+              "snack": {
+                "recipeId": 46,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 53,
+                "portion": 1.7
+              }
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 51,
+                "portion": 1.6
+              },
+              "lunch": {
+                "recipeId": 24,
+                "portion": 1.1
+              },
+              "snack": {
+                "recipeId": 13,
+                "portion": 1.2
+              },
+              "dinner": {
+                "recipeId": 40,
+                "portion": 1.2
+              }
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": {
+                "recipeId": 49,
+                "portion": 1.4
+              },
+              "lunch": {
+                "recipeId": 12,
+                "portion": 1.1
+              },
+              "snack": {
+                "recipeId": 43,
+                "portion": 1.6
+              },
+              "dinner": {
+                "recipeId": 39,
+                "portion": 1.2
+              }
+            }
+          }
+        ]
+      },
+      {
+        "week": 4,
+        "title": "Semaine 4",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 52,
+                "portion": 1.3
+              },
+              "lunch": {
+                "recipeId": 22,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 43,
+                "portion": 1.6
+              },
+              "dinner": {
+                "recipeId": 19,
+                "portion": 1.6
+              }
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 51,
+                "portion": 1.7
+              },
+              "lunch": {
+                "recipeId": 30,
+                "portion": 1.2
+              },
+              "snack": {
+                "recipeId": 14,
+                "portion": 1.2
+              },
+              "dinner": {
+                "recipeId": 37,
+                "portion": 1.1
+              }
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 47,
+                "portion": 1.4
+              },
+              "lunch": {
+                "recipeId": 21,
+                "portion": 1.3
+              },
+              "snack": {
+                "recipeId": 45,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 31,
+                "portion": 1.1
+              }
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 2,
+                "portion": 1.5
+              },
+              "lunch": {
+                "recipeId": 11,
+                "portion": 1.6
+              },
+              "snack": {
+                "recipeId": 44,
+                "portion": 1.1
+              },
+              "dinner": {
+                "recipeId": 23,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 6,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 35,
+                "portion": 1.7
+              },
+              "snack": {
+                "recipeId": 42,
+                "portion": 1.6
+              },
+              "dinner": {
+                "recipeId": 5,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 49,
+                "portion": 1.2
+              },
+              "lunch": {
+                "recipeId": 26,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 16,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 53,
+                "portion": 1.6
+              }
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": {
+                "recipeId": 50,
+                "portion": 1.5
+              },
+              "lunch": {
+                "recipeId": 35,
+                "portion": 1.7
+              },
+              "snack": {
+                "recipeId": 46,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 28,
+                "portion": 1.0
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "2000-2050",
+    "title": "Programme Hana Fit 2000–2050 kcal",
+    "emoji": "✨",
+    "goal": "Progression calorique",
+    "durationWeeks": 4,
+    "daysPerWeek": 7,
+    "targets": {
+      "caloriesMin": 2000,
+      "caloriesMax": 2050,
+      "protein": 110
+    },
+    "weeks": [
+      {
+        "week": 1,
+        "title": "Semaine 1",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 2,
+                "portion": 1.6
+              },
+              "lunch": {
+                "recipeId": 35,
+                "portion": 1.1
+              },
+              "snack": {
+                "recipeId": 14,
+                "portion": 1.7
+              },
+              "dinner": {
+                "recipeId": 18,
+                "portion": 1.4
+              }
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 51,
+                "portion": 1.1
+              },
+              "lunch": {
+                "recipeId": 11,
+                "portion": 1.5
+              },
+              "snack": {
+                "recipeId": 15,
+                "portion": 1.2
+              },
+              "dinner": {
+                "recipeId": 53,
+                "portion": 1.7
+              }
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 7,
+                "portion": 1.6
+              },
+              "lunch": {
+                "recipeId": 21,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 43,
+                "portion": 1.5
+              },
+              "dinner": {
+                "recipeId": 19,
+                "portion": 1.5
+              }
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 49,
+                "portion": 1.3
+              },
+              "lunch": {
+                "recipeId": 11,
+                "portion": 1.5
+              },
+              "snack": {
+                "recipeId": 42,
+                "portion": 1.4
+              },
+              "dinner": {
+                "recipeId": 28,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 52,
+                "portion": 1.1
+              },
+              "lunch": {
+                "recipeId": 35,
+                "portion": 1.4
+              },
+              "snack": {
+                "recipeId": 45,
+                "portion": 1.6
+              },
+              "dinner": {
+                "recipeId": 40,
+                "portion": 1.5
+              }
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 8,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 35,
+                "portion": 1.5
+              },
+              "snack": {
+                "recipeId": 16,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 39,
+                "portion": 1.7
+              }
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": {
+                "recipeId": 51,
+                "portion": 1.5
+              },
+              "lunch": {
+                "recipeId": 24,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 43,
+                "portion": 1.7
+              },
+              "dinner": {
+                "recipeId": 31,
+                "portion": 1.6
+              }
+            }
+          }
+        ]
+      },
+      {
+        "week": 2,
+        "title": "Semaine 2",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 2,
+                "portion": 1.7
+              },
+              "lunch": {
+                "recipeId": 29,
+                "portion": 1.3
+              },
+              "snack": {
+                "recipeId": 42,
+                "portion": 1.1
+              },
+              "dinner": {
+                "recipeId": 19,
+                "portion": 1.3
+              }
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 49,
+                "portion": 1.5
+              },
+              "lunch": {
+                "recipeId": 21,
+                "portion": 1.1
+              },
+              "snack": {
+                "recipeId": 45,
+                "portion": 1.3
+              },
+              "dinner": {
+                "recipeId": 53,
+                "portion": 1.1
+              }
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 47,
+                "portion": 1.6
+              },
+              "lunch": {
+                "recipeId": 11,
+                "portion": 1.1
+              },
+              "snack": {
+                "recipeId": 43,
+                "portion": 1.7
+              },
+              "dinner": {
+                "recipeId": 39,
+                "portion": 1.3
+              }
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 51,
+                "portion": 1.3
+              },
+              "lunch": {
+                "recipeId": 10,
+                "portion": 1.1
+              },
+              "snack": {
+                "recipeId": 14,
+                "portion": 1.3
+              },
+              "dinner": {
+                "recipeId": 28,
+                "portion": 1.6
+              }
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 8,
+                "portion": 1.4
+              },
+              "lunch": {
+                "recipeId": 35,
+                "portion": 1.5
+              },
+              "snack": {
+                "recipeId": 41,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 19,
+                "portion": 1.6
+              }
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 51,
+                "portion": 1.8
+              },
+              "lunch": {
+                "recipeId": 12,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 46,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 40,
+                "portion": 1.5
+              }
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": {
+                "recipeId": 50,
+                "portion": 1.1
+              },
+              "lunch": {
+                "recipeId": 11,
+                "portion": 1.8
+              },
+              "snack": {
+                "recipeId": 13,
+                "portion": 1.2
+              },
+              "dinner": {
+                "recipeId": 19,
+                "portion": 1.7
+              }
+            }
+          }
+        ]
+      },
+      {
+        "week": 3,
+        "title": "Semaine 3",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 2,
+                "portion": 1.6
+              },
+              "lunch": {
+                "recipeId": 30,
+                "portion": 1.3
+              },
+              "snack": {
+                "recipeId": 42,
+                "portion": 1.1
+              },
+              "dinner": {
+                "recipeId": 53,
+                "portion": 1.2
+              }
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 49,
+                "portion": 1.0
+              },
+              "lunch": {
+                "recipeId": 21,
+                "portion": 1.5
+              },
+              "snack": {
+                "recipeId": 14,
+                "portion": 1.6
+              },
+              "dinner": {
+                "recipeId": 20,
+                "portion": 1.1
+              }
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 1,
+                "portion": 1.3
+              },
+              "lunch": {
+                "recipeId": 9,
+                "portion": 1.1
+              },
+              "snack": {
+                "recipeId": 43,
+                "portion": 1.7
+              },
+              "dinner": {
+                "recipeId": 19,
+                "portion": 1.9
+              }
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 47,
+                "portion": 1.6
+              },
+              "lunch": {
+                "recipeId": 11,
+                "portion": 1.1
+              },
+              "snack": {
+                "recipeId": 45,
+                "portion": 1.5
+              },
+              "dinner": {
+                "recipeId": 39,
+                "portion": 1.3
+              }
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 51,
+                "portion": 1.4
+              },
+              "lunch": {
+                "recipeId": 22,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 16,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 28,
+                "portion": 1.5
+              }
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 7,
+                "portion": 1.3
+              },
+              "lunch": {
+                "recipeId": 35,
+                "portion": 1.3
+              },
+              "snack": {
+                "recipeId": 14,
+                "portion": 1.4
+              },
+              "dinner": {
+                "recipeId": 40,
+                "portion": 1.6
+              }
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": {
+                "recipeId": 2,
+                "portion": 1.7
+              },
+              "lunch": {
+                "recipeId": 26,
+                "portion": 1.1
+              },
+              "snack": {
+                "recipeId": 43,
+                "portion": 1.7
+              },
+              "dinner": {
+                "recipeId": 18,
+                "portion": 1.2
+              }
+            }
+          }
+        ]
+      },
+      {
+        "week": 4,
+        "title": "Semaine 4",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 1,
+                "portion": 1.1
+              },
+              "lunch": {
+                "recipeId": 32,
+                "portion": 1.1
+              },
+              "snack": {
+                "recipeId": 42,
+                "portion": 1.8
+              },
+              "dinner": {
+                "recipeId": 53,
+                "portion": 1.8
+              }
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 51,
+                "portion": 1.6
+              },
+              "lunch": {
+                "recipeId": 21,
+                "portion": 1.2
+              },
+              "snack": {
+                "recipeId": 45,
+                "portion": 1.4
+              },
+              "dinner": {
+                "recipeId": 23,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 2,
+                "portion": 1.7
+              },
+              "lunch": {
+                "recipeId": 11,
+                "portion": 1.3
+              },
+              "snack": {
+                "recipeId": 46,
+                "portion": 1.0
+              },
+              "dinner": {
+                "recipeId": 17,
+                "portion": 1.4
+              }
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 6,
+                "portion": 1.3
+              },
+              "lunch": {
+                "recipeId": 35,
+                "portion": 1.4
+              },
+              "snack": {
+                "recipeId": 43,
+                "portion": 1.9
+              },
+              "dinner": {
+                "recipeId": 31,
+                "portion": 1.5
+              }
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 8,
+                "portion": 1.2
+              },
+              "lunch": {
+                "recipeId": 22,
+                "portion": 1.2
+              },
+              "snack": {
+                "recipeId": 14,
+                "portion": 1.4
+              },
+              "dinner": {
+                "recipeId": 19,
+                "portion": 1.8
+              }
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": {
+                "recipeId": 7,
+                "portion": 1.4
+              },
+              "lunch": {
+                "recipeId": 11,
+                "portion": 1.7
+              },
+              "snack": {
+                "recipeId": 41,
+                "portion": 1.2
+              },
+              "dinner": {
+                "recipeId": 28,
+                "portion": 1.0
+              }
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": {
+                "recipeId": 2,
+                "portion": 1.5
+              },
+              "lunch": {
+                "recipeId": 12,
+                "portion": 1.0
+              },
+              "snack": {
+                "recipeId": 16,
+                "portion": 1.4
+              },
+              "dinner": {
+                "recipeId": 40,
+                "portion": 1.7
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

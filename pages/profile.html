@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#2563eb">
+    <title>Profil & paramètres — Hana Fit</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        .profile-page {
+            width: min(calc(100% - 28px), 950px);
+            margin: 0 auto;
+            padding: 28px 0 120px;
+        }
+
+        .page-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 22px;
+        }
+
+        .back-button {
+            width: 46px;
+            height: 46px;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+            border: 1px solid #dbeafe;
+            border-radius: 15px;
+            background: rgba(255,255,255,.92);
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 800;
+            box-shadow: 0 12px 30px rgba(37,99,235,.12);
+        }
+
+        .page-header h1 {
+            margin: 4px 0;
+            font-size: clamp(30px, 7vw, 42px);
+        }
+
+        .page-subtitle {
+            margin: 0;
+            color: #64748b;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .profile-card {
+            padding: 24px;
+            border: 1px solid rgba(255,255,255,.96);
+            border-radius: 26px;
+            background: rgba(255,255,255,.92);
+            box-shadow: 0 18px 45px rgba(37,99,235,.11);
+        }
+
+        .profile-card.full {
+            grid-column: 1 / -1;
+        }
+
+        .card-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .card-heading h2 {
+            margin: 0;
+            font-size: 22px;
+        }
+
+        .card-heading p {
+            margin: 5px 0 0;
+            color: #64748b;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .card-icon {
+            font-size: 29px;
+        }
+
+        .profile-summary {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .profile-avatar {
+            width: 72px;
+            height: 72px;
+            display: grid;
+            place-items: center;
+            border-radius: 22px;
+            background: linear-gradient(135deg,#dbeafe,#eff6ff);
+            color: #1d4ed8;
+            font-size: 34px;
+            font-weight: 900;
+        }
+
+        .profile-summary h3 {
+            margin: 0;
+            color: #172554;
+            font-size: 22px;
+        }
+
+        .profile-summary p {
+            margin: 5px 0 0;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        .settings-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .field-label {
+            display: block;
+            color: #1e293b;
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .field-full {
+            grid-column: 1 / -1;
+        }
+
+        .field-label input,
+        .field-label select {
+            width: 100%;
+            margin-top: 7px;
+            padding: 13px 14px;
+            border: 1px solid #bfdbfe;
+            border-radius: 14px;
+            background: #f8fbff;
+            color: #1e293b;
+            font: inherit;
+        }
+
+        .field-label input:focus,
+        .field-label select:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 4px rgba(37,99,235,.1);
+        }
+
+        .primary-button,
+        .secondary-button,
+        .danger-button,
+        .file-button {
+            width: 100%;
+            min-height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border: 0;
+            border-radius: 15px;
+            cursor: pointer;
+            font: inherit;
+            font-weight: 850;
+            text-decoration: none;
+        }
+
+        .primary-button {
+            margin-top: 14px;
+            background: linear-gradient(135deg,#2563eb,#60a5fa);
+            color: white;
+            box-shadow: 0 14px 28px rgba(37,99,235,.20);
+        }
+
+        .secondary-button {
+            background: #eff6ff;
+            color: #2563eb;
+        }
+
+        .danger-button {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+
+
+        .backup-reminder {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            padding: 14px 15px;
+            border: 1px solid #bfdbfe;
+            border-radius: 16px;
+            background: #eff6ff;
+            color: #1e3a8a;
+        }
+
+        .backup-reminder-icon {
+            flex-shrink: 0;
+            font-size: 22px;
+            line-height: 1;
+        }
+
+        .backup-reminder strong {
+            display: block;
+            margin-bottom: 4px;
+            color: #172554;
+            font-size: 14px;
+        }
+
+        .backup-reminder p {
+            margin: 0;
+            color: #475569;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .backup-reminder.good {
+            border-color: #bbf7d0;
+            background: #f0fdf4;
+        }
+
+        .backup-reminder.warning {
+            border-color: #fde68a;
+            background: #fffbeb;
+        }
+
+        .backup-reminder.alert {
+            border-color: #fecaca;
+            background: #fff7f7;
+        }
+
+        .backup-actions {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .backup-option {
+            padding: 16px;
+            border: 1px solid #dbeafe;
+            border-radius: 18px;
+            background: #f8fbff;
+        }
+
+        .backup-option h3 {
+            margin: 0 0 6px;
+            color: #172554;
+            font-size: 16px;
+        }
+
+        .backup-option p {
+            margin: 0 0 13px;
+            color: #64748b;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .restore-box {
+            margin-top: 14px;
+            padding: 16px;
+            border: 1px dashed #93c5fd;
+            border-radius: 18px;
+            background: #eff6ff;
+        }
+
+        .restore-box strong {
+            display: block;
+            color: #172554;
+            margin-bottom: 6px;
+        }
+
+        .restore-box p {
+            margin: 0 0 12px;
+            color: #64748b;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .file-button {
+            position: relative;
+            overflow: hidden;
+            background: #ffffff;
+            color: #2563eb;
+            border: 1px solid #bfdbfe;
+        }
+
+        .file-button input {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .privacy-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .privacy-line {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            padding: 12px 13px;
+            border-radius: 14px;
+            background: #f8fbff;
+            color: #475569;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .privacy-line span {
+            flex-shrink: 0;
+        }
+
+        .storage-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .storage-stat {
+            padding: 14px;
+            border-radius: 16px;
+            background: #f8fbff;
+            border: 1px solid #dbeafe;
+        }
+
+        .storage-stat span {
+            display: block;
+            color: #64748b;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .storage-stat strong {
+            display: block;
+            margin-top: 6px;
+            color: #0d47a1;
+            font-size: 20px;
+        }
+
+        .danger-zone {
+            padding: 16px;
+            border: 1px solid #fecaca;
+            border-radius: 18px;
+            background: #fff7f7;
+        }
+
+        .danger-zone h3 {
+            margin: 0 0 6px;
+            color: #991b1b;
+            font-size: 16px;
+        }
+
+        .danger-zone p {
+            margin: 0 0 13px;
+            color: #7f1d1d;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .status-message {
+            display: none;
+            margin-top: 14px;
+            padding: 13px 14px;
+            border-radius: 14px;
+            background: #dcfce7;
+            color: #166534;
+            text-align: center;
+            font-weight: 800;
+            font-size: 13px;
+        }
+
+        @media (max-width: 760px) {
+            .profile-grid,
+            .settings-grid,
+            .backup-actions {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-card.full,
+            .field-full {
+                grid-column: 1;
+            }
+
+            .storage-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<main class="profile-page">
+
+    <header class="page-header">
+        <a href="../index.html" class="back-button" aria-label="Retour à l'accueil">←</a>
+
+        <div>
+            <p class="section-label">MON ESPACE</p>
+            <h1>👤 Profil & paramètres</h1>
+            <p class="page-subtitle">
+                Tes objectifs, tes sauvegardes et la confidentialité de Hana Fit.
+            </p>
+        </div>
+    </header>
+
+    <div class="profile-grid">
+
+        <section class="profile-card">
+            <div class="card-heading">
+                <div>
+                    <h2>Mon profil</h2>
+                    <p>Les informations utilisées par Hana Fit.</p>
+                </div>
+                <span class="card-icon">🌸</span>
+            </div>
+
+            <div class="profile-summary">
+                <div class="profile-avatar">H</div>
+
+                <div>
+                    <h3 id="profileDisplayName">Hana</h3>
+                    <p id="profileDisplayDetails">Profil Hana Fit</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="profile-card">
+            <div class="card-heading">
+                <div>
+                    <h2>Mes objectifs</h2>
+                    <p>Ajuste les repères utilisés dans l'application.</p>
+                </div>
+                <span class="card-icon">🎯</span>
+            </div>
+
+            <div class="settings-grid">
+                <label class="field-label">
+                    Prénom / pseudo
+                    <input type="text" id="profileNickname" placeholder="Hana">
+                </label>
+
+                <label class="field-label">
+                    Taille (cm)
+                    <input type="number" id="profileHeight" min="100" max="230" step="1">
+                </label>
+
+                <label class="field-label">
+                    Objectif de poids (kg)
+                    <input type="number" id="profileGoalWeight" min="30" max="250" step="0.1">
+                </label>
+
+                <label class="field-label">
+                    Objectif de pas
+                    <input type="number" id="profileStepsGoal" min="0" step="500">
+                </label>
+
+                <label class="field-label">
+                    Objectif eau (L)
+                    <input type="number" id="profileWaterGoal" min="0" step="0.1">
+                </label>
+
+                <label class="field-label">
+                    Objectif protéines (g)
+                    <input type="number" id="profileProteinGoal" min="0" step="1">
+                </label>
+            </div>
+
+            <button type="button" id="saveProfileButton" class="primary-button">
+                ✓ Enregistrer mes paramètres
+            </button>
+        </section>
+
+        <section class="profile-card full">
+            <div class="card-heading">
+                <div>
+                    <h2>💾 Sauvegarde & restauration</h2>
+                    <p>
+                        Crée une copie de tes données avant un changement de téléphone
+                        ou une réinitialisation du navigateur.
+                    </p>
+                </div>
+                <span class="card-icon">☁️</span>
+            </div>
+
+
+            <div
+                id="backupReminder"
+                class="backup-reminder"
+            >
+                <span
+                    id="backupReminderIcon"
+                    class="backup-reminder-icon"
+                >
+                    💾
+                </span>
+
+                <div>
+                    <strong id="backupReminderTitle">
+                        Vérification de ta sauvegarde…
+                    </strong>
+
+                    <p id="backupReminderText">
+                        Hana Fit regarde quand ta dernière sauvegarde a été créée.
+                    </p>
+                </div>
+            </div>
+
+            <div class="backup-actions">
+                <article class="backup-option">
+                    <h3>📦 Sauvegarde légère</h3>
+                    <p>
+                        Poids, mensurations, nutrition, bien-être, entraînements,
+                        modèles de séances et paramètres. Sans les photos.
+                    </p>
+
+                    <button type="button" id="exportDataButton" class="secondary-button">
+                        Exporter mes données
+                    </button>
+                </article>
+
+                <article class="backup-option">
+                    <h3>📸 Sauvegarde complète</h3>
+                    <p>
+                        Toutes les données Hana Fit + les photos de progression privées.
+                        Le fichier sera naturellement plus volumineux.
+                    </p>
+
+                    <button type="button" id="exportFullBackupButton" class="secondary-button">
+                        Exporter avec mes photos
+                    </button>
+                </article>
+            </div>
+
+            <div class="restore-box">
+                <strong>↩️ Restaurer une sauvegarde</strong>
+
+                <p>
+                    Sélectionne un fichier de sauvegarde Hana Fit créé précédemment.
+                    Les données du fichier seront réimportées sur cet appareil.
+                </p>
+
+                <label class="file-button">
+                    📂 Choisir une sauvegarde
+                    <input type="file" id="restoreFileInput" accept=".json,application/json">
+                </label>
+            </div>
+
+            <p id="backupStatus" class="status-message"></p>
+        </section>
+
+        <section class="profile-card">
+            <div class="card-heading">
+                <div>
+                    <h2>Stockage local</h2>
+                    <p>Un aperçu des données conservées sur cet appareil.</p>
+                </div>
+                <span class="card-icon">📱</span>
+            </div>
+
+            <div class="storage-stats">
+                <article class="storage-stat">
+                    <span>DONNÉES</span>
+                    <strong id="storageDataCount">—</strong>
+                </article>
+
+                <article class="storage-stat">
+                    <span>PHOTOS</span>
+                    <strong id="storagePhotoCount">—</strong>
+                </article>
+
+                <article class="storage-stat">
+                    <span>SAUVEGARDE</span>
+                    <strong id="lastBackupDate">—</strong>
+                </article>
+            </div>
+        </section>
+
+        <section class="profile-card">
+            <div class="card-heading">
+                <div>
+                    <h2>🔒 Confidentialité</h2>
+                    <p>Comment Hana Fit conserve tes informations personnelles.</p>
+                </div>
+                <span class="card-icon">🛡️</span>
+            </div>
+
+            <div class="privacy-list">
+                <div class="privacy-line">
+                    <span>📱</span>
+                    <div>
+                        Tes données personnelles sont stockées localement dans le navigateur
+                        de ton appareil.
+                    </div>
+                </div>
+
+                <div class="privacy-line">
+                    <span>📸</span>
+                    <div>
+                        Tes photos de progression sont conservées dans IndexedDB
+                        et ne sont pas ajoutées au dépôt GitHub public.
+                    </div>
+                </div>
+
+                <div class="privacy-line">
+                    <span>⚠️</span>
+                    <div>
+                        Effacer les données du site ou réinitialiser le navigateur peut supprimer
+                        ces informations locales. Une sauvegarde régulière est donc recommandée.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="profile-card full">
+            <div class="danger-zone">
+                <h3>🗑️ Zone sensible</h3>
+
+                <p>
+                    Cette action supprimera les données Hana Fit enregistrées localement
+                    sur cet appareil. Une confirmation sera toujours demandée avant suppression.
+                </p>
+
+                <button type="button" id="deleteLocalDataButton" class="danger-button">
+                    Supprimer mes données locales
+                </button>
+            </div>
+        </section>
+
+    </div>
+
+</main>
+
+<script src="../assets/js/profile.js"></script>
+
+</body>
+</html>

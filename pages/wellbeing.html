@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#2563eb">
+
+    <title>Bien-être — Hana Fit</title>
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
+
+    <style>
+        .wellbeing-page {
+            width: min(calc(100% - 28px), 950px);
+            margin: 0 auto;
+            padding: 28px 0 120px;
+        }
+
+        .page-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 22px;
+        }
+
+        .back-button {
+            width: 46px;
+            height: 46px;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+            border: 1px solid #dbeafe;
+            border-radius: 15px;
+            background: rgba(255,255,255,.92);
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 800;
+            box-shadow: 0 12px 30px rgba(37,99,235,.12);
+        }
+
+        .page-header h1 {
+            margin: 4px 0;
+            font-size: clamp(30px,7vw,42px);
+        }
+
+        .page-subtitle {
+            margin: 0;
+            color: #64748b;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .summary-card,
+        .wellbeing-card {
+            border: 1px solid rgba(255,255,255,.96);
+            background: rgba(255,255,255,.92);
+            box-shadow: 0 18px 45px rgba(37,99,235,.11);
+        }
+
+        .summary-card {
+            padding: 18px;
+            border-radius: 21px;
+        }
+
+        .summary-card span {
+            display: block;
+            font-size: 24px;
+        }
+
+        .summary-card p {
+            margin: 8px 0 4px;
+            color: #64748b;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+        }
+
+        .summary-card strong {
+            color: #0d47a1;
+            font-size: 21px;
+        }
+
+        .wellbeing-form,
+        .dashboard-stack {
+            display: grid;
+            gap: 18px;
+        }
+
+        .wellbeing-card {
+            padding: 24px;
+            border-radius: 26px;
+        }
+
+        .card-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .card-title-main {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .card-title-main > span {
+            font-size: 28px;
+        }
+
+        .card-title h2 {
+            margin: 0;
+            font-size: 22px;
+        }
+
+        .card-title p {
+            margin: 5px 0 0;
+            color: #64748b;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .date-row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 10px;
+            align-items: end;
+        }
+
+        .field-grid {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 14px;
+        }
+
+        .field-label {
+            display: block;
+            color: #1e293b;
+            font-size: 14px;
+            font-weight: 750;
+        }
+
+        input[type="date"],
+        input[type="time"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            margin-top: 8px;
+            padding: 14px 15px;
+            border: 1px solid #bfdbfe;
+            border-radius: 15px;
+            background: #f8fbff;
+            color: #1e293b;
+            font: inherit;
+            outline: none;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 4px rgba(37,99,235,.10);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .small-button {
+            min-height: 48px;
+            padding: 0 16px;
+            border: 0;
+            border-radius: 15px;
+            background: #eff6ff;
+            color: #2563eb;
+            cursor: pointer;
+            font: inherit;
+            font-weight: 850;
+            white-space: nowrap;
+        }
+
+        .choice-grid {
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            gap: 10px;
+        }
+
+        .choice-option {
+            position: relative;
+        }
+
+        .choice-option input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .choice-option span {
+            min-height: 78px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            padding: 10px;
+            border: 1px solid #dbeafe;
+            border-radius: 16px;
+            background: #f8fbff;
+            color: #64748b;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 750;
+            cursor: pointer;
+            transition: .18s ease;
+        }
+
+        .choice-option span strong {
+            font-size: 25px;
+        }
+
+        .choice-option span:hover {
+            transform: translateY(-2px);
+            border-color: #60a5fa;
+        }
+
+        .choice-option input:checked + span {
+            border-color: #2563eb;
+            background: #dbeafe;
+            color: #0d47a1;
+            box-shadow: 0 10px 24px rgba(37,99,235,.14);
+        }
+
+        .three-options {
+            grid-template-columns: repeat(3,1fr);
+        }
+
+
+        .symptom-note {
+            margin: 14px 0 0;
+            padding: 11px 13px;
+            border-radius: 14px;
+            background: #f8fbff;
+            color: #64748b;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 10px;
+        }
+
+        .pain-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 13px 14px;
+            border: 1px solid #dbeafe;
+            border-radius: 15px;
+            background: #f8fbff;
+            cursor: pointer;
+        }
+
+        .pain-option input {
+            width: 20px;
+            height: 20px;
+            accent-color: #2563eb;
+        }
+
+        .range-block + .range-block {
+            margin-top: 18px;
+        }
+
+        .range-heading {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .range-heading strong {
+            font-size: 14px;
+        }
+
+        .range-heading span {
+            min-width: 62px;
+            padding: 8px 10px;
+            border-radius: 13px;
+            background: #dbeafe;
+            color: #0d47a1;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        .range-block input {
+            width: 100%;
+            accent-color: #2563eb;
+        }
+
+
+        .nap-box {
+            margin-top: 16px;
+            padding: 14px;
+            border: 1px solid #dbeafe;
+            border-radius: 16px;
+            background: #f8fbff;
+        }
+
+        .nap-toggle {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #1e293b;
+            font-size: 14px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .nap-toggle input {
+            width: 20px;
+            height: 20px;
+            accent-color: #2563eb;
+        }
+
+        .nap-duration {
+            margin-top: 12px;
+        }
+
+        .nap-duration[hidden] {
+            display: none;
+        }
+
+        .sleep-result {
+            margin-top: 14px;
+            padding: 12px 14px;
+            border-radius: 14px;
+            background: #eff6ff;
+            color: #475569;
+            font-size: 12px;
+        }
+
+        .save-button {
+            width: 100%;
+            padding: 16px 22px;
+            border: 0;
+            border-radius: 17px;
+            background: linear-gradient(135deg,#2563eb,#60a5fa);
+            color: white;
+            font-size: 16px;
+            font-weight: 850;
+            cursor: pointer;
+            box-shadow: 0 16px 30px rgba(37,99,235,.25);
+        }
+
+        .save-message {
+            display: none;
+            margin: 14px 0 0;
+            padding: 14px;
+            border-radius: 15px;
+            background: #dcfce7;
+            color: #166534;
+            text-align: center;
+            font-weight: 750;
+        }
+
+        .period-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .period-row select {
+            width: auto;
+            min-width: 140px;
+            margin: 0;
+        }
+
+        .trend-stats {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .trend-stat {
+            padding: 14px;
+            border: 1px solid #dbeafe;
+            border-radius: 16px;
+            background: #f8fbff;
+        }
+
+        .trend-stat span {
+            display: block;
+            color: #64748b;
+            font-size: 10px;
+            font-weight: 850;
+            text-transform: uppercase;
+        }
+
+        .trend-stat strong {
+            display: block;
+            margin-top: 6px;
+            color: #0d47a1;
+            font-size: 18px;
+        }
+
+        .trend-chart {
+            min-height: 250px;
+            padding: 12px;
+            border: 1px solid #dbeafe;
+            border-radius: 18px;
+            background: #f8fbff;
+        }
+
+        .trend-chart svg {
+            width: 100%;
+            min-height: 225px;
+            display: block;
+        }
+
+        .empty-message {
+            margin: 0;
+            padding: 24px;
+            color: #64748b;
+            text-align: center;
+        }
+
+        .insight-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .insight-item {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            padding: 13px 14px;
+            border-radius: 15px;
+            background: #eff6ff;
+            color: #475569;
+            font-size: 12px;
+            line-height: 1.55;
+        }
+
+        .history-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .history-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 12px;
+            align-items: center;
+            padding: 14px;
+            border: 1px solid #dbeafe;
+            border-radius: 17px;
+            background: #f8fbff;
+        }
+
+        .history-item h3 {
+            margin: 0;
+            color: #172554;
+            font-size: 15px;
+        }
+
+        .history-item p {
+            margin: 5px 0 0;
+            color: #64748b;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .history-actions {
+            display: flex;
+            gap: 7px;
+        }
+
+        .history-actions button {
+            min-height: 38px;
+            padding: 0 11px;
+            border: 0;
+            border-radius: 11px;
+            cursor: pointer;
+            font: inherit;
+            font-size: 11px;
+            font-weight: 850;
+        }
+
+        .edit-entry {
+            background: #eff6ff;
+            color: #2563eb;
+        }
+
+        .delete-entry {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+
+        .score-note {
+            margin: 12px 0 0;
+            color: #64748b;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 800px) {
+            .summary-grid,
+            .trend-stats {
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .field-grid,
+            .date-row {
+                grid-template-columns: 1fr;
+            }
+
+            .choice-grid {
+                grid-template-columns: repeat(3,1fr);
+            }
+
+            .three-options {
+                grid-template-columns: 1fr;
+            }
+
+            .pain-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .wellbeing-card {
+                padding: 19px;
+            }
+
+            .period-row {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .period-row select {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 440px) {
+            .summary-grid,
+            .trend-stats,
+            .pain-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .choice-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .history-item {
+                grid-template-columns: 1fr;
+            }
+
+            .history-actions {
+                width: 100%;
+            }
+
+            .history-actions button {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<main class="wellbeing-page">
+
+    <header class="page-header">
+
+        <a
+            href="../index.html"
+            class="back-button"
+            aria-label="Retour à l'accueil"
+        >
+            ←
+        </a>
+
+        <div>
+            <p class="section-label">JOURNAL BIEN-ÊTRE</p>
+
+            <h1>🌿 Bien-être</h1>
+
+            <p class="page-subtitle">
+                Écoute ton corps, observe tes tendances et garde des repères utiles.
+            </p>
+        </div>
+
+    </header>
+
+
+    <section class="summary-grid">
+
+        <article class="summary-card">
+            <span>🌿</span>
+            <p>Repère du jour</p>
+            <strong id="todayWellbeingScore">—</strong>
+        </article>
+
+        <article class="summary-card">
+            <span>😴</span>
+            <p>Sommeil</p>
+            <strong id="todaySleepDuration">—</strong>
+        </article>
+
+        <article class="summary-card">
+            <span>⚡</span>
+            <p>Énergie</p>
+            <strong id="todayEnergy">—</strong>
+        </article>
+
+        <article class="summary-card">
+            <span>🧠</span>
+            <p>Stress</p>
+            <strong id="todayStress">—</strong>
+        </article>
+
+    </section>
+
+
+    <div class="dashboard-stack">
+
+        <form
+            id="wellbeingForm"
+            class="wellbeing-form"
+        >
+
+            <section class="wellbeing-card">
+
+                <div class="card-title">
+
+                    <div class="card-title-main">
+                        <span>📅</span>
+
+                        <div>
+                            <h2>Jour suivi</h2>
+                            <p>
+                                Tu peux aussi compléter ou corriger une journée passée.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="date-row">
+
+                    <label class="field-label">
+                        Date
+
+                        <input
+                            type="date"
+                            id="wellbeingDate"
+                            required
+                        >
+                    </label>
+
+                    <button
+                        type="button"
+                        id="todayButton"
+                        class="small-button"
+                    >
+                        Aujourd'hui
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <section class="wellbeing-card">
+
+                <div class="card-title">
+
+                    <div class="card-title-main">
+                        <span>😴</span>
+
+                        <div>
+                            <h2>Sommeil</h2>
+                            <p>
+                                Horaires, qualité et réveils nocturnes.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="field-grid">
+
+                    <label class="field-label">
+                        Heure du coucher
+
+                        <input
+                            type="time"
+                            id="bedtime"
+                        >
+                    </label>
+
+                    <label class="field-label">
+                        Heure du réveil
+
+                        <input
+                            type="time"
+                            id="wakeTime"
+                        >
+                    </label>
+
+                    <label class="field-label">
+                        Réveils nocturnes
+
+                        <input
+                            type="number"
+                            id="nightAwakenings"
+                            min="0"
+                            max="30"
+                            step="1"
+                            placeholder="Ex : 2"
+                        >
+                    </label>
+
+                </div>
+
+                <p
+                    id="sleepDurationPreview"
+                    class="sleep-result"
+                >
+                    Durée estimée : —
+                </p>
+
+                <div class="nap-box">
+
+                    <label class="nap-toggle">
+                        <input
+                            type="checkbox"
+                            id="napTaken"
+                        >
+
+                        💤 J'ai fait une sieste
+                    </label>
+
+                    <div
+                        id="napDurationBox"
+                        class="nap-duration"
+                        hidden
+                    >
+
+                        <label class="field-label">
+                            Durée de la sieste (minutes)
+
+                            <input
+                                type="number"
+                                id="napMinutes"
+                                min="1"
+                                max="300"
+                                step="1"
+                                placeholder="Ex : 30"
+                            >
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <p class="field-label">
+                    Qualité du sommeil
+                </p>
+
+                <div class="choice-grid">
+
+                    <label class="choice-option">
+                        <input type="radio" name="sleepQuality" value="1">
+                        <span><strong>😫</strong>Très mauvaise</span>
+                    </label>
+
+                    <label class="choice-option">
+                        <input type="radio" name="sleepQuality" value="2">
+                        <span><strong>😕</strong>Mauvaise</span>
+                    </label>
+
+                    <label class="choice-option">
+                        <input type="radio" name="sleepQuality" value="3">
+                        <span><strong>😐</strong>Moyenne</span>
+                    </label>
+
+                    <label class="choice-option">
+                        <input type="radio" name="sleepQuality" value="4">
+                        <span><strong>🙂</strong>Bonne</span>
+                    </label>
+
+                    <label class="choice-option">
+                        <input type="radio" name="sleepQuality" value="5">
+                        <span><strong>😴</strong>Excellente</span>
+                    </label>
+
+                </div>
+
+            </section>
+
+
+            <section class="wellbeing-card">
+
+                <div class="card-title">
+
+                    <div class="card-title-main">
+                        <span>😊</span>
+
+                        <div>
+                            <h2>Humeur</h2>
+                            <p>
+                                Ton ressenti général sur la journée.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="choice-grid">
+
+                    <label class="choice-option">
+                        <input type="radio" name="mood" value="tres-bonne">
+                        <span><strong>😄</strong>Très bonne</span>
+                    </label>
+
+                    <label class="choice-option">
+                        <input type="radio" name="mood" value="bonne">
+                        <span><strong>🙂</strong>Bonne</span>
+                    </label>
+
+                    <label class="choice-option">
+                        <input type="radio" name="mood" value="neutre">
+                        <span><strong>😐</strong>Neutre</span>
+                    </label>
+
+                    <label class="choice-option">
+                        <input type="radio" name="mood" value="difficile">
+                        <span><strong>🙁</strong>Difficile</span>
+                    </label>
+
+                    <label class="choice-option">
+                        <input type="radio" name="mood" value="tres-difficile">
+                        <span><strong>😢</strong>Très difficile</span>
+                    </label>
+
+                </div>
+
+            </section>
+
+
+            <section class="wellbeing-card">
+
+                <div class="card-title">
+
+                    <div class="card-title-main">
+                        <span>⚡</span>
+
+                        <div>
+                            <h2>Énergie & stress</h2>
+                            <p>
+                                Deux repères simples de 1 à 10.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="range-block">
+
+                    <div class="range-heading">
+                        <strong>⚡ Niveau d'énergie</strong>
+                        <span id="energyValue">5 / 10</span>
+                    </div>
+
+                    <input
+                        type="range"
+                        id="energy"
+                        min="1"
+                        max="10"
+                        value="5"
+                    >
+
+                </div>
+
+                <div class="range-block">
+
+                    <div class="range-heading">
+                        <strong>🧠 Stress / charge mentale</strong>
+                        <span id="stressValue">5 / 10</span>
+                    </div>
+
+                    <input
+                        type="range"
+                        id="stress"
+                        min="1"
+                        max="10"
+                        value="5"
+                    >
+
+                </div>
+
+            </section>
+
+
+            <section class="wellbeing-card">
+
+                <div class="card-title">
+
+                    <div class="card-title-main">
+                        <span>🚽</span>
+
+                        <div>
+                            <h2>Transit</h2>
+                            <p>
+                                Un repère simple pour suivre ta régularité.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="choice-grid three-options">
+
+                    <label class="choice-option">
+                        <input type="radio" name="transit" value="non">
+                        <span><strong>❌</strong>Pas aujourd'hui</span>
+                    </label>
+
+                    <label class="choice-option">
+                        <input type="radio" name="transit" value="normal">
+                        <span><strong>✅</strong>Oui, normal</span>
+                    </label>
+
+                    <label class="choice-option">
+                        <input type="radio" name="transit" value="difficile">
+                        <span><strong>😣</strong>Oui, difficile</span>
+                    </label>
+
+                </div>
+
+            </section>
+
+
+            <section class="wellbeing-card">
+
+                <div class="card-title">
+
+                    <div class="card-title-main">
+                        <span>💧</span>
+
+                        <div>
+                            <h2>Ballonnements & rétention</h2>
+                            <p>
+                                Deux sensations séparées pour mieux repérer les tendances.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <p class="field-label">
+                    Ballonnements
+                </p>
+
+                <div class="choice-grid three-options">
+
+                    <label class="choice-option">
+                        <input type="radio" name="bloating" value="aucun">
+                        <span><strong>😊</strong>Aucun</span>
+                    </label>
+
+                    <label class="choice-option">
+                        <input type="radio" name="bloating" value="leger">
+                        <span><strong>🙂</strong>Léger</span>
+                    </label>
+
+                    <label class="choice-option">
+                        <input type="radio" name="bloating" value="important">
+                        <span><strong>😣</strong>Important</span>
+                    </label>
+
+                </div>
+
+                <p
+                    class="field-label"
+                    style="margin-top:18px;"
+                >
+                    Rétention / gonflement
+                </p>
+
+                <div class="choice-grid three-options">
+
+                    <label class="choice-option">
+                        <input type="radio" name="retention" value="aucune">
+                        <span><strong>✨</strong>Aucune</span>
+                    </label>
+
+                    <label class="choice-option">
+                        <input type="radio" name="retention" value="legere">
+                        <span><strong>💧</strong>Légère</span>
+                    </label>
+
+                    <label class="choice-option">
+                        <input type="radio" name="retention" value="importante">
+                        <span><strong>🌊</strong>Importante</span>
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <section class="wellbeing-card">
+
+                <div class="card-title">
+
+                    <div class="card-title-main">
+                        <span>🌙</span>
+
+                        <div>
+                            <h2>Saignements & symptômes hormonaux</h2>
+                            <p>
+                                Un suivi facultatif pour repérer les périodes de spotting ou d'inconfort.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <p class="field-label">
+                    Spotting / saignements
+                </p>
+
+                <div class="choice-grid three-options">
+
+                    <label class="choice-option">
+                        <input type="radio" name="spotting" value="aucun">
+                        <span><strong>✨</strong>Aucun</span>
+                    </label>
+
+                    <label class="choice-option">
+                        <input type="radio" name="spotting" value="brun">
+                        <span><strong>🤎</strong>Spotting brun</span>
+                    </label>
+
+                    <label class="choice-option">
+                        <input type="radio" name="spotting" value="rouge">
+                        <span><strong>❤️</strong>Spotting rouge</span>
+                    </label>
+
+                </div>
+
+                <p class="field-label" style="margin-top:18px;">
+                    Crampes / gêne pelvienne
+                </p>
+
+                <div class="choice-grid">
+
+                    <label class="choice-option">
+                        <input type="radio" name="cramps" value="0">
+                        <span><strong>✨</strong>Aucune</span>
+                    </label>
+
+                    <label class="choice-option">
+                        <input type="radio" name="cramps" value="1">
+                        <span><strong>🙂</strong>Très légère</span>
+                    </label>
+
+                    <label class="choice-option">
+                        <input type="radio" name="cramps" value="2">
+                        <span><strong>😐</strong>Légère</span>
+                    </label>
+
+                    <label class="choice-option">
+                        <input type="radio" name="cramps" value="3">
+                        <span><strong>😣</strong>Modérée</span>
+                    </label>
+
+                    <label class="choice-option">
+                        <input type="radio" name="cramps" value="4">
+                        <span><strong>🥴</strong>Importante</span>
+                    </label>
+
+                </div>
+
+                <p class="symptom-note">
+                    Ce suivi sert uniquement à ton journal personnel : Hana Fit ne cherche pas à prédire tes règles ou ton cycle.
+                </p>
+
+            </section>
+
+
+            <section class="wellbeing-card">
+
+                <div class="card-title">
+
+                    <div class="card-title-main">
+                        <span>🤕</span>
+
+                        <div>
+                            <h2>Douleurs / inconforts</h2>
+                            <p>
+                                Tu peux en sélectionner plusieurs.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="pain-grid">
+
+                    <label class="pain-option">
+                        <input type="checkbox" value="tete">
+                        Tête
+                    </label>
+
+                    <label class="pain-option">
+                        <input type="checkbox" value="nuque">
+                        Nuque
+                    </label>
+
+                    <label class="pain-option">
+                        <input type="checkbox" value="dos">
+                        Dos
+                    </label>
+
+                    <label class="pain-option">
+                        <input type="checkbox" value="genou">
+                        Genou
+                    </label>
+
+                    <label class="pain-option">
+                        <input type="checkbox" value="ventre">
+                        Ventre
+                    </label>
+
+                    <label class="pain-option">
+                        <input type="checkbox" value="autre">
+                        Autre
+                    </label>
+
+                </div>
+
+            </section>
+
+
+            <section class="wellbeing-card">
+
+                <div class="card-title">
+
+                    <div class="card-title-main">
+                        <span>📝</span>
+
+                        <div>
+                            <h2>Notes du jour</h2>
+                            <p>
+                                Tout ce qui peut t'aider à remettre la journée dans son contexte.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <label class="field-label">
+                    Comment te sens-tu ?
+
+                    <textarea
+                        id="dailyNotes"
+                        placeholder="Ex : fatigue, stress, séance, restaurant, bonne journée..."
+                    ></textarea>
+                </label>
+
+            </section>
+
+
+            <section class="wellbeing-card">
+
+                <button
+                    type="submit"
+                    class="save-button"
+                >
+                    Enregistrer mon bien-être
+                </button>
+
+                <p
+                    id="saveMessage"
+                    class="save-message"
+                >
+                    ✅ Ton suivi bien-être a été enregistré.
+                </p>
+
+                <p class="score-note">
+                    Le « repère bien-être » est seulement un résumé visuel de tes réponses.
+                    Ce n'est ni une note médicale ni un diagnostic.
+                </p>
+
+            </section>
+
+        </form>
+
+
+        <section class="wellbeing-card">
+
+            <div class="card-title">
+
+                <div class="card-title-main">
+                    <span>📊</span>
+
+                    <div>
+                        <h2>Mes tendances</h2>
+                        <p>
+                            Observe l'évolution de tes journées enregistrées.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="period-row">
+
+                <strong id="trendPeriodTitle">
+                    7 derniers jours
+                </strong>
+
+                <select id="trendPeriod">
+                    <option value="7">7 jours</option>
+                    <option value="30">30 jours</option>
+                </select>
+
+            </div>
+
+            <div class="trend-stats">
+
+                <article class="trend-stat">
+                    <span>Jours suivis</span>
+                    <strong id="trendDaysTracked">0</strong>
+                </article>
+
+                <article class="trend-stat">
+                    <span>Énergie moy.</span>
+                    <strong id="trendAverageEnergy">—</strong>
+                </article>
+
+                <article class="trend-stat">
+                    <span>Stress moy.</span>
+                    <strong id="trendAverageStress">—</strong>
+                </article>
+
+                <article class="trend-stat">
+                    <span>Sommeil moy.</span>
+                    <strong id="trendAverageSleep">—</strong>
+                </article>
+
+            </div>
+
+            <div
+                id="wellbeingTrendChart"
+                class="trend-chart"
+            >
+                <p class="empty-message">
+                    Enregistre quelques journées pour afficher ta courbe.
+                </p>
+            </div>
+
+        </section>
+
+
+        <section class="wellbeing-card">
+
+            <div class="card-title">
+
+                <div class="card-title-main">
+                    <span>🔎</span>
+
+                    <div>
+                        <h2>Ce que tes données montrent</h2>
+                        <p>
+                            Des observations simples, sans transformer une association en cause.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div
+                id="wellbeingInsights"
+                class="insight-list"
+            >
+                <div class="insight-item">
+                    <span>🌱</span>
+                    <div>
+                        Il faut quelques journées enregistrées avant de pouvoir dégager des tendances.
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="wellbeing-card">
+
+            <div class="card-title">
+
+                <div class="card-title-main">
+                    <span>🗓️</span>
+
+                    <div>
+                        <h2>Historique récent</h2>
+                        <p>
+                            Recharge une journée pour la modifier ou supprime-la.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div
+                id="wellbeingHistory"
+                class="history-list"
+            >
+                <p class="empty-message">
+                    Aucun suivi enregistré.
+                </p>
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+<script src="../assets/js/wellbeing.js"></script>
+
+</body>
+</html>

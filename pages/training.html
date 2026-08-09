@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#2563eb">
+
+    <title>Entraînement — Hana Fit</title>
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
+
+    <style>
+        .training-page {
+            width: min(calc(100% - 28px), 950px);
+            margin: 0 auto;
+            padding: 28px 0 120px;
+        }
+
+        .page-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 22px;
+        }
+
+        .back-button {
+            width: 46px;
+            height: 46px;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+            border: 1px solid #dbeafe;
+            border-radius: 15px;
+            background: rgba(255,255,255,.92);
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 800;
+            box-shadow: 0 12px 30px rgba(37,99,235,.12);
+        }
+
+        .page-header h1 {
+            margin: 4px 0;
+            font-size: clamp(30px, 7vw, 42px);
+        }
+
+        .page-subtitle {
+            margin: 0;
+            color: #64748b;
+        }
+
+        .training-summary {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .summary-card,
+        .training-card {
+            border: 1px solid rgba(255,255,255,.96);
+            background: rgba(255,255,255,.92);
+            box-shadow: 0 18px 45px rgba(37,99,235,.11);
+        }
+
+        .summary-card {
+            padding: 18px;
+            border-radius: 22px;
+        }
+
+        .summary-card span {
+            font-size: 26px;
+        }
+
+        .summary-card p {
+            margin: 10px 0 6px;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .summary-card strong {
+            display: block;
+            color: #0d47a1;
+            font-size: 22px;
+        }
+
+        .training-card {
+            margin-top: 18px;
+            padding: 24px;
+            border-radius: 26px;
+        }
+
+        .card-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 18px;
+        }
+
+        .card-heading h2 {
+            margin: 0;
+            font-size: 23px;
+        }
+
+        .card-heading p {
+            margin: 5px 0 0;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        .card-icon {
+            font-size: 29px;
+        }
+
+        .session-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .field-label {
+            display: block;
+            color: #1e293b;
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .field-full {
+            grid-column: 1 / -1;
+        }
+
+        .session-meta-grid input,
+        .session-meta-grid select,
+        .session-meta-grid textarea,
+        .exercise-search input,
+        .custom-exercise-row input,
+        .custom-exercise-row select {
+            width: 100%;
+            margin-top: 7px;
+            padding: 13px 14px;
+            border: 1px solid #bfdbfe;
+            border-radius: 14px;
+            background: #f8fbff;
+            color: #1e293b;
+            font: inherit;
+        }
+
+        .session-meta-grid textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .session-meta-grid input:focus,
+        .session-meta-grid select:focus,
+        .session-meta-grid textarea:focus,
+        .exercise-search input:focus,
+        .custom-exercise-row input:focus,
+        .custom-exercise-row select:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 4px rgba(37,99,235,.1);
+        }
+
+        .exercise-search {
+            position: relative;
+        }
+
+        .exercise-results {
+            display: grid;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .exercise-result {
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 14px;
+            border: 1px solid #dbeafe;
+            border-radius: 14px;
+            background: #fff;
+            color: inherit;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .exercise-result:hover {
+            border-color: #93c5fd;
+            background: #f8fbff;
+        }
+
+        .exercise-result-emoji {
+            font-size: 24px;
+        }
+
+        .exercise-result-info strong {
+            display: block;
+            color: #172554;
+            font-size: 14px;
+        }
+
+        .exercise-result-info span {
+            display: block;
+            margin-top: 3px;
+            color: #64748b;
+            font-size: 12px;
+        }
+
+        .exercise-result-add {
+            color: #2563eb;
+            font-weight: 900;
+            font-size: 18px;
+        }
+
+        .custom-exercise {
+            margin-top: 14px;
+            border: 1px solid #dbeafe;
+            border-radius: 16px;
+            background: #f8fbff;
+            overflow: hidden;
+        }
+
+        .custom-exercise summary {
+            padding: 14px 16px;
+            color: #2563eb;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .custom-exercise-row {
+            display: grid;
+            grid-template-columns: 1fr 150px auto;
+            gap: 10px;
+            padding: 0 16px 16px;
+        }
+
+        .small-button,
+        .save-session-button,
+        .add-set-button {
+            border: 0;
+            border-radius: 14px;
+            cursor: pointer;
+            font-weight: 850;
+        }
+
+        .small-button {
+            padding: 12px 16px;
+            align-self: end;
+            background: #eff6ff;
+            color: #2563eb;
+        }
+
+        .active-exercises {
+            display: grid;
+            gap: 14px;
+        }
+
+        .exercise-card {
+            border: 1px solid #dbeafe;
+            border-radius: 20px;
+            background: #f8fbff;
+            overflow: hidden;
+        }
+
+        .exercise-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 15px 16px;
+            background: linear-gradient(135deg,#eff6ff,#fff);
+            border-bottom: 1px solid #dbeafe;
+        }
+
+        .exercise-card-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .exercise-card-title span {
+            font-size: 23px;
+        }
+
+        .exercise-card-title strong {
+            color: #172554;
+        }
+
+        .exercise-card-title small {
+            display: block;
+            margin-top: 2px;
+            color: #64748b;
+        }
+
+        .remove-exercise {
+            width: 36px;
+            height: 36px;
+            display: grid;
+            place-items: center;
+            border: 0;
+            border-radius: 11px;
+            background: #fee2e2;
+            color: #b91c1c;
+            cursor: pointer;
+            font-size: 17px;
+        }
+
+        .sets-wrap {
+            padding: 14px 16px 16px;
+        }
+
+        .set-head,
+        .set-row {
+            display: grid;
+            grid-template-columns: 48px 1fr 1fr 1fr 40px;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .set-head {
+            margin-bottom: 8px;
+            color: #64748b;
+            font-size: 11px;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .set-row + .set-row {
+            margin-top: 8px;
+        }
+
+        .set-number {
+            text-align: center;
+            color: #2563eb;
+            font-weight: 900;
+        }
+
+        .set-row input {
+            width: 100%;
+            padding: 10px 8px;
+            border: 1px solid #bfdbfe;
+            border-radius: 11px;
+            background: #fff;
+            text-align: center;
+            font: inherit;
+        }
+
+        .set-row input:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37,99,235,.09);
+        }
+
+        .delete-set {
+            width: 36px;
+            height: 36px;
+            display: grid;
+            place-items: center;
+            border: 0;
+            border-radius: 10px;
+            background: #fff;
+            color: #b91c1c;
+            cursor: pointer;
+        }
+
+        .add-set-button {
+            width: 100%;
+            margin-top: 12px;
+            padding: 11px;
+            background: #eff6ff;
+            color: #2563eb;
+        }
+
+        .save-session-button {
+            width: 100%;
+            margin-top: 18px;
+            padding: 15px;
+            background: linear-gradient(135deg,#2563eb,#60a5fa);
+            color: #fff;
+            font-size: 16px;
+            box-shadow: 0 16px 30px rgba(37,99,235,.22);
+        }
+
+        .empty-message {
+            margin: 0;
+            padding: 16px;
+            border-radius: 15px;
+            background: #eff6ff;
+            color: #64748b;
+            text-align: center;
+        }
+
+        .session-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .session-item {
+            padding: 16px;
+            border: 1px solid #dbeafe;
+            border-radius: 18px;
+            background: #f8fbff;
+        }
+
+        .session-item-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .session-item h3 {
+            margin: 0 0 5px;
+            font-size: 17px;
+        }
+
+        .session-item p {
+            margin: 3px 0;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        .session-exercise-list {
+            display: grid;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .session-exercise-line {
+            padding: 10px 12px;
+            border-radius: 12px;
+            background: #fff;
+            color: #334155;
+            font-size: 13px;
+        }
+
+        .delete-session {
+            width: 38px;
+            height: 38px;
+            display: grid;
+            place-items: center;
+            border: 0;
+            border-radius: 11px;
+            background: #fee2e2;
+            color: #b91c1c;
+            cursor: pointer;
+            font-size: 17px;
+        }
+
+        .history-toolbar {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .history-toolbar input {
+            width: 100%;
+            padding: 12px 13px;
+            border: 1px solid #bfdbfe;
+            border-radius: 13px;
+            background: #f8fbff;
+            font: inherit;
+        }
+
+        .success-message {
+            display: none;
+            margin-top: 14px;
+            padding: 13px;
+            border-radius: 14px;
+            background: #dcfce7;
+            color: #166534;
+            text-align: center;
+            font-weight: 800;
+        }
+
+
+        .exercise-rest {
+            padding: 0 16px 16px;
+        }
+
+        .exercise-rest-box {
+            padding: 14px;
+            border: 1px solid #dbeafe;
+            border-radius: 16px;
+            background: #ffffff;
+        }
+
+        .exercise-rest-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .exercise-rest-heading strong {
+            color: #172554;
+            font-size: 13px;
+        }
+
+        .exercise-rest-time {
+            color: #0d47a1;
+            font-size: 26px;
+            font-weight: 900;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .exercise-rest-presets {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 7px;
+        }
+
+        .exercise-rest-preset,
+        .exercise-rest-control {
+            border: 0;
+            border-radius: 11px;
+            cursor: pointer;
+            font: inherit;
+            font-weight: 800;
+        }
+
+        .exercise-rest-preset {
+            padding: 9px 5px;
+            background: #eff6ff;
+            color: #2563eb;
+            font-size: 12px;
+        }
+
+        .exercise-rest-preset.active {
+            background: #2563eb;
+            color: #ffffff;
+        }
+
+        .exercise-rest-controls {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 8px;
+            margin-top: 9px;
+        }
+
+        .exercise-rest-control {
+            padding: 10px 11px;
+        }
+
+        .exercise-rest-start {
+            background: linear-gradient(135deg,#2563eb,#60a5fa);
+            color: #ffffff;
+        }
+
+        .exercise-rest-reset {
+            background: #f1f5f9;
+            color: #475569;
+        }
+
+        .exercise-rest-status {
+            min-height: 17px;
+            margin: 8px 0 0;
+            color: #64748b;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .exercise-rest-finished {
+            animation: exerciseTimerPulse .8s ease-in-out 2;
+        }
+
+        @keyframes exerciseTimerPulse {
+            0%,100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.02);
+            }
+        }
+
+
+        .exercise-progress-controls {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .exercise-progress-controls label {
+            display: block;
+            color: #1e293b;
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .exercise-progress-controls select {
+            width: 100%;
+            margin-top: 7px;
+            padding: 13px 14px;
+            border: 1px solid #bfdbfe;
+            border-radius: 14px;
+            background: #f8fbff;
+            color: #1e293b;
+            font: inherit;
+        }
+
+        .exercise-progress-controls select:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 4px rgba(37,99,235,.1);
+        }
+
+        .exercise-progress-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .exercise-progress-stat {
+            padding: 14px;
+            border: 1px solid #dbeafe;
+            border-radius: 16px;
+            background: #f8fbff;
+        }
+
+        .exercise-progress-stat span {
+            display: block;
+            color: #64748b;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .exercise-progress-stat strong {
+            display: block;
+            margin-top: 6px;
+            color: #0d47a1;
+            font-size: 20px;
+        }
+
+        .exercise-chart-wrap {
+            padding: 14px;
+            border: 1px solid #dbeafe;
+            border-radius: 18px;
+            background: #ffffff;
+            overflow: hidden;
+        }
+
+        .exercise-chart-title {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .exercise-chart-title strong {
+            color: #172554;
+            font-size: 14px;
+        }
+
+        .exercise-chart-title span {
+            color: #64748b;
+            font-size: 11px;
+        }
+
+        .exercise-progress-chart {
+            min-height: 230px;
+        }
+
+        .exercise-progress-chart svg {
+            display: block;
+            width: 100%;
+            height: 230px;
+            overflow: visible;
+        }
+
+        .exercise-records {
+            display: grid;
+            gap: 9px;
+            margin-top: 14px;
+        }
+
+        .exercise-record-line {
+            padding: 11px 13px;
+            border-radius: 13px;
+            background: #eff6ff;
+            color: #334155;
+            font-size: 13px;
+        }
+
+        .exercise-record-line strong {
+            color: #0d47a1;
+        }
+
+
+        .session-actions {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .repeat-session {
+            min-height: 38px;
+            padding: 0 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            border: 0;
+            border-radius: 11px;
+            background: #eff6ff;
+            color: #2563eb;
+            cursor: pointer;
+            font: inherit;
+            font-size: 12px;
+            font-weight: 850;
+            white-space: nowrap;
+        }
+
+        .repeat-session:hover {
+            background: #dbeafe;
+        }
+
+        @media (max-width: 520px) {
+            .session-item-header {
+                align-items: stretch;
+            }
+
+            .session-actions {
+                flex-direction: column;
+            }
+
+            .repeat-session {
+                width: 100%;
+                padding: 9px 10px;
+            }
+        }
+
+
+        .template-create {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .template-create input {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #bfdbfe;
+            border-radius: 14px;
+            background: #f8fbff;
+            color: #1e293b;
+            font: inherit;
+        }
+
+        .template-create input:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 4px rgba(37,99,235,.1);
+        }
+
+        .template-save-button {
+            padding: 12px 16px;
+            border: 0;
+            border-radius: 14px;
+            background: linear-gradient(135deg,#2563eb,#60a5fa);
+            color: #fff;
+            cursor: pointer;
+            font: inherit;
+            font-weight: 850;
+            white-space: nowrap;
+        }
+
+        .template-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .template-card {
+            padding: 15px;
+            border: 1px solid #dbeafe;
+            border-radius: 18px;
+            background: #f8fbff;
+        }
+
+        .template-card-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .template-card h3 {
+            margin: 0;
+            color: #172554;
+            font-size: 17px;
+        }
+
+        .template-card p {
+            margin: 5px 0 0;
+            color: #64748b;
+            font-size: 12px;
+        }
+
+        .template-exercises {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-top: 12px;
+        }
+
+        .template-exercise-chip {
+            padding: 7px 9px;
+            border-radius: 999px;
+            background: #fff;
+            color: #334155;
+            font-size: 11px;
+            font-weight: 750;
+        }
+
+        .template-actions {
+            display: flex;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .template-start,
+        .template-delete {
+            min-height: 38px;
+            border: 0;
+            border-radius: 11px;
+            cursor: pointer;
+            font: inherit;
+            font-weight: 850;
+        }
+
+        .template-start {
+            padding: 0 12px;
+            background: #eff6ff;
+            color: #2563eb;
+        }
+
+        .template-delete {
+            width: 38px;
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+
+        .template-help {
+            margin: 0 0 14px;
+            padding: 12px 13px;
+            border-radius: 14px;
+            background: #eff6ff;
+            color: #475569;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 560px) {
+            .custom-exercise-row {
+                grid-template-columns: 1fr;
+            }
+
+            .template-create {
+                grid-template-columns: 1fr;
+            }
+
+            .template-card-header {
+                flex-direction: column;
+            }
+
+            .template-actions {
+                width: 100%;
+            }
+
+            .template-start {
+                flex: 1;
+            }
+        }
+
+
+        .cardio-fields {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            padding: 14px 16px 16px;
+        }
+
+        .cardio-field {
+            display: block;
+            color: #475569;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .cardio-field input {
+            width: 100%;
+            margin-top: 6px;
+            padding: 11px 10px;
+            border: 1px solid #bfdbfe;
+            border-radius: 11px;
+            background: #fff;
+            color: #1e293b;
+            font: inherit;
+        }
+
+        .cardio-field input:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37,99,235,.09);
+        }
+
+        .cardio-hint {
+            grid-column: 1 / -1;
+            margin: 0;
+            padding: 10px 12px;
+            border-radius: 12px;
+            background: #eff6ff;
+            color: #64748b;
+            font-size: 11px;
+            line-height: 1.45;
+        }
+
+        .session-template-button {
+            min-height: 38px;
+            padding: 0 11px;
+            border: 0;
+            border-radius: 11px;
+            background: #fef3c7;
+            color: #92400e;
+            cursor: pointer;
+            font: inherit;
+            font-size: 12px;
+            font-weight: 850;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 560px) {
+            .cardio-fields {
+                grid-template-columns: 1fr;
+            }
+
+            .cardio-hint {
+                grid-column: 1;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .exercise-progress-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 760px) {
+            .training-summary,
+            .session-meta-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .field-full {
+                grid-column: 1;
+            }
+
+            .set-head,
+            .set-row {
+                grid-template-columns: 38px 1fr 1fr 1fr 36px;
+                gap: 6px;
+            }
+
+            .exercise-rest-presets {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 430px) {
+            .training-card {
+                padding: 18px;
+            }
+
+            .custom-exercise-row {
+                grid-template-columns: 1fr;
+            }
+
+            .set-head,
+            .set-row {
+                grid-template-columns: 32px 1fr 1fr 1fr 34px;
+                font-size: 12px;
+            }
+
+            .set-row input {
+                padding: 9px 4px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<main class="training-page">
+
+    <header class="page-header">
+
+        <a
+            href="../index.html"
+            class="back-button"
+            aria-label="Retour à l'accueil"
+        >
+            ←
+        </a>
+
+        <div>
+            <p class="section-label">
+                CARNET D'ENTRAÎNEMENT
+            </p>
+
+            <h1>
+                🏋️ Entraînement
+            </h1>
+
+            <p class="page-subtitle">
+                Séries, répétitions, charges et progression au même endroit.
+            </p>
+        </div>
+
+    </header>
+
+
+    <section class="training-summary">
+
+        <article class="summary-card">
+            <span>🏋️</span>
+            <p>Séances aujourd'hui</p>
+            <strong id="todaySessions">0</strong>
+        </article>
+
+        <article class="summary-card">
+            <span>🔁</span>
+            <p>Séries aujourd'hui</p>
+            <strong id="todaySets">0</strong>
+        </article>
+
+        <article class="summary-card">
+            <span>📦</span>
+            <p>Volume musculation</p>
+            <strong id="todayVolume">0 kg</strong>
+        </article>
+
+        <article class="summary-card">
+            <span>❤️</span>
+            <p>Cardio aujourd'hui</p>
+            <strong id="todayCardio">0 min</strong>
+        </article>
+
+    </section>
+
+
+
+    <section class="training-card">
+
+        <div class="card-heading">
+            <div>
+                <h2>⭐ Mes séances modèles</h2>
+                <p>
+                    Garde tes séances habituelles prêtes à démarrer.
+                </p>
+            </div>
+
+            <span class="card-icon">🗂️</span>
+        </div>
+
+        <p class="template-help">
+            Tu peux enregistrer la séance en cours ici, ou utiliser le bouton ⭐ Modèle
+            sur une séance déjà enregistrée. Les exercices, séries et temps de repos seront conservés.
+        </p>
+
+        <div class="template-create">
+
+            <input
+                type="text"
+                id="templateName"
+                placeholder="Ex : Jambes, Haut du corps, Full Body..."
+                maxlength="50"
+            >
+
+            <button
+                type="button"
+                id="saveTemplateButton"
+                class="template-save-button"
+            >
+                ⭐ Enregistrer comme modèle
+            </button>
+
+        </div>
+
+        <div
+            id="templateList"
+            class="template-list"
+        >
+            <p class="empty-message">
+                Aucun modèle enregistré pour le moment.
+            </p>
+        </div>
+
+    </section>
+
+
+    <section class="training-card">
+
+        <div class="card-heading">
+            <div>
+                <h2>Nouvelle séance</h2>
+                <p>Prépare ta séance puis ajoute tes exercices.</p>
+            </div>
+
+            <span class="card-icon">✍️</span>
+        </div>
+
+        <div class="session-meta-grid">
+
+            <label class="field-label">
+                Date
+
+                <input
+                    type="date"
+                    id="sessionDate"
+                >
+            </label>
+
+            <label class="field-label">
+                Type de séance
+
+                <select id="sessionType">
+                    <option value="Jambes">Jambes</option>
+                    <option value="Fessiers">Fessiers</option>
+                    <option value="Haut du corps">Haut du corps</option>
+                    <option value="Full Body">Full Body</option>
+                    <option value="Cardio">Cardio</option>
+                    <option value="Mobilité">Mobilité</option>
+                    <option value="Autre">Autre</option>
+                </select>
+            </label>
+
+            <label class="field-label">
+                Durée
+
+                <input
+                    type="number"
+                    id="sessionDuration"
+                    min="0"
+                    step="1"
+                    placeholder="Ex : 65 min"
+                >
+            </label>
+
+            <label class="field-label">
+                Ressenti
+
+                <select id="sessionDifficulty">
+                    <option value="Facile">Facile</option>
+                    <option value="Modérée" selected>Modérée</option>
+                    <option value="Intense">Intense</option>
+                </select>
+            </label>
+
+            <label class="field-label field-full">
+                Notes
+
+                <textarea
+                    id="sessionNotes"
+                    placeholder="Ex : reprise tranquille, bonnes sensations sur le hip thrust..."
+                ></textarea>
+            </label>
+
+        </div>
+
+    </section>
+
+
+    <section class="training-card">
+
+        <div class="card-heading">
+            <div>
+                <h2>🔎 Ajouter un exercice</h2>
+                <p>Recherche dans la bibliothèque Hana Fit.</p>
+            </div>
+
+            <span class="card-icon">💪</span>
+        </div>
+
+        <div class="exercise-search">
+
+            <input
+                type="search"
+                id="exerciseSearch"
+                placeholder="Ex : hip thrust, RDL, presse, abducteurs..."
+                autocomplete="off"
+            >
+
+            <div
+                id="exerciseResults"
+                class="exercise-results"
+            ></div>
+
+        </div>
+
+        <details class="custom-exercise">
+
+            <summary>
+                ✏️ Exercice absent ? Ajouter le mien
+            </summary>
+
+            <div class="custom-exercise-row">
+
+                <input
+                    type="text"
+                    id="customExerciseName"
+                    placeholder="Nom de l'exercice"
+                >
+
+                <select
+                    id="customExerciseMode"
+                    aria-label="Type d'exercice personnalisé"
+                >
+                    <option value="strength">
+                        Musculation
+                    </option>
+
+                    <option value="cardio">
+                        Cardio
+                    </option>
+                </select>
+
+                <button
+                    type="button"
+                    id="addCustomExerciseButton"
+                    class="small-button"
+                >
+                    Ajouter
+                </button>
+
+            </div>
+
+        </details>
+
+    </section>
+
+
+    <section class="training-card">
+
+        <div class="card-heading">
+            <div>
+                <h2>Ma séance</h2>
+                <p>Ajoute tes séries au fur et à mesure.</p>
+            </div>
+
+            <span class="card-icon">📋</span>
+        </div>
+
+        <div
+            id="activeExercises"
+            class="active-exercises"
+        >
+            <p class="empty-message">
+                Aucun exercice ajouté pour le moment.
+            </p>
+        </div>
+
+        <button
+            type="button"
+            id="saveSessionButton"
+            class="save-session-button"
+        >
+            ✓ Enregistrer ma séance
+        </button>
+
+        <p
+            id="saveMessage"
+            class="success-message"
+        >
+            ✅ Séance enregistrée.
+        </p>
+
+    </section>
+
+
+    <section class="training-card">
+
+        <div class="card-heading">
+            <div>
+                <h2>Mes séances du jour</h2>
+                <p>Les séances enregistrées aujourd'hui.</p>
+            </div>
+
+            <span class="card-icon">🗓️</span>
+        </div>
+
+        <div
+            id="todaySessionList"
+            class="session-list"
+        >
+            <p class="empty-message">
+                Aucune séance enregistrée aujourd'hui.
+            </p>
+        </div>
+
+    </section>
+
+
+
+    <section class="training-card">
+
+        <div class="card-heading">
+            <div>
+                <h2>📈 Progression par exercice</h2>
+                <p>
+                    Suis tes charges, ton volume et tes records au fil des séances.
+                </p>
+            </div>
+
+            <span class="card-icon">🏆</span>
+        </div>
+
+        <div class="exercise-progress-controls">
+
+            <label>
+                Exercice
+
+                <select id="progressExerciseSelect">
+                    <option value="">
+                        Choisir un exercice enregistré
+                    </option>
+                </select>
+            </label>
+
+        </div>
+
+        <div class="exercise-progress-stats">
+
+            <article class="exercise-progress-stat">
+                <span id="progressMetric1Label">CHARGE MAX</span>
+                <strong id="progressBestWeight">
+                    —
+                </strong>
+            </article>
+
+            <article class="exercise-progress-stat">
+                <span id="progressMetric2Label">MEILLEUR VOLUME</span>
+                <strong id="progressBestVolume">
+                    —
+                </strong>
+            </article>
+
+            <article class="exercise-progress-stat">
+                <span id="progressMetric3Label">SÉANCES</span>
+                <strong id="progressSessionCount">
+                    —
+                </strong>
+            </article>
+
+            <article class="exercise-progress-stat">
+                <span id="progressMetric4Label">DERNIÈRE PERF</span>
+                <strong id="progressLastPerformance">
+                    —
+                </strong>
+            </article>
+
+        </div>
+
+        <div class="exercise-chart-wrap">
+
+            <div class="exercise-chart-title">
+                <strong id="progressChartTitle">
+                    Évolution de la charge maximale
+                </strong>
+
+                <span id="progressChartSubtitle">
+                    par séance
+                </span>
+            </div>
+
+            <div
+                id="exerciseProgressChart"
+                class="exercise-progress-chart"
+            >
+                <p class="empty-message">
+                    Choisis un exercice pour afficher sa progression.
+                </p>
+            </div>
+
+        </div>
+
+        <div
+            id="exerciseRecordList"
+            class="exercise-records"
+        ></div>
+
+    </section>
+
+
+    <section class="training-card">
+
+        <div class="card-heading">
+            <div>
+                <h2>📚 Historique</h2>
+                <p>Retrouve tes anciennes séances et tes charges.</p>
+            </div>
+
+            <span class="card-icon">📈</span>
+        </div>
+
+        <div class="history-toolbar">
+
+            <input
+                type="search"
+                id="historySearch"
+                placeholder="Rechercher une séance ou un exercice..."
+            >
+
+        </div>
+
+        <div
+            id="trainingHistory"
+            class="session-list"
+        >
+            <p class="empty-message">
+                Ton historique apparaîtra ici.
+            </p>
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="../assets/js/training.js"></script>
+
+</body>
+</html>

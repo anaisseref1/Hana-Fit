@@ -1,0 +1,878 @@
+[
+  {
+    "id": "hip-thrust",
+    "name": "Hip Thrust",
+    "emoji": "🍑",
+    "category": "Jambes / Fessiers",
+    "muscles": [
+      "Fessiers",
+      "Ischio-jambiers"
+    ],
+    "equipment": "Barre / machine",
+    "aliases": [
+      "hip thrust",
+      "hiptrust",
+      "hip trust"
+    ]
+  },
+  {
+    "id": "glute-bridge",
+    "name": "Glute Bridge",
+    "emoji": "🍑",
+    "category": "Jambes / Fessiers",
+    "muscles": [
+      "Fessiers"
+    ],
+    "equipment": "Poids du corps / barre",
+    "aliases": [
+      "pont fessier",
+      "glute bridge"
+    ]
+  },
+  {
+    "id": "leg-press",
+    "name": "Presse à cuisses",
+    "emoji": "🦵",
+    "category": "Jambes",
+    "muscles": [
+      "Quadriceps",
+      "Fessiers",
+      "Ischio-jambiers"
+    ],
+    "equipment": "Machine",
+    "aliases": [
+      "presse",
+      "leg press",
+      "presse a cuisses"
+    ]
+  },
+  {
+    "id": "single-leg-press",
+    "name": "Presse à cuisses unilatérale",
+    "emoji": "🦵",
+    "category": "Jambes",
+    "muscles": [
+      "Quadriceps",
+      "Fessiers"
+    ],
+    "equipment": "Machine",
+    "aliases": [
+      "single leg press",
+      "presse unilatérale",
+      "presse une jambe"
+    ]
+  },
+  {
+    "id": "rdl",
+    "name": "Soulevé de terre roumain (RDL)",
+    "emoji": "🏋️",
+    "category": "Jambes / Fessiers",
+    "muscles": [
+      "Ischio-jambiers",
+      "Fessiers"
+    ],
+    "equipment": "Barre / haltères",
+    "aliases": [
+      "rdl",
+      "romanian deadlift",
+      "souleve de terre roumain",
+      "stiff leg deadlift"
+    ]
+  },
+  {
+    "id": "deadlift",
+    "name": "Soulevé de terre",
+    "emoji": "🏋️",
+    "category": "Full Body",
+    "muscles": [
+      "Dos",
+      "Fessiers",
+      "Ischio-jambiers"
+    ],
+    "equipment": "Barre",
+    "aliases": [
+      "deadlift",
+      "souleve de terre"
+    ]
+  },
+  {
+    "id": "static-lunges",
+    "name": "Fentes statiques",
+    "emoji": "🦵",
+    "category": "Jambes / Fessiers",
+    "muscles": [
+      "Quadriceps",
+      "Fessiers"
+    ],
+    "equipment": "Poids du corps / haltères",
+    "aliases": [
+      "fentes statiques",
+      "static lunges",
+      "split squat"
+    ]
+  },
+  {
+    "id": "walking-lunges",
+    "name": "Fentes marchées",
+    "emoji": "🦵",
+    "category": "Jambes / Fessiers",
+    "muscles": [
+      "Quadriceps",
+      "Fessiers"
+    ],
+    "equipment": "Poids du corps / haltères",
+    "aliases": [
+      "walking lunges",
+      "fentes marchées"
+    ]
+  },
+  {
+    "id": "reverse-lunges",
+    "name": "Fentes arrière",
+    "emoji": "🦵",
+    "category": "Jambes / Fessiers",
+    "muscles": [
+      "Quadriceps",
+      "Fessiers"
+    ],
+    "equipment": "Poids du corps / haltères",
+    "aliases": [
+      "reverse lunges",
+      "fentes arriere"
+    ]
+  },
+  {
+    "id": "bulgarian-split-squat",
+    "name": "Fentes bulgares",
+    "emoji": "🔥",
+    "category": "Jambes / Fessiers",
+    "muscles": [
+      "Quadriceps",
+      "Fessiers"
+    ],
+    "equipment": "Banc / haltères",
+    "aliases": [
+      "bulgarian split squat",
+      "fentes bulgares"
+    ]
+  },
+  {
+    "id": "squat",
+    "name": "Squat",
+    "emoji": "🏋️",
+    "category": "Jambes",
+    "muscles": [
+      "Quadriceps",
+      "Fessiers"
+    ],
+    "equipment": "Barre / poids du corps",
+    "aliases": [
+      "squat",
+      "back squat"
+    ]
+  },
+  {
+    "id": "goblet-squat",
+    "name": "Goblet Squat",
+    "emoji": "🏋️",
+    "category": "Jambes",
+    "muscles": [
+      "Quadriceps",
+      "Fessiers"
+    ],
+    "equipment": "Haltère / kettlebell",
+    "aliases": [
+      "goblet squat"
+    ]
+  },
+  {
+    "id": "hack-squat",
+    "name": "Hack Squat",
+    "emoji": "🦵",
+    "category": "Jambes",
+    "muscles": [
+      "Quadriceps",
+      "Fessiers"
+    ],
+    "equipment": "Machine",
+    "aliases": [
+      "hack squat"
+    ]
+  },
+  {
+    "id": "smith-squat",
+    "name": "Squat guidé Smith",
+    "emoji": "🦵",
+    "category": "Jambes",
+    "muscles": [
+      "Quadriceps",
+      "Fessiers"
+    ],
+    "equipment": "Smith machine",
+    "aliases": [
+      "smith squat",
+      "squat smith"
+    ]
+  },
+  {
+    "id": "leg-extension",
+    "name": "Leg Extension",
+    "emoji": "🦵",
+    "category": "Jambes",
+    "muscles": [
+      "Quadriceps"
+    ],
+    "equipment": "Machine",
+    "aliases": [
+      "leg extension",
+      "extension jambes"
+    ]
+  },
+  {
+    "id": "leg-curl-seated",
+    "name": "Leg Curl assis",
+    "emoji": "🦵",
+    "category": "Jambes",
+    "muscles": [
+      "Ischio-jambiers"
+    ],
+    "equipment": "Machine",
+    "aliases": [
+      "leg curl assis",
+      "seated leg curl"
+    ]
+  },
+  {
+    "id": "leg-curl-lying",
+    "name": "Leg Curl allongé",
+    "emoji": "🦵",
+    "category": "Jambes",
+    "muscles": [
+      "Ischio-jambiers"
+    ],
+    "equipment": "Machine",
+    "aliases": [
+      "leg curl allongé",
+      "lying leg curl"
+    ]
+  },
+  {
+    "id": "hip-abduction",
+    "name": "Abducteurs machine",
+    "emoji": "🍑",
+    "category": "Jambes / Fessiers",
+    "muscles": [
+      "Moyen fessier",
+      "Abducteurs"
+    ],
+    "equipment": "Machine",
+    "aliases": [
+      "abducteurs",
+      "abduction",
+      "hip abduction"
+    ]
+  },
+  {
+    "id": "hip-adduction",
+    "name": "Adducteurs machine",
+    "emoji": "🦵",
+    "category": "Jambes",
+    "muscles": [
+      "Adducteurs"
+    ],
+    "equipment": "Machine",
+    "aliases": [
+      "adducteurs",
+      "adduction",
+      "hip adduction"
+    ]
+  },
+  {
+    "id": "cable-kickback",
+    "name": "Kickback à la poulie",
+    "emoji": "🍑",
+    "category": "Fessiers",
+    "muscles": [
+      "Fessiers"
+    ],
+    "equipment": "Poulie",
+    "aliases": [
+      "kickback",
+      "cable kickback",
+      "extension hanche poulie"
+    ]
+  },
+  {
+    "id": "cable-abduction",
+    "name": "Abduction à la poulie",
+    "emoji": "🍑",
+    "category": "Fessiers",
+    "muscles": [
+      "Moyen fessier",
+      "Abducteurs"
+    ],
+    "equipment": "Poulie",
+    "aliases": [
+      "cable abduction",
+      "abduction poulie"
+    ]
+  },
+  {
+    "id": "step-up",
+    "name": "Step-up",
+    "emoji": "🦵",
+    "category": "Jambes / Fessiers",
+    "muscles": [
+      "Quadriceps",
+      "Fessiers"
+    ],
+    "equipment": "Banc / haltères",
+    "aliases": [
+      "step up",
+      "montée banc"
+    ]
+  },
+  {
+    "id": "back-extension-glutes",
+    "name": "Extension lombaire focus fessiers",
+    "emoji": "🍑",
+    "category": "Fessiers",
+    "muscles": [
+      "Fessiers",
+      "Ischio-jambiers"
+    ],
+    "equipment": "Banc à lombaires",
+    "aliases": [
+      "back extension glutes",
+      "extension lombaire fessiers"
+    ]
+  },
+  {
+    "id": "calf-raise-standing",
+    "name": "Mollets debout",
+    "emoji": "🦵",
+    "category": "Jambes",
+    "muscles": [
+      "Mollets"
+    ],
+    "equipment": "Machine / haltères",
+    "aliases": [
+      "calf raise",
+      "mollets debout"
+    ]
+  },
+  {
+    "id": "calf-raise-seated",
+    "name": "Mollets assis",
+    "emoji": "🦵",
+    "category": "Jambes",
+    "muscles": [
+      "Mollets"
+    ],
+    "equipment": "Machine",
+    "aliases": [
+      "seated calf raise",
+      "mollets assis"
+    ]
+  },
+  {
+    "id": "lat-pulldown",
+    "name": "Tirage vertical",
+    "emoji": "💪",
+    "category": "Dos",
+    "muscles": [
+      "Grand dorsal",
+      "Biceps"
+    ],
+    "equipment": "Poulie",
+    "aliases": [
+      "lat pulldown",
+      "tirage vertical"
+    ]
+  },
+  {
+    "id": "assisted-pullup",
+    "name": "Tractions assistées",
+    "emoji": "💪",
+    "category": "Dos",
+    "muscles": [
+      "Grand dorsal",
+      "Biceps"
+    ],
+    "equipment": "Machine",
+    "aliases": [
+      "tractions assistées",
+      "assisted pull up"
+    ]
+  },
+  {
+    "id": "seated-row",
+    "name": "Tirage horizontal assis",
+    "emoji": "💪",
+    "category": "Dos",
+    "muscles": [
+      "Dos",
+      "Biceps"
+    ],
+    "equipment": "Poulie / machine",
+    "aliases": [
+      "seated row",
+      "tirage horizontal"
+    ]
+  },
+  {
+    "id": "one-arm-row",
+    "name": "Rowing unilatéral haltère",
+    "emoji": "💪",
+    "category": "Dos",
+    "muscles": [
+      "Dos",
+      "Biceps"
+    ],
+    "equipment": "Haltère",
+    "aliases": [
+      "one arm row",
+      "rowing unilatéral"
+    ]
+  },
+  {
+    "id": "chest-supported-row",
+    "name": "Rowing poitrine appuyée",
+    "emoji": "💪",
+    "category": "Dos",
+    "muscles": [
+      "Dos",
+      "Biceps"
+    ],
+    "equipment": "Machine / haltères",
+    "aliases": [
+      "chest supported row",
+      "rowing poitrine"
+    ]
+  },
+  {
+    "id": "face-pull",
+    "name": "Face Pull",
+    "emoji": "💪",
+    "category": "Épaules / Dos",
+    "muscles": [
+      "Deltoïdes postérieurs",
+      "Haut du dos"
+    ],
+    "equipment": "Poulie",
+    "aliases": [
+      "face pull"
+    ]
+  },
+  {
+    "id": "reverse-fly",
+    "name": "Oiseau / Reverse Fly",
+    "emoji": "💪",
+    "category": "Épaules / Dos",
+    "muscles": [
+      "Deltoïdes postérieurs",
+      "Haut du dos"
+    ],
+    "equipment": "Machine / haltères",
+    "aliases": [
+      "oiseau",
+      "reverse fly"
+    ]
+  },
+  {
+    "id": "chest-press",
+    "name": "Chest Press",
+    "emoji": "💪",
+    "category": "Pectoraux",
+    "muscles": [
+      "Pectoraux",
+      "Triceps"
+    ],
+    "equipment": "Machine",
+    "aliases": [
+      "chest press",
+      "presse poitrine"
+    ]
+  },
+  {
+    "id": "bench-press",
+    "name": "Développé couché",
+    "emoji": "🏋️",
+    "category": "Pectoraux",
+    "muscles": [
+      "Pectoraux",
+      "Triceps"
+    ],
+    "equipment": "Barre",
+    "aliases": [
+      "bench press",
+      "developpé couché",
+      "développé couché"
+    ]
+  },
+  {
+    "id": "dumbbell-bench-press",
+    "name": "Développé couché haltères",
+    "emoji": "🏋️",
+    "category": "Pectoraux",
+    "muscles": [
+      "Pectoraux",
+      "Triceps"
+    ],
+    "equipment": "Haltères",
+    "aliases": [
+      "dumbbell bench press",
+      "développé couché haltères"
+    ]
+  },
+  {
+    "id": "incline-press",
+    "name": "Développé incliné",
+    "emoji": "💪",
+    "category": "Pectoraux",
+    "muscles": [
+      "Pectoraux",
+      "Triceps"
+    ],
+    "equipment": "Haltères / machine",
+    "aliases": [
+      "incline press",
+      "développé incliné"
+    ]
+  },
+  {
+    "id": "pec-deck",
+    "name": "Pec Deck / Butterfly",
+    "emoji": "💪",
+    "category": "Pectoraux",
+    "muscles": [
+      "Pectoraux"
+    ],
+    "equipment": "Machine",
+    "aliases": [
+      "pec deck",
+      "butterfly"
+    ]
+  },
+  {
+    "id": "shoulder-press",
+    "name": "Shoulder Press",
+    "emoji": "💪",
+    "category": "Épaules",
+    "muscles": [
+      "Épaules",
+      "Triceps"
+    ],
+    "equipment": "Machine / haltères",
+    "aliases": [
+      "shoulder press",
+      "développé épaules"
+    ]
+  },
+  {
+    "id": "lateral-raise",
+    "name": "Élévations latérales",
+    "emoji": "💪",
+    "category": "Épaules",
+    "muscles": [
+      "Deltoïdes latéraux"
+    ],
+    "equipment": "Haltères / poulie",
+    "aliases": [
+      "lateral raise",
+      "élévations latérales"
+    ]
+  },
+  {
+    "id": "front-raise",
+    "name": "Élévations frontales",
+    "emoji": "💪",
+    "category": "Épaules",
+    "muscles": [
+      "Deltoïdes antérieurs"
+    ],
+    "equipment": "Haltères / poulie",
+    "aliases": [
+      "front raise",
+      "élévations frontales"
+    ]
+  },
+  {
+    "id": "biceps-curl",
+    "name": "Curl biceps",
+    "emoji": "💪",
+    "category": "Bras",
+    "muscles": [
+      "Biceps"
+    ],
+    "equipment": "Haltères / barre",
+    "aliases": [
+      "biceps curl",
+      "curl biceps"
+    ]
+  },
+  {
+    "id": "hammer-curl",
+    "name": "Curl marteau",
+    "emoji": "💪",
+    "category": "Bras",
+    "muscles": [
+      "Biceps",
+      "Brachial"
+    ],
+    "equipment": "Haltères",
+    "aliases": [
+      "hammer curl",
+      "curl marteau"
+    ]
+  },
+  {
+    "id": "cable-curl",
+    "name": "Curl à la poulie",
+    "emoji": "💪",
+    "category": "Bras",
+    "muscles": [
+      "Biceps"
+    ],
+    "equipment": "Poulie",
+    "aliases": [
+      "cable curl",
+      "curl poulie"
+    ]
+  },
+  {
+    "id": "triceps-pushdown",
+    "name": "Extension triceps à la poulie",
+    "emoji": "💪",
+    "category": "Bras",
+    "muscles": [
+      "Triceps"
+    ],
+    "equipment": "Poulie",
+    "aliases": [
+      "triceps pushdown",
+      "extension triceps poulie"
+    ]
+  },
+  {
+    "id": "overhead-triceps",
+    "name": "Extension triceps au-dessus de la tête",
+    "emoji": "💪",
+    "category": "Bras",
+    "muscles": [
+      "Triceps"
+    ],
+    "equipment": "Poulie / haltère",
+    "aliases": [
+      "overhead triceps",
+      "extension triceps tête"
+    ]
+  },
+  {
+    "id": "plank",
+    "name": "Gainage planche",
+    "emoji": "🧘",
+    "category": "Abdos / Gainage",
+    "muscles": [
+      "Abdominaux",
+      "Core"
+    ],
+    "equipment": "Poids du corps",
+    "aliases": [
+      "plank",
+      "gainage",
+      "planche"
+    ]
+  },
+  {
+    "id": "side-plank",
+    "name": "Gainage latéral",
+    "emoji": "🧘",
+    "category": "Abdos / Gainage",
+    "muscles": [
+      "Obliques",
+      "Core"
+    ],
+    "equipment": "Poids du corps",
+    "aliases": [
+      "side plank",
+      "gainage latéral"
+    ]
+  },
+  {
+    "id": "dead-bug",
+    "name": "Dead Bug",
+    "emoji": "🧘",
+    "category": "Abdos / Gainage",
+    "muscles": [
+      "Abdominaux",
+      "Core"
+    ],
+    "equipment": "Poids du corps",
+    "aliases": [
+      "dead bug"
+    ]
+  },
+  {
+    "id": "cable-crunch",
+    "name": "Crunch à la poulie",
+    "emoji": "🔥",
+    "category": "Abdos / Gainage",
+    "muscles": [
+      "Abdominaux"
+    ],
+    "equipment": "Poulie",
+    "aliases": [
+      "cable crunch",
+      "crunch poulie"
+    ]
+  },
+  {
+    "id": "pallof-press",
+    "name": "Pallof Press",
+    "emoji": "🧘",
+    "category": "Abdos / Gainage",
+    "muscles": [
+      "Core",
+      "Obliques"
+    ],
+    "equipment": "Poulie",
+    "aliases": [
+      "pallof press"
+    ]
+  },
+  {
+    "id": "treadmill-walk",
+    "name": "Marche sur tapis",
+    "emoji": "🚶",
+    "category": "Cardio",
+    "muscles": [
+      "Cardio"
+    ],
+    "equipment": "Tapis",
+    "aliases": [
+      "tapis",
+      "marche inclinée",
+      "treadmill walk"
+    ]
+  },
+  {
+    "id": "elliptical",
+    "name": "Vélo elliptique",
+    "emoji": "🚴",
+    "category": "Cardio",
+    "muscles": [
+      "Cardio"
+    ],
+    "equipment": "Elliptique",
+    "aliases": [
+      "elliptique",
+      "elliptical"
+    ]
+  },
+  {
+    "id": "bike",
+    "name": "Vélo",
+    "emoji": "🚴",
+    "category": "Cardio",
+    "muscles": [
+      "Cardio"
+    ],
+    "equipment": "Vélo",
+    "aliases": [
+      "vélo",
+      "bike"
+    ]
+  },
+  {
+    "id": "rowing-machine",
+    "name": "Rameur",
+    "emoji": "🚣",
+    "category": "Cardio",
+    "muscles": [
+      "Cardio",
+      "Dos",
+      "Jambes"
+    ],
+    "equipment": "Rameur",
+    "aliases": [
+      "rameur",
+      "rowing machine"
+    ]
+  },
+  {
+    "id": "stair-climber",
+    "name": "Escalier / Stair Climber",
+    "emoji": "🪜",
+    "category": "Cardio",
+    "muscles": [
+      "Cardio",
+      "Jambes",
+      "Fessiers"
+    ],
+    "equipment": "Stair climber",
+    "aliases": [
+      "stairmaster",
+      "stair climber",
+      "escalier"
+    ]
+  },
+  {
+    "id": "push-up",
+    "name": "Pompes",
+    "emoji": "💪",
+    "category": "Poids du corps",
+    "muscles": [
+      "Pectoraux",
+      "Triceps"
+    ],
+    "equipment": "Poids du corps",
+    "aliases": [
+      "push up",
+      "pompes"
+    ]
+  },
+  {
+    "id": "bodyweight-squat",
+    "name": "Squat au poids du corps",
+    "emoji": "🦵",
+    "category": "Poids du corps",
+    "muscles": [
+      "Quadriceps",
+      "Fessiers"
+    ],
+    "equipment": "Poids du corps",
+    "aliases": [
+      "air squat",
+      "bodyweight squat"
+    ]
+  },
+  {
+    "id": "mountain-climber",
+    "name": "Mountain Climbers",
+    "emoji": "🔥",
+    "category": "Cardio / Gainage",
+    "muscles": [
+      "Cardio",
+      "Core"
+    ],
+    "equipment": "Poids du corps",
+    "aliases": [
+      "mountain climbers"
+    ]
+  },
+  {
+    "id": "bird-dog",
+    "name": "Bird Dog",
+    "emoji": "🧘",
+    "category": "Gainage / Mobilité",
+    "muscles": [
+      "Core",
+      "Dos"
+    ],
+    "equipment": "Poids du corps",
+    "aliases": [
+      "bird dog"
+    ]
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "user": {
+    "name": "Anaïs",
+    "nickname": "Hana",
+    "height": 153,
+    "birthYear": 1995
+  },
+
+  "goals": {
+    "calories": 1550,
+    "protein": 110,
+    "carbs": 133,
+    "fat": 65,
+    "water": 2.3,
+    "steps": 8000
+  },
+
+  "program": {
+    "active": "1500-1550",
+    "week": 1,
+    "day": 1
+  },
+
+  "theme": {
+    "color": "blue",
+    "darkMode": false
+  },
+
+  "neha": {
+    "enabled": true
+  }
+}

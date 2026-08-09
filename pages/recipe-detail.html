@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Recette | Hana Fit</title>
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/components.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/programs.css"
+    >
+
+    <style>
+
+        /* =========================================
+           INFOS RECETTE
+        ========================================= */
+
+        .recipe-info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .recipe-info-box {
+            padding: 15px;
+
+            border: 1px solid #dbeafe;
+            border-radius: 16px;
+
+            background: #f8fbff;
+
+            text-align: center;
+        }
+
+        .recipe-info-box span {
+            display: block;
+
+            color: #64748b;
+
+            font-size: 12px;
+        }
+
+        .recipe-info-box strong {
+            display: block;
+
+            margin-top: 5px;
+
+            color: #172554;
+
+            font-size: 16px;
+        }
+
+
+        /* =========================================
+           ÉTAPES
+        ========================================= */
+
+        .recipe-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+
+            margin-top: 18px;
+        }
+
+        .recipe-step {
+            display: grid;
+            grid-template-columns: 38px 1fr;
+            gap: 13px;
+
+            align-items: start;
+
+            padding: 14px;
+
+            border: 1px solid #dbeafe;
+            border-radius: 16px;
+
+            background: #f8fbff;
+        }
+
+        .recipe-step-number {
+            display: grid;
+            place-items: center;
+
+            width: 38px;
+            height: 38px;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #60a5fa
+                );
+
+            color: white;
+
+            font-weight: 800;
+        }
+
+        .recipe-step p {
+            margin: 0;
+
+            color: #334155;
+
+            line-height: 1.55;
+        }
+
+
+        /* =========================================
+           ASTUCE
+        ========================================= */
+
+        .recipe-tip {
+            margin-top: 18px;
+            padding: 17px;
+
+            border: 1px solid #dbeafe;
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eff6ff,
+                    #ffffff
+                );
+        }
+
+        .recipe-tip strong {
+            display: block;
+
+            margin-bottom: 6px;
+
+            color: #1d4ed8;
+        }
+
+        .recipe-tip p {
+            margin: 0;
+
+            color: #475569;
+
+            line-height: 1.55;
+        }
+
+
+        @media (max-width: 600px) {
+
+            .recipe-info-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<main class="page">
+
+
+    <!-- RETOUR -->
+
+    <a
+        href="javascript:history.back()"
+        class="back-link"
+    >
+        ← Retour
+    </a>
+
+
+
+    <!-- EN-TÊTE -->
+
+    <header class="programs-header">
+
+        <div
+            id="recipe-emoji"
+            class="header-icon"
+        >
+            🍽️
+        </div>
+
+
+        <div>
+
+            <span
+                id="recipe-meal"
+                class="badge"
+            >
+                RECETTE
+            </span>
+
+
+            <h1
+                id="recipe-title"
+                class="section-title"
+            >
+                Chargement...
+            </h1>
+
+
+            <p
+                id="recipe-subtitle"
+                class="section-subtitle"
+            >
+                Hana Fit prépare les informations de la recette.
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- TEMPS / PORTIONS -->
+
+    <section class="card">
+
+        <span class="badge">
+            ⏱️ PRÉPARATION
+        </span>
+
+
+        <div class="recipe-info-grid">
+
+            <div class="recipe-info-box">
+
+                <span>
+                    Préparation
+                </span>
+
+                <strong id="recipe-prep-time">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="recipe-info-box">
+
+                <span>
+                    Cuisson
+                </span>
+
+                <strong id="recipe-cook-time">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="recipe-info-box">
+
+                <span>
+                    Portion
+                </span>
+
+                <strong id="recipe-servings">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- VALEURS NUTRITIONNELLES -->
+
+    <section class="card">
+
+        <span class="badge">
+            ⚡ VALEURS NUTRITIONNELLES
+        </span>
+
+
+        <div
+            class="day-total-macros"
+            style="margin-top:18px;"
+        >
+
+            <span>
+                🔥
+                <strong id="recipe-calories">
+                    —
+                </strong>
+                kcal
+            </span>
+
+
+            <span>
+                🥩 P
+                <strong id="recipe-protein">
+                    —
+                </strong>
+                g
+            </span>
+
+
+            <span>
+                🌾 G
+                <strong id="recipe-carbs">
+                    —
+                </strong>
+                g
+            </span>
+
+
+            <span>
+                🥑 L
+                <strong id="recipe-fat">
+                    —
+                </strong>
+                g
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- INGRÉDIENTS -->
+
+    <section class="card">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="badge">
+                    🛒 INGRÉDIENTS
+                </span>
+
+                <h2>
+                    Ce qu'il te faut
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="recipe-ingredients"
+            class="shopping-items"
+        >
+
+            <p>
+                Chargement des ingrédients...
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PRÉPARATION -->
+
+    <section class="card">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="badge">
+                    👩‍🍳 PRÉPARATION
+                </span>
+
+                <h2>
+                    Les étapes
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="recipe-steps"
+            class="recipe-steps"
+        >
+
+            <p>
+                Chargement de la préparation...
+            </p>
+
+        </div>
+
+
+        <div
+            id="recipe-tip"
+            class="recipe-tip"
+            hidden
+        >
+
+            <strong>
+                💡 Astuce Hana Fit
+            </strong>
+
+            <p id="recipe-tip-text">
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- AJOUTER À LA JOURNÉE -->
+
+    <section class="card">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="badge">
+                    🌸 MA JOURNÉE
+                </span>
+
+                <h2>
+                    Ajouter cette recette
+                </h2>
+
+                <p>
+                    Ajoute directement cette portion
+                    dans ton journal Nutrition.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="add-recipe-button"
+            class="button button-primary"
+            style="width:100%;"
+        >
+            ＋ Ajouter à ma journée
+        </button>
+
+    </section>
+
+
+</main>
+
+
+
+<script src="../assets/js/store.js"></script>
+
+<script src="../assets/js/database.js"></script>
+
+<script src="../assets/js/recipe-detail.js"></script>
+
+
+</body>
+
+</html>

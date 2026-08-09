@@ -1,0 +1,1989 @@
+[
+  {
+    "id": 1,
+    "name": "Overnight oats fruits rouges",
+    "emoji": "🥣",
+    "meal": "Petit-déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 8,
+        "quantity": 40
+      },
+      {
+        "foodId": 12,
+        "quantity": 150
+      },
+      {
+        "foodId": 1,
+        "quantity": 150
+      },
+      {
+        "foodId": 11,
+        "quantity": 10
+      },
+      {
+        "foodId": 16,
+        "quantity": 100
+      }
+    ],
+    "prepTime": 5,
+    "cookTime": 0,
+    "servings": 1,
+    "instructions": [
+      "Dans un bocal, mélanger les flocons d’avoine, le lait d’amande, le skyr et les graines de chia.",
+      "Ajouter les fruits rouges et mélanger légèrement.",
+      "Couvrir et laisser reposer au réfrigérateur au moins 4 heures, idéalement toute la nuit.",
+      "Mélanger avant de déguster."
+    ],
+    "tip": "Prépare-le la veille : le petit-déjeuner est prêt dès le réveil."
+  },
+  {
+    "id": 2,
+    "name": "Chia pudding pomme",
+    "emoji": "🍎",
+    "meal": "Petit-déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 11,
+        "quantity": 30
+      },
+      {
+        "foodId": 13,
+        "quantity": 200
+      },
+      {
+        "foodId": 15,
+        "quantity": 220
+      }
+    ],
+    "prepTime": 5,
+    "cookTime": 0,
+    "servings": 1,
+    "instructions": [
+      "Mélanger les graines de chia avec le lait demi-écrémé dans un bol ou un bocal.",
+      "Laisser reposer 10 minutes puis remuer de nouveau pour éviter les amas.",
+      "Ajouter la pomme coupée en dés ou râpée.",
+      "Réfrigérer au moins 3 heures, idéalement toute la nuit."
+    ],
+    "tip": "Pour une texture plus onctueuse, remue une seconde fois après 10 minutes de repos."
+  },
+  {
+    "id": 3,
+    "name": "Bowlcake citron",
+    "emoji": "🍋",
+    "meal": "Petit-déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 8,
+        "quantity": 40
+      },
+      {
+        "foodId": 1,
+        "quantity": 150
+      },
+      {
+        "foodId": 6,
+        "quantity": 50
+      },
+      {
+        "foodId": 71,
+        "quantity": 30
+      }
+    ],
+    "prepTime": 5,
+    "cookTime": 3,
+    "servings": 1,
+    "instructions": [
+      "Dans un bol, mélanger le skyr, l’œuf et les flocons d’avoine.",
+      "Ajouter le jus et/ou le zeste de citron puis mélanger jusqu’à obtenir une pâte homogène.",
+      "Cuire au micro-ondes environ 2 à 3 minutes selon la puissance.",
+      "Laisser tiédir une minute avant de démouler ou de manger directement dans le bol."
+    ],
+    "tip": "Surveille la fin de cuisson : le bowlcake doit rester moelleux."
+  },
+  {
+    "id": 4,
+    "name": "Salade quinoa poulet",
+    "emoji": "🥗",
+    "meal": "Déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 9,
+        "quantity": 80
+      },
+      {
+        "foodId": 5,
+        "quantity": 130
+      },
+      {
+        "foodId": 17,
+        "quantity": 100
+      },
+      {
+        "foodId": 18,
+        "quantity": 80
+      },
+      {
+        "foodId": 19,
+        "quantity": 50
+      },
+      {
+        "foodId": 4,
+        "quantity": 30
+      }
+    ],
+    "prepTime": 10,
+    "cookTime": 8,
+    "servings": 1,
+    "instructions": [
+      "Couper le poulet en morceaux et le cuire dans une poêle antiadhésive jusqu’à cuisson complète.",
+      "Dans un saladier, réunir le quinoa cuit, la tomate, le poivron et l’oignon coupés.",
+      "Ajouter le poulet chaud ou refroidi puis émietter la feta.",
+      "Mélanger et assaisonner selon ton goût."
+    ],
+    "tip": "Cette salade se prépare très bien à l’avance pour le déjeuner."
+  },
+  {
+    "id": 5,
+    "name": "Poulet pâtes légumes",
+    "emoji": "🍝",
+    "meal": "Dîner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 5,
+        "quantity": 150
+      },
+      {
+        "foodId": 10,
+        "quantity": 150
+      },
+      {
+        "foodId": 18,
+        "quantity": 100
+      },
+      {
+        "foodId": 19,
+        "quantity": 50
+      },
+      {
+        "foodId": 20,
+        "quantity": 10
+      }
+    ],
+    "prepTime": 10,
+    "cookTime": 12,
+    "servings": 1,
+    "instructions": [
+      "Faire revenir l’oignon et le poivron dans l’huile d’olive.",
+      "Ajouter le poulet coupé en morceaux et cuire jusqu’à ce qu’il soit bien cuit.",
+      "Ajouter les pâtes complètes déjà cuites et mélanger quelques minutes.",
+      "Assaisonner puis servir chaud."
+    ],
+    "tip": "Garde les légumes légèrement croquants pour plus de texture."
+  },
+  {
+    "id": 6,
+    "name": "Skyr banane chia",
+    "emoji": "🍌",
+    "meal": "Petit-déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 1,
+        "quantity": 200
+      },
+      {
+        "foodId": 14,
+        "quantity": 100
+      },
+      {
+        "foodId": 8,
+        "quantity": 30
+      },
+      {
+        "foodId": 11,
+        "quantity": 10
+      }
+    ],
+    "prepTime": 5,
+    "cookTime": 0,
+    "servings": 1,
+    "instructions": [
+      "Verser le skyr dans un bol.",
+      "Ajouter la banane coupée en rondelles, les flocons d’avoine et les graines de chia.",
+      "Mélanger ou laisser les toppings sur le dessus selon ta préférence."
+    ],
+    "tip": "Tu peux préparer le bol 10 minutes à l’avance pour laisser les graines de chia s’hydrater."
+  },
+  {
+    "id": 7,
+    "name": "Porridge fruits rouges",
+    "emoji": "🫐",
+    "meal": "Petit-déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 8,
+        "quantity": 45
+      },
+      {
+        "foodId": 13,
+        "quantity": 180
+      },
+      {
+        "foodId": 16,
+        "quantity": 100
+      },
+      {
+        "foodId": 1,
+        "quantity": 100
+      }
+    ],
+    "prepTime": 5,
+    "cookTime": 6,
+    "servings": 1,
+    "instructions": [
+      "Verser les flocons d’avoine et le lait dans une petite casserole.",
+      "Cuire à feu doux en remuant jusqu’à obtenir une texture crémeuse.",
+      "Retirer du feu puis incorporer le skyr.",
+      "Ajouter les fruits rouges au moment de servir."
+    ],
+    "tip": "Ajoute un peu d’eau ou de lait pendant la cuisson si tu préfères un porridge plus fluide."
+  },
+  {
+    "id": 8,
+    "name": "Bowlcake banane",
+    "emoji": "🍌",
+    "meal": "Petit-déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 8,
+        "quantity": 40
+      },
+      {
+        "foodId": 6,
+        "quantity": 50
+      },
+      {
+        "foodId": 14,
+        "quantity": 80
+      },
+      {
+        "foodId": 1,
+        "quantity": 100
+      }
+    ],
+    "prepTime": 5,
+    "cookTime": 3,
+    "servings": 1,
+    "instructions": [
+      "Écraser la banane dans un bol.",
+      "Ajouter le skyr, l’œuf et les flocons d’avoine puis mélanger.",
+      "Cuire au micro-ondes environ 2 à 3 minutes.",
+      "Laisser reposer une minute avant de déguster."
+    ],
+    "tip": "Une banane bien mûre apporte naturellement plus de douceur."
+  },
+  {
+    "id": 9,
+    "name": "Quinoa thon feta",
+    "emoji": "🐟",
+    "meal": "Déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 9,
+        "quantity": 120
+      },
+      {
+        "foodId": 7,
+        "quantity": 100
+      },
+      {
+        "foodId": 4,
+        "quantity": 25
+      },
+      {
+        "foodId": 17,
+        "quantity": 120
+      },
+      {
+        "foodId": 18,
+        "quantity": 80
+      },
+      {
+        "foodId": 20,
+        "quantity": 5
+      }
+    ],
+    "prepTime": 8,
+    "cookTime": 0,
+    "servings": 1,
+    "instructions": [
+      "Déposer le quinoa cuit dans un saladier.",
+      "Ajouter le thon égoutté, la tomate et le poivron coupés.",
+      "Émietter la feta, ajouter l’huile d’olive et mélanger.",
+      "Assaisonner selon ton goût et servir."
+    ],
+    "tip": "Le citron ou les herbes fraîches fonctionnent très bien avec cette salade."
+  },
+  {
+    "id": 10,
+    "name": "Salade poulet feta",
+    "emoji": "🥗",
+    "meal": "Déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 5,
+        "quantity": 140
+      },
+      {
+        "foodId": 4,
+        "quantity": 30
+      },
+      {
+        "foodId": 17,
+        "quantity": 150
+      },
+      {
+        "foodId": 18,
+        "quantity": 100
+      },
+      {
+        "foodId": 19,
+        "quantity": 40
+      },
+      {
+        "foodId": 20,
+        "quantity": 8
+      }
+    ],
+    "prepTime": 10,
+    "cookTime": 8,
+    "servings": 1,
+    "instructions": [
+      "Cuire le poulet dans une poêle antiadhésive puis le laisser légèrement tiédir.",
+      "Couper la tomate, le poivron et l’oignon.",
+      "Réunir les légumes et le poulet dans un saladier.",
+      "Ajouter la feta et l’huile d’olive puis mélanger."
+    ],
+    "tip": "Tu peux cuire le poulet à l’avance et assembler la salade en quelques minutes."
+  },
+  {
+    "id": 11,
+    "name": "Quinoa œufs légumes",
+    "emoji": "🥚",
+    "meal": "Déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 9,
+        "quantity": 140
+      },
+      {
+        "foodId": 6,
+        "quantity": 100
+      },
+      {
+        "foodId": 17,
+        "quantity": 100
+      },
+      {
+        "foodId": 18,
+        "quantity": 100
+      },
+      {
+        "foodId": 19,
+        "quantity": 40
+      },
+      {
+        "foodId": 20,
+        "quantity": 5
+      }
+    ],
+    "prepTime": 10,
+    "cookTime": 8,
+    "servings": 1,
+    "instructions": [
+      "Réchauffer le quinoa cuit.",
+      "Cuire les œufs selon ta préférence : brouillés, au plat ou durs.",
+      "Faire revenir rapidement le poivron et l’oignon, puis ajouter la tomate.",
+      "Assembler le quinoa, les légumes et les œufs et terminer avec l’huile d’olive."
+    ],
+    "tip": "Cette recette fonctionne aussi très bien en bowl avec les légumes laissés crus."
+  },
+  {
+    "id": 12,
+    "name": "Pâtes complètes au thon",
+    "emoji": "🍝",
+    "meal": "Déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 10,
+        "quantity": 150
+      },
+      {
+        "foodId": 7,
+        "quantity": 100
+      },
+      {
+        "foodId": 17,
+        "quantity": 120
+      },
+      {
+        "foodId": 19,
+        "quantity": 40
+      },
+      {
+        "foodId": 20,
+        "quantity": 5
+      }
+    ],
+    "prepTime": 8,
+    "cookTime": 7,
+    "servings": 1,
+    "instructions": [
+      "Faire revenir l’oignon dans l’huile d’olive.",
+      "Ajouter la tomate et laisser compoter quelques minutes.",
+      "Ajouter les pâtes complètes cuites et le thon égoutté.",
+      "Mélanger, réchauffer l’ensemble et servir."
+    ],
+    "tip": "Ajoute du citron ou des herbes pour relever le thon sans alourdir le plat."
+  },
+  {
+    "id": 13,
+    "name": "Skyr et pomme",
+    "emoji": "🍎",
+    "meal": "Collation",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 1,
+        "quantity": 150
+      },
+      {
+        "foodId": 15,
+        "quantity": 150
+      }
+    ],
+    "prepTime": 3,
+    "cookTime": 0,
+    "servings": 1,
+    "instructions": [
+      "Verser le skyr dans un bol.",
+      "Couper la pomme en morceaux.",
+      "Ajouter la pomme au skyr et servir."
+    ],
+    "tip": "Un peu de cannelle peut apporter du goût sans modifier significativement les calories."
+  },
+  {
+    "id": 14,
+    "name": "Activia et banane",
+    "emoji": "🍌",
+    "meal": "Collation",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 3,
+        "quantity": 125
+      },
+      {
+        "foodId": 14,
+        "quantity": 100
+      }
+    ],
+    "prepTime": 2,
+    "cookTime": 0,
+    "servings": 1,
+    "instructions": [
+      "Verser l’Activia dans un bol.",
+      "Couper la banane en rondelles.",
+      "Ajouter la banane et déguster."
+    ],
+    "tip": "Une collation simple à préparer au dernier moment."
+  },
+  {
+    "id": 15,
+    "name": "Skyr fruits rouges",
+    "emoji": "🫐",
+    "meal": "Collation",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 1,
+        "quantity": 150
+      },
+      {
+        "foodId": 16,
+        "quantity": 100
+      }
+    ],
+    "prepTime": 3,
+    "cookTime": 0,
+    "servings": 1,
+    "instructions": [
+      "Verser le skyr dans un bol.",
+      "Ajouter les fruits rouges.",
+      "Mélanger ou servir les fruits sur le dessus."
+    ],
+    "tip": "Les fruits rouges surgelés peuvent être décongelés la veille au réfrigérateur."
+  },
+  {
+    "id": 16,
+    "name": "Mini chia pudding fruits rouges",
+    "emoji": "🥣",
+    "meal": "Collation",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 11,
+        "quantity": 15
+      },
+      {
+        "foodId": 12,
+        "quantity": 120
+      },
+      {
+        "foodId": 1,
+        "quantity": 100
+      },
+      {
+        "foodId": 16,
+        "quantity": 70
+      }
+    ],
+    "prepTime": 5,
+    "cookTime": 0,
+    "servings": 1,
+    "instructions": [
+      "Mélanger les graines de chia et le lait d’amande.",
+      "Laisser reposer 10 minutes puis remuer.",
+      "Ajouter le skyr et mélanger.",
+      "Terminer avec les fruits rouges et réfrigérer au moins 2 heures."
+    ],
+    "tip": "Prépare plusieurs portions à l’avance pour avoir des collations prêtes."
+  },
+  {
+    "id": 17,
+    "name": "Poulet quinoa légumes",
+    "emoji": "🍗",
+    "meal": "Dîner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 5,
+        "quantity": 150
+      },
+      {
+        "foodId": 9,
+        "quantity": 150
+      },
+      {
+        "foodId": 18,
+        "quantity": 120
+      },
+      {
+        "foodId": 19,
+        "quantity": 50
+      },
+      {
+        "foodId": 20,
+        "quantity": 8
+      }
+    ],
+    "prepTime": 10,
+    "cookTime": 10,
+    "servings": 1,
+    "instructions": [
+      "Faire revenir le poivron et l’oignon dans l’huile d’olive.",
+      "Ajouter le poulet coupé en morceaux et cuire complètement.",
+      "Ajouter le quinoa cuit et mélanger quelques minutes.",
+      "Assaisonner et servir chaud."
+    ],
+    "tip": "Le quinoa déjà cuit permet de préparer ce dîner très rapidement."
+  },
+  {
+    "id": 18,
+    "name": "Pâtes poulet feta",
+    "emoji": "🍝",
+    "meal": "Dîner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 10,
+        "quantity": 160
+      },
+      {
+        "foodId": 5,
+        "quantity": 130
+      },
+      {
+        "foodId": 4,
+        "quantity": 25
+      },
+      {
+        "foodId": 17,
+        "quantity": 100
+      },
+      {
+        "foodId": 20,
+        "quantity": 5
+      }
+    ],
+    "prepTime": 10,
+    "cookTime": 10,
+    "servings": 1,
+    "instructions": [
+      "Cuire le poulet coupé en morceaux dans une poêle.",
+      "Ajouter la tomate et laisser cuire quelques minutes.",
+      "Incorporer les pâtes cuites puis la feta émiettée.",
+      "Mélanger jusqu’à ce que l’ensemble soit bien chaud."
+    ],
+    "tip": "Ajoute la feta à la fin pour qu’elle reste légèrement crémeuse."
+  },
+  {
+    "id": 19,
+    "name": "Omelette quinoa feta",
+    "emoji": "🍳",
+    "meal": "Dîner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 6,
+        "quantity": 100
+      },
+      {
+        "foodId": 9,
+        "quantity": 120
+      },
+      {
+        "foodId": 4,
+        "quantity": 25
+      },
+      {
+        "foodId": 17,
+        "quantity": 120
+      },
+      {
+        "foodId": 19,
+        "quantity": 40
+      },
+      {
+        "foodId": 20,
+        "quantity": 5
+      }
+    ],
+    "prepTime": 10,
+    "cookTime": 8,
+    "servings": 1,
+    "instructions": [
+      "Faire revenir l’oignon et la tomate avec l’huile d’olive.",
+      "Battre les œufs puis les verser dans la poêle.",
+      "Cuire l’omelette à feu moyen.",
+      "Servir avec le quinoa réchauffé et la feta émiettée."
+    ],
+    "tip": "Évite un feu trop fort pour garder l’omelette moelleuse."
+  },
+  {
+    "id": 20,
+    "name": "Thon quinoa légumes",
+    "emoji": "🐟",
+    "meal": "Dîner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 7,
+        "quantity": 120
+      },
+      {
+        "foodId": 9,
+        "quantity": 150
+      },
+      {
+        "foodId": 17,
+        "quantity": 120
+      },
+      {
+        "foodId": 18,
+        "quantity": 100
+      },
+      {
+        "foodId": 19,
+        "quantity": 40
+      },
+      {
+        "foodId": 20,
+        "quantity": 8
+      }
+    ],
+    "prepTime": 8,
+    "cookTime": 6,
+    "servings": 1,
+    "instructions": [
+      "Faire revenir l’oignon et le poivron dans l’huile d’olive.",
+      "Ajouter la tomate puis le quinoa cuit et réchauffer.",
+      "Ajouter le thon égoutté à la fin.",
+      "Mélanger délicatement et servir."
+    ],
+    "tip": "Ajoute le thon en dernier pour éviter qu’il ne se dessèche."
+  },
+  {
+    "id": 21,
+    "name": "Poké bowl saumon mangue avocat",
+    "emoji": "🥢",
+    "meal": "Déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 21,
+        "quantity": 100
+      },
+      {
+        "foodId": 22,
+        "quantity": 120
+      },
+      {
+        "foodId": 23,
+        "quantity": 60
+      },
+      {
+        "foodId": 24,
+        "quantity": 40
+      },
+      {
+        "foodId": 25,
+        "quantity": 70
+      },
+      {
+        "foodId": 26,
+        "quantity": 15
+      }
+    ],
+    "prepTime": 12,
+    "cookTime": 0,
+    "servings": 1,
+    "instructions": [
+      "Déposer le riz cuit dans un grand bol.",
+      "Ajouter le saumon coupé en dés et les edamame.",
+      "Couper l’avocat et la mangue puis les disposer dans le bol.",
+      "Verser la sauce soja juste avant de déguster."
+    ],
+    "tip": "Ajoute du concombre ou un peu de kimchi si tu veux davantage de volume et de croquant."
+  },
+  {
+    "id": 22,
+    "name": "Poulet grillé patate douce et haricots verts",
+    "emoji": "🍗",
+    "meal": "Déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 5,
+        "quantity": 150
+      },
+      {
+        "foodId": 39,
+        "quantity": 220
+      },
+      {
+        "foodId": 40,
+        "quantity": 150
+      },
+      {
+        "foodId": 20,
+        "quantity": 8
+      }
+    ],
+    "prepTime": 10,
+    "cookTime": 20,
+    "servings": 1,
+    "instructions": [
+      "Réchauffer ou préparer la patate douce cuite et les haricots verts.",
+      "Assaisonner le poulet puis le griller à la poêle jusqu’à cuisson complète.",
+      "Réunir le poulet, la patate douce et les haricots verts dans l’assiette.",
+      "Ajouter l’huile d’olive au moment de servir ou pour la cuisson."
+    ],
+    "tip": "Coupe la patate douce en petits morceaux pour une cuisson plus rapide si tu la prépares le jour même."
+  },
+  {
+    "id": 23,
+    "name": "Curry de poulet légumes et riz basmati",
+    "emoji": "🍛",
+    "meal": "Dîner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 5,
+        "quantity": 140
+      },
+      {
+        "foodId": 38,
+        "quantity": 150
+      },
+      {
+        "foodId": 64,
+        "quantity": 100
+      },
+      {
+        "foodId": 41,
+        "quantity": 80
+      },
+      {
+        "foodId": 18,
+        "quantity": 80
+      },
+      {
+        "foodId": 70,
+        "quantity": 70
+      },
+      {
+        "foodId": 20,
+        "quantity": 5
+      }
+    ],
+    "prepTime": 12,
+    "cookTime": 18,
+    "servings": 1,
+    "instructions": [
+      "Faire revenir le poulet dans l’huile d’olive.",
+      "Ajouter la courgette, la carotte et le poivron coupés en morceaux.",
+      "Assaisonner avec du curry puis laisser cuire jusqu’à ce que les légumes soient tendres.",
+      "Baisser le feu, incorporer le yaourt grec et mélanger sans faire bouillir fortement.",
+      "Servir avec le riz basmati cuit."
+    ],
+    "tip": "Ajoute le yaourt à feu doux pour garder une sauce lisse et crémeuse."
+  },
+  {
+    "id": 24,
+    "name": "Chili con carne",
+    "emoji": "🌶️",
+    "meal": "Déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 32,
+        "quantity": 120
+      },
+      {
+        "foodId": 60,
+        "quantity": 130
+      },
+      {
+        "foodId": 17,
+        "quantity": 150
+      },
+      {
+        "foodId": 18,
+        "quantity": 80
+      },
+      {
+        "foodId": 19,
+        "quantity": 50
+      },
+      {
+        "foodId": 67,
+        "quantity": 50
+      },
+      {
+        "foodId": 20,
+        "quantity": 5
+      }
+    ],
+    "prepTime": 12,
+    "cookTime": 20,
+    "servings": 1,
+    "instructions": [
+      "Faire revenir l’oignon et le poivron dans l’huile d’olive.",
+      "Ajouter le steak haché émietté et cuire en mélangeant.",
+      "Ajouter la tomate, les haricots rouges et le maïs.",
+      "Assaisonner avec paprika, cumin et piment selon ton goût puis laisser mijoter environ 10 minutes."
+    ],
+    "tip": "Préparé la veille, le chili est encore meilleur une fois les saveurs développées."
+  },
+  {
+    "id": 25,
+    "name": "Köfte boulgour et salade",
+    "emoji": "🇹🇷",
+    "meal": "Dîner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 32,
+        "quantity": 140
+      },
+      {
+        "foodId": 59,
+        "quantity": 170
+      },
+      {
+        "foodId": 17,
+        "quantity": 100
+      },
+      {
+        "foodId": 65,
+        "quantity": 100
+      },
+      {
+        "foodId": 19,
+        "quantity": 40
+      },
+      {
+        "foodId": 70,
+        "quantity": 50
+      }
+    ],
+    "prepTime": 15,
+    "cookTime": 15,
+    "servings": 1,
+    "instructions": [
+      "Mélanger le steak haché avec une partie de l’oignon finement haché, du sel, du poivre, du cumin et du persil si tu en as.",
+      "Former de petits köfte puis les cuire à la poêle ou au grill jusqu’à cuisson complète.",
+      "Réchauffer le boulgour cuit.",
+      "Préparer une salade avec tomate, concombre et le reste de l’oignon.",
+      "Servir les köfte avec le boulgour, la salade et le yaourt grec."
+    ],
+    "tip": "Humidifie légèrement tes mains pour former les köfte plus facilement."
+  },
+  {
+    "id": 26,
+    "name": "Cabillaud riz et brocoli",
+    "emoji": "🐟",
+    "meal": "Déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 30,
+        "quantity": 160
+      },
+      {
+        "foodId": 38,
+        "quantity": 170
+      },
+      {
+        "foodId": 27,
+        "quantity": 180
+      },
+      {
+        "foodId": 20,
+        "quantity": 8
+      },
+      {
+        "foodId": 71,
+        "quantity": 20
+      }
+    ],
+    "prepTime": 8,
+    "cookTime": 15,
+    "servings": 1,
+    "instructions": [
+      "Réchauffer le riz basmati et cuire ou réchauffer le brocoli.",
+      "Assaisonner le cabillaud puis le cuire à la poêle ou au four jusqu’à ce qu’il s’effeuille facilement.",
+      "Assembler le riz, le brocoli et le cabillaud.",
+      "Ajouter l’huile d’olive et le citron au moment de servir."
+    ],
+    "tip": "Le citron ajouté après cuisson garde un goût plus frais."
+  },
+  {
+    "id": 27,
+    "name": "Dinde aux champignons et riz basmati",
+    "emoji": "🍄",
+    "meal": "Dîner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 31,
+        "quantity": 150
+      },
+      {
+        "foodId": 38,
+        "quantity": 160
+      },
+      {
+        "foodId": 34,
+        "quantity": 180
+      },
+      {
+        "foodId": 19,
+        "quantity": 50
+      },
+      {
+        "foodId": 70,
+        "quantity": 60
+      },
+      {
+        "foodId": 20,
+        "quantity": 5
+      }
+    ],
+    "prepTime": 10,
+    "cookTime": 15,
+    "servings": 1,
+    "instructions": [
+      "Faire revenir l’oignon et les champignons dans l’huile d’olive.",
+      "Ajouter la dinde coupée en morceaux et cuire complètement.",
+      "Baisser le feu puis incorporer le yaourt grec pour créer une sauce légère.",
+      "Servir avec le riz basmati cuit."
+    ],
+    "tip": "Ne fais pas bouillir fortement le yaourt pour conserver une sauce homogène."
+  },
+  {
+    "id": 28,
+    "name": "Pâtes saumon pesto vert",
+    "emoji": "🍝",
+    "meal": "Dîner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 10,
+        "quantity": 150
+      },
+      {
+        "foodId": 21,
+        "quantity": 100
+      },
+      {
+        "foodId": 56,
+        "quantity": 15
+      },
+      {
+        "foodId": 33,
+        "quantity": 100
+      },
+      {
+        "foodId": 69,
+        "quantity": 10
+      }
+    ],
+    "prepTime": 8,
+    "cookTime": 8,
+    "servings": 1,
+    "instructions": [
+      "Réchauffer les pâtes complètes cuites.",
+      "Cuire le saumon en morceaux dans une poêle jusqu’à cuisson souhaitée.",
+      "Ajouter les épinards et les laisser tomber.",
+      "Incorporer le pesto vert puis les pâtes.",
+      "Terminer avec le parmesan."
+    ],
+    "tip": "Détends le pesto avec une cuillère d’eau chaude si nécessaire."
+  },
+  {
+    "id": 29,
+    "name": "Pâtes poulet pesto rouge",
+    "emoji": "🍝",
+    "meal": "Déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 10,
+        "quantity": 160
+      },
+      {
+        "foodId": 5,
+        "quantity": 130
+      },
+      {
+        "foodId": 57,
+        "quantity": 20
+      },
+      {
+        "foodId": 17,
+        "quantity": 100
+      },
+      {
+        "foodId": 33,
+        "quantity": 80
+      }
+    ],
+    "prepTime": 8,
+    "cookTime": 10,
+    "servings": 1,
+    "instructions": [
+      "Cuire le poulet en morceaux dans une poêle.",
+      "Ajouter les épinards puis la tomate et laisser réduire légèrement.",
+      "Ajouter les pâtes complètes cuites et le pesto rouge.",
+      "Mélanger jusqu’à ce que le plat soit bien chaud."
+    ],
+    "tip": "Ajoute le pesto en fin de cuisson pour préserver son goût."
+  },
+  {
+    "id": 30,
+    "name": "Bowl poulet avocat edamame",
+    "emoji": "🥗",
+    "meal": "Déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 5,
+        "quantity": 130
+      },
+      {
+        "foodId": 22,
+        "quantity": 130
+      },
+      {
+        "foodId": 23,
+        "quantity": 70
+      },
+      {
+        "foodId": 24,
+        "quantity": 50
+      },
+      {
+        "foodId": 65,
+        "quantity": 100
+      },
+      {
+        "foodId": 26,
+        "quantity": 15
+      }
+    ],
+    "prepTime": 12,
+    "cookTime": 10,
+    "servings": 1,
+    "instructions": [
+      "Cuire le poulet puis le couper en morceaux.",
+      "Déposer le riz cuit dans un bol.",
+      "Ajouter le poulet, les edamame, l’avocat et le concombre.",
+      "Verser la sauce soja juste avant de servir."
+    ],
+    "tip": "Laisse refroidir légèrement le riz si tu préfères un bowl tiède plutôt que chaud."
+  },
+  {
+    "id": 31,
+    "name": "Bowl coréen bœuf kimchi",
+    "emoji": "🇰🇷",
+    "meal": "Dîner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 32,
+        "quantity": 120
+      },
+      {
+        "foodId": 22,
+        "quantity": 150
+      },
+      {
+        "foodId": 29,
+        "quantity": 80
+      },
+      {
+        "foodId": 41,
+        "quantity": 80
+      },
+      {
+        "foodId": 33,
+        "quantity": 80
+      },
+      {
+        "foodId": 26,
+        "quantity": 15
+      }
+    ],
+    "prepTime": 12,
+    "cookTime": 12,
+    "servings": 1,
+    "instructions": [
+      "Cuire le steak haché émietté dans une poêle.",
+      "Ajouter la carotte et les épinards puis faire revenir quelques minutes.",
+      "Ajouter un peu de sauce soja et mélanger.",
+      "Déposer le riz dans un bol puis ajouter le bœuf, les légumes et le kimchi."
+    ],
+    "tip": "Ajoute le kimchi à la fin pour conserver son croquant et sa fraîcheur."
+  },
+  {
+    "id": 32,
+    "name": "Quiche sans pâte épinards feta",
+    "emoji": "🥧",
+    "meal": "Déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 6,
+        "quantity": 100
+      },
+      {
+        "foodId": 33,
+        "quantity": 150
+      },
+      {
+        "foodId": 4,
+        "quantity": 40
+      },
+      {
+        "foodId": 70,
+        "quantity": 100
+      },
+      {
+        "foodId": 19,
+        "quantity": 40
+      }
+    ],
+    "prepTime": 10,
+    "cookTime": 25,
+    "servings": 1,
+    "instructions": [
+      "Préchauffer le four à 180 °C.",
+      "Faire revenir rapidement l’oignon et les épinards pour retirer l’excès d’eau.",
+      "Battre les œufs avec le yaourt grec puis incorporer la feta et les légumes.",
+      "Verser dans un petit moule ou un plat individuel.",
+      "Cuire environ 25 minutes, jusqu’à ce que le centre soit pris."
+    ],
+    "tip": "Laisse reposer 5 minutes après cuisson : la quiche se tiendra mieux."
+  },
+  {
+    "id": 33,
+    "name": "Quiche sans pâte saumon brocoli",
+    "emoji": "🥧",
+    "meal": "Déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 6,
+        "quantity": 100
+      },
+      {
+        "foodId": 21,
+        "quantity": 80
+      },
+      {
+        "foodId": 27,
+        "quantity": 130
+      },
+      {
+        "foodId": 70,
+        "quantity": 100
+      },
+      {
+        "foodId": 68,
+        "quantity": 30
+      }
+    ],
+    "prepTime": 10,
+    "cookTime": 25,
+    "servings": 1,
+    "instructions": [
+      "Préchauffer le four à 180 °C.",
+      "Cuire ou précuire légèrement le brocoli et égoutter soigneusement.",
+      "Battre les œufs avec le yaourt grec puis ajouter le saumon, le brocoli et la mozzarella.",
+      "Verser dans un petit moule.",
+      "Cuire environ 25 minutes jusqu’à ce que la quiche soit prise."
+    ],
+    "tip": "Égoutte bien le brocoli pour éviter que la quiche ne rende trop d’eau."
+  },
+  {
+    "id": 34,
+    "name": "Quiche sans pâte poulet champignons",
+    "emoji": "🥧",
+    "meal": "Déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 6,
+        "quantity": 100
+      },
+      {
+        "foodId": 5,
+        "quantity": 100
+      },
+      {
+        "foodId": 34,
+        "quantity": 150
+      },
+      {
+        "foodId": 70,
+        "quantity": 100
+      },
+      {
+        "foodId": 68,
+        "quantity": 30
+      }
+    ],
+    "prepTime": 10,
+    "cookTime": 25,
+    "servings": 1,
+    "instructions": [
+      "Préchauffer le four à 180 °C.",
+      "Faire revenir le poulet et les champignons jusqu’à cuisson du poulet et évaporation de l’eau des champignons.",
+      "Battre les œufs avec le yaourt grec puis ajouter le poulet, les champignons et la mozzarella.",
+      "Verser dans un petit moule.",
+      "Cuire environ 25 minutes."
+    ],
+    "tip": "Fais bien évaporer l’eau des champignons avant de les incorporer."
+  },
+  {
+    "id": 35,
+    "name": "Salade lentilles feta betterave",
+    "emoji": "🥗",
+    "meal": "Déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 62,
+        "quantity": 160
+      },
+      {
+        "foodId": 42,
+        "quantity": 120
+      },
+      {
+        "foodId": 4,
+        "quantity": 35
+      },
+      {
+        "foodId": 65,
+        "quantity": 100
+      },
+      {
+        "foodId": 20,
+        "quantity": 8
+      }
+    ],
+    "prepTime": 8,
+    "cookTime": 0,
+    "servings": 1,
+    "instructions": [
+      "Déposer les lentilles cuites dans un saladier.",
+      "Couper la betterave et le concombre.",
+      "Ajouter les légumes aux lentilles puis émietter la feta.",
+      "Ajouter l’huile d’olive, assaisonner et mélanger."
+    ],
+    "tip": "Un filet de citron ou de vinaigre donne encore plus de fraîcheur à cette salade."
+  },
+  {
+    "id": 36,
+    "name": "Salade pois chiches thon",
+    "emoji": "🥗",
+    "meal": "Déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 63,
+        "quantity": 130
+      },
+      {
+        "foodId": 7,
+        "quantity": 100
+      },
+      {
+        "foodId": 17,
+        "quantity": 120
+      },
+      {
+        "foodId": 65,
+        "quantity": 100
+      },
+      {
+        "foodId": 19,
+        "quantity": 40
+      },
+      {
+        "foodId": 20,
+        "quantity": 5
+      }
+    ],
+    "prepTime": 8,
+    "cookTime": 0,
+    "servings": 1,
+    "instructions": [
+      "Égoutter les pois chiches et le thon.",
+      "Couper la tomate, le concombre et l’oignon.",
+      "Réunir tous les ingrédients dans un saladier.",
+      "Ajouter l’huile d’olive, assaisonner et mélanger."
+    ],
+    "tip": "Rince les pois chiches en conserve avant de les utiliser."
+  },
+  {
+    "id": 37,
+    "name": "Cabillaud patate douce épinards",
+    "emoji": "🐟",
+    "meal": "Dîner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 30,
+        "quantity": 170
+      },
+      {
+        "foodId": 39,
+        "quantity": 220
+      },
+      {
+        "foodId": 33,
+        "quantity": 150
+      },
+      {
+        "foodId": 20,
+        "quantity": 8
+      },
+      {
+        "foodId": 71,
+        "quantity": 20
+      }
+    ],
+    "prepTime": 8,
+    "cookTime": 18,
+    "servings": 1,
+    "instructions": [
+      "Réchauffer la patate douce cuite et les épinards.",
+      "Assaisonner le cabillaud puis le cuire à la poêle ou au four.",
+      "Assembler le poisson, la patate douce et les épinards.",
+      "Ajouter l’huile d’olive et le citron au moment de servir."
+    ],
+    "tip": "Le cabillaud est prêt lorsqu’il devient opaque et se détache facilement en lamelles."
+  },
+  {
+    "id": 38,
+    "name": "Dinde quinoa légumes",
+    "emoji": "🍗",
+    "meal": "Dîner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 31,
+        "quantity": 150
+      },
+      {
+        "foodId": 9,
+        "quantity": 160
+      },
+      {
+        "foodId": 64,
+        "quantity": 120
+      },
+      {
+        "foodId": 18,
+        "quantity": 100
+      },
+      {
+        "foodId": 19,
+        "quantity": 40
+      },
+      {
+        "foodId": 20,
+        "quantity": 8
+      }
+    ],
+    "prepTime": 10,
+    "cookTime": 12,
+    "servings": 1,
+    "instructions": [
+      "Faire revenir l’oignon et le poivron dans l’huile d’olive.",
+      "Ajouter la dinde coupée en morceaux puis cuire complètement.",
+      "Ajouter la courgette et poursuivre la cuisson quelques minutes.",
+      "Ajouter le quinoa cuit, mélanger et servir chaud."
+    ],
+    "tip": "Coupe les légumes de taille similaire pour une cuisson homogène."
+  },
+  {
+    "id": 39,
+    "name": "Steak haché pommes de terre haricots verts",
+    "emoji": "🥩",
+    "meal": "Dîner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 32,
+        "quantity": 130
+      },
+      {
+        "foodId": 58,
+        "quantity": 220
+      },
+      {
+        "foodId": 40,
+        "quantity": 180
+      },
+      {
+        "foodId": 20,
+        "quantity": 8
+      }
+    ],
+    "prepTime": 8,
+    "cookTime": 15,
+    "servings": 1,
+    "instructions": [
+      "Réchauffer les pommes de terre cuites et les haricots verts.",
+      "Cuire le steak haché à la poêle selon la cuisson souhaitée.",
+      "Servir avec les pommes de terre et les haricots verts.",
+      "Ajouter l’huile d’olive sur les légumes ou pour la cuisson."
+    ],
+    "tip": "Écrase légèrement les pommes de terre à la poêle pour les rendre croustillantes."
+  },
+  {
+    "id": 40,
+    "name": "Saumon pommes de terre brocoli",
+    "emoji": "🐟",
+    "meal": "Dîner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 21,
+        "quantity": 120
+      },
+      {
+        "foodId": 58,
+        "quantity": 200
+      },
+      {
+        "foodId": 27,
+        "quantity": 180
+      },
+      {
+        "foodId": 71,
+        "quantity": 20
+      }
+    ],
+    "prepTime": 8,
+    "cookTime": 15,
+    "servings": 1,
+    "instructions": [
+      "Réchauffer les pommes de terre et cuire ou réchauffer le brocoli.",
+      "Cuire le saumon à la poêle ou au four.",
+      "Assembler le saumon, les pommes de terre et le brocoli.",
+      "Ajouter le citron juste avant de servir."
+    ],
+    "tip": "Commence la cuisson du saumon côté peau si ton morceau en possède une."
+  },
+  {
+    "id": 41,
+    "name": "Skyr kiwi amandes",
+    "emoji": "🥝",
+    "meal": "Collation",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 1,
+        "quantity": 150
+      },
+      {
+        "foodId": 43,
+        "quantity": 100
+      },
+      {
+        "foodId": 47,
+        "quantity": 10
+      }
+    ],
+    "prepTime": 4,
+    "cookTime": 0,
+    "servings": 1,
+    "instructions": [
+      "Verser le skyr dans un bol.",
+      "Couper le kiwi en morceaux.",
+      "Ajouter le kiwi et les amandes sur le skyr."
+    ],
+    "tip": "Ajoute les amandes au dernier moment pour conserver leur croquant."
+  },
+  {
+    "id": 42,
+    "name": "Kéfir ananas chia",
+    "emoji": "🍍",
+    "meal": "Collation",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 53,
+        "quantity": 200
+      },
+      {
+        "foodId": 44,
+        "quantity": 100
+      },
+      {
+        "foodId": 11,
+        "quantity": 10
+      }
+    ],
+    "prepTime": 4,
+    "cookTime": 0,
+    "servings": 1,
+    "instructions": [
+      "Verser le kéfir dans un bol ou un verre.",
+      "Ajouter les graines de chia et mélanger.",
+      "Ajouter l’ananas coupé en morceaux.",
+      "Laisser reposer 10 minutes si tu souhaites une texture légèrement plus épaisse."
+    ],
+    "tip": "Le chia épaissit progressivement : adapte le temps de repos à la texture que tu préfères."
+  },
+  {
+    "id": 43,
+    "name": "Dattes au beurre de cacahuète",
+    "emoji": "🥜",
+    "meal": "Collation",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 46,
+        "quantity": 35
+      },
+      {
+        "foodId": 54,
+        "quantity": 12
+      }
+    ],
+    "prepTime": 4,
+    "cookTime": 0,
+    "servings": 1,
+    "instructions": [
+      "Ouvrir les dattes et retirer les noyaux si nécessaire.",
+      "Répartir le beurre de cacahuète à l’intérieur des dattes.",
+      "Servir immédiatement ou placer quelques minutes au réfrigérateur."
+    ],
+    "tip": "Une pincée de sel sur le beurre de cacahuète accentue le contraste sucré-salé."
+  },
+  {
+    "id": 44,
+    "name": "Skyr fraises chocolat noir",
+    "emoji": "🍓",
+    "meal": "Collation",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 1,
+        "quantity": 150
+      },
+      {
+        "foodId": 36,
+        "quantity": 120
+      },
+      {
+        "foodId": 55,
+        "quantity": 10
+      }
+    ],
+    "prepTime": 4,
+    "cookTime": 0,
+    "servings": 1,
+    "instructions": [
+      "Verser le skyr dans un bol.",
+      "Ajouter les fraises coupées.",
+      "Hacher ou casser le chocolat noir puis le répartir sur le dessus."
+    ],
+    "tip": "Ajoute le chocolat au dernier moment pour garder de petits morceaux croquants."
+  },
+  {
+    "id": 45,
+    "name": "Activia framboises amandes",
+    "emoji": "🫐",
+    "meal": "Collation",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 3,
+        "quantity": 125
+      },
+      {
+        "foodId": 37,
+        "quantity": 100
+      },
+      {
+        "foodId": 47,
+        "quantity": 10
+      }
+    ],
+    "prepTime": 4,
+    "cookTime": 0,
+    "servings": 1,
+    "instructions": [
+      "Verser l’Activia dans un bol.",
+      "Ajouter les framboises.",
+      "Terminer avec les amandes."
+    ],
+    "tip": "Si les framboises sont surgelées, laisse-les décongeler avant de les ajouter."
+  },
+  {
+    "id": 46,
+    "name": "Skyr pomme beurre de cacahuète",
+    "emoji": "🍎",
+    "meal": "Collation",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 1,
+        "quantity": 150
+      },
+      {
+        "foodId": 15,
+        "quantity": 120
+      },
+      {
+        "foodId": 54,
+        "quantity": 10
+      }
+    ],
+    "prepTime": 4,
+    "cookTime": 0,
+    "servings": 1,
+    "instructions": [
+      "Verser le skyr dans un bol.",
+      "Couper la pomme en morceaux.",
+      "Ajouter la pomme et le beurre de cacahuète.",
+      "Mélanger légèrement ou garder les toppings séparés."
+    ],
+    "tip": "Réchauffe légèrement la pomme avec de la cannelle pour une version plus réconfortante."
+  },
+  {
+    "id": 47,
+    "name": "Overnight oats banane beurre de cacahuète",
+    "emoji": "🥜",
+    "meal": "Petit-déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 8,
+        "quantity": 40
+      },
+      {
+        "foodId": 12,
+        "quantity": 150
+      },
+      {
+        "foodId": 1,
+        "quantity": 150
+      },
+      {
+        "foodId": 14,
+        "quantity": 80
+      },
+      {
+        "foodId": 54,
+        "quantity": 10
+      }
+    ],
+    "prepTime": 5,
+    "cookTime": 0,
+    "servings": 1,
+    "instructions": [
+      "Mélanger les flocons d’avoine, le lait d’amande et le skyr.",
+      "Ajouter la banane coupée en rondelles.",
+      "Ajouter le beurre de cacahuète et mélanger légèrement.",
+      "Couvrir et réfrigérer au moins 4 heures, idéalement toute la nuit."
+    ],
+    "tip": "Mélange le beurre de cacahuète avec un peu de lait avant de l’ajouter si tu veux mieux le répartir."
+  },
+  {
+    "id": 48,
+    "name": "Skyr kiwi chia",
+    "emoji": "🥝",
+    "meal": "Petit-déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 1,
+        "quantity": 200
+      },
+      {
+        "foodId": 43,
+        "quantity": 120
+      },
+      {
+        "foodId": 8,
+        "quantity": 35
+      },
+      {
+        "foodId": 11,
+        "quantity": 10
+      }
+    ],
+    "prepTime": 5,
+    "cookTime": 0,
+    "servings": 1,
+    "instructions": [
+      "Verser le skyr dans un bol.",
+      "Ajouter les flocons d’avoine et les graines de chia.",
+      "Couper le kiwi puis l’ajouter.",
+      "Laisser reposer quelques minutes avant de servir si tu veux attendrir l’avoine."
+    ],
+    "tip": "Pour une version préparée la veille, conserve le kiwi à part et ajoute-le le matin."
+  },
+  {
+    "id": 49,
+    "name": "Bowlcake banane chocolat noir",
+    "emoji": "🍫",
+    "meal": "Petit-déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 8,
+        "quantity": 40
+      },
+      {
+        "foodId": 1,
+        "quantity": 120
+      },
+      {
+        "foodId": 6,
+        "quantity": 50
+      },
+      {
+        "foodId": 14,
+        "quantity": 80
+      },
+      {
+        "foodId": 55,
+        "quantity": 10
+      }
+    ],
+    "prepTime": 6,
+    "cookTime": 3,
+    "servings": 1,
+    "instructions": [
+      "Écraser la banane dans un bol.",
+      "Ajouter le skyr, l’œuf et les flocons d’avoine puis mélanger.",
+      "Ajouter le chocolat noir en petits morceaux.",
+      "Cuire au micro-ondes environ 2 à 3 minutes.",
+      "Laisser tiédir avant de déguster."
+    ],
+    "tip": "Enfonce quelques morceaux de chocolat au centre pour obtenir un cœur plus fondant."
+  },
+  {
+    "id": 50,
+    "name": "Chia pudding ananas",
+    "emoji": "🍍",
+    "meal": "Petit-déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 11,
+        "quantity": 25
+      },
+      {
+        "foodId": 12,
+        "quantity": 180
+      },
+      {
+        "foodId": 1,
+        "quantity": 150
+      },
+      {
+        "foodId": 44,
+        "quantity": 120
+      }
+    ],
+    "prepTime": 5,
+    "cookTime": 0,
+    "servings": 1,
+    "instructions": [
+      "Mélanger les graines de chia et le lait d’amande.",
+      "Laisser reposer 10 minutes puis mélanger de nouveau.",
+      "Incorporer le skyr.",
+      "Ajouter l’ananas et réfrigérer au moins 3 heures."
+    ],
+    "tip": "Ajoute l’ananas au dernier moment si tu préfères conserver davantage de texture."
+  },
+  {
+    "id": 51,
+    "name": "Porridge pomme amandes",
+    "emoji": "🍎",
+    "meal": "Petit-déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 8,
+        "quantity": 40
+      },
+      {
+        "foodId": 13,
+        "quantity": 180
+      },
+      {
+        "foodId": 15,
+        "quantity": 150
+      },
+      {
+        "foodId": 47,
+        "quantity": 10
+      }
+    ],
+    "prepTime": 7,
+    "cookTime": 6,
+    "servings": 1,
+    "instructions": [
+      "Couper la pomme en petits morceaux.",
+      "Faire chauffer les flocons d’avoine et le lait dans une casserole.",
+      "Ajouter la pomme et cuire à feu doux en remuant jusqu’à texture crémeuse.",
+      "Servir avec les amandes sur le dessus."
+    ],
+    "tip": "Un peu de cannelle se marie très bien avec la pomme et l’amande."
+  },
+  {
+    "id": 52,
+    "name": "Skyr fraises avoine",
+    "emoji": "🍓",
+    "meal": "Petit-déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 1,
+        "quantity": 200
+      },
+      {
+        "foodId": 36,
+        "quantity": 150
+      },
+      {
+        "foodId": 8,
+        "quantity": 40
+      },
+      {
+        "foodId": 11,
+        "quantity": 10
+      }
+    ],
+    "prepTime": 5,
+    "cookTime": 0,
+    "servings": 1,
+    "instructions": [
+      "Verser le skyr dans un bol.",
+      "Ajouter les flocons d’avoine et les graines de chia.",
+      "Couper les fraises puis les déposer sur le dessus.",
+      "Mélanger juste avant de déguster."
+    ],
+    "tip": "Laisse reposer 10 à 15 minutes si tu veux que l’avoine soit plus tendre."
+  },
+  {
+    "id": 53,
+    "name": "Mantı au yaourt à l’ail",
+    "emoji": "🥟",
+    "meal": "Dîner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 73,
+        "quantity": 120
+      },
+      {
+        "foodId": 70,
+        "quantity": 120
+      },
+      {
+        "foodId": 66,
+        "quantity": 3
+      },
+      {
+        "foodId": 20,
+        "quantity": 5
+      }
+    ],
+    "prepTime": 5,
+    "cookTime": 12,
+    "servings": 1,
+    "instructions": [
+      "Porter une casserole d’eau à ébullition puis cuire les mantı prêts à cuire selon les indications du paquet, comme des pâtes.",
+      "Pendant ce temps, mélanger le yaourt grec avec l’ail finement râpé ou écrasé.",
+      "Égoutter les mantı puis les déposer dans une assiette ou un bol.",
+      "Ajouter la sauce au yaourt à l’ail sur les mantı.",
+      "Faire tiédir l’huile d’olive avec du pul biber ou du paprika si tu en as, puis verser sur le dessus. Ajouter éventuellement menthe séchée ou sumac."
+    ],
+    "tip": "Les valeurs des mantı peuvent varier selon la marque : quand tu auras ton paquet habituel, on pourra remplacer la valeur générique par celle de l’étiquette."
+  }
+]

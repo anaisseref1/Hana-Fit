@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "type": "welcome",
+    "message": "Bonjour Hana 🌸 Prête pour une nouvelle journée ?"
+  },
+  {
+    "id": 2,
+    "type": "protein_success",
+    "message": "Bravo ! Tu as atteint ton objectif de protéines aujourd'hui 💪"
+  },
+  {
+    "id": 3,
+    "type": "water_reminder",
+    "message": "Pense à boire un verre d'eau 💧"
+  },
+  {
+    "id": 4,
+    "type": "steps",
+    "message": "Une petite marche et ton objectif sera atteint 🚶"
+  },
+  {
+    "id": 5,
+    "type": "sleep",
+    "message": "Le sommeil est aussi important que l'entraînement 😴"
+  },
+  {
+    "id": 6,
+    "type": "motivation",
+    "message": "Les petits progrès répétés chaque jour font les grandes réussites 🌸"
+  },
+  {
+    "id": 7,
+    "type": "program_start",
+    "message": "Un nouveau programme commence aujourd'hui ! Je serai là pour t'accompagner 🐈"
+  },
+  {
+    "id": 8,
+    "type": "program_complete",
+    "message": "Félicitations ! Tu viens de terminer ton programme. Tu peux être fière de toi 💙"
+  }
+]

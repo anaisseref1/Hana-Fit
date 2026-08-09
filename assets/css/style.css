@@ -1,0 +1,713 @@
+@import url("components.css");
+:root {
+    --blue-900: #0d47a1;
+    --blue-700: #2563eb;
+    --blue-500: #60a5fa;
+    --blue-200: #bfdbfe;
+    --blue-100: #dbeafe;
+    --blue-50: #eff6ff;
+
+    --background: #f5f9ff;
+    --surface: rgba(255, 255, 255, 0.88);
+    --surface-solid: #ffffff;
+
+    --text: #1e293b;
+    --text-soft: #64748b;
+
+    --shadow:
+        0 18px 45px rgba(37, 99, 235, 0.12);
+
+    --shadow-hover:
+        0 22px 55px rgba(37, 99, 235, 0.2);
+
+    --radius-large: 28px;
+    --radius-medium: 22px;
+    --radius-small: 16px;
+}
+
+
+/* =========================
+   Réglages généraux
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: var(--background);
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding-bottom: 110px;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(96, 165, 250, 0.24),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(191, 219, 254, 0.28),
+            transparent 28%
+        ),
+        linear-gradient(
+            180deg,
+            #fbfdff 0%,
+            var(--background) 100%
+        );
+}
+
+a {
+    color: inherit;
+}
+
+
+/* =========================
+   En-tête
+========================= */
+
+.top-header {
+    width: min(calc(100% - 36px), 1100px);
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    padding: 34px 0 22px;
+}
+
+.app-name,
+.section-label {
+    margin: 0;
+
+    color: var(--blue-700);
+
+    font-size: 12px;
+    font-weight: 900;
+
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.top-header h1 {
+    margin: 7px 0 6px;
+
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.05;
+}
+
+.subtitle {
+    margin: 0;
+
+    color: var(--text-soft);
+    font-size: 16px;
+}
+
+.logo-container {
+    flex-shrink: 0;
+}
+
+.app-logo,
+.logo-fallback {
+    width: 78px;
+    height: 78px;
+
+    border-radius: 24px;
+
+    object-fit: cover;
+
+    box-shadow:
+        0 16px 35px rgba(37, 99, 235, 0.28);
+}
+
+.logo-fallback {
+    display: none;
+    place-items: center;
+
+    color: white;
+
+    font-size: 34px;
+    font-weight: 900;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--blue-500),
+            var(--blue-900)
+        );
+}
+
+
+/* =========================
+   Conteneur principal
+========================= */
+
+.app-container {
+    width: min(calc(100% - 28px), 1100px);
+    margin: 0 auto;
+}
+
+
+/* =========================
+   Style commun des cartes
+========================= */
+
+.stat-card,
+.main-card,
+.menu-card {
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.96);
+
+    background: var(--surface);
+
+    box-shadow: var(--shadow);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+
+/* =========================
+   Statistiques
+========================= */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.stat-card {
+    min-height: 155px;
+
+    padding: 20px;
+
+    border-radius: var(--radius-medium);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.stat-icon {
+    font-size: 27px;
+}
+
+.stat-card p {
+    margin: 14px 0 8px;
+
+    color: var(--text-soft);
+    font-size: 14px;
+}
+
+.stat-card strong {
+    display: block;
+
+    color: var(--blue-900);
+
+    font-size: 23px;
+    line-height: 1.2;
+}
+
+.stat-card small {
+    display: block;
+
+    margin-top: 6px;
+
+    color: var(--text-soft);
+}
+
+
+/* =========================
+   Grandes cartes
+========================= */
+
+.main-card {
+    margin-top: 18px;
+
+    padding: 24px;
+
+    border-radius: var(--radius-large);
+}
+
+
+/* =========================
+   Carte du poids
+========================= */
+
+.weight-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.weight-card h2 {
+    margin: 8px 0;
+
+    font-size: clamp(38px, 7vw, 54px);
+    line-height: 1;
+}
+
+.objective-text {
+    margin: 0;
+
+    color: var(--blue-700);
+    font-weight: 800;
+}
+
+.progress-circle {
+    width: 104px;
+    height: 104px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: var(--blue-900);
+
+    font-size: 18px;
+    font-weight: 900;
+
+    background:
+        radial-gradient(
+            circle,
+            white 57%,
+            transparent 59%
+        ),
+        conic-gradient(
+            var(--blue-700) 38%,
+            var(--blue-100) 0
+        );
+
+    box-shadow:
+        inset 0 0 0 1px rgba(37, 99, 235, 0.05);
+}
+
+
+/* =========================
+   Objectifs du jour
+========================= */
+
+.section-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    margin: 7px 0 0;
+
+    font-size: 26px;
+}
+
+.butterfly {
+    font-size: 30px;
+}
+
+.goals-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.goal-item {
+    min-height: 58px;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 14px 16px;
+
+    border:
+        1px solid
+        rgba(191, 219, 254, 0.7);
+
+    border-radius: var(--radius-small);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(239, 246, 255, 0.95),
+            rgba(255, 255, 255, 0.92)
+        );
+
+    color: var(--text);
+
+    font-size: 15px;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.18s ease,
+        border-color 0.18s ease,
+        background 0.18s ease;
+}
+
+.goal-item:hover {
+    transform: translateY(-2px);
+    border-color: var(--blue-500);
+}
+
+.goal-item input {
+    width: 21px;
+    height: 21px;
+
+    flex-shrink: 0;
+
+    accent-color: var(--blue-700);
+
+    cursor: pointer;
+}
+
+.goal-item:has(input:checked) {
+    border-color: var(--blue-500);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue-50),
+            rgba(219, 234, 254, 0.9)
+        );
+}
+
+.goal-item:has(input:checked) span {
+    color: var(--blue-900);
+}
+
+
+/* =========================
+   Carte de NEHA
+========================= */
+
+.mascot-card {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.mascot-image-container {
+    flex-shrink: 0;
+}
+
+.mascot-image,
+.cat-fallback {
+    width: 116px;
+    height: 116px;
+
+    border-radius: 50%;
+
+    border: 5px solid var(--blue-100);
+
+    object-fit: cover;
+
+    box-shadow:
+        0 12px 28px rgba(37, 99, 235, 0.14);
+}
+
+.cat-fallback {
+    display: none;
+    place-items: center;
+
+    background: var(--surface-solid);
+
+    font-size: 54px;
+}
+
+.mascot-message h2 {
+    margin: 8px 0;
+
+    font-size: 25px;
+}
+
+.mascot-message p:last-child {
+    margin: 0;
+
+    color: var(--text-soft);
+
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+
+/* =========================
+   Menu des rubriques
+========================= */
+
+.menu-grid {
+    margin-top: 18px;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+}
+
+.menu-card {
+    min-height: 165px;
+
+    padding: 20px;
+
+    border-radius: var(--radius-medium);
+
+    color: var(--text);
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(96, 165, 250, 0.55);
+
+    box-shadow: var(--shadow-hover);
+}
+
+.menu-icon {
+    font-size: 30px;
+}
+
+.menu-card strong {
+    display: block;
+
+    margin-top: 15px;
+
+    color: var(--blue-900);
+
+    font-size: 16px;
+}
+
+.menu-card small {
+    display: block;
+
+    margin-top: 8px;
+
+    color: var(--text-soft);
+
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+
+/* =========================
+   Navigation du bas
+========================= */
+
+.bottom-nav {
+    position: fixed;
+    z-index: 100;
+
+    left: 50%;
+    bottom: 14px;
+
+    transform: translateX(-50%);
+
+    width: min(calc(100% - 22px), 760px);
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    padding: 10px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.96);
+
+    border-radius: 26px;
+
+    background:
+        rgba(255, 255, 255, 0.94);
+
+    box-shadow:
+        0 20px 50px
+        rgba(15, 23, 42, 0.18);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.bottom-nav a {
+    padding: 7px 3px;
+
+    color: var(--text-soft);
+
+    text-align: center;
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 750;
+
+    transition:
+        color 0.18s ease,
+        transform 0.18s ease;
+}
+
+.bottom-nav a:hover {
+    transform: translateY(-2px);
+}
+
+.bottom-nav a span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 20px;
+}
+
+.bottom-nav a.active {
+    color: var(--blue-700);
+}
+
+
+/* =========================
+   Tablettes
+========================= */
+
+@media (max-width: 900px) {
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* =========================
+   Téléphones
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding-bottom: 100px;
+    }
+
+    .top-header {
+        align-items: flex-start;
+
+        padding-top: 25px;
+    }
+
+    .app-logo,
+    .logo-fallback {
+        width: 64px;
+        height: 64px;
+
+        border-radius: 19px;
+    }
+
+    .stats-grid {
+        gap: 12px;
+    }
+
+    .stat-card {
+        min-height: 138px;
+
+        padding: 17px;
+    }
+
+    .stat-card strong {
+        font-size: 19px;
+    }
+
+    .main-card {
+        padding: 20px;
+    }
+
+    .progress-circle {
+        width: 88px;
+        height: 88px;
+
+        font-size: 16px;
+    }
+
+    .goals-list {
+        grid-template-columns: 1fr;
+    }
+
+    .goal-item {
+        min-height: 56px;
+    }
+
+    .mascot-card {
+        align-items: flex-start;
+    }
+
+    .mascot-image,
+    .cat-fallback {
+        width: 88px;
+        height: 88px;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .menu-card {
+        min-height: 150px;
+    }
+
+    .bottom-nav a {
+        font-size: 9px;
+    }
+
+    .bottom-nav a span {
+        font-size: 18px;
+    }
+}
+
+
+/* =========================
+   Très petits écrans
+========================= */
+
+@media (max-width: 380px) {
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .weight-card {
+        align-items: flex-start;
+    }
+
+    .mascot-card {
+        flex-direction: column;
+    }
+}
