@@ -21,11 +21,14 @@ const selectedFoodCarbs = document.getElementById("selectedFoodCarbs");
 const selectedFoodFat = document.getElementById("selectedFoodFat");
 const addDatabaseFoodButton = document.getElementById("addDatabaseFoodButton");
 
-const barcodePhotoInput = document.getElementById("barcodePhotoInput");
+const barcodeScanButton = document.getElementById("barcodeScanButton");
+const barcodeScannerOverlay = document.getElementById("barcodeScannerOverlay");
+const barcodeScannerVideo = document.getElementById("barcodeScannerVideo");
+const barcodeScannerCloseButton = document.getElementById("barcodeScannerCloseButton");
+const barcodeLiveStatus = document.getElementById("barcodeLiveStatus");
 const barcodeManualInput = document.getElementById("barcodeManualInput");
 const barcodeLookupButton = document.getElementById("barcodeLookupButton");
 const barcodeStatus = document.getElementById("barcodeStatus");
-const barcodePreview = document.getElementById("barcodePreview");
 const scannedProductCard = document.getElementById("scannedProductCard");
 const scannedProductMeta = document.getElementById("scannedProductMeta");
 const scannedProductName = document.getElementById("scannedProductName");
@@ -43,6 +46,11 @@ const CUSTOM_FOODS_KEY = "hanaFitCustomFoods";
 let foodDatabase = [];
 let selectedDatabaseFood = null;
 let scannedProductDraft = null;
+
+let liveScannerReader = null;
+let liveScannerControls = null;
+let liveScannerStarting = false;
+let liveScannerFound = false;
 
 let nutritionTargets = {
     minCalories: 1500,
@@ -1005,120 +1013,359 @@ async function lookupBarcode(
 }
 
 
-function waitForImageLoad(
-    image
+function setLiveScannerStatus(
+    message,
+    type = ""
 ) {
-    return new Promise(
-        (resolve, reject) => {
-            if (
-                image.complete &&
-                image.naturalWidth > 0
-            ) {
-                resolve();
-                return;
-            }
+    if (!barcodeLiveStatus) {
+        return;
+    }
 
-            image.onload =
-                () =>
-                    resolve();
+    barcodeLiveStatus.textContent =
+        message;
 
-            image.onerror =
-                () =>
-                    reject(
-                        new Error(
-                            "Impossible de lire la photo."
-                        )
-                    );
-        }
+    barcodeLiveStatus.classList.remove(
+        "success",
+        "error"
+    );
+
+    if (
+        type === "success" ||
+        type === "error"
+    ) {
+        barcodeLiveStatus.classList.add(
+            type
+        );
+    }
+}
+
+
+function openLiveScannerOverlay() {
+    if (!barcodeScannerOverlay) {
+        return;
+    }
+
+    barcodeScannerOverlay.hidden =
+        false;
+
+    document.body.classList.add(
+        "barcode-scanner-open"
     );
 }
 
 
-async function decodeBarcodePhoto(
-    file
+function closeLiveScannerOverlay() {
+    if (!barcodeScannerOverlay) {
+        return;
+    }
+
+    barcodeScannerOverlay.hidden =
+        true;
+
+    document.body.classList.remove(
+        "barcode-scanner-open"
+    );
+}
+
+
+function stopVideoTracks() {
+    const stream =
+        barcodeScannerVideo?.srcObject;
+
+    if (
+        stream &&
+        typeof stream.getTracks ===
+            "function"
+    ) {
+        stream
+            .getTracks()
+            .forEach(
+                track => {
+                    try {
+                        track.stop();
+                    } catch {
+                        // Rien à faire.
+                    }
+                }
+            );
+    }
+
+    if (barcodeScannerVideo) {
+        barcodeScannerVideo.srcObject =
+            null;
+    }
+}
+
+
+function stopLiveBarcodeScanner(
+    hideOverlay = true
 ) {
-    if (!file) {
+    try {
+        liveScannerControls?.stop?.();
+    } catch {
+        // Rien à faire.
+    }
+
+    liveScannerControls =
+        null;
+
+    try {
+        liveScannerReader?.reset?.();
+    } catch {
+        // Certaines versions n'exposent pas reset().
+    }
+
+    stopVideoTracks();
+
+    liveScannerReader =
+        null;
+
+    liveScannerStarting =
+        false;
+
+    liveScannerFound =
+        false;
+
+    if (hideOverlay) {
+        closeLiveScannerOverlay();
+    }
+}
+
+
+function getCameraErrorMessage(
+    error
+) {
+    const name =
+        error?.name ||
+        "";
+
+    if (
+        name ===
+        "NotAllowedError" ||
+        name ===
+        "PermissionDeniedError"
+    ) {
+        return "L'accès à la caméra a été refusé. Autorise la caméra pour Hana Fit dans Safari puis réessaie.";
+    }
+
+    if (
+        name ===
+        "NotFoundError" ||
+        name ===
+        "DevicesNotFoundError"
+    ) {
+        return "Aucune caméra compatible n'a été trouvée.";
+    }
+
+    if (
+        name ===
+        "NotReadableError" ||
+        name ===
+        "TrackStartError"
+    ) {
+        return "La caméra est déjà utilisée par une autre application. Ferme-la puis réessaie.";
+    }
+
+    return "Impossible d'ouvrir le scanner pour le moment. Tu peux toujours saisir le code-barres manuellement.";
+}
+
+
+async function startLiveBarcodeScanner() {
+    if (
+        liveScannerStarting ||
+        liveScannerControls
+    ) {
+        return;
+    }
+
+    if (
+        !window.isSecureContext ||
+        !navigator.mediaDevices?.getUserMedia
+    ) {
+        setBarcodeStatus(
+            "Le scanner caméra nécessite une connexion sécurisée HTTPS. La saisie manuelle reste disponible.",
+            "error"
+        );
+
         return;
     }
 
     if (
         !window.ZXingBrowser ||
-        !window.ZXingBrowser.BrowserMultiFormatReader
+        !window.ZXingBrowser
+            .BrowserMultiFormatReader
     ) {
         setBarcodeStatus(
-            "Le lecteur de code-barres n'a pas pu se charger. Vérifie ta connexion ou saisis le code manuellement.",
+            "Le lecteur de code-barres n'a pas pu se charger. Vérifie ta connexion puis réessaie.",
             "error"
         );
 
         return;
     }
 
-    const objectUrl =
-        URL.createObjectURL(
-            file
-        );
+    liveScannerStarting =
+        true;
+
+    liveScannerFound =
+        false;
+
+    openLiveScannerOverlay();
+
+    setLiveScannerStatus(
+        "Place le code-barres dans le cadre. Hana Fit le détecte automatiquement."
+    );
 
     try {
-        setBarcodeStatus(
-            "📷 Lecture du code-barres…"
-        );
-
-        barcodePreview.hidden =
-            false;
-
-        barcodePreview.src =
-            objectUrl;
-
-        await waitForImageLoad(
-            barcodePreview
-        );
-
-        const reader =
+        liveScannerReader =
             new window.ZXingBrowser
                 .BrowserMultiFormatReader();
 
-        const result =
-            await reader.decodeFromImageElement(
-                barcodePreview
-            );
+        const constraints = {
+            audio:
+                false,
 
-        const code =
-            normalizeBarcode(
-                result?.getText?.() ||
-                result?.text ||
-                ""
-            );
+            video: {
+                facingMode: {
+                    ideal:
+                        "environment"
+                },
 
-        if (!code) {
-            throw new Error(
-                "Aucun code-barres détecté."
-            );
+                width: {
+                    ideal:
+                        1280
+                },
+
+                height: {
+                    ideal:
+                        720
+                },
+
+                frameRate: {
+                    ideal:
+                        30,
+                    max:
+                        30
+                }
+            }
+        };
+
+        const controls =
+            await liveScannerReader
+                .decodeFromConstraints(
+                    constraints,
+                    barcodeScannerVideo,
+                    (
+                        result,
+                        error,
+                        callbackControls
+                    ) => {
+                        if (
+                            !result ||
+                            liveScannerFound
+                        ) {
+                            return;
+                        }
+
+                        const code =
+                            normalizeBarcode(
+                                result?.getText?.() ||
+                                result?.text ||
+                                ""
+                            );
+
+                        if (!code) {
+                            return;
+                        }
+
+                        liveScannerFound =
+                            true;
+
+                        setLiveScannerStatus(
+                            `✅ Code détecté : ${code}`,
+                            "success"
+                        );
+
+                        try {
+                            callbackControls
+                                ?.stop?.();
+                        } catch {
+                            // Rien à faire.
+                        }
+
+                        liveScannerControls =
+                            null;
+
+                        stopVideoTracks();
+
+                        if (
+                            typeof navigator.vibrate ===
+                            "function"
+                        ) {
+                            navigator.vibrate(
+                                70
+                            );
+                        }
+
+                        window.setTimeout(
+                            async () => {
+                                closeLiveScannerOverlay();
+
+                                liveScannerReader =
+                                    null;
+
+                                liveScannerStarting =
+                                    false;
+
+                                await lookupBarcode(
+                                    code
+                                );
+
+                                liveScannerFound =
+                                    false;
+                            },
+                            180
+                        );
+                    }
+                );
+
+        liveScannerStarting =
+            false;
+
+        if (liveScannerFound) {
+            try {
+                controls?.stop?.();
+            } catch {
+                // Rien à faire.
+            }
+
+            liveScannerControls =
+                null;
+
+            return;
         }
 
-        await lookupBarcode(
-            code
-        );
+        liveScannerControls =
+            controls;
 
     } catch (error) {
         console.error(
-            "Lecture photo code-barres :",
+            "Scanner caméra :",
             error
         );
 
+        const message =
+            getCameraErrorMessage(
+                error
+            );
+
+        stopLiveBarcodeScanner(
+            true
+        );
+
         setBarcodeStatus(
-            "Je n'arrive pas à lire ce code-barres. Reprends la photo de près, bien nette et avec tout le code visible, ou saisis les chiffres manuellement.",
+            message,
             "error"
         );
-
-    } finally {
-        URL.revokeObjectURL(
-            objectUrl
-        );
-
-        if (barcodePhotoInput) {
-            barcodePhotoInput.value =
-                "";
-        }
     }
 }
 
@@ -1265,19 +1512,61 @@ function saveScannedProduct() {
 }
 
 
-if (barcodePhotoInput) {
-    barcodePhotoInput.addEventListener(
-        "change",
-        event => {
-            const file =
-                event.target.files?.[0];
+if (barcodeScanButton) {
+    barcodeScanButton.addEventListener(
+        "click",
+        startLiveBarcodeScanner
+    );
+}
 
-            decodeBarcodePhoto(
-                file
+
+if (barcodeScannerCloseButton) {
+    barcodeScannerCloseButton.addEventListener(
+        "click",
+        () => {
+            stopLiveBarcodeScanner(
+                true
+            );
+
+            setBarcodeStatus(
+                "Scanner fermé. Tu peux le rouvrir ou saisir le code manuellement."
             );
         }
     );
 }
+
+
+window.addEventListener(
+    "pagehide",
+    () => {
+        if (
+            liveScannerControls ||
+            liveScannerStarting
+        ) {
+            stopLiveBarcodeScanner(
+                true
+            );
+        }
+    }
+);
+
+
+document.addEventListener(
+    "visibilitychange",
+    () => {
+        if (
+            document.hidden &&
+            (
+                liveScannerControls ||
+                liveScannerStarting
+            )
+        ) {
+            stopLiveBarcodeScanner(
+                true
+            );
+        }
+    }
+);
 
 
 if (barcodeLookupButton) {
@@ -1867,7 +2156,7 @@ async function loadFoodDatabase() {
 async function initNutrition() {
     if (barcodeStatus) {
         setBarcodeStatus(
-            "📷 Scanner prêt. Tu peux prendre une photo ou saisir un code-barres."
+            "📷 Scanner prêt. Ouvre la caméra et vise simplement le code-barres."
         );
     }
 
