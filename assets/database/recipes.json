@@ -1985,5 +1985,206 @@
       "Faire tiédir l’huile d’olive avec du pul biber ou du paprika si tu en as, puis verser sur le dessus. Ajouter éventuellement menthe séchée ou sumac."
     ],
     "tip": "Les valeurs des mantı peuvent varier selon la marque : quand tu auras ton paquet habituel, on pourra remplacer la valeur générique par celle de l’étiquette."
+  },
+  {
+    "id": 54,
+    "name": "Baked oats myrtilles chocolat blanc",
+    "emoji": "🫐",
+    "meal": "Petit-déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 8,
+        "quantity": 30
+      },
+      {
+        "foodId": 14,
+        "quantity": 60
+      },
+      {
+        "foodId": 1,
+        "quantity": 100
+      },
+      {
+        "foodId": 6,
+        "quantity": 50
+      },
+      {
+        "foodId": 12,
+        "quantity": 30
+      },
+      {
+        "foodId": 89,
+        "quantity": 70
+      },
+      {
+        "foodId": 86,
+        "quantity": 5
+      }
+    ],
+    "prepTime": 7,
+    "cookTime": 20,
+    "servings": 1,
+    "instructions": [
+      "Préchauffer le four à 180 °C.",
+      "Écraser la banane puis la mélanger avec le skyr, l’œuf et le lait d’amande.",
+      "Ajouter les flocons d’avoine et mélanger jusqu’à obtenir une pâte homogène.",
+      "Incorporer une partie des myrtilles puis verser dans un petit ramequin.",
+      "Ajouter le reste des myrtilles et le chocolat blanc sur le dessus.",
+      "Cuire environ 18 à 22 minutes, selon la texture souhaitée."
+    ],
+    "tip": "Laisse le centre légèrement moelleux pour une texture plus fondante."
+  },
+  {
+    "id": 55,
+    "name": "Dessert aux pommes façon Hana Fit",
+    "emoji": "🍎",
+    "meal": "Collation",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 88,
+        "quantity": 155
+      },
+      {
+        "foodId": 15,
+        "quantity": 150
+      },
+      {
+        "foodId": 85,
+        "quantity": 4
+      },
+      {
+        "foodId": 72,
+        "quantity": 6
+      }
+    ],
+    "prepTime": 6,
+    "cookTime": 8,
+    "servings": 1,
+    "instructions": [
+      "Couper la pomme en petits dés.",
+      "Faire fondre le beurre dans une poêle puis ajouter la pomme.",
+      "Cuire quelques minutes jusqu’à ce que les morceaux deviennent tendres.",
+      "Ajouter le miel et, si tu veux, une pincée de cannelle.",
+      "Verser le fromage blanc dans un verre ou un bol puis ajouter les pommes tièdes par-dessus."
+    ],
+    "tip": "La cannelle est facultative mais fonctionne très bien avec les pommes."
+  },
+  {
+    "id": 56,
+    "name": "Glace fraise express",
+    "emoji": "🍓",
+    "meal": "Collation",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 36,
+        "quantity": 140
+      },
+      {
+        "foodId": 88,
+        "quantity": 125
+      },
+      {
+        "foodId": 72,
+        "quantity": 7
+      }
+    ],
+    "prepTime": 10,
+    "cookTime": 0,
+    "servings": 1,
+    "instructions": [
+      "Utiliser de préférence des fraises surgelées ou très froides.",
+      "Mixer les fraises avec le fromage blanc jusqu’à obtenir une texture crémeuse.",
+      "Ajouter le miel puis mixer brièvement.",
+      "Déguster immédiatement pour une texture type glace à l’italienne ou placer au congélateur 30 à 60 minutes pour une texture plus ferme."
+    ],
+    "tip": "Si tu utilises des fraises fraîches, congèle-les coupées en morceaux avant de préparer la recette."
+  },
+  {
+    "id": 57,
+    "name": "Cheesecake framboise en bocal",
+    "emoji": "🍓",
+    "meal": "Collation",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 88,
+        "quantity": 150
+      },
+      {
+        "foodId": 37,
+        "quantity": 50
+      },
+      {
+        "foodId": 48,
+        "quantity": 22.5
+      },
+      {
+        "foodId": 72,
+        "quantity": 24
+      }
+    ],
+    "prepTime": 8,
+    "cookTime": 0,
+    "servings": 1,
+    "instructions": [
+      "Concasser les noix et les déposer au fond d’un petit bocal.",
+      "Mélanger le fromage blanc avec la moitié du miel puis le verser sur les noix.",
+      "Écraser légèrement les framboises avec le reste du miel.",
+      "Déposer les framboises sur le fromage blanc.",
+      "Réserver au réfrigérateur jusqu’au moment de déguster."
+    ],
+    "tip": "Une pincée de cannelle peut être ajoutée au fromage blanc si tu aimes."
+  },
+  {
+    "id": 58,
+    "name": "Gâteau de semoule fromage blanc cerises",
+    "emoji": "🍒",
+    "meal": "Petit-déjeuner",
+    "favorite": true,
+    "ingredients": [
+      {
+        "foodId": 71,
+        "quantity": 48
+      },
+      {
+        "foodId": 87,
+        "quantity": 22.5
+      },
+      {
+        "foodId": 88,
+        "quantity": 150
+      },
+      {
+        "foodId": 45,
+        "quantity": 75
+      },
+      {
+        "foodId": 6,
+        "quantity": 50
+      },
+      {
+        "foodId": 85,
+        "quantity": 8
+      },
+      {
+        "foodId": 72,
+        "quantity": 10
+      }
+    ],
+    "prepTime": 10,
+    "cookTime": 25,
+    "servings": 1,
+    "instructions": [
+      "Préchauffer le four à 180 °C.",
+      "Mélanger le fromage blanc, l’œuf, le miel et le jus de citron.",
+      "Ajouter la semoule puis mélanger jusqu’à obtenir une préparation homogène.",
+      "Faire fondre le beurre et l’incorporer.",
+      "Verser dans un petit plat puis répartir les cerises.",
+      "Cuire environ 25 minutes, jusqu’à ce que le centre soit pris."
+    ],
+    "tip": "Cette version Hana Fit utilise moins de beurre que la recette repérée sur Fitatu."
   }
 ]
