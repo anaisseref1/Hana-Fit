@@ -311,21 +311,140 @@
 
         .chart-shell{
             position:relative;
-            min-height:260px;
-            padding:18px;
+            min-height:320px;
+            padding:16px;
             border:1px solid #dbeafe;
             border-radius:20px;
             background:linear-gradient(180deg,#f8fbff,#ffffff);
-            overflow:hidden;
+        }
+
+        .chart-toolbar{
+            display:flex;
+            gap:8px;
+            overflow-x:auto;
+            padding:2px 1px 10px;
+            scrollbar-width:none;
+            -webkit-overflow-scrolling:touch;
+        }
+
+        .chart-toolbar::-webkit-scrollbar{
+            display:none;
+        }
+
+        .chart-period-button{
+            flex:0 0 auto;
+            padding:9px 13px;
+            border:1px solid #bfdbfe;
+            border-radius:999px;
+            background:#ffffff;
+            color:#475569;
+            font:inherit;
+            font-size:12px;
+            font-weight:800;
+            cursor:pointer;
+            transition:.2s ease;
+        }
+
+        .chart-period-button.active{
+            border-color:#2563eb;
+            background:#2563eb;
+            color:#ffffff;
+            box-shadow:0 8px 18px rgba(37,99,235,.18);
+        }
+
+        .chart-period-note{
+            min-height:18px;
+            margin:0 2px 11px;
+            color:#64748b;
+            font-size:11px;
+            line-height:1.45;
+        }
+
+        .chart-scroll-viewport{
+            position:relative;
+            width:100%;
+            overflow-x:auto;
+            overflow-y:hidden;
+            border-radius:15px;
+            background:#ffffff;
+            scrollbar-width:thin;
+            scrollbar-color:#bfdbfe transparent;
+            -webkit-overflow-scrolling:touch;
+            overscroll-behavior-x:contain;
+            touch-action:pan-x pan-y;
+        }
+
+        .chart-scroll-viewport::-webkit-scrollbar{
+            height:6px;
+        }
+
+        .chart-scroll-viewport::-webkit-scrollbar-thumb{
+            border-radius:999px;
+            background:#bfdbfe;
         }
 
         .weight-chart{
-            width:100%;
-            min-height:220px;
+            width:max-content;
+            min-width:100%;
+            min-height:238px;
+        }
+
+        .weight-chart svg{
+            display:block;
+            max-width:none;
+        }
+
+        .chart-point{
+            cursor:pointer;
+            outline:none;
+        }
+
+        .chart-point circle{
+            transition:r .15s ease,stroke-width .15s ease;
+        }
+
+        .chart-point:hover circle,
+        .chart-point:focus circle,
+        .chart-point.active circle{
+            r:7;
+            stroke-width:4;
+        }
+
+        .chart-tooltip{
+            position:absolute;
+            z-index:5;
+            left:0;
+            top:0;
+            max-width:190px;
+            padding:9px 11px;
+            border:1px solid #bfdbfe;
+            border-radius:12px;
+            background:rgba(255,255,255,.98);
+            color:#172554;
+            box-shadow:0 10px 28px rgba(15,23,42,.16);
+            font-size:12px;
+            font-weight:800;
+            line-height:1.35;
+            pointer-events:none;
+            opacity:0;
+            transform:translate(-50%,-110%);
+            transition:opacity .12s ease;
+            white-space:nowrap;
+        }
+
+        .chart-tooltip.visible{
+            opacity:1;
+        }
+
+        .chart-swipe-hint{
+            margin:10px 2px 0;
+            color:#64748b;
+            font-size:11px;
+            text-align:center;
         }
 
         .chart-empty{
-            min-height:220px;
+            min-height:238px;
             display:grid;
             place-items:center;
             color:#64748b;
@@ -1298,7 +1417,7 @@
             <div>
                 <h2>📈 Évolution du poids</h2>
                 <p>
-                    Ta courbe se construit automatiquement à partir de tes pesées.
+                    Choisis une période puis fais glisser la courbe pour parcourir les dates.
                 </p>
             </div>
 
@@ -1308,14 +1427,59 @@
         </div>
 
         <div class="chart-shell">
+
             <div
-                id="weightChart"
-                class="weight-chart"
+                id="weightChartToolbar"
+                class="chart-toolbar"
+                role="group"
+                aria-label="Période du graphique"
             >
-                <div class="chart-empty">
-                    Ajoute au moins deux pesées pour afficher ta courbe.
-                </div>
+                <button type="button" class="chart-period-button" data-chart-period="7d">
+                    7 jours
+                </button>
+
+                <button type="button" class="chart-period-button active" data-chart-period="1m">
+                    1 mois
+                </button>
+
+                <button type="button" class="chart-period-button" data-chart-period="3m">
+                    3 mois
+                </button>
+
+                <button type="button" class="chart-period-button" data-chart-period="1y">
+                    1 an
+                </button>
+
+                <button type="button" class="chart-period-button" data-chart-period="all">
+                    Tout
+                </button>
             </div>
+
+            <p id="weightChartPeriodNote" class="chart-period-note">
+                Pesées détaillées du dernier mois.
+            </p>
+
+            <div id="weightChartViewport" class="chart-scroll-viewport">
+
+                <div id="weightChart" class="weight-chart">
+                    <div class="chart-empty">
+                        Ajoute au moins une pesée pour afficher ta courbe.
+                    </div>
+                </div>
+
+                <div
+                    id="weightChartTooltip"
+                    class="chart-tooltip"
+                    role="status"
+                    aria-live="polite"
+                ></div>
+
+            </div>
+
+            <p class="chart-swipe-hint">
+                ↔️ Fais glisser horizontalement · touche un point pour voir sa valeur
+            </p>
+
         </div>
 
     </section>
