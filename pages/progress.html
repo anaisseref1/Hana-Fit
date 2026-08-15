@@ -738,6 +738,68 @@
 
 
         /* =========================================
+           HISTORIQUE DES PESÉES — ACCORDÉON
+        ========================================= */
+
+        .weight-history-accordion{
+            margin:0;
+        }
+
+        .weight-history-summary{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:14px;
+            list-style:none;
+            cursor:pointer;
+            user-select:none;
+        }
+
+        .weight-history-summary::-webkit-details-marker{
+            display:none;
+        }
+
+        .weight-history-summary::marker{
+            content:"";
+        }
+
+        .weight-history-summary h2{
+            margin:0;
+            font-size:23px;
+        }
+
+        .weight-history-summary p{
+            margin:5px 0 0;
+            color:#64748b;
+            font-size:13px;
+        }
+
+        .weight-history-chevron{
+            width:42px;
+            height:42px;
+            display:grid;
+            place-items:center;
+            flex-shrink:0;
+            border:1px solid #bfdbfe;
+            border-radius:14px;
+            background:#eff6ff;
+            color:#2563eb;
+            font-size:24px;
+            font-weight:900;
+            line-height:1;
+            transition:transform .2s ease;
+        }
+
+        .weight-history-accordion[open] .weight-history-chevron{
+            transform:rotate(180deg);
+        }
+
+        .weight-history-content{
+            padding-top:18px;
+        }
+
+
+        /* =========================================
            TENDANCE HEBDOMADAIRE
         ========================================= */
 
@@ -1389,23 +1451,37 @@
 
     <section class="journey-card">
 
-        <div class="card-heading">
-            <div>
-                <h2>📖 Historique des pesées</h2>
-                <p>
-                    Tes dernières entrées apparaîtront ici.
-                </p>
-            </div>
-        </div>
+        <details class="weight-history-accordion">
 
-        <div
-            id="weightHistory"
-            class="history-list"
-        >
-            <p class="empty-message">
-                Aucune pesée enregistrée.
-            </p>
-        </div>
+            <summary class="weight-history-summary">
+
+                <div>
+                    <h2>📖 Historique des pesées</h2>
+                    <p>
+                        Ouvre le volet pour consulter toutes tes pesées.
+                    </p>
+                </div>
+
+                <span class="weight-history-chevron" aria-hidden="true">
+                    ⌄
+                </span>
+
+            </summary>
+
+            <div class="weight-history-content">
+
+                <div
+                    id="weightHistory"
+                    class="history-list"
+                >
+                    <p class="empty-message">
+                        Aucune pesée enregistrée.
+                    </p>
+                </div>
+
+            </div>
+
+        </details>
 
     </section>
 
