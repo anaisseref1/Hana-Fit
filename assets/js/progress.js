@@ -83,6 +83,8 @@ const DEFAULTS = {
     goalWeight: 60
 };
 
+let weightChartPeriod = "1m";
+
 
 /* =========================================
    OUTILS
@@ -2073,8 +2075,594 @@ if (saveMeasurementsButton) {
 
 
 /* =========================================
-   COURBE DE POIDS
+   COURBE DE POIDS — PÉRIODES + SCROLL + TOOLTIP
 ========================================= */
+
+const WEIGHT_CHART_PERIODS = {
+    "7d": {
+        days: 7,
+        mode: "raw",
+        note: "Pesées détaillées des 7 derniers jours."
+    },
+
+    "1m": {
+        days: 30,
+        mode: "raw",
+        note: "Pesées détaillées du dernier mois."
+    },
+
+    "3m": {
+        days: 90,
+        mode: "weekly",
+        note: "Vue sur 3 mois : une moyenne par semaine."
+    },
+
+    "1y": {
+        days: 365,
+        mode: "monthly",
+        note: "Vue sur 1 an : une moyenne par mois."
+    },
+
+    "all": {
+        days: null,
+        mode: "monthly",
+        note: "Vue globale : une moyenne par mois."
+    }
+};
+
+
+function startOfMonth(date) {
+
+    return new Date(
+        date.getFullYear(),
+        date.getMonth(),
+        1,
+        12,
+        0,
+        0,
+        0
+    );
+
+}
+
+
+function monthLabel(date) {
+
+    return date
+        .toLocaleDateString(
+            "fr-FR",
+            {
+                month: "short",
+                year: "2-digit"
+            }
+        )
+        .replace(".", "");
+
+}
+
+
+function monthLongLabel(date) {
+
+    const label =
+        date.toLocaleDateString(
+            "fr-FR",
+            {
+                month: "long",
+                year: "numeric"
+            }
+        );
+
+    return label.charAt(0).toUpperCase() +
+        label.slice(1);
+
+}
+
+
+function getChartEntriesForPeriod(
+    allEntries,
+    periodKey
+) {
+
+    const config =
+        WEIGHT_CHART_PERIODS[
+            periodKey
+        ] ||
+        WEIGHT_CHART_PERIODS["1m"];
+
+
+    if (
+        allEntries.length === 0 ||
+        !config.days
+    ) {
+
+        return allEntries;
+
+    }
+
+
+    const latestDate =
+        parseDateKey(
+            allEntries[
+                allEntries.length - 1
+            ].date
+        );
+
+
+    if (!latestDate) {
+        return allEntries;
+    }
+
+
+    const firstDate =
+        addDays(
+            latestDate,
+            -(config.days - 1)
+        );
+
+
+    return allEntries.filter(
+        entry => {
+
+            const date =
+                parseDateKey(
+                    entry.date
+                );
+
+
+            return (
+                date &&
+                date >= firstDate &&
+                date <= latestDate
+            );
+
+        }
+    );
+
+}
+
+
+function aggregateChartEntries(
+    entries,
+    mode
+) {
+
+    if (
+        mode === "raw" ||
+        entries.length === 0
+    ) {
+
+        return entries.map(
+            entry => ({
+                date: entry.date,
+                weight: Number(entry.weight),
+
+                label:
+                    formatDate(
+                        entry.date
+                    ).slice(
+                        0,
+                        5
+                    ),
+
+                tooltip:
+                    `${formatDate(
+                        entry.date
+                    )} — ${formatWeight(
+                        entry.weight
+                    )}`
+            })
+        );
+
+    }
+
+
+    const groups =
+        new Map();
+
+
+    entries.forEach(
+        entry => {
+
+            const date =
+                parseDateKey(
+                    entry.date
+                );
+
+
+            if (!date) {
+                return;
+            }
+
+
+            let groupDate;
+            let key;
+
+
+            if (
+                mode === "weekly"
+            ) {
+
+                groupDate =
+                    getMonday(
+                        date
+                    );
+
+                key =
+                    `w-${localDateKey(
+                        groupDate
+                    )}`;
+
+            } else {
+
+                groupDate =
+                    startOfMonth(
+                        date
+                    );
+
+                key =
+                    `m-${groupDate.getFullYear()}-${String(
+                        groupDate.getMonth() + 1
+                    ).padStart(
+                        2,
+                        "0"
+                    )}`;
+
+            }
+
+
+            if (
+                !groups.has(
+                    key
+                )
+            ) {
+
+                groups.set(
+                    key,
+                    {
+                        date: groupDate,
+                        entries: []
+                    }
+                );
+
+            }
+
+
+            groups
+                .get(
+                    key
+                )
+                .entries
+                .push(
+                    entry
+                );
+
+        }
+    );
+
+
+    return [...groups.values()]
+        .sort(
+            (a, b) =>
+                a.date - b.date
+        )
+        .map(
+            group => {
+
+                const average =
+                    averageWeightEntries(
+                        group.entries
+                    );
+
+
+                if (
+                    mode === "weekly"
+                ) {
+
+                    return {
+                        date:
+                            localDateKey(
+                                group.date
+                            ),
+
+                        weight:
+                            average,
+
+                        label:
+                            `Sem. ${String(
+                                group.date.getDate()
+                            ).padStart(
+                                2,
+                                "0"
+                            )}/${String(
+                                group.date.getMonth() + 1
+                            ).padStart(
+                                2,
+                                "0"
+                            )}`,
+
+                        tooltip:
+                            `Semaine du ${formatDate(
+                                localDateKey(
+                                    group.date
+                                )
+                            )} — moyenne ${formatWeight(
+                                average
+                            )}`
+                    };
+
+                }
+
+
+                return {
+                    date:
+                        localDateKey(
+                            group.date
+                        ),
+
+                    weight:
+                        average,
+
+                    label:
+                        monthLabel(
+                            group.date
+                        ),
+
+                    tooltip:
+                        `${monthLongLabel(
+                            group.date
+                        )} — moyenne ${formatWeight(
+                            average
+                        )}`
+                };
+
+            }
+        )
+        .filter(
+            entry =>
+                Number.isFinite(
+                    Number(
+                        entry.weight
+                    )
+                )
+        );
+
+}
+
+
+function hideWeightChartTooltip() {
+
+    const tooltip =
+        document.getElementById(
+            "weightChartTooltip"
+        );
+
+
+    if (!tooltip) {
+        return;
+    }
+
+
+    tooltip.classList.remove(
+        "visible"
+    );
+
+
+    document
+        .querySelectorAll(
+            ".chart-point.active"
+        )
+        .forEach(
+            point =>
+                point.classList.remove(
+                    "active"
+                )
+        );
+
+}
+
+
+function showWeightChartTooltip(
+    pointElement,
+    text
+) {
+
+    const viewport =
+        document.getElementById(
+            "weightChartViewport"
+        );
+
+    const tooltip =
+        document.getElementById(
+            "weightChartTooltip"
+        );
+
+
+    if (
+        !viewport ||
+        !tooltip ||
+        !pointElement
+    ) {
+
+        return;
+
+    }
+
+
+    hideWeightChartTooltip();
+
+    pointElement.classList.add(
+        "active"
+    );
+
+    tooltip.textContent =
+        text;
+
+
+    const viewportRect =
+        viewport.getBoundingClientRect();
+
+    const pointRect =
+        pointElement.getBoundingClientRect();
+
+
+    const rawLeft =
+        pointRect.left -
+        viewportRect.left +
+        pointRect.width / 2;
+
+
+    const rawTop =
+        pointRect.top -
+        viewportRect.top -
+        7;
+
+
+    const safeLeft =
+        clamp(
+            rawLeft,
+            88,
+            Math.max(
+                88,
+                viewport.clientWidth - 88
+            )
+        );
+
+
+    tooltip.style.left =
+        `${safeLeft}px`;
+
+    tooltip.style.top =
+        `${Math.max(
+            46,
+            rawTop
+        )}px`;
+
+    tooltip.classList.add(
+        "visible"
+    );
+
+}
+
+
+function bindWeightChartInteractions() {
+
+    const toolbar =
+        document.getElementById(
+            "weightChartToolbar"
+        );
+
+    const viewport =
+        document.getElementById(
+            "weightChartViewport"
+        );
+
+
+    if (toolbar) {
+
+        toolbar
+            .querySelectorAll(
+                "[data-chart-period]"
+            )
+            .forEach(
+                button => {
+
+                    button.classList.toggle(
+                        "active",
+                        button.dataset.chartPeriod ===
+                            weightChartPeriod
+                    );
+
+
+                    button.onclick =
+                        () => {
+
+                            const nextPeriod =
+                                button.dataset.chartPeriod;
+
+
+                            if (
+                                !WEIGHT_CHART_PERIODS[
+                                    nextPeriod
+                                ]
+                            ) {
+
+                                return;
+
+                            }
+
+
+                            weightChartPeriod =
+                                nextPeriod;
+
+                            renderWeightChart();
+
+                        };
+
+                }
+            );
+
+    }
+
+
+    document
+        .querySelectorAll(
+            ".chart-point"
+        )
+        .forEach(
+            point => {
+
+                const show =
+                    event => {
+
+                        event.preventDefault();
+
+                        showWeightChartTooltip(
+                            point,
+                            point.dataset.tooltip ||
+                                ""
+                        );
+
+                    };
+
+
+                point.addEventListener(
+                    "click",
+                    show
+                );
+
+                point.addEventListener(
+                    "pointerdown",
+                    show
+                );
+
+                point.addEventListener(
+                    "focus",
+                    () =>
+                        showWeightChartTooltip(
+                            point,
+                            point.dataset.tooltip ||
+                                ""
+                        )
+                );
+
+                point.addEventListener(
+                    "blur",
+                    hideWeightChartTooltip
+                );
+
+            }
+        );
+
+
+    if (viewport) {
+
+        viewport.onscroll =
+            hideWeightChartTooltip;
+
+    }
+
+}
+
 
 function renderWeightChart() {
 
@@ -2083,9 +2671,34 @@ function renderWeightChart() {
             "weightChart"
         );
 
+    const viewport =
+        document.getElementById(
+            "weightChartViewport"
+        );
+
+    const note =
+        document.getElementById(
+            "weightChartPeriodNote"
+        );
+
 
     if (!container) {
         return;
+    }
+
+
+    const config =
+        WEIGHT_CHART_PERIODS[
+            weightChartPeriod
+        ] ||
+        WEIGHT_CHART_PERIODS["1m"];
+
+
+    if (note) {
+
+        note.textContent =
+            config.note;
+
     }
 
 
@@ -2093,48 +2706,105 @@ function renderWeightChart() {
         getProgressData();
 
 
-    const entries =
+    const allEntries =
         [...data.weights]
             .filter(
                 entry =>
                     entry.date &&
+                    parseDateKey(
+                        entry.date
+                    ) &&
                     Number.isFinite(
-                        Number(entry.weight)
+                        Number(
+                            entry.weight
+                        )
                     )
+            )
+            .map(
+                entry => ({
+                    ...entry,
+                    weight:
+                        Number(
+                            entry.weight
+                        )
+                })
             )
             .sort(
                 (a, b) =>
-                    String(a.date)
+                    String(
+                        a.date
+                    )
                         .localeCompare(
-                            String(b.date)
+                            String(
+                                b.date
+                            )
                         )
             );
 
 
-    if (entries.length < 2) {
+    const periodEntries =
+        getChartEntriesForPeriod(
+            allEntries,
+            weightChartPeriod
+        );
+
+
+    const entries =
+        aggregateChartEntries(
+            periodEntries,
+            config.mode
+        );
+
+
+    if (
+        entries.length === 0
+    ) {
 
         container.innerHTML = `
 
             <div class="chart-empty">
-                Ajoute au moins deux pesées pour afficher ta courbe.
+                Aucune pesée disponible pour cette période.
             </div>
 
         `;
 
+        bindWeightChartInteractions();
         return;
 
     }
 
 
-    const width = 900;
-    const height = 250;
+    const spacing =
+        config.mode === "raw"
+            ? 72
+            : config.mode === "weekly"
+                ? 92
+                : 106;
+
+
+    const height =
+        260;
+
 
     const padding = {
-        top: 24,
-        right: 28,
-        bottom: 42,
-        left: 52
+        top: 28,
+        right: 42,
+        bottom: 48,
+        left: 56
     };
+
+
+    const width =
+        Math.max(
+            690,
+            padding.left +
+            padding.right +
+            Math.max(
+                1,
+                entries.length - 1
+            ) *
+            spacing
+        );
 
 
     const values =
@@ -2149,32 +2819,41 @@ function renderWeightChart() {
     let minWeight =
         Math.min(
             ...values,
-            Number(data.goalWeight)
+            Number(
+                data.goalWeight
+            )
         );
 
 
     let maxWeight =
         Math.max(
             ...values,
-            Number(data.startWeight)
+            Number(
+                data.startWeight
+            )
         );
 
 
-    /*
-     * Petite marge visuelle pour que
-     * la courbe ne colle pas aux bords.
-     */
-
     minWeight =
         Math.floor(
-            (minWeight - 0.8) * 2
-        ) / 2;
+            (
+                minWeight -
+                0.8
+            ) *
+            2
+        ) /
+        2;
 
 
     maxWeight =
         Math.ceil(
-            (maxWeight + 0.8) * 2
-        ) / 2;
+            (
+                maxWeight +
+                0.8
+            ) *
+            2
+        ) /
+        2;
 
 
     if (
@@ -2205,19 +2884,18 @@ function renderWeightChart() {
             entries.length === 1
         ) {
 
-            return padding.left +
-                innerWidth / 2;
+            return (
+                padding.left +
+                innerWidth / 2
+            );
 
         }
 
 
         return (
             padding.left +
-            (
-                index /
-                (entries.length - 1)
-            ) *
-            innerWidth
+            index *
+            spacing
         );
 
     }
@@ -2247,7 +2925,9 @@ function renderWeightChart() {
         entries.map(
             (entry, index) => ({
                 x:
-                    xPosition(index),
+                    xPosition(
+                        index
+                    ),
 
                 y:
                     yPosition(
@@ -2262,7 +2942,13 @@ function renderWeightChart() {
                     ),
 
                 date:
-                    entry.date
+                    entry.date,
+
+                label:
+                    entry.label,
+
+                tooltip:
+                    entry.tooltip
             })
         );
 
@@ -2273,12 +2959,17 @@ function renderWeightChart() {
                 point =>
                     `${point.x},${point.y}`
             )
-            .join(" ");
+            .join(
+                " "
+            );
 
 
-    const gridSteps = 4;
+    const gridSteps =
+        4;
 
-    const gridLines = [];
+    const gridLines =
+        [];
+
 
     for (
         let index = 0;
@@ -2324,7 +3015,9 @@ function renderWeightChart() {
                 font-size="11"
                 fill="#64748b"
             >
-                ${formatNumber(value)}
+                ${formatNumber(
+                    value
+                )}
             </text>
 
         `);
@@ -2335,20 +3028,15 @@ function renderWeightChart() {
     const pointElements =
         points
             .map(
-                (point, index) => {
+                point => `
 
-                    const showDate =
-                        entries.length <= 7 ||
-                        index === 0 ||
-                        index ===
-                            points.length - 1 ||
-                        index %
-                            Math.ceil(
-                                entries.length / 6
-                            ) === 0;
-
-
-                    return `
+                    <g
+                        class="chart-point"
+                        tabindex="0"
+                        role="button"
+                        aria-label="${point.tooltip}"
+                        data-tooltip="${point.tooltip}"
+                    >
 
                         <circle
                             cx="${point.x}"
@@ -2359,44 +3047,31 @@ function renderWeightChart() {
                             stroke-width="3"
                         />
 
+                        <circle
+                            cx="${point.x}"
+                            cy="${point.y}"
+                            r="15"
+                            fill="transparent"
+                        />
+
                         <text
                             x="${point.x}"
-                            y="${point.y - 12}"
+                            y="${height - 15}"
                             text-anchor="middle"
-                            font-size="11"
-                            font-weight="700"
-                            fill="#0d47a1"
+                            font-size="10"
+                            fill="#64748b"
+                            pointer-events="none"
                         >
-                            ${formatNumber(
-                                point.weight
-                            )}
+                            ${point.label}
                         </text>
 
-                        ${
-                            showDate
-                                ? `
+                    </g>
 
-                                    <text
-                                        x="${point.x}"
-                                        y="${height - 12}"
-                                        text-anchor="middle"
-                                        font-size="10"
-                                        fill="#64748b"
-                                    >
-                                        ${formatDate(
-                                            point.date
-                                        ).slice(0, 5)}
-                                    </text>
-
-                                `
-                                : ""
-                        }
-
-                    `;
-
-                }
+                `
             )
-            .join("");
+            .join(
+                ""
+            );
 
 
     const goalY =
@@ -2407,15 +3082,31 @@ function renderWeightChart() {
         );
 
 
+    const lineMarkup =
+        points.length > 1
+            ? `
+
+                <polyline
+                    points="${polyline}"
+                    fill="none"
+                    stroke="#2563eb"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+
+            `
+            : "";
+
+
     container.innerHTML = `
 
         <svg
             viewBox="0 0 ${width} ${height}"
-            width="100%"
-            height="250"
+            width="${width}"
+            height="${height}"
             role="img"
             aria-label="Courbe d'évolution du poids"
-            preserveAspectRatio="none"
         >
 
             ${gridLines.join("")}
@@ -2426,17 +3117,17 @@ function renderWeightChart() {
                 x2="${width - padding.right}"
                 y2="${goalY}"
                 stroke="#16a34a"
-                stroke-width="1.5"
+                stroke-width="1.8"
                 stroke-dasharray="7 6"
-                opacity=".8"
+                opacity=".9"
             />
 
             <text
                 x="${width - padding.right}"
-                y="${goalY - 7}"
+                y="${goalY - 8}"
                 text-anchor="end"
                 font-size="11"
-                font-weight="700"
+                font-weight="800"
                 fill="#16a34a"
             >
                 Objectif ${formatNumber(
@@ -2444,20 +3135,34 @@ function renderWeightChart() {
                 )} kg
             </text>
 
-            <polyline
-                points="${polyline}"
-                fill="none"
-                stroke="#2563eb"
-                stroke-width="4"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-            />
+            ${lineMarkup}
 
             ${pointElements}
 
         </svg>
 
     `;
+
+
+    bindWeightChartInteractions();
+
+
+    if (viewport) {
+
+        requestAnimationFrame(
+            () => {
+
+                viewport.scrollLeft =
+                    Math.max(
+                        0,
+                        viewport.scrollWidth -
+                        viewport.clientWidth
+                    );
+
+            }
+        );
+
+    }
 
 }
 
