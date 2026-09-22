@@ -1,0 +1,45 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hana Fit — Pompes sur poignées</title><style>
+*{box-sizing:border-box}body{margin:0;background:#eef3f8;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#172b4d;display:grid;place-items:center;min-height:100vh}
+.card{width:min(720px,94vw);background:#fff;border:1px solid #dfe6ef;border-radius:24px;padding:18px}
+.head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}.tag{background:#e8f1ff;color:#286bd3;padding:7px 11px;border-radius:999px;font-weight:750;font-size:13px}.sub{color:#71809a;font-size:14px}
+.stage{background:linear-gradient(#fafbfd,#edf2f7);border-radius:20px;overflow:hidden}svg{width:100%;display:block}
+.controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px}button{border:0;border-radius:13px;background:#2f73df;color:#fff;padding:11px 16px;font-weight:750;font-size:15px;cursor:pointer}.status{font-size:14px;color:#71809a}
+.note{margin-top:12px;border:1px solid #e0e7f0;border-radius:14px;padding:11px 13px;font-size:14px}
+</style><style>body{min-height:0!important;background:transparent!important;display:block!important}.card{width:100%!important;max-width:none!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important}.head,.controls,.note{display:none!important}.stage{border-radius:18px!important}</style></head>
+<body><main class="card"><div class="head"><div><b style="font-size:24px">Pompes sur poignées</b><div class="sub">Démo vectorielle Hana Fit · Hana V3</div></div><span class="tag">CALISTHÉNIE</span></div>
+<div class="stage"><svg id="scene" viewBox="0 0 680 400" role="img" aria-label="Hana réalise Pompes sur poignées"></svg></div>
+<div class="controls"><button id="toggle" type="button">⏸ Pause</button><span class="status">planche → descente → poussée</span></div><div class="note">🔑 <b>Poignets :</b> les poignées gardent une prise neutre. Arrêter si la douleur électrique réapparaît.</div></main>
+<script>
+const NS="http://www.w3.org/2000/svg";
+const svg=document.getElementById("scene");
+function el(tag,attrs,parent=svg){const e=document.createElementNS(NS,tag);for(const [k,v] of Object.entries(attrs||{}))e.setAttribute(k,v);parent.appendChild(e);return e}
+const skin="#efb08d",hair="#392a29",hanaTop="#2f73df",leggings="#596f91",ink="#29394c";
+function line(a,b,w,c,parent){return el("line",{x1:a[0],y1:a[1],x2:b[0],y2:b[1],stroke:c,"stroke-width":w,"stroke-linecap":"round"},parent)}
+function circle(p,r,c,parent){return el("circle",{cx:p[0],cy:p[1],r,fill:c},parent)}
+function P(p,len,deg){let r=deg*Math.PI/180;return[p[0]+Math.cos(r)*len,p[1]+Math.sin(r)*len]}
+function mix(a,b,t){return a+(b-a)*t} function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2}
+const ground=el("ellipse",{cx:340,cy:345,rx:250,ry:14,fill:"#dbe3ec"});
+const gear=el("g",{}), bodyG=el("g",{}), limbs=el("g",{});
+function hana(p){
+  limbs.innerHTML=""; bodyG.innerHTML="";
+  // p: head, shoulder, hip, elbows/hands, knees/feet
+  line(p.shoulder,p.hip,48,hanaTop,bodyG);
+  circle(p.head,31,skin,bodyG);
+  el("path",{d:`M${p.head[0]-29} ${p.head[1]-3} q2 -38 35 -35 q27 4 25 34 q-13 -18 -29 -16 q-18 3 -31 17`,fill:hair},bodyG);
+  el("path",{d:`M${p.head[0]-22} ${p.head[1]-8} q-20 30 -7 67 q6 17 20 26 q-8 -24 -3 -47z`,fill:hair},bodyG);
+  el("path",{d:`M${p.head[0]+24} ${p.head[1]-8} q20 28 9 64 q-5 18 -19 28 q7 -24 3 -47z`,fill:hair},bodyG);
+  line(p.shoulder,p.elbowL,16,skin,limbs);line(p.elbowL,p.handL,16,skin,limbs);circle(p.handL,8,skin,limbs);
+  line(p.shoulder,p.elbowR,16,skin,limbs);line(p.elbowR,p.handR,16,skin,limbs);circle(p.handR,8,skin,limbs);
+  line(p.hip,p.kneeL,29,leggings,limbs);line(p.kneeL,p.footL,27,leggings,limbs);line(p.footL,[p.footL[0]+28,p.footL[1]],16,"#fff",limbs);
+  line(p.hip,p.kneeR,29,leggings,limbs);line(p.kneeR,p.footR,27,leggings,limbs);line(p.footR,[p.footR[0]+28,p.footR[1]],16,"#fff",limbs);
+}
+let running=true,start=performance.now(),frozen=0;
+function frame(now){if(running){const t=((now-start)%4000)/4000;draw(t)}requestAnimationFrame(frame)}
+document.getElementById("toggle").addEventListener("click",()=>{if(running){frozen=performance.now();running=false;document.getElementById("toggle").textContent="▶ Reprendre"}else{start+=performance.now()-frozen;running=true;document.getElementById("toggle").textContent="⏸ Pause"}});
+requestAnimationFrame(frame);
+
+gear.innerHTML=`<g fill="none" stroke="#29394c" stroke-width="9" stroke-linecap="round"><path d="M210 304v22m0-22h55m0 0v22M195 326h30M250 326h30"/><path d="M315 304v22m0-22h55m0 0v22M300 326h30M355 326h30"/></g>`;
+
+function draw(t){let q=(1-Math.cos(t*Math.PI*2))/2;let dy=mix(0,45,q);let sh=[285,215+dy],hip=[380,245+dy*.65],head=[245,190+dy];hana({head,shoulder:sh,hip,elbowL:[260,270+dy*.45],handL:[235,304],elbowR:[325,270+dy*.45],handR:[340,304],kneeL:[470,274+dy*.35],footL:[555,303],kneeR:[478,279+dy*.35],footR:[562,308]})}
+
+</script></body></html>

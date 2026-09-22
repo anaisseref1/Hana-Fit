@@ -4,7 +4,7 @@
 ========================================= */
 
 const CACHE_NAME =
-    "hana-fit-v11-2026-09-22";
+    "hana-fit-v12-animations-visual-fix-2026-09-22";
 
 const APP_FILES = [
     "./",

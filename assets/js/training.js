@@ -1041,50 +1041,30 @@
             }
         }
 
-        const image =
-            document.getElementById(
-                "exerciseGuideGif"
-            );
+        const image = document.getElementById("exerciseGuideGif");
+        const animation = document.getElementById("exerciseGuideAnimation");
+        const fallback = document.getElementById("exerciseGuideMediaFallback");
 
-        const fallback =
-            document.getElementById(
-                "exerciseGuideMediaFallback"
-            );
+        if (image && animation && fallback) {
+            const mediaPath = normalizeExerciseGuideMediaPath(guide.media);
+            const isHtmlAnimation = guide.mediaType === "html" || /\.html(?:\?|$)/i.test(mediaPath);
+            image.hidden = true;
+            animation.hidden = true;
+            fallback.hidden = true;
+            image.removeAttribute("src");
+            animation.removeAttribute("src");
 
-        if (
-            image &&
-            fallback
-        ) {
-
-            image.hidden =
-                false;
-
-            fallback.hidden =
-                true;
-
-            image.alt =
-                `Démonstration de ${guide.name}`;
-
-            image.onerror =
-                () => {
-                    image.hidden =
-                        true;
-
-                    fallback.hidden =
-                        false;
-                };
-
-            image.src =
-                normalizeExerciseGuideMediaPath(
-                    guide.media
-                );
-
-            if (!image.src) {
-                image.hidden =
-                    true;
-
-                fallback.hidden =
-                    false;
+            if (!mediaPath) {
+                fallback.hidden = false;
+            } else if (isHtmlAnimation) {
+                animation.title = `Démonstration animée de ${guide.name}`;
+                animation.src = mediaPath;
+                animation.hidden = false;
+            } else {
+                image.alt = `Démonstration de ${guide.name}`;
+                image.onerror = () => { image.hidden = true; fallback.hidden = false; };
+                image.src = mediaPath;
+                image.hidden = false;
             }
         }
 

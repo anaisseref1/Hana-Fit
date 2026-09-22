@@ -109,7 +109,7 @@
     "exerciseId": "push-up",
     "name": "Pompes",
     "category": "Calisthénie / Poussée",
-    "media": "assets/exercises/push-up.gif",
+    "media": "assets/exercises/animated/04-pompes-poignees.html",
     "goal": "Développer la force du haut du corps et le gainage.",
     "muscles": [
       "Pectoraux",
@@ -125,7 +125,8 @@
     "keyCue": "Pousse le sol tout en gardant le corps gainé.",
     "commonMistake": "Creuser le bas du dos ou écarter excessivement les coudes.",
     "regression": "Pompes inclinées ou sur les genoux.",
-    "progression": "Plus de répétitions, tempo lent ou pike push-up."
+    "progression": "Plus de répétitions, tempo lent ou pike push-up.",
+    "mediaType": "html"
   },
   {
     "exerciseId": "pike-push-up",
@@ -152,7 +153,7 @@
     "exerciseId": "support-hold",
     "name": "Support Hold",
     "category": "Calisthénie / L-sit",
-    "media": "assets/exercises/support-hold.gif",
+    "media": "assets/exercises/animated/01-support-hold.html",
     "goal": "Développer la poussée des bras et des épaules nécessaire au L-sit.",
     "muscles": [
       "Triceps",
@@ -167,13 +168,14 @@
     "keyCue": "Pousse fort dans les supports.",
     "commonMistake": "Hausser les épaules vers les oreilles ou garder les coudes fléchis.",
     "regression": "Garder les pieds en contact léger avec le sol.",
-    "progression": "Tuck L-sit."
+    "progression": "Tuck L-sit.",
+    "mediaType": "html"
   },
   {
     "exerciseId": "tuck-l-sit",
     "name": "Tuck L-sit",
     "category": "Calisthénie / L-sit",
-    "media": "assets/exercises/tuck-l-sit.gif",
+    "media": "assets/exercises/animated/02-tuck-l-sit.html",
     "goal": "Apprendre à maintenir tout le corps décollé avant d'allonger les jambes.",
     "muscles": [
       "Abdominaux",
@@ -189,7 +191,8 @@
     "keyCue": "Genoux vers la poitrine, bras verrouillés.",
     "commonMistake": "S'effondrer entre les épaules.",
     "regression": "Support hold.",
-    "progression": "L-sit une jambe tendue."
+    "progression": "L-sit une jambe tendue.",
+    "mediaType": "html"
   },
   {
     "exerciseId": "one-leg-l-sit",
@@ -421,5 +424,491 @@
     "commonMistake": "Forcer les bras contre le mur au prix d'une forte cambrure.",
     "regression": "Faire le mouvement sans contact complet avec le mur.",
     "progression": "Amplitude plus grande avec meilleur contrôle."
+  },
+  {
+    "exerciseId": "knee-raises",
+    "name": "Knee Raises",
+    "category": "Calisthénie",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/03-knee-raises.html",
+    "mediaType": "html"
+  },
+  {
+    "exerciseId": "australian-row",
+    "name": "Australian Row",
+    "category": "Calisthénie",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/05-row-australien.html",
+    "mediaType": "html"
+  },
+  {
+    "exerciseId": "assisted-dip",
+    "name": "Dips assistés",
+    "category": "Calisthénie",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/06-dips-assistes.html",
+    "mediaType": "html"
+  },
+  {
+    "exerciseId": "assisted-pullup",
+    "name": "Tractions assistées",
+    "category": "Calisthénie",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/07-traction-assistee.html",
+    "mediaType": "html"
+  },
+  {
+    "exerciseId": "pike-hold",
+    "name": "Pike Hold",
+    "category": "Calisthénie",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/08-preparation-handstand.html",
+    "mediaType": "html"
+  },
+  {
+    "exerciseId": "hip-thrust",
+    "name": "Hip Thrust",
+    "category": "Musculation",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/01-hip-thrust.html",
+    "mediaType": "html"
+  },
+  {
+    "exerciseId": "rdl",
+    "name": "Soulevé de terre roumain (RDL)",
+    "category": "Musculation",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/02-rdl.html",
+    "mediaType": "html"
+  },
+  {
+    "exerciseId": "leg-press",
+    "name": "Presse à cuisses",
+    "category": "Musculation",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/03-leg-press.html",
+    "mediaType": "html"
+  },
+  {
+    "exerciseId": "leg-extension",
+    "name": "Leg Extension",
+    "category": "Musculation",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/04-leg-extension.html",
+    "mediaType": "html"
+  },
+  {
+    "exerciseId": "hip-abduction",
+    "name": "Abducteurs machine",
+    "category": "Musculation",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/05-abduction.html",
+    "mediaType": "html"
+  },
+  {
+    "exerciseId": "seated-row",
+    "name": "Tirage horizontal assis",
+    "category": "Musculation",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/06-rowing.html",
+    "mediaType": "html"
+  },
+  {
+    "exerciseId": "shoulder-press",
+    "name": "Shoulder Press",
+    "category": "Musculation",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/07-shoulder-press.html",
+    "mediaType": "html"
+  },
+  {
+    "exerciseId": "squat",
+    "name": "Squat",
+    "category": "Musculation",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/01-squat.html",
+    "mediaType": "html"
+  },
+  {
+    "exerciseId": "bulgarian-split-squat",
+    "name": "Fentes bulgares",
+    "category": "Musculation",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/02-bulgarian-split-squat.html",
+    "mediaType": "html"
+  },
+  {
+    "exerciseId": "reverse-lunges",
+    "name": "Fentes arrière",
+    "category": "Musculation",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/03-fentes-arriere.html",
+    "mediaType": "html"
+  },
+  {
+    "exerciseId": "step-up",
+    "name": "Step-up",
+    "category": "Musculation",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/04-step-up.html",
+    "mediaType": "html"
+  },
+  {
+    "exerciseId": "leg-curl-seated",
+    "name": "Leg Curl assis",
+    "category": "Musculation",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/05-leg-curl.html",
+    "mediaType": "html"
+  },
+  {
+    "exerciseId": "cable-kickback",
+    "name": "Kickback à la poulie",
+    "category": "Musculation",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/06-glute-kickback-cable.html",
+    "mediaType": "html"
+  },
+  {
+    "exerciseId": "cable-abduction",
+    "name": "Abduction à la poulie",
+    "category": "Musculation",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/07-cable-abduction.html",
+    "mediaType": "html"
+  },
+  {
+    "exerciseId": "calf-raise-standing",
+    "name": "Mollets debout",
+    "category": "Musculation",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/08-calf-raises.html",
+    "mediaType": "html"
+  },
+  {
+    "exerciseId": "chest-press",
+    "name": "Chest Press",
+    "category": "Musculation",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/09-chest-press.html",
+    "mediaType": "html"
+  },
+  {
+    "exerciseId": "lat-pulldown",
+    "name": "Tirage vertical",
+    "category": "Musculation",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/10-lat-pulldown.html",
+    "mediaType": "html"
+  },
+  {
+    "exerciseId": "lateral-raise",
+    "name": "Élévations latérales",
+    "category": "Musculation",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/14-lateral-raises.html",
+    "mediaType": "html"
+  },
+  {
+    "exerciseId": "face-pull",
+    "name": "Face Pull",
+    "category": "Musculation",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/15-face-pull.html",
+    "mediaType": "html"
+  },
+  {
+    "exerciseId": "pec-deck",
+    "name": "Pec Deck / Butterfly",
+    "category": "Musculation",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/16-chest-fly.html",
+    "mediaType": "html"
+  },
+  {
+    "exerciseId": "biceps-curl",
+    "name": "Curl biceps",
+    "category": "Musculation",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/12-biceps-curl.html",
+    "mediaType": "html"
+  },
+  {
+    "exerciseId": "triceps-pushdown",
+    "name": "Extension triceps à la poulie",
+    "category": "Musculation",
+    "goal": "Visualiser et exécuter le mouvement avec une technique contrôlée.",
+    "muscles": [],
+    "howTo": [
+      "Observe la démonstration animée.",
+      "Reproduis le mouvement lentement et avec contrôle.",
+      "Adapte la charge ou l’assistance à ton niveau."
+    ],
+    "keyCue": "Mouvement contrôlé et position stable.",
+    "commonMistake": "Accélérer au détriment du contrôle.",
+    "regression": "Réduire la charge, l’amplitude ou augmenter l’assistance.",
+    "progression": "Augmenter progressivement la difficulté quand la technique reste propre.",
+    "media": "assets/exercises/animated/13-triceps-pushdown.html",
+    "mediaType": "html"
   }
 ]
