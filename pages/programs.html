@@ -25,6 +25,114 @@
         href="../assets/css/programs.css"
     >
 
+<style>
+
+        /* =========================================
+           NAVIGATION FIXE HANA FIT
+        ========================================= */
+
+        body {
+            padding-bottom: 110px;
+        }
+
+        .bottom-nav {
+            position: fixed;
+            z-index: 100;
+            left: 50%;
+            bottom: 14px;
+            transform: translateX(-50%);
+            width: min(calc(100% - 22px), 760px);
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            padding: 10px;
+            border: 1px solid rgba(255,255,255,.96);
+            border-radius: 26px;
+            background: rgba(255,255,255,.94);
+            box-shadow: 0 20px 50px rgba(15,23,42,.18);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .bottom-nav a {
+            padding: 7px 3px;
+            color: #64748b;
+            text-align: center;
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 750;
+            transition: color .18s ease, transform .18s ease;
+        }
+
+        .bottom-nav a:hover {
+            transform: translateY(-2px);
+        }
+
+        .bottom-nav a span {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 20px;
+        }
+
+        .bottom-nav a.active {
+            color: #2563eb;
+        }
+
+        .scroll-top-button {
+            position: fixed;
+            z-index: 110;
+            right: max(16px, env(safe-area-inset-right));
+            bottom: calc(104px + env(safe-area-inset-bottom));
+            width: 46px;
+            height: 46px;
+            display: grid;
+            place-items: center;
+            padding: 0;
+            border: 1px solid rgba(191,219,254,.95);
+            border-radius: 50%;
+            background: rgba(255,255,255,.96);
+            color: #2563eb;
+            box-shadow: 0 12px 30px rgba(15,23,42,.18);
+            font: inherit;
+            font-size: 24px;
+            font-weight: 900;
+            line-height: 1;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: opacity .2s ease, visibility .2s ease, transform .2s ease, background .2s ease;
+        }
+
+        .scroll-top-button.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .scroll-top-button:hover {
+            background: #eff6ff;
+        }
+
+        @media (max-width: 560px) {
+            .bottom-nav a {
+                font-size: 9px;
+            }
+
+            .bottom-nav a span {
+                font-size: 18px;
+            }
+
+            .scroll-top-button {
+                right: 14px;
+                bottom: calc(100px + env(safe-area-inset-bottom));
+                width: 44px;
+                height: 44px;
+                font-size: 22px;
+            }
+        }
+
+    </style>
+
 </head>
 
 
@@ -37,7 +145,7 @@
         <!-- RETOUR VERS NUTRITION -->
 
         <a
-            href="./nutrition.html"
+            href="./nutrition-v4.html"
             class="back-link"
         >
             ← Retour
@@ -148,6 +256,44 @@
     </main>
 
 
+<nav class="bottom-nav" aria-label="Navigation principale">
+    <a href="../index.html">
+        <span>⌂</span>
+        Accueil
+    </a>
+
+    <a href="./nutrition-v4.html" class="active">
+        <span>●</span>
+        Nutrition
+    </a>
+
+    <a href="./training.html">
+        <span>H</span>
+        Training
+    </a>
+
+    <a href="./wellbeing.html">
+        <span>🌿</span>
+        Bien-être
+    </a>
+
+    <a href="./progress.html">
+        <span>⌁</span>
+        Progression
+    </a>
+</nav>
+
+<button
+    type="button"
+    class="scroll-top-button"
+    aria-label="Revenir en haut de la page"
+    title="Revenir en haut"
+>
+    ↑
+</button>
+
+
+
 
     <!-- JAVASCRIPT -->
 
@@ -156,6 +302,34 @@
     <script src="../assets/js/database.js"></script>
 
     <script src="../assets/js/programs.js"></script>
+
+
+<script>
+    (() => {
+        const button = document.querySelector(".scroll-top-button");
+
+        if (!button) {
+            return;
+        }
+
+        const updateScrollButton = () => {
+            button.classList.toggle("visible", window.scrollY > 500);
+        };
+
+        button.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+        window.addEventListener("scroll", updateScrollButton, {
+            passive: true
+        });
+
+        updateScrollButton();
+    })();
+</script>
 
 
 </body>

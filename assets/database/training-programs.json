@@ -54,7 +54,8 @@
         "target": "12–15 reps / jambe",
         "rest": 60
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "hana-quads-gym",
@@ -107,7 +108,8 @@
         "target": "12–20 reps",
         "rest": 60
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "hana-legs-complete",
@@ -161,7 +163,8 @@
         "target": "15–20 reps",
         "rest": 60
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "hana-upper-gym",
@@ -220,7 +223,8 @@
         "target": "10–15 reps",
         "rest": 60
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "hana-full-gym",
@@ -281,7 +285,8 @@
         "target": "30–45 sec",
         "rest": 60
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "hana-full-restart",
@@ -334,7 +339,8 @@
         "target": "10–12 reps",
         "rest": 75
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "hana-express-gym",
@@ -383,7 +389,8 @@
         "target": "8–12 reps",
         "rest": 60
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "hana-home-bodyweight",
@@ -444,7 +451,8 @@
         "target": "30–45 sec",
         "rest": 45
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "hana-home-glutes",
@@ -498,7 +506,8 @@
         "target": "30–45 sec",
         "rest": 45
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "hana-home-dumbbells-full",
@@ -559,7 +568,8 @@
         "target": "30–45 sec",
         "rest": 45
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "hana-home-dumbbells-upper",
@@ -618,7 +628,8 @@
         "target": "10–15 reps",
         "rest": 45
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "hana-home-bands-full",
@@ -679,7 +690,8 @@
         "target": "15–25 reps",
         "rest": 45
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "hana-home-bands-glutes",
@@ -735,7 +747,8 @@
         "rest": 30,
         "note": "Avec ou sans mini-band."
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "hana-home-express",
@@ -792,7 +805,8 @@
         "target": "15 reps",
         "rest": 30
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "coach-legs-tempo-deadlift",
@@ -850,7 +864,8 @@
         "mode": "cardio",
         "duration": 20
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "coach-upper-9reps",
@@ -935,7 +950,8 @@
         "rest": 60,
         "note": "Variante diagonale haltères dans le document."
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "coach-legs-squat-tempo",
@@ -991,7 +1007,8 @@
         "mode": "cardio",
         "duration": 20
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "coach-cardio-mix",
@@ -1038,7 +1055,8 @@
         "mode": "cardio",
         "duration": 10
       }
-    ]
+    ],
+    "discipline": "Cardio"
   },
   {
     "id": "coach-quads-trisets",
@@ -1120,7 +1138,8 @@
         "mode": "cardio",
         "duration": 20
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "coach-upper-trisets",
@@ -1217,7 +1236,8 @@
         "target": "12 reps",
         "rest": 30
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "coach-home-20-10",
@@ -1310,7 +1330,8 @@
         "target": "20 sec",
         "rest": 10
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "coach-home-countdown",
@@ -1362,7 +1383,8 @@
         "target": "10 → 3 reps",
         "rest": 30
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "coach-legs-three-loads",
@@ -1416,7 +1438,8 @@
         "mode": "cardio",
         "duration": 20
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "coach-upper-three-loads",
@@ -1463,7 +1486,8 @@
         "rest": 90,
         "note": "Corde à la poulie."
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "coach-home-45-15",
@@ -1556,7 +1580,8 @@
         "mode": "cardio",
         "duration": 30
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "coach-home-cardio-45-15",
@@ -1624,7 +1649,8 @@
         "mode": "cardio",
         "duration": 30
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "coach-legs-no-rest",
@@ -1738,7 +1764,8 @@
         "mode": "cardio",
         "duration": 15
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "coach-upper-no-rest",
@@ -1849,7 +1876,8 @@
         "mode": "cardio",
         "duration": 15
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "coach-arms-stairmaster",
@@ -1924,7 +1952,8 @@
         "mode": "cardio",
         "duration": 30
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "coach-stepup-bulgarian",
@@ -1978,7 +2007,8 @@
         "mode": "cardio",
         "duration": 20
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "coach-upper-back-arms-core",
@@ -2071,7 +2101,8 @@
         "mode": "cardio",
         "duration": 20
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "coach-home-pyramid",
@@ -2130,7 +2161,8 @@
         "target": "Pyramide 1 → 10 → 1 / jambe",
         "rest": 30
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "coach-quad-glutes-supersets",
@@ -2200,7 +2232,8 @@
         "rest": 75,
         "note": "Pieds joints avec haltère · superset."
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "coach-upper-pull-shoulders-arms",
@@ -2267,7 +2300,8 @@
         "rest": 75,
         "note": "Superset · deux séries dégressives sur la dernière."
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "coach-ham-glutes",
@@ -2334,7 +2368,8 @@
         "rest": 60,
         "note": "Jambe tendue."
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "coach-upper-back-chest-arms",
@@ -2398,7 +2433,8 @@
         "rest": 60,
         "note": "Deux rest-pause sur la dernière série."
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "coach-glutes-hipthrust-press",
@@ -2465,7 +2501,8 @@
         "target": "15–20 reps / jambe",
         "rest": 60
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "coach-abs-1",
@@ -2512,7 +2549,8 @@
         "target": "Max contrôlé",
         "rest": 45
       }
-    ]
+    ],
+    "discipline": "Musculation"
   },
   {
     "id": "coach-abs-2",
@@ -2557,6 +2595,1166 @@
         "libraryId": "plank",
         "sets": 3,
         "target": "Max contrôlé",
+        "rest": 45
+      }
+    ],
+    "discipline": "Musculation"
+  },
+  {
+    "id": "hana-cardio-incline-walk",
+    "title": "Cardio — Marche inclinée",
+    "emoji": "🚶",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Cardio",
+    "discipline": "Cardio",
+    "tags": [
+      "Cardio",
+      "Salle",
+      "Marche"
+    ],
+    "duration": "20–30 min",
+    "level": "Débutant",
+    "equipment": "Tapis de course",
+    "summary": "Un cardio simple à ajouter après la musculation ou à faire seul.",
+    "sessionType": "Cardio",
+    "techniques": [
+      "Continu"
+    ],
+    "instructions": [
+      "Garde une intensité où tu peux encore parler par phrases courtes.",
+      "Adapte pente et vitesse selon tes sensations."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "treadmill-walk",
+        "sets": 0,
+        "target": "20–30 min",
+        "rest": 0,
+        "duration": 25
+      }
+    ]
+  },
+  {
+    "id": "hana-cardio-elliptical",
+    "title": "Cardio — Elliptique",
+    "emoji": "❤️",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Cardio",
+    "discipline": "Cardio",
+    "tags": [
+      "Cardio",
+      "Salle",
+      "Elliptique"
+    ],
+    "duration": "20–30 min",
+    "level": "Débutant",
+    "equipment": "Elliptique",
+    "summary": "Cardio continu sans impact important.",
+    "sessionType": "Cardio",
+    "techniques": [
+      "Continu"
+    ],
+    "instructions": [
+      "Commence doucement 3 à 5 minutes puis augmente progressivement."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "elliptical",
+        "sets": 0,
+        "target": "20–30 min",
+        "rest": 0,
+        "duration": 25
+      }
+    ]
+  },
+  {
+    "id": "hana-cardio-rower",
+    "title": "Cardio — Rameur technique",
+    "emoji": "🚣",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Cardio",
+    "discipline": "Cardio",
+    "tags": [
+      "Cardio",
+      "Salle",
+      "Rameur"
+    ],
+    "duration": "15–25 min",
+    "level": "Débutant",
+    "equipment": "Rameur",
+    "summary": "Une séance courte axée rythme régulier et technique.",
+    "sessionType": "Cardio",
+    "techniques": [
+      "Continu"
+    ],
+    "instructions": [
+      "Priorité au geste fluide plutôt qu'à la résistance maximale."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "rowing-machine",
+        "sets": 0,
+        "target": "15–25 min",
+        "rest": 0,
+        "duration": 20
+      }
+    ]
+  },
+  {
+    "id": "hana-cali-upper-starter-home",
+    "title": "Calisthénie — Haut du corps · Départ Hana",
+    "emoji": "💙",
+    "source": "Hana Fit",
+    "sourceDetail": "Séance de départ personnalisée",
+    "location": "Maison",
+    "category": "Calisthénie",
+    "discipline": "Calisthénie",
+    "tags": [
+      "Calisthénie",
+      "Maison",
+      "Haut du corps",
+      "Débutant",
+      "Poignées",
+      "Station",
+      "Élastiques"
+    ],
+    "duration": "25–35 min",
+    "level": "Débutant — Niveau de départ",
+    "equipment": "Station réglable 72/79/86 cm + poignées de pompes + élastiques 15/20/30 kg",
+    "summary": "Première séance haut du corps : tirage, poussée, support et fondations du L-sit avec prise neutre pour les pompes.",
+    "sessionType": "Calisthénie",
+    "techniques": [
+      "Fondations",
+      "Push-up",
+      "Pull",
+      "L-sit"
+    ],
+    "instructions": [
+      "Échauffement 6–8 min : marche dynamique, cercles de bras/épaules, rétractions scapulaires et band pull-aparts faciles.",
+      "Poignet gauche : privilégier les poignées en prise neutre. Décharge électrique, douleur vive ou engourdissement = arrêt de l’appui.",
+      "Première séance : garder 1–3 répétitions en réserve. Le but est d’établir le niveau de départ, pas d’aller à l’échec."
+    ],
+    "sessionNote": "Point de départ connu : pompes sur les genoux avec poignées déjà testées sans décharge au poignet gauche.",
+    "exercises": [
+      {
+        "libraryId": "inverted-row",
+        "sets": 3,
+        "target": "6–10 reps",
+        "rest": 90
+      },
+      {
+        "libraryId": "knee-push-up",
+        "sets": 3,
+        "target": "5 reps propres",
+        "rest": 90
+      },
+      {
+        "libraryId": "support-hold",
+        "sets": 3,
+        "target": "10–20 sec",
+        "rest": 60
+      },
+      {
+        "libraryId": "band-row",
+        "sets": 3,
+        "target": "10–15 reps · 15 ou 20 kg",
+        "rest": 60
+      },
+      {
+        "libraryId": "compression-leg-lift",
+        "sets": 3,
+        "target": "5–8 reps · ou 1 genou à la fois",
+        "rest": 60
+      }
+    ]
+  },
+  {
+    "id": "hana-cali-foundation-home",
+    "title": "Calisthénie — Fondations maison",
+    "emoji": "🤸",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Maison",
+    "category": "Calisthénie",
+    "discipline": "Calisthénie",
+    "tags": [
+      "Calisthénie",
+      "Maison",
+      "Débutant",
+      "Full Body"
+    ],
+    "duration": "30–40 min",
+    "level": "Débutant",
+    "equipment": "Sol + support stable",
+    "summary": "Construire poussée, gainage, jambes et contrôle avant les skills.",
+    "sessionType": "Calisthénie",
+    "techniques": [
+      "Technique"
+    ],
+    "instructions": [
+      "Garde 1 à 3 répétitions en réserve.",
+      "Choisis la variante de pompe qui reste propre et confortable pour les poignets."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "incline-push-up",
+        "sets": 3,
+        "target": "8–12 reps",
+        "rest": 75
+      },
+      {
+        "libraryId": "bodyweight-squat",
+        "sets": 3,
+        "target": "12–15 reps",
+        "rest": 60
+      },
+      {
+        "libraryId": "hollow-body-hold",
+        "sets": 3,
+        "target": "15–25 sec",
+        "rest": 45
+      },
+      {
+        "libraryId": "glute-bridge",
+        "sets": 3,
+        "target": "15 reps",
+        "rest": 45
+      },
+      {
+        "libraryId": "scapular-push-up",
+        "sets": 2,
+        "target": "8–12 reps",
+        "rest": 45
+      }
+    ]
+  },
+  {
+    "id": "hana-cali-push-home",
+    "title": "Calisthénie — Progression pompes",
+    "emoji": "💪",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Maison",
+    "category": "Calisthénie",
+    "discipline": "Calisthénie",
+    "tags": [
+      "Calisthénie",
+      "Maison",
+      "Pompes",
+      "Poussée"
+    ],
+    "duration": "25–35 min",
+    "level": "Débutant → Intermédiaire",
+    "equipment": "Support stable / poignées optionnelles",
+    "summary": "Renforcer progressivement la poussée vers les pompes classiques puis le travail vertical.",
+    "sessionType": "Calisthénie",
+    "techniques": [
+      "Progression"
+    ],
+    "instructions": [
+      "Si la position classique gêne le poignet, utilise une prise neutre sur poignées ou haltères stables."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "incline-push-up",
+        "sets": 3,
+        "target": "8–15 reps",
+        "rest": 60
+      },
+      {
+        "libraryId": "knee-push-up",
+        "sets": 3,
+        "target": "6–12 reps",
+        "rest": 60
+      },
+      {
+        "libraryId": "push-up",
+        "sets": 3,
+        "target": "3–10 reps propres",
+        "rest": 75
+      },
+      {
+        "libraryId": "pike-push-up",
+        "sets": 2,
+        "target": "5–8 reps",
+        "rest": 90
+      }
+    ]
+  },
+  {
+    "id": "hana-cali-pull-gym",
+    "title": "Calisthénie — Première traction",
+    "emoji": "🪽",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Calisthénie",
+    "discipline": "Calisthénie",
+    "tags": [
+      "Calisthénie",
+      "Salle",
+      "Tractions",
+      "Tirage"
+    ],
+    "duration": "30–40 min",
+    "level": "Débutant",
+    "equipment": "Barre + machine assistée",
+    "summary": "De la suspension à la traction assistée puis à la première traction.",
+    "sessionType": "Calisthénie",
+    "techniques": [
+      "Progression"
+    ],
+    "instructions": [
+      "La qualité des répétitions passe avant la quantité."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "dead-hang",
+        "sets": 3,
+        "target": "15–30 sec",
+        "rest": 60
+      },
+      {
+        "libraryId": "scapular-pull-up",
+        "sets": 3,
+        "target": "5–8 reps",
+        "rest": 60
+      },
+      {
+        "libraryId": "assisted-pullup",
+        "sets": 3,
+        "target": "5–8 reps",
+        "rest": 90
+      },
+      {
+        "libraryId": "negative-pull-up",
+        "sets": 2,
+        "target": "3–5 reps lentes",
+        "rest": 90
+      }
+    ]
+  },
+  {
+    "id": "hana-cali-dips-gym",
+    "title": "Calisthénie — Progression dips",
+    "emoji": "💪",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Calisthénie",
+    "discipline": "Calisthénie",
+    "tags": [
+      "Calisthénie",
+      "Salle",
+      "Dips",
+      "Poussée"
+    ],
+    "duration": "25–35 min",
+    "level": "Débutant → Intermédiaire",
+    "equipment": "Machine assistée / barres",
+    "summary": "Construire la force de poussée nécessaire pour les dips.",
+    "sessionType": "Calisthénie",
+    "techniques": [
+      "Progression"
+    ],
+    "instructions": [
+      "Reste dans une amplitude confortable pour les épaules."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "assisted-dip",
+        "sets": 3,
+        "target": "6–10 reps",
+        "rest": 90
+      },
+      {
+        "libraryId": "push-up",
+        "sets": 3,
+        "target": "6–12 reps",
+        "rest": 75
+      },
+      {
+        "libraryId": "dip",
+        "sets": 3,
+        "target": "1–5 reps propres",
+        "rest": 120
+      }
+    ]
+  },
+  {
+    "id": "hana-cali-lsit-home",
+    "title": "Skill — L-sit avec parallettes",
+    "emoji": "🪑",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Maison",
+    "category": "Calisthénie",
+    "discipline": "Calisthénie",
+    "tags": [
+      "Calisthénie",
+      "Maison",
+      "L-sit",
+      "Skill",
+      "Parallettes"
+    ],
+    "duration": "20–30 min",
+    "level": "Débutant",
+    "equipment": "Station réglable / parallettes",
+    "summary": "Support, compression et progression vers les jambes parallèles au sol.",
+    "sessionType": "Calisthénie",
+    "techniques": [
+      "Skill"
+    ],
+    "instructions": [
+      "Des parallettes basses donnent plus de hauteur et permettent une prise neutre.",
+      "Arrête si tu ressens une douleur vive ou une décharge dans le poignet."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "support-hold",
+        "sets": 4,
+        "target": "10–20 sec",
+        "rest": 60
+      },
+      {
+        "libraryId": "compression-leg-lift",
+        "sets": 3,
+        "target": "8–12 reps",
+        "rest": 45
+      },
+      {
+        "libraryId": "tuck-l-sit",
+        "sets": 4,
+        "target": "5–15 sec",
+        "rest": 60
+      },
+      {
+        "libraryId": "one-leg-l-sit",
+        "sets": 3,
+        "target": "3–8 sec / côté",
+        "rest": 60
+      },
+      {
+        "libraryId": "l-sit",
+        "sets": 3,
+        "target": "tentatives propres",
+        "rest": 75
+      }
+    ]
+  },
+  {
+    "id": "hana-cali-lsit-gym",
+    "title": "Skill — Préparation L-sit à la salle",
+    "emoji": "🪑",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Calisthénie",
+    "discipline": "Calisthénie",
+    "tags": [
+      "Calisthénie",
+      "Salle",
+      "L-sit",
+      "Skill"
+    ],
+    "duration": "20–25 min",
+    "level": "Débutant",
+    "equipment": "Bancs stables / barre",
+    "summary": "Travailler les qualités du L-sit même sans parallettes.",
+    "sessionType": "Calisthénie",
+    "techniques": [
+      "Skill"
+    ],
+    "instructions": [
+      "N'utilise pas deux supports instables improvisés.",
+      "Privilégie la compression et le gainage si aucun support adapté n'est disponible."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "compression-leg-lift",
+        "sets": 4,
+        "target": "8–12 reps",
+        "rest": 45
+      },
+      {
+        "libraryId": "hollow-body-hold",
+        "sets": 3,
+        "target": "20–30 sec",
+        "rest": 45
+      },
+      {
+        "libraryId": "leg-raise",
+        "sets": 3,
+        "target": "8–12 reps contrôlées",
+        "rest": 60,
+        "note": "Version suspendue si une barre adaptée est disponible, sinon relevés de jambes au sol."
+      },
+      {
+        "libraryId": "support-hold",
+        "sets": 3,
+        "target": "10–20 sec sur supports adaptés",
+        "rest": 60
+      }
+    ]
+  },
+  {
+    "id": "hana-cali-handstand-home",
+    "title": "Skill — Handstand fondations",
+    "emoji": "🤸",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Maison",
+    "category": "Calisthénie",
+    "discipline": "Calisthénie",
+    "tags": [
+      "Calisthénie",
+      "Maison",
+      "Handstand",
+      "Épaules",
+      "Skill"
+    ],
+    "duration": "20–30 min",
+    "level": "Débutant",
+    "equipment": "Mur + tapis / parallettes optionnelles",
+    "summary": "Épaules, gainage et équilibre avant de chercher à marcher sur les mains.",
+    "sessionType": "Calisthénie",
+    "techniques": [
+      "Skill"
+    ],
+    "instructions": [
+      "Échauffe poignets et épaules avant les appuis.",
+      "Si le poignet n'accepte pas l'extension, privilégie les parallettes et ne force pas."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "hollow-body-hold",
+        "sets": 3,
+        "target": "20–30 sec",
+        "rest": 45
+      },
+      {
+        "libraryId": "pike-hold",
+        "sets": 3,
+        "target": "20–30 sec",
+        "rest": 60
+      },
+      {
+        "libraryId": "wall-handstand",
+        "sets": 4,
+        "target": "15–30 sec",
+        "rest": 75
+      },
+      {
+        "libraryId": "handstand-weight-shift",
+        "sets": 3,
+        "target": "5–8 transferts / côté",
+        "rest": 75
+      }
+    ]
+  },
+  {
+    "id": "hana-cali-legs-home",
+    "title": "Calisthénie — Pistol Squat",
+    "emoji": "🦵",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Maison",
+    "category": "Calisthénie",
+    "discipline": "Calisthénie",
+    "tags": [
+      "Calisthénie",
+      "Maison",
+      "Jambes",
+      "Pistol Squat"
+    ],
+    "duration": "25–35 min",
+    "level": "Débutant → Intermédiaire",
+    "equipment": "Support stable",
+    "summary": "Force unilatérale, équilibre et mobilité pour progresser vers le pistol squat.",
+    "sessionType": "Calisthénie",
+    "techniques": [
+      "Progression"
+    ],
+    "instructions": [
+      "Utilise un support pour contrôler la descente et garder une amplitude confortable."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "bodyweight-squat",
+        "sets": 3,
+        "target": "12–15 reps",
+        "rest": 45
+      },
+      {
+        "libraryId": "assisted-pistol-squat",
+        "sets": 3,
+        "target": "5–8 reps / jambe",
+        "rest": 75
+      },
+      {
+        "libraryId": "step-up",
+        "sets": 3,
+        "target": "8–10 reps / jambe",
+        "rest": 60
+      },
+      {
+        "libraryId": "pistol-squat",
+        "sets": 3,
+        "target": "tentatives contrôlées",
+        "rest": 90
+      }
+    ]
+  },
+  {
+    "id": "hana-handstand-1-upper-strength-home",
+    "title": "Handstand 1/4 — Épaules & poussée",
+    "emoji": "🤸",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Maison",
+    "category": "Calisthénie",
+    "discipline": "Calisthénie",
+    "tags": [
+      "Calisthénie",
+      "Maison",
+      "Handstand",
+      "Épaules",
+      "Bras",
+      "Débutant"
+    ],
+    "duration": "30–40 min",
+    "level": "Niveau 1 — Fondations",
+    "equipment": "Sol + support stable / parallettes optionnelles",
+    "summary": "Avant de tenir sur les mains : renforcer épaules, triceps, omoplates et gainage.",
+    "sessionType": "Calisthénie",
+    "techniques": [
+      "Progression",
+      "Handstand"
+    ],
+    "instructions": [
+      "Cette séance construit la force nécessaire au handstand avant de multiplier les tentatives d'équilibre.",
+      "Garde une prise neutre sur parallettes ou haltères stables si l'extension du poignet n'est pas confortable."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "incline-push-up",
+        "sets": 3,
+        "target": "8–12 reps",
+        "rest": 60
+      },
+      {
+        "libraryId": "pike-push-up",
+        "sets": 3,
+        "target": "5–8 reps",
+        "rest": 90
+      },
+      {
+        "libraryId": "scapular-push-up",
+        "sets": 3,
+        "target": "8–12 reps",
+        "rest": 45
+      },
+      {
+        "libraryId": "support-hold",
+        "sets": 3,
+        "target": "10–20 sec",
+        "rest": 60
+      },
+      {
+        "libraryId": "hollow-body-hold",
+        "sets": 3,
+        "target": "20–30 sec",
+        "rest": 45
+      }
+    ]
+  },
+  {
+    "id": "hana-handstand-1-upper-strength-gym",
+    "title": "Handstand 1/4 — Renforcement salle",
+    "emoji": "🏋️",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Calisthénie",
+    "discipline": "Calisthénie",
+    "tags": [
+      "Calisthénie",
+      "Salle",
+      "Handstand",
+      "Épaules",
+      "Bras",
+      "Haut du corps"
+    ],
+    "duration": "40–50 min",
+    "level": "Niveau 1 — Fondations",
+    "equipment": "Machines / haltères / poulies",
+    "summary": "Une séance haut du corps pensée pour construire les épaules et les triceps utiles au handstand.",
+    "sessionType": "Calisthénie",
+    "techniques": [
+      "Renforcement",
+      "Handstand"
+    ],
+    "instructions": [
+      "Choisis des charges qui permettent une exécution propre avec 1 à 3 répétitions en réserve.",
+      "Ce programme complète le travail technique au mur."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "shoulder-press",
+        "sets": 3,
+        "target": "8–12 reps",
+        "rest": 90
+      },
+      {
+        "libraryId": "chest-press",
+        "sets": 3,
+        "target": "8–12 reps",
+        "rest": 90
+      },
+      {
+        "libraryId": "triceps-pushdown",
+        "sets": 3,
+        "target": "10–15 reps",
+        "rest": 60
+      },
+      {
+        "libraryId": "lateral-raise",
+        "sets": 3,
+        "target": "12–15 reps",
+        "rest": 60
+      },
+      {
+        "libraryId": "face-pull",
+        "sets": 3,
+        "target": "12–15 reps",
+        "rest": 60
+      },
+      {
+        "libraryId": "hollow-body-hold",
+        "sets": 3,
+        "target": "20–30 sec",
+        "rest": 45
+      }
+    ]
+  },
+  {
+    "id": "hana-handstand-2-wall-control",
+    "title": "Handstand 2/4 — Appuis au mur",
+    "emoji": "🤸",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Maison",
+    "category": "Calisthénie",
+    "discipline": "Calisthénie",
+    "tags": [
+      "Calisthénie",
+      "Maison",
+      "Handstand",
+      "Mur",
+      "Intermédiaire"
+    ],
+    "duration": "20–30 min",
+    "level": "Niveau 2 — Contrôle",
+    "equipment": "Mur / parallettes optionnelles",
+    "summary": "Apprendre à pousser fort dans le sol, gainer et rester alignée au mur.",
+    "sessionType": "Calisthénie",
+    "techniques": [
+      "Skill",
+      "Handstand"
+    ],
+    "instructions": [
+      "Passe à ce niveau quand le pike hold et les pike push-ups deviennent propres.",
+      "Ne cherche pas encore à marcher : priorité à l'alignement et au contrôle."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "pike-hold",
+        "sets": 3,
+        "target": "20–30 sec",
+        "rest": 60
+      },
+      {
+        "libraryId": "pike-push-up",
+        "sets": 3,
+        "target": "5–10 reps",
+        "rest": 90
+      },
+      {
+        "libraryId": "wall-handstand",
+        "sets": 4,
+        "target": "20–40 sec",
+        "rest": 75
+      },
+      {
+        "libraryId": "hollow-body-hold",
+        "sets": 3,
+        "target": "25–35 sec",
+        "rest": 45
+      }
+    ]
+  },
+  {
+    "id": "hana-handstand-3-balance",
+    "title": "Handstand 3/4 — Équilibre libre",
+    "emoji": "⚖️",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Maison",
+    "category": "Calisthénie",
+    "discipline": "Calisthénie",
+    "tags": [
+      "Calisthénie",
+      "Maison",
+      "Handstand",
+      "Équilibre",
+      "Skill"
+    ],
+    "duration": "20–30 min",
+    "level": "Niveau 3 — Équilibre",
+    "equipment": "Mur + espace dégagé",
+    "summary": "Transferts de poids, décollage d'une main et premières secondes sans mur.",
+    "sessionType": "Calisthénie",
+    "techniques": [
+      "Skill",
+      "Équilibre"
+    ],
+    "instructions": [
+      "Objectif avant le niveau suivant : plusieurs tenues libres contrôlées, même très courtes.",
+      "Les épaules restent actives : pousse le sol au lieu de t'affaisser."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "wall-handstand",
+        "sets": 3,
+        "target": "25–40 sec",
+        "rest": 75
+      },
+      {
+        "libraryId": "handstand-weight-shift",
+        "sets": 4,
+        "target": "6–10 transferts / côté",
+        "rest": 75
+      },
+      {
+        "libraryId": "wall-handstand-shoulder-tap",
+        "sets": 3,
+        "target": "3–6 décollages / côté",
+        "rest": 90
+      },
+      {
+        "libraryId": "free-handstand",
+        "sets": 6,
+        "target": "tentatives de qualité",
+        "rest": 60
+      }
+    ]
+  },
+  {
+    "id": "hana-handstand-4-walk",
+    "title": "Handstand 4/4 — Marcher sur les mains",
+    "emoji": "🚶",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Maison",
+    "category": "Calisthénie",
+    "discipline": "Calisthénie",
+    "tags": [
+      "Calisthénie",
+      "Maison",
+      "Handstand Walk",
+      "Avancé",
+      "Skill"
+    ],
+    "duration": "20–30 min",
+    "level": "Niveau 4 — Handstand Walk",
+    "equipment": "Espace dégagé + mur à proximité",
+    "summary": "Une fois l'équilibre acquis : apprendre les transferts et les premiers pas.",
+    "sessionType": "Calisthénie",
+    "techniques": [
+      "Skill",
+      "Handstand Walk"
+    ],
+    "instructions": [
+      "Prérequis conseillé : handstand libre d'environ 8–10 secondes à plusieurs reprises.",
+      "Commence par 1 ou 2 pas contrôlés. La distance vient ensuite."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "free-handstand",
+        "sets": 5,
+        "target": "5–15 sec",
+        "rest": 60
+      },
+      {
+        "libraryId": "handstand-weight-shift",
+        "sets": 3,
+        "target": "8–12 transferts / côté",
+        "rest": 75
+      },
+      {
+        "libraryId": "wall-handstand-shoulder-tap",
+        "sets": 3,
+        "target": "5–8 / côté",
+        "rest": 90
+      },
+      {
+        "libraryId": "handstand-walk-drill",
+        "sets": 6,
+        "target": "1–3 pas contrôlés",
+        "rest": 75
+      }
+    ]
+  },
+  {
+    "id": "hana-lsit-1-support-compression",
+    "title": "L-sit 1/3 — Support & compression",
+    "emoji": "🪑",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Maison",
+    "category": "Calisthénie",
+    "discipline": "Calisthénie",
+    "tags": [
+      "Calisthénie",
+      "Maison",
+      "L-sit",
+      "Débutant",
+      "Parallettes"
+    ],
+    "duration": "20–25 min",
+    "level": "Niveau 1 — Fondations",
+    "equipment": "Station réglable / parallettes",
+    "summary": "Construire la poussée des bras et la compression des hanches avant le tuck L-sit.",
+    "sessionType": "Calisthénie",
+    "techniques": [
+      "Skill",
+      "L-sit"
+    ],
+    "instructions": [
+      "Les parallettes donnent de la hauteur et évitent d'imposer une forte extension du poignet.",
+      "Travaille aussi les ischios : une meilleure compression facilite la montée des jambes."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "support-hold",
+        "sets": 4,
+        "target": "10–20 sec",
+        "rest": 60
+      },
+      {
+        "libraryId": "compression-leg-lift",
+        "sets": 4,
+        "target": "8–12 reps",
+        "rest": 45
+      },
+      {
+        "libraryId": "hollow-body-hold",
+        "sets": 3,
+        "target": "20–30 sec",
+        "rest": 45
+      },
+      {
+        "libraryId": "tuck-l-sit",
+        "sets": 4,
+        "target": "3–8 sec",
+        "rest": 60
+      }
+    ]
+  },
+  {
+    "id": "hana-lsit-2-tuck-one-leg",
+    "title": "L-sit 2/3 — Tuck & une jambe",
+    "emoji": "🪑",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Maison",
+    "category": "Calisthénie",
+    "discipline": "Calisthénie",
+    "tags": [
+      "Calisthénie",
+      "Maison",
+      "L-sit",
+      "Intermédiaire",
+      "Parallettes"
+    ],
+    "duration": "20–30 min",
+    "level": "Niveau 2 — Contrôle",
+    "equipment": "Station réglable / parallettes",
+    "summary": "Allonger progressivement les jambes sans perdre la poussée des épaules.",
+    "sessionType": "Calisthénie",
+    "techniques": [
+      "Skill",
+      "L-sit"
+    ],
+    "instructions": [
+      "Passe à ce niveau quand le tuck hold est stable plusieurs secondes.",
+      "Alterne la jambe tendue sans chercher l'horizontale parfaite tout de suite."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "support-hold",
+        "sets": 3,
+        "target": "15–25 sec",
+        "rest": 60
+      },
+      {
+        "libraryId": "compression-leg-lift",
+        "sets": 3,
+        "target": "10–15 reps",
+        "rest": 45
+      },
+      {
+        "libraryId": "tuck-l-sit",
+        "sets": 4,
+        "target": "8–15 sec",
+        "rest": 60
+      },
+      {
+        "libraryId": "one-leg-l-sit",
+        "sets": 4,
+        "target": "4–8 sec / côté",
+        "rest": 75
+      }
+    ]
+  },
+  {
+    "id": "hana-lsit-3-full",
+    "title": "L-sit 3/3 — Jambes parallèles",
+    "emoji": "🔥",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Maison",
+    "category": "Calisthénie",
+    "discipline": "Calisthénie",
+    "tags": [
+      "Calisthénie",
+      "Maison",
+      "L-sit",
+      "Avancé",
+      "Parallettes"
+    ],
+    "duration": "20–30 min",
+    "level": "Niveau 3 — L-sit complet",
+    "equipment": "Station réglable / parallettes",
+    "summary": "Transformer le one-leg L-sit en L-sit complet et augmenter le temps de maintien.",
+    "sessionType": "Calisthénie",
+    "techniques": [
+      "Skill",
+      "L-sit"
+    ],
+    "instructions": [
+      "Les jambes peuvent être légèrement sous l'horizontale au début : cherche d'abord une position solide.",
+      "Objectif progressif : 3 s → 5 s → 10 s."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "compression-leg-lift",
+        "sets": 3,
+        "target": "12–15 reps",
+        "rest": 45
+      },
+      {
+        "libraryId": "one-leg-l-sit",
+        "sets": 3,
+        "target": "6–10 sec / côté",
+        "rest": 75
+      },
+      {
+        "libraryId": "l-sit",
+        "sets": 5,
+        "target": "3–10 sec",
+        "rest": 75
+      },
+      {
+        "libraryId": "hollow-body-hold",
+        "sets": 3,
+        "target": "30–40 sec",
+        "rest": 45
+      }
+    ]
+  },
+  {
+    "id": "hana-cali-fullbody-intermediate",
+    "title": "Calisthénie — Full Body intermédiaire",
+    "emoji": "🤸",
+    "source": "Hana Fit",
+    "sourceDetail": "",
+    "location": "Salle",
+    "category": "Calisthénie",
+    "discipline": "Calisthénie",
+    "tags": [
+      "Calisthénie",
+      "Salle",
+      "Full Body",
+      "Intermédiaire"
+    ],
+    "duration": "40–50 min",
+    "level": "Intermédiaire",
+    "equipment": "Barre de traction + machine assistée / supports",
+    "summary": "Une séance complète pour faire progresser poussée, tirage, jambes et gainage.",
+    "sessionType": "Calisthénie",
+    "techniques": [
+      "Force relative"
+    ],
+    "instructions": [
+      "Choisis les variantes qui te permettent de garder une technique propre.",
+      "Tu peux utiliser la machine assistée pour tractions et dips."
+    ],
+    "sessionNote": "",
+    "exercises": [
+      {
+        "libraryId": "push-up",
+        "sets": 3,
+        "target": "6–12 reps",
+        "rest": 75
+      },
+      {
+        "libraryId": "assisted-pullup",
+        "sets": 3,
+        "target": "5–8 reps",
+        "rest": 90
+      },
+      {
+        "libraryId": "assisted-dip",
+        "sets": 3,
+        "target": "6–10 reps",
+        "rest": 90
+      },
+      {
+        "libraryId": "assisted-pistol-squat",
+        "sets": 3,
+        "target": "5–8 reps / jambe",
+        "rest": 75
+      },
+      {
+        "libraryId": "hollow-body-hold",
+        "sets": 3,
+        "target": "25–35 sec",
         "rest": 45
       }
     ]

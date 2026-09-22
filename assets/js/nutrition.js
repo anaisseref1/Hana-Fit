@@ -21,8 +21,28 @@ const selectedFoodCarbs = document.getElementById("selectedFoodCarbs");
 const selectedFoodFat = document.getElementById("selectedFoodFat");
 const addDatabaseFoodButton = document.getElementById("addDatabaseFoodButton");
 
+const barcodePhotoInput = document.getElementById("barcodePhotoInput");
+const barcodeManualInput = document.getElementById("barcodeManualInput");
+const barcodeLookupButton = document.getElementById("barcodeLookupButton");
+const barcodeStatus = document.getElementById("barcodeStatus");
+const barcodePreview = document.getElementById("barcodePreview");
+const scannedProductCard = document.getElementById("scannedProductCard");
+const scannedProductMeta = document.getElementById("scannedProductMeta");
+const scannedProductName = document.getElementById("scannedProductName");
+const scannedProductUnit = document.getElementById("scannedProductUnit");
+const scannedProductCalories = document.getElementById("scannedProductCalories");
+const scannedProductProtein = document.getElementById("scannedProductProtein");
+const scannedProductCarbs = document.getElementById("scannedProductCarbs");
+const scannedProductFat = document.getElementById("scannedProductFat");
+const scannedProductFiber = document.getElementById("scannedProductFiber");
+const saveScannedProductButton = document.getElementById("saveScannedProductButton");
+const cancelScannedProductButton = document.getElementById("cancelScannedProductButton");
+
+const CUSTOM_FOODS_KEY = "hanaFitCustomFoods";
+
 let foodDatabase = [];
 let selectedDatabaseFood = null;
+let scannedProductDraft = null;
 
 let nutritionTargets = {
     minCalories: 1500,
@@ -298,6 +318,10 @@ function createMealElement(meal, index) {
         sourceLabel = " · Base Hana Fit";
     }
 
+    if (meal.barcode) {
+        sourceLabel = " · Produit scanné";
+    }
+
     const portion =
         Number(meal.portion) > 0
             ? Number(meal.portion)
@@ -435,6 +459,883 @@ if (foodForm) {
 
 
 /* =========================================
+   PRODUITS PERSONNELS + CODE-BARRES
+========================================= */
+
+function readCustomFoods() {
+    try {
+        const raw =
+            localStorage.getItem(
+                CUSTOM_FOODS_KEY
+            );
+
+        if (!raw) {
+            return [];
+        }
+
+        const parsed =
+            JSON.parse(raw);
+
+        return Array.isArray(parsed)
+            ? parsed
+            : [];
+
+    } catch (error) {
+        console.error(
+            "Impossible de lire les produits personnels :",
+            error
+        );
+
+        return [];
+    }
+}
+
+
+function saveCustomFoods(foods) {
+    localStorage.setItem(
+        CUSTOM_FOODS_KEY,
+        JSON.stringify(
+            Array.isArray(foods)
+                ? foods
+                : []
+        )
+    );
+}
+
+
+function normalizeBarcode(value) {
+    return String(
+        value || ""
+    )
+        .replace(/\D/g, "")
+        .trim();
+}
+
+
+function findCustomFoodByBarcode(barcode) {
+    const normalized =
+        normalizeBarcode(barcode);
+
+    return readCustomFoods().find(
+        food =>
+            normalizeBarcode(
+                food.barcode
+            ) === normalized
+    ) || null;
+}
+
+
+function upsertCustomFood(food) {
+    const foods =
+        readCustomFoods();
+
+    const normalized =
+        normalizeBarcode(
+            food.barcode
+        );
+
+    const index =
+        foods.findIndex(
+            item =>
+                normalizeBarcode(
+                    item.barcode
+                ) === normalized
+        );
+
+    if (index >= 0) {
+        foods[index] = food;
+    } else {
+        foods.unshift(food);
+    }
+
+    saveCustomFoods(foods);
+}
+
+
+function mergeCustomFoodsIntoDatabase(
+    staticFoods
+) {
+    const customFoods =
+        readCustomFoods();
+
+    const customBarcodes =
+        new Set(
+            customFoods
+                .map(
+                    food =>
+                        normalizeBarcode(
+                            food.barcode
+                        )
+                )
+                .filter(Boolean)
+        );
+
+    const cleanStaticFoods =
+        (Array.isArray(staticFoods)
+            ? staticFoods
+            : []
+        )
+            .filter(
+                food =>
+                    !food.barcode ||
+                    !customBarcodes.has(
+                        normalizeBarcode(
+                            food.barcode
+                        )
+                    )
+            );
+
+    return [
+        ...customFoods,
+        ...cleanStaticFoods
+    ];
+}
+
+
+function refreshCustomFoodInDatabase(food) {
+    foodDatabase =
+        foodDatabase.filter(
+            item =>
+                !(
+                    item.barcode &&
+                    normalizeBarcode(
+                        item.barcode
+                    ) ===
+                    normalizeBarcode(
+                        food.barcode
+                    )
+                )
+        );
+
+    foodDatabase.unshift(food);
+}
+
+
+function setBarcodeStatus(
+    message,
+    type = ""
+) {
+    if (!barcodeStatus) {
+        return;
+    }
+
+    barcodeStatus.textContent =
+        message;
+
+    barcodeStatus.classList.remove(
+        "success",
+        "error"
+    );
+
+    if (
+        type === "success" ||
+        type === "error"
+    ) {
+        barcodeStatus.classList.add(
+            type
+        );
+    }
+}
+
+
+function firstFiniteNumber(
+    ...values
+) {
+    for (
+        const value of values
+    ) {
+        const number =
+            Number(value);
+
+        if (
+            Number.isFinite(number)
+        ) {
+            return number;
+        }
+    }
+
+    return 0;
+}
+
+
+function detectProductUnit(product) {
+    const text =
+        normalizeText(
+            [
+                product?.product_quantity_unit,
+                product?.serving_size,
+                product?.quantity
+            ]
+                .filter(Boolean)
+                .join(" ")
+        );
+
+    if (
+        /\bml\b|\bcl\b|\blitre\b|\bliter\b|\bl\b/.test(
+            text
+        )
+    ) {
+        return "ml";
+    }
+
+    return "g";
+}
+
+
+function mapOpenFoodFactsProduct(
+    product,
+    barcode
+) {
+    const nutriments =
+        product?.nutriments ||
+        {};
+
+    const kcal =
+        firstFiniteNumber(
+            nutriments["energy-kcal_100g"],
+            nutriments["energy-kcal"],
+            Number(nutriments.energy_100g) > 0
+                ? Number(nutriments.energy_100g) / 4.184
+                : 0
+        );
+
+    return {
+        barcode:
+            normalizeBarcode(
+                product?.code ||
+                barcode
+            ),
+
+        name:
+            String(
+                product?.product_name ||
+                product?.generic_name ||
+                `Produit ${barcode}`
+            )
+                .trim(),
+
+        brand:
+            String(
+                product?.brands ||
+                ""
+            )
+                .trim(),
+
+        unit:
+            detectProductUnit(
+                product
+            ),
+
+        calories:
+            roundOne(kcal),
+
+        protein:
+            roundOne(
+                firstFiniteNumber(
+                    nutriments.proteins_100g,
+                    nutriments.proteins
+                )
+            ),
+
+        carbs:
+            roundOne(
+                firstFiniteNumber(
+                    nutriments.carbohydrates_100g,
+                    nutriments.carbohydrates
+                )
+            ),
+
+        fat:
+            roundOne(
+                firstFiniteNumber(
+                    nutriments.fat_100g,
+                    nutriments.fat
+                )
+            ),
+
+        fiber:
+            roundOne(
+                firstFiniteNumber(
+                    nutriments.fiber_100g,
+                    nutriments.fiber
+                )
+            )
+    };
+}
+
+
+function hideScannedProductCard() {
+    scannedProductDraft =
+        null;
+
+    if (scannedProductCard) {
+        scannedProductCard.hidden =
+            true;
+    }
+}
+
+
+function renderScannedProductDraft(
+    draft
+) {
+    scannedProductDraft =
+        draft;
+
+    if (
+        !scannedProductCard ||
+        !draft
+    ) {
+        return;
+    }
+
+    scannedProductCard.hidden =
+        false;
+
+    scannedProductMeta.textContent =
+        [
+            draft.brand,
+            `code ${draft.barcode}`
+        ]
+            .filter(Boolean)
+            .join(" · ");
+
+    scannedProductName.value =
+        draft.name || "";
+
+    scannedProductUnit.value =
+        draft.unit === "ml"
+            ? "ml"
+            : "g";
+
+    scannedProductCalories.value =
+        draft.calories;
+
+    scannedProductProtein.value =
+        draft.protein;
+
+    scannedProductCarbs.value =
+        draft.carbs;
+
+    scannedProductFat.value =
+        draft.fat;
+
+    scannedProductFiber.value =
+        draft.fiber;
+
+    scannedProductCard.scrollIntoView({
+        behavior:
+            "smooth",
+        block:
+            "nearest"
+    });
+}
+
+
+async function fetchOpenFoodFactsProduct(
+    barcode
+) {
+    const code =
+        normalizeBarcode(
+            barcode
+        );
+
+    if (
+        code.length < 8 ||
+        code.length > 18
+    ) {
+        throw new Error(
+            "Le code-barres semble incomplet."
+        );
+    }
+
+    /*
+     * Open Food Facts documente actuellement
+     * son endpoint produit v2 dans son guide
+     * spécifique au scan de codes-barres.
+     */
+    const fields = [
+        "code",
+        "product_name",
+        "generic_name",
+        "brands",
+        "quantity",
+        "product_quantity_unit",
+        "serving_size",
+        "nutriments"
+    ]
+        .join(",");
+
+    const url =
+        "https://world.openfoodfacts.org/api/v2/product/" +
+        encodeURIComponent(code) +
+        ".json?fields=" +
+        encodeURIComponent(fields);
+
+    const response =
+        await fetch(
+            url,
+            {
+                method:
+                    "GET",
+                mode:
+                    "cors",
+                cache:
+                    "no-store"
+            }
+        );
+
+    if (!response.ok) {
+        throw new Error(
+            response.status === 404
+                ? "Produit absent d'Open Food Facts."
+                : "Open Food Facts ne répond pas pour le moment."
+        );
+    }
+
+    const data =
+        await response.json();
+
+    if (
+        Number(data?.status) !== 1 ||
+        !data?.product
+    ) {
+        throw new Error(
+            "Produit introuvable dans Open Food Facts."
+        );
+    }
+
+    return mapOpenFoodFactsProduct(
+        data.product,
+        code
+    );
+}
+
+
+async function lookupBarcode(
+    rawBarcode
+) {
+    const barcode =
+        normalizeBarcode(
+            rawBarcode
+        );
+
+    if (
+        barcode.length < 8 ||
+        barcode.length > 18
+    ) {
+        setBarcodeStatus(
+            "Je n'ai pas reconnu un code-barres complet. Tu peux le saisir manuellement.",
+            "error"
+        );
+
+        return;
+    }
+
+    if (barcodeManualInput) {
+        barcodeManualInput.value =
+            barcode;
+    }
+
+    hideScannedProductCard();
+
+    const localFood =
+        findCustomFoodByBarcode(
+            barcode
+        );
+
+    if (localFood) {
+        setBarcodeStatus(
+            "✅ Ce produit est déjà enregistré dans ta base Hana Fit. Je l'ai sélectionné.",
+            "success"
+        );
+
+        selectDatabaseFood(
+            localFood
+        );
+
+        selectedFoodCard?.scrollIntoView({
+            behavior:
+                "smooth",
+            block:
+                "nearest"
+        });
+
+        return;
+    }
+
+    if (!navigator.onLine) {
+        setBarcodeStatus(
+            "Tu es hors ligne. Ce produit n'est pas encore dans ta base personnelle.",
+            "error"
+        );
+
+        return;
+    }
+
+    setBarcodeStatus(
+        "🔎 Code reconnu. Recherche du produit dans Open Food Facts…"
+    );
+
+    try {
+        const draft =
+            await fetchOpenFoodFactsProduct(
+                barcode
+            );
+
+        renderScannedProductDraft(
+            draft
+        );
+
+        setBarcodeStatus(
+            "✅ Produit trouvé. Vérifie les valeurs de l'étiquette puis enregistre-le dans Hana Fit.",
+            "success"
+        );
+
+    } catch (error) {
+        console.error(
+            "Recherche code-barres :",
+            error
+        );
+
+        setBarcodeStatus(
+            `${error.message || "Produit introuvable."} Tu peux utiliser l'ajout manuel juste en dessous.`,
+            "error"
+        );
+    }
+}
+
+
+function waitForImageLoad(
+    image
+) {
+    return new Promise(
+        (resolve, reject) => {
+            if (
+                image.complete &&
+                image.naturalWidth > 0
+            ) {
+                resolve();
+                return;
+            }
+
+            image.onload =
+                () =>
+                    resolve();
+
+            image.onerror =
+                () =>
+                    reject(
+                        new Error(
+                            "Impossible de lire la photo."
+                        )
+                    );
+        }
+    );
+}
+
+
+async function decodeBarcodePhoto(
+    file
+) {
+    if (!file) {
+        return;
+    }
+
+    if (
+        !window.ZXingBrowser ||
+        !window.ZXingBrowser.BrowserMultiFormatReader
+    ) {
+        setBarcodeStatus(
+            "Le lecteur de code-barres n'a pas pu se charger. Vérifie ta connexion ou saisis le code manuellement.",
+            "error"
+        );
+
+        return;
+    }
+
+    const objectUrl =
+        URL.createObjectURL(
+            file
+        );
+
+    try {
+        setBarcodeStatus(
+            "📷 Lecture du code-barres…"
+        );
+
+        barcodePreview.hidden =
+            false;
+
+        barcodePreview.src =
+            objectUrl;
+
+        await waitForImageLoad(
+            barcodePreview
+        );
+
+        const reader =
+            new window.ZXingBrowser
+                .BrowserMultiFormatReader();
+
+        const result =
+            await reader.decodeFromImageElement(
+                barcodePreview
+            );
+
+        const code =
+            normalizeBarcode(
+                result?.getText?.() ||
+                result?.text ||
+                ""
+            );
+
+        if (!code) {
+            throw new Error(
+                "Aucun code-barres détecté."
+            );
+        }
+
+        await lookupBarcode(
+            code
+        );
+
+    } catch (error) {
+        console.error(
+            "Lecture photo code-barres :",
+            error
+        );
+
+        setBarcodeStatus(
+            "Je n'arrive pas à lire ce code-barres. Reprends la photo de près, bien nette et avec tout le code visible, ou saisis les chiffres manuellement.",
+            "error"
+        );
+
+    } finally {
+        URL.revokeObjectURL(
+            objectUrl
+        );
+
+        if (barcodePhotoInput) {
+            barcodePhotoInput.value =
+                "";
+        }
+    }
+}
+
+
+function saveScannedProduct() {
+    if (!scannedProductDraft) {
+        return;
+    }
+
+    const barcode =
+        normalizeBarcode(
+            scannedProductDraft.barcode
+        );
+
+    const name =
+        scannedProductName.value.trim();
+
+    const calories =
+        Number(
+            scannedProductCalories.value
+        );
+
+    const protein =
+        Number(
+            scannedProductProtein.value
+        );
+
+    const carbs =
+        Number(
+            scannedProductCarbs.value
+        );
+
+    const fat =
+        Number(
+            scannedProductFat.value
+        );
+
+    const fiber =
+        Number(
+            scannedProductFiber.value
+        ) || 0;
+
+    const values = [
+        calories,
+        protein,
+        carbs,
+        fat,
+        fiber
+    ];
+
+    if (
+        !name ||
+        values.some(
+            value =>
+                !Number.isFinite(value) ||
+                value < 0
+        )
+    ) {
+        setBarcodeStatus(
+            "Vérifie le nom et les valeurs nutritionnelles avant d'enregistrer.",
+            "error"
+        );
+
+        return;
+    }
+
+    const food = {
+        id:
+            `scan-${barcode}`,
+
+        name,
+
+        emoji:
+            "📦",
+
+        category:
+            "Produits scannés",
+
+        favorite:
+            false,
+
+        isPantry:
+            false,
+
+        barcode,
+
+        brand:
+            scannedProductDraft.brand ||
+            "",
+
+        source:
+            "openfoodfacts",
+
+        serving: {
+            amount:
+                100,
+
+            unit:
+                scannedProductUnit.value === "ml"
+                    ? "ml"
+                    : "g"
+        },
+
+        nutrition: {
+            calories:
+                roundOne(calories),
+
+            protein:
+                roundOne(protein),
+
+            carbs:
+                roundOne(carbs),
+
+            fat:
+                roundOne(fat),
+
+            fiber:
+                roundOne(fiber)
+        },
+
+        savedAt:
+            new Date()
+                .toISOString()
+    };
+
+    upsertCustomFood(
+        food
+    );
+
+    refreshCustomFoodInDatabase(
+        food
+    );
+
+    hideScannedProductCard();
+
+    setBarcodeStatus(
+        "✅ Produit enregistré dans ta base personnelle Hana Fit. Il sera désormais retrouvé dans la recherche et reconnu lors d'un prochain scan.",
+        "success"
+    );
+
+    selectDatabaseFood(
+        food
+    );
+}
+
+
+if (barcodePhotoInput) {
+    barcodePhotoInput.addEventListener(
+        "change",
+        event => {
+            const file =
+                event.target.files?.[0];
+
+            decodeBarcodePhoto(
+                file
+            );
+        }
+    );
+}
+
+
+if (barcodeLookupButton) {
+    barcodeLookupButton.addEventListener(
+        "click",
+        () => {
+            lookupBarcode(
+                barcodeManualInput?.value
+            );
+        }
+    );
+}
+
+
+if (barcodeManualInput) {
+    barcodeManualInput.addEventListener(
+        "keydown",
+        event => {
+            if (
+                event.key ===
+                "Enter"
+            ) {
+                event.preventDefault();
+
+                lookupBarcode(
+                    barcodeManualInput.value
+                );
+            }
+        }
+    );
+}
+
+
+if (saveScannedProductButton) {
+    saveScannedProductButton.addEventListener(
+        "click",
+        saveScannedProduct
+    );
+}
+
+
+if (cancelScannedProductButton) {
+    cancelScannedProductButton.addEventListener(
+        "click",
+        () => {
+            hideScannedProductCard();
+
+            setBarcodeStatus(
+                "Produit non enregistré. Tu peux scanner un autre code-barres."
+            );
+        }
+    );
+}
+
+
+
+
+/* =========================================
    BASE ALIMENTAIRE
 ========================================= */
 
@@ -546,6 +1447,7 @@ function renderFoodSearchResults(search) {
 
                     <span>
                         ${food.category || "Aliment"}
+                        ${food.barcode ? ` · code ${food.barcode}` : ""}
                         · pour
                         ${food.serving?.amount || 100}
                         ${food.serving?.unit || "g"}
@@ -701,6 +1603,10 @@ if (addDatabaseFoodButton) {
 
                 foodId:
                     selectedDatabaseFood.id,
+
+                barcode:
+                    selectedDatabaseFood.barcode ||
+                    null,
 
                 source:
                     "database",
@@ -927,9 +1833,14 @@ async function importSelectedRecipe() {
 
 async function loadFoodDatabase() {
     try {
-        foodDatabase =
+        const staticFoods =
             await loadDatabaseFile(
                 "foods.json"
+            );
+
+        foodDatabase =
+            mergeCustomFoodsIntoDatabase(
+                staticFoods
             );
 
     } catch (error) {

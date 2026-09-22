@@ -655,7 +655,73 @@
 
 </main>
 
+
+<nav class="bottom-nav" aria-label="Navigation principale">
+    <a href="../index.html">
+        <span>⌂</span>
+        Accueil
+    </a>
+
+    <a href="./nutrition-v4.html">
+        <span>●</span>
+        Nutrition
+    </a>
+
+    <a href="./training.html">
+        <span>H</span>
+        Training
+    </a>
+
+    <a href="./wellbeing.html">
+        <span>🌿</span>
+        Bien-être
+    </a>
+
+    <a href="./progress.html">
+        <span>⌁</span>
+        Progression
+    </a>
+</nav>
+
+<button
+    type="button"
+    class="scroll-top-button"
+    aria-label="Revenir en haut de la page"
+    title="Revenir en haut"
+>
+    ↑
+</button>
+
+
 <script src="../assets/js/profile.js"></script>
+
+<script>
+    (() => {
+        const button = document.querySelector(".scroll-top-button");
+
+        if (!button) {
+            return;
+        }
+
+        const updateScrollButton = () => {
+            button.classList.toggle("visible", window.scrollY > 500);
+        };
+
+        button.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+        window.addEventListener("scroll", updateScrollButton, {
+            passive: true
+        });
+
+        updateScrollButton();
+    })();
+</script>
+
 
 </body>
 </html>

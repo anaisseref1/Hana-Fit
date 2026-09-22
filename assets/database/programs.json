@@ -1,5 +1,325 @@
 [
   {
+    "id": 0,
+    "name": "1400-1450",
+    "title": "Programme Hana Fit 1400–1450 kcal",
+    "emoji": "🌿",
+    "goal": "Perte de gras",
+    "durationWeeks": 4,
+    "daysPerWeek": 7,
+    "targets": {
+      "caloriesMin": 1400,
+      "caloriesMax": 1450,
+      "protein": 110
+    },
+    "weeks": [
+      {
+        "week": 1,
+        "title": "Semaine 1",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": 54,
+              "lunch": 9,
+              "snack": 15,
+              "dinner": 23
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": 6,
+              "lunch": 35,
+              "snack": 44,
+              "dinner": 37
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": 1,
+              "lunch": 22,
+              "snack": 14,
+              "dinner": 25
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": 49,
+              "lunch": 32,
+              "snack": 16,
+              "dinner": 37
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": 49,
+              "lunch": 32,
+              "snack": 13,
+              "dinner": 20
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": 7,
+              "lunch": 32,
+              "snack": 41,
+              "dinner": 38
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": 8,
+              "lunch": 9,
+              "snack": 13,
+              "dinner": 38
+            }
+          }
+        ]
+      },
+      {
+        "week": 2,
+        "title": "Semaine 2",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": 52,
+              "lunch": 10,
+              "snack": 13,
+              "dinner": 18
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": 1,
+              "lunch": 10,
+              "snack": 43,
+              "dinner": 5
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": 50,
+              "lunch": 22,
+              "snack": 13,
+              "dinner": 17
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": 2,
+              "lunch": 4,
+              "snack": 16,
+              "dinner": 18
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": 3,
+              "lunch": 29,
+              "snack": 16,
+              "dinner": 19
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": 3,
+              "lunch": 24,
+              "snack": 56,
+              "dinner": 38
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": 58,
+              "lunch": 10,
+              "snack": 13,
+              "dinner": 23
+            }
+          }
+        ]
+      },
+      {
+        "week": 3,
+        "title": "Semaine 3",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": 52,
+              "lunch": 26,
+              "snack": 15,
+              "dinner": 37
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": 58,
+              "lunch": 34,
+              "snack": 42,
+              "dinner": 25
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": 58,
+              "lunch": 12,
+              "snack": 15,
+              "dinner": 27
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": 52,
+              "lunch": 4,
+              "snack": 44,
+              "dinner": 53
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": 48,
+              "lunch": 36,
+              "snack": 15,
+              "dinner": 40
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": 52,
+              "lunch": 36,
+              "snack": 15,
+              "dinner": 27
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": 8,
+              "lunch": 26,
+              "snack": 16,
+              "dinner": 25
+            }
+          }
+        ]
+      },
+      {
+        "week": 4,
+        "title": "Semaine 4",
+        "days": [
+          {
+            "day": 1,
+            "name": "Lundi",
+            "meals": {
+              "breakfast": 3,
+              "lunch": 12,
+              "snack": 41,
+              "dinner": 17
+            }
+          },
+          {
+            "day": 2,
+            "name": "Mardi",
+            "meals": {
+              "breakfast": 8,
+              "lunch": 26,
+              "snack": 56,
+              "dinner": 17
+            }
+          },
+          {
+            "day": 3,
+            "name": "Mercredi",
+            "meals": {
+              "breakfast": 50,
+              "lunch": 4,
+              "snack": 57,
+              "dinner": 31
+            }
+          },
+          {
+            "day": 4,
+            "name": "Jeudi",
+            "meals": {
+              "breakfast": 52,
+              "lunch": 9,
+              "snack": 41,
+              "dinner": 31
+            }
+          },
+          {
+            "day": 5,
+            "name": "Vendredi",
+            "meals": {
+              "breakfast": 50,
+              "lunch": 12,
+              "snack": 16,
+              "dinner": 5
+            }
+          },
+          {
+            "day": 6,
+            "name": "Samedi",
+            "meals": {
+              "breakfast": 7,
+              "lunch": 30,
+              "snack": 15,
+              "dinner": 19
+            }
+          },
+          {
+            "day": 7,
+            "name": "Dimanche",
+            "meals": {
+              "breakfast": 6,
+              "lunch": 36,
+              "snack": 13,
+              "dinner": 20
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": 1,
     "name": "1500-1550",
     "title": "Programme Hana Fit 1500–1550 kcal",

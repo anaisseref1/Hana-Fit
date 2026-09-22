@@ -107,7 +107,6 @@ Fonctions :
 ---
 
 ## 🔄 Programmes Hana Fit
-Hana Fit v3
 
 À développer
 
@@ -116,3 +115,13 @@ Hana Fit v3
 ## 🔄 Intelligence NEHA
 
 À développer
+
+---
+
+## Mise à jour septembre 2026
+
+- Programme nutrition **1400–1450 kcal** sur 4 semaines, ≈110 g de protéines/jour.
+- Calisthénie : matériel maison (station 72/79/86 cm, poignées de pompes, élastiques 15/20/30 kg).
+- Nouvelle séance **Haut du corps · Départ Hana**.
+- Parcours de skills ajustés : pompes, tractions, dips, L-sit, handstand et handstand walk.
+- Vigilance poignet gauche intégrée aux consignes de progression.

@@ -1,0 +1,425 @@
+[
+  {
+    "exerciseId": "hollow-body-hold",
+    "name": "Hollow Body Hold",
+    "category": "Calisthénie / Gainage",
+    "media": "assets/exercises/hollow-body-hold.gif",
+    "goal": "Créer un gainage solide pour le L-sit, le handstand et les mouvements de calisthénie.",
+    "muscles": [
+      "Abdominaux",
+      "Gainage profond",
+      "Fléchisseurs de hanche"
+    ],
+    "howTo": [
+      "Allonge-toi sur le dos et plaque le bas du dos au sol.",
+      "Décolle légèrement les épaules et les jambes.",
+      "Garde les côtes rentrées et respire sans perdre la position."
+    ],
+    "keyCue": "Bas du dos collé au sol.",
+    "commonMistake": "Laisser le bas du dos se cambrer pour descendre les jambes trop bas.",
+    "regression": "Genoux pliés, bras le long du corps.",
+    "progression": "Jambes plus tendues, bras derrière la tête puis hollow rocks."
+  },
+  {
+    "exerciseId": "dead-hang",
+    "name": "Dead Hang / Suspension",
+    "category": "Calisthénie / Tirage",
+    "media": "assets/exercises/dead-hang.gif",
+    "goal": "Développer le grip et préparer les épaules et le dos aux tractions.",
+    "muscles": [
+      "Avant-bras",
+      "Grand dorsal",
+      "Épaules"
+    ],
+    "howTo": [
+      "Attrape la barre avec une prise confortable.",
+      "Laisse les jambes quitter le sol sans balancer.",
+      "Tiens la position en gardant une respiration régulière."
+    ],
+    "keyCue": "Reste longue et stable sous la barre.",
+    "commonMistake": "Se balancer ou forcer une position douloureuse des épaules.",
+    "regression": "Garder légèrement les pieds au sol pour décharger une partie du poids.",
+    "progression": "Dead hang plus long puis scapular pull-ups."
+  },
+  {
+    "exerciseId": "scapular-pull-up",
+    "name": "Scapular Pull-ups",
+    "category": "Calisthénie / Tirage",
+    "media": "assets/exercises/scapular-pull-up.gif",
+    "goal": "Apprendre à engager les omoplates avant une traction.",
+    "muscles": [
+      "Grand dorsal",
+      "Trapèzes",
+      "Muscles scapulaires"
+    ],
+    "howTo": [
+      "Pars suspendue, bras tendus.",
+      "Sans plier les coudes, abaisse légèrement les épaules.",
+      "Monte le corps de quelques centimètres puis reviens lentement."
+    ],
+    "keyCue": "Les bras restent tendus.",
+    "commonMistake": "Transformer le mouvement en mini traction en pliant les coudes.",
+    "regression": "Travail scapulaire avec élastique ou tirage vertical très léger.",
+    "progression": "Scapular pull-ups contrôlés puis tractions assistées."
+  },
+  {
+    "exerciseId": "incline-push-up",
+    "name": "Pompes inclinées",
+    "category": "Calisthénie / Poussée",
+    "media": "assets/exercises/incline-push-up.gif",
+    "goal": "Construire la force nécessaire aux pompes classiques.",
+    "muscles": [
+      "Pectoraux",
+      "Triceps",
+      "Épaules",
+      "Gainage"
+    ],
+    "howTo": [
+      "Pose les mains ou les poignées sur un support stable.",
+      "Garde le corps aligné de la tête aux talons.",
+      "Descends la poitrine vers le support puis repousse."
+    ],
+    "keyCue": "Le corps reste en bloc.",
+    "commonMistake": "Laisser les hanches tomber ou partir en arrière.",
+    "regression": "Utiliser un support plus haut.",
+    "progression": "Baisser progressivement la hauteur du support."
+  },
+  {
+    "exerciseId": "knee-push-up",
+    "name": "Pompes sur les genoux",
+    "category": "Calisthénie / Poussée",
+    "media": "assets/exercises/knee-push-up.gif",
+    "goal": "Renforcer la poussée avant les pompes classiques.",
+    "muscles": [
+      "Pectoraux",
+      "Triceps",
+      "Épaules"
+    ],
+    "howTo": [
+      "Place les mains ou poignées sous les épaules.",
+      "Appuie les genoux au sol et garde le bassin aligné.",
+      "Descends la poitrine puis repousse sans casser la ligne du corps."
+    ],
+    "keyCue": "Épaules, hanches et genoux restent alignés.",
+    "commonMistake": "Plier uniquement au niveau des hanches.",
+    "regression": "Pompes inclinées.",
+    "progression": "Pompes classiques."
+  },
+  {
+    "exerciseId": "push-up",
+    "name": "Pompes",
+    "category": "Calisthénie / Poussée",
+    "media": "assets/exercises/push-up.gif",
+    "goal": "Développer la force du haut du corps et le gainage.",
+    "muscles": [
+      "Pectoraux",
+      "Triceps",
+      "Épaules",
+      "Gainage"
+    ],
+    "howTo": [
+      "Place les mains ou poignées sous ou légèrement en dehors des épaules.",
+      "Gaine tout le corps.",
+      "Descends sous contrôle puis pousse le sol pour revenir."
+    ],
+    "keyCue": "Pousse le sol tout en gardant le corps gainé.",
+    "commonMistake": "Creuser le bas du dos ou écarter excessivement les coudes.",
+    "regression": "Pompes inclinées ou sur les genoux.",
+    "progression": "Plus de répétitions, tempo lent ou pike push-up."
+  },
+  {
+    "exerciseId": "pike-push-up",
+    "name": "Pike Push-up",
+    "category": "Calisthénie / Handstand",
+    "media": "assets/exercises/pike-push-up.gif",
+    "goal": "Renforcer les épaules et les triceps pour le handstand.",
+    "muscles": [
+      "Épaules",
+      "Triceps",
+      "Haut des pectoraux"
+    ],
+    "howTo": [
+      "Place les hanches hautes pour former un V inversé.",
+      "Fléchis les coudes et dirige la tête entre les mains.",
+      "Repousse fortement le sol pour revenir."
+    ],
+    "keyCue": "Les hanches restent hautes.",
+    "commonMistake": "Faire une pompe classique avec le bassin trop bas.",
+    "regression": "Pike hold ou pike push-up avec mains surélevées.",
+    "progression": "Pieds surélevés puis travail handstand au mur."
+  },
+  {
+    "exerciseId": "support-hold",
+    "name": "Support Hold",
+    "category": "Calisthénie / L-sit",
+    "media": "assets/exercises/support-hold.gif",
+    "goal": "Développer la poussée des bras et des épaules nécessaire au L-sit.",
+    "muscles": [
+      "Triceps",
+      "Épaules",
+      "Abdominaux"
+    ],
+    "howTo": [
+      "Saisis les parallettes ou deux supports très stables.",
+      "Tends complètement les bras.",
+      "Pousse les épaules vers le bas pour décoller le bassin."
+    ],
+    "keyCue": "Pousse fort dans les supports.",
+    "commonMistake": "Hausser les épaules vers les oreilles ou garder les coudes fléchis.",
+    "regression": "Garder les pieds en contact léger avec le sol.",
+    "progression": "Tuck L-sit."
+  },
+  {
+    "exerciseId": "tuck-l-sit",
+    "name": "Tuck L-sit",
+    "category": "Calisthénie / L-sit",
+    "media": "assets/exercises/tuck-l-sit.gif",
+    "goal": "Apprendre à maintenir tout le corps décollé avant d'allonger les jambes.",
+    "muscles": [
+      "Abdominaux",
+      "Fléchisseurs de hanche",
+      "Triceps",
+      "Épaules"
+    ],
+    "howTo": [
+      "Pars en support hold.",
+      "Ramène les genoux vers la poitrine.",
+      "Maintiens le bassin et les pieds décollés."
+    ],
+    "keyCue": "Genoux vers la poitrine, bras verrouillés.",
+    "commonMistake": "S'effondrer entre les épaules.",
+    "regression": "Support hold.",
+    "progression": "L-sit une jambe tendue."
+  },
+  {
+    "exerciseId": "one-leg-l-sit",
+    "name": "L-sit une jambe",
+    "category": "Calisthénie / L-sit",
+    "media": "assets/exercises/one-leg-l-sit.gif",
+    "goal": "Faire la transition entre le tuck et le L-sit complet.",
+    "muscles": [
+      "Abdominaux",
+      "Fléchisseurs de hanche",
+      "Quadriceps",
+      "Triceps"
+    ],
+    "howTo": [
+      "Pars en tuck L-sit.",
+      "Tends une jambe devant toi.",
+      "Alterne les côtés sans laisser tomber le bassin."
+    ],
+    "keyCue": "Le bassin reste haut pendant que la jambe s'allonge.",
+    "commonMistake": "Chercher l'horizontale au prix d'une perte complète de hauteur.",
+    "regression": "Tuck L-sit plus long.",
+    "progression": "L-sit complet."
+  },
+  {
+    "exerciseId": "wall-handstand",
+    "name": "Handstand face au mur",
+    "category": "Calisthénie / Handstand",
+    "media": "assets/exercises/wall-handstand.gif",
+    "goal": "Construire l'alignement, le gainage et l'endurance des épaules.",
+    "muscles": [
+      "Épaules",
+      "Triceps",
+      "Gainage",
+      "Avant-bras"
+    ],
+    "howTo": [
+      "Monte progressivement les pieds au mur, ventre orienté vers celui-ci.",
+      "Pousse fort dans les mains ou parallettes.",
+      "Aligne épaules, bassin et jambes autant que possible."
+    ],
+    "keyCue": "Pousse le sol et serre le ventre.",
+    "commonMistake": "Cambrer fortement le dos et relâcher les épaules.",
+    "regression": "Pike hold avec pieds sur support.",
+    "progression": "Transferts de poids au mur."
+  },
+  {
+    "exerciseId": "handstand-weight-shift",
+    "name": "Handstand — transferts de poids",
+    "category": "Calisthénie / Handstand",
+    "media": "assets/exercises/handstand-weight-shift.gif",
+    "goal": "Préparer l'équilibre libre et les premiers pas sur les mains.",
+    "muscles": [
+      "Épaules",
+      "Triceps",
+      "Gainage"
+    ],
+    "howTo": [
+      "Tiens un handstand stable au mur.",
+      "Déplace légèrement le poids vers une main.",
+      "Reviens au centre puis change de côté."
+    ],
+    "keyCue": "Petit transfert contrôlé, pas un grand balancement.",
+    "commonMistake": "Tourner les hanches au lieu de déplacer le poids avec les épaules.",
+    "regression": "Handstand au mur statique.",
+    "progression": "Décoller brièvement une main puis handstand libre."
+  },
+  {
+    "exerciseId": "wrist-rocks",
+    "name": "Wrist Rocks",
+    "category": "Mobilité / Poignets",
+    "media": "assets/exercises/wrist-rocks.gif",
+    "goal": "Préparer progressivement les poignets aux appuis.",
+    "muscles": [
+      "Poignets",
+      "Avant-bras"
+    ],
+    "howTo": [
+      "Place-toi à quatre pattes ou sur une surface plus haute.",
+      "Garde une amplitude confortable.",
+      "Déplace doucement le poids vers l'avant puis reviens."
+    ],
+    "keyCue": "Le mouvement reste doux et contrôlé.",
+    "commonMistake": "Chercher une grande amplitude malgré une douleur.",
+    "regression": "Faire le mouvement debout contre un mur.",
+    "progression": "Augmenter très progressivement la charge.",
+    "caution": "Arrêter en cas de douleur vive, décharge électrique ou engourdissement."
+  },
+  {
+    "exerciseId": "finger-pulses",
+    "name": "Finger Pulses",
+    "category": "Mobilité / Poignets",
+    "media": "assets/exercises/finger-pulses.gif",
+    "goal": "Activer doigts et avant-bras avant les appuis.",
+    "muscles": [
+      "Doigts",
+      "Avant-bras",
+      "Poignets"
+    ],
+    "howTo": [
+      "Pose les mains sur une surface confortable.",
+      "Garde les doigts largement ouverts.",
+      "Effectue de petites pressions progressives sans forcer."
+    ],
+    "keyCue": "Petite amplitude, contrôle maximal.",
+    "commonMistake": "Charger brutalement les poignets.",
+    "regression": "Version debout contre un mur.",
+    "progression": "Plus de charge seulement si totalement confortable.",
+    "caution": "Arrêter en cas de douleur vive, décharge électrique ou engourdissement."
+  },
+  {
+    "exerciseId": "hip-90-90",
+    "name": "90/90 Hanches",
+    "category": "Mobilité / Hanches",
+    "media": "assets/exercises/hip-90-90.gif",
+    "goal": "Améliorer la rotation interne et externe des hanches.",
+    "muscles": [
+      "Hanches",
+      "Fessiers",
+      "Rotateurs de hanche"
+    ],
+    "howTo": [
+      "Assieds-toi avec les deux genoux pliés.",
+      "Place une jambe devant et l'autre sur le côté.",
+      "Passe lentement d'un côté à l'autre sans forcer."
+    ],
+    "keyCue": "Le mouvement vient des hanches.",
+    "commonMistake": "Forcer les genoux vers le sol.",
+    "regression": "S'aider des mains derrière le dos.",
+    "progression": "Transitions 90/90 sans les mains."
+  },
+  {
+    "exerciseId": "hip-flexor-lunge",
+    "name": "Fente fléchisseur de hanche",
+    "category": "Mobilité / Hanches",
+    "media": "assets/exercises/hip-flexor-lunge.gif",
+    "goal": "Mobiliser l'avant de la hanche, particulièrement après une journée assise.",
+    "muscles": [
+      "Fléchisseurs de hanche",
+      "Quadriceps"
+    ],
+    "howTo": [
+      "Place un genou au sol et l'autre pied devant.",
+      "Rentre légèrement le bassin.",
+      "Avance doucement jusqu'à sentir l'avant de la hanche arrière."
+    ],
+    "keyCue": "Rentre légèrement le bassin au lieu de cambrer.",
+    "commonMistake": "Chercher l'amplitude en creusant le bas du dos.",
+    "regression": "Réduire la longueur de la fente.",
+    "progression": "Ajouter le bras du côté étiré au-dessus de la tête."
+  },
+  {
+    "exerciseId": "ankle-knee-to-wall",
+    "name": "Mobilité cheville genou-au-mur",
+    "category": "Mobilité / Chevilles",
+    "media": "assets/exercises/ankle-knee-to-wall.gif",
+    "goal": "Améliorer la dorsiflexion utile au squat et aux mouvements unilatéraux.",
+    "muscles": [
+      "Cheville",
+      "Mollets"
+    ],
+    "howTo": [
+      "Place le pied à quelques centimètres d'un mur.",
+      "Garde le talon au sol.",
+      "Amène le genou vers le mur puis reviens."
+    ],
+    "keyCue": "Le talon ne décolle pas.",
+    "commonMistake": "Faire rouler le pied vers l'intérieur pour toucher le mur.",
+    "regression": "Rapprocher le pied du mur.",
+    "progression": "Éloigner progressivement le pied."
+  },
+  {
+    "exerciseId": "assisted-deep-squat",
+    "name": "Squat profond assisté",
+    "category": "Mobilité / Hanches & chevilles",
+    "media": "assets/exercises/assisted-deep-squat.gif",
+    "goal": "Améliorer progressivement le confort en squat profond.",
+    "muscles": [
+      "Hanches",
+      "Chevilles",
+      "Adducteurs"
+    ],
+    "howTo": [
+      "Tiens-toi à un support stable.",
+      "Descends dans un squat confortable.",
+      "Respire et utilise le support pour contrôler la position."
+    ],
+    "keyCue": "Reste dans une profondeur confortable.",
+    "commonMistake": "Forcer vers le bas alors que les talons se décollent.",
+    "regression": "Squat moins profond avec support.",
+    "progression": "Réduire progressivement l'aide des mains."
+  },
+  {
+    "exerciseId": "thoracic-rotation",
+    "name": "Rotations thoraciques",
+    "category": "Mobilité / Dos",
+    "media": "assets/exercises/thoracic-rotation.gif",
+    "goal": "Améliorer la mobilité du haut du dos et des épaules.",
+    "muscles": [
+      "Haut du dos",
+      "Épaules"
+    ],
+    "howTo": [
+      "Stabilise le bassin.",
+      "Tourne lentement le haut du corps.",
+      "Reviens au centre puis répète de l'autre côté."
+    ],
+    "keyCue": "Le bassin bouge le moins possible.",
+    "commonMistake": "Créer toute la rotation avec le bas du dos.",
+    "regression": "Réduire l'amplitude.",
+    "progression": "Rotation plus ample sans perdre le contrôle."
+  },
+  {
+    "exerciseId": "wall-slide",
+    "name": "Wall Slides",
+    "category": "Mobilité / Épaules",
+    "media": "assets/exercises/wall-slide.gif",
+    "goal": "Améliorer la mobilité et le contrôle des épaules pour le handstand.",
+    "muscles": [
+      "Épaules",
+      "Omoplates",
+      "Haut du dos"
+    ],
+    "howTo": [
+      "Place le dos contre un mur.",
+      "Garde les côtes contrôlées.",
+      "Fais glisser les bras vers le haut puis redescends sans douleur."
+    ],
+    "keyCue": "Ne compense pas en cambrant.",
+    "commonMistake": "Forcer les bras contre le mur au prix d'une forte cambrure.",
+    "regression": "Faire le mouvement sans contact complet avec le mur.",
+    "progression": "Amplitude plus grande avec meilleur contrôle."
+  }
+]

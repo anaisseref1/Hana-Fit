@@ -14,9 +14,13 @@
 
     let trainingProgramLibrary = [];
 
+    let exerciseGuideLibrary = [];
+
     let trainingProgramFilter = "all";
 
     let activeTrainingProgram = null;
+
+    let activeTrainingDiscipline = "musculation";
 
     let activeExercises = [];
 
@@ -339,6 +343,325 @@
     }
 
 
+
+    function isMobilityTrainingSession(session) {
+
+        return (
+            normalizeText(
+                session?.type
+            ) === "mobilite" ||
+            normalizeText(
+                session?.discipline
+            ) === "mobilite"
+        );
+    }
+
+
+    function isCardioOnlyTrainingSession(session) {
+
+        const exercises =
+            Array.isArray(
+                session?.exercises
+            )
+                ? session.exercises
+                : [];
+
+        return (
+            exercises.length > 0 &&
+            exercises.every(
+                exercise =>
+                    getExerciseMode(
+                        exercise
+                    ) === "cardio"
+            )
+        );
+    }
+
+
+    function sessionTimestamp(session) {
+
+        const value =
+            Date.parse(
+                session?.createdAt ||
+                ""
+            );
+
+        return Number.isFinite(value)
+            ? value
+            : 0;
+    }
+
+
+    function canMergeTrainingSessions(
+        previous,
+        current
+    ) {
+
+        if (
+            !previous ||
+            !current ||
+            isMobilityTrainingSession(previous) ||
+            isMobilityTrainingSession(current)
+        ) {
+            return false;
+        }
+
+        const previousTime =
+            sessionTimestamp(
+                previous
+            );
+
+        const currentTime =
+            sessionTimestamp(
+                current
+            );
+
+        if (
+            !previousTime ||
+            !currentTime
+        ) {
+            return false;
+        }
+
+        const minutesApart =
+            Math.abs(
+                currentTime -
+                previousTime
+            ) /
+            60000;
+
+        if (
+            minutesApart > 180
+        ) {
+            return false;
+        }
+
+        return (
+            isCardioOnlyTrainingSession(previous) ||
+            isCardioOnlyTrainingSession(current)
+        );
+    }
+
+
+    function mergeTrainingSessions(
+        previous,
+        current
+    ) {
+
+        const previousCardioOnly =
+            isCardioOnlyTrainingSession(
+                previous
+            );
+
+        const currentCardioOnly =
+            isCardioOnlyTrainingSession(
+                current
+            );
+
+        const mainSession =
+            previousCardioOnly &&
+            !currentCardioOnly
+                ? current
+                : previous;
+
+        const extraSession =
+            mainSession === previous
+                ? current
+                : previous;
+
+        const mergedExercises = [
+            ...(
+                Array.isArray(
+                    mainSession.exercises
+                )
+                    ? mainSession.exercises
+                    : []
+            ),
+            ...(
+                Array.isArray(
+                    extraSession.exercises
+                )
+                    ? extraSession.exercises
+                    : []
+            )
+        ];
+
+        const cardioMinutes =
+            calculateSessionCardioMinutes(
+                extraSession
+            );
+
+        const mergedNotes = [
+            mainSession.notes,
+            extraSession.notes
+        ]
+            .filter(Boolean)
+            .filter(
+                (value, index, values) =>
+                    values.indexOf(value) === index
+            )
+            .join("\n");
+
+        return {
+            ...mainSession,
+            id:
+                previous.id ||
+                mainSession.id ||
+                makeId(),
+            type:
+                currentCardioOnly ||
+                previousCardioOnly
+                    ? (
+                        normalizeText(
+                            mainSession.type
+                        ) === "cardio"
+                            ? "Cardio"
+                            : `${mainSession.type || "Séance"} + Cardio`
+                    )
+                    : (
+                        mainSession.type ||
+                        "Séance"
+                    ),
+            duration:
+                safeNumber(
+                    mainSession.duration
+                ) +
+                (
+                    safeNumber(
+                        extraSession.duration
+                    ) ||
+                    cardioMinutes
+                ),
+            notes:
+                mergedNotes,
+            exercises:
+                mergedExercises,
+            updatedAt:
+                new Date()
+                    .toISOString()
+        };
+    }
+
+
+    function addOrMergeSessionToHistory(
+        date,
+        session
+    ) {
+
+        const history =
+            loadTrainingHistory();
+
+        const sessions =
+            Array.isArray(
+                history[date]
+            )
+                ? history[date]
+                : [];
+
+        const previous =
+            sessions[
+                sessions.length - 1
+            ];
+
+        if (
+            previous &&
+            canMergeTrainingSessions(
+                previous,
+                session
+            )
+        ) {
+
+            sessions[
+                sessions.length - 1
+            ] =
+                mergeTrainingSessions(
+                    previous,
+                    session
+                );
+
+            history[date] =
+                sessions;
+
+            saveTrainingHistory(
+                history
+            );
+
+            return true;
+        }
+
+        sessions.push(
+            session
+        );
+
+        history[date] =
+            sessions;
+
+        saveTrainingHistory(
+            history
+        );
+
+        return false;
+    }
+
+
+    function countTrainingSessions(
+        sessions
+    ) {
+
+        const filtered =
+            (
+                Array.isArray(
+                    sessions
+                )
+                    ? sessions
+                    : []
+            )
+                .filter(
+                    session =>
+                        !isMobilityTrainingSession(
+                            session
+                        )
+                );
+
+        if (
+            filtered.length <= 1
+        ) {
+            return filtered.length;
+        }
+
+        let count = 0;
+        let previous = null;
+
+        filtered.forEach(
+            session => {
+
+                if (
+                    previous &&
+                    canMergeTrainingSessions(
+                        previous,
+                        session
+                    )
+                ) {
+
+                    previous =
+                        mergeTrainingSessions(
+                            previous,
+                            session
+                        );
+
+                    return;
+                }
+
+                count += 1;
+                previous =
+                    session;
+            }
+        );
+
+        return count;
+    }
+
+
     function deleteSessionFromHistory(
         date,
         sessionId,
@@ -445,6 +768,398 @@
         renderExerciseResults("");
 
     }
+
+
+
+
+    /* =========================================
+       FICHES / DÉMOS EXERCICES
+    ========================================= */
+
+    async function loadExerciseGuideLibrary() {
+
+        try {
+
+            const response =
+                await fetch(
+                    "../assets/database/exercise-guides.json"
+                );
+
+            if (!response.ok) {
+                throw new Error(
+                    "Impossible de charger exercise-guides.json"
+                );
+            }
+
+            const data =
+                await response.json();
+
+            exerciseGuideLibrary =
+                Array.isArray(data)
+                    ? data
+                    : [];
+
+        } catch (error) {
+
+            console.error(
+                "Erreur fiches exercices :",
+                error
+            );
+
+            exerciseGuideLibrary =
+                [];
+        }
+    }
+
+
+    function getExerciseGuide(
+        exerciseId
+    ) {
+
+        if (!exerciseId) {
+            return null;
+        }
+
+        return (
+            exerciseGuideLibrary.find(
+                guide =>
+                    guide.exerciseId ===
+                    exerciseId
+            ) ||
+            null
+        );
+    }
+
+
+    function normalizeExerciseGuideMediaPath(
+        media
+    ) {
+
+        const path =
+            String(
+                media ||
+                ""
+            ).trim();
+
+        if (!path) {
+            return "";
+        }
+
+        if (
+            path.startsWith(
+                "assets/"
+            )
+        ) {
+            return `../${path}`;
+        }
+
+        return path;
+    }
+
+
+    function createExerciseDemoButton(
+        exerciseId,
+        label = "▶ Voir la démo"
+    ) {
+
+        const guide =
+            getExerciseGuide(
+                exerciseId
+            );
+
+        if (!guide) {
+            return null;
+        }
+
+        const button =
+            document.createElement(
+                "button"
+            );
+
+        button.type =
+            "button";
+
+        button.className =
+            "exercise-demo-button";
+
+        button.textContent =
+            label;
+
+        button.addEventListener(
+            "click",
+            event => {
+
+                event.preventDefault();
+                event.stopPropagation();
+
+                openExerciseGuide(
+                    guide
+                );
+            }
+        );
+
+        return button;
+    }
+
+
+    function openExerciseGuide(
+        guide
+    ) {
+
+        const modal =
+            document.getElementById(
+                "exerciseGuideModal"
+            );
+
+        if (
+            !modal ||
+            !guide
+        ) {
+            return;
+        }
+
+        const setText =
+            (
+                id,
+                value
+            ) => {
+
+                const element =
+                    document.getElementById(
+                        id
+                    );
+
+                if (element) {
+                    element.textContent =
+                        value ||
+                        "—";
+                }
+            };
+
+        setText(
+            "exerciseGuideTitle",
+            guide.name
+        );
+
+        setText(
+            "exerciseGuideCategory",
+            guide.category
+        );
+
+        setText(
+            "exerciseGuideGoal",
+            `🎯 ${guide.goal || ""}`
+        );
+
+        setText(
+            "exerciseGuideKeyCue",
+            guide.keyCue
+        );
+
+        setText(
+            "exerciseGuideMistake",
+            guide.commonMistake
+        );
+
+        setText(
+            "exerciseGuideRegression",
+            guide.regression
+        );
+
+        setText(
+            "exerciseGuideProgression",
+            guide.progression
+        );
+
+        setText(
+            "exerciseGuideMuscles",
+            Array.isArray(
+                guide.muscles
+            )
+                ? guide.muscles.join(
+                    " · "
+                )
+                : guide.muscles
+        );
+
+        const howTo =
+            document.getElementById(
+                "exerciseGuideHowTo"
+            );
+
+        if (howTo) {
+
+            howTo.innerHTML =
+                "";
+
+            (
+                Array.isArray(
+                    guide.howTo
+                )
+                    ? guide.howTo
+                    : []
+            )
+                .forEach(
+                    step => {
+
+                        const item =
+                            document.createElement(
+                                "li"
+                            );
+
+                        item.textContent =
+                            step;
+
+                        howTo.appendChild(
+                            item
+                        );
+                    }
+                );
+        }
+
+        const caution =
+            document.getElementById(
+                "exerciseGuideCaution"
+            );
+
+        const cautionText =
+            document.getElementById(
+                "exerciseGuideCautionText"
+            );
+
+        if (caution) {
+
+            caution.hidden =
+                !guide.caution;
+
+            if (
+                guide.caution &&
+                cautionText
+            ) {
+                cautionText.textContent =
+                    guide.caution;
+            }
+        }
+
+        const image =
+            document.getElementById(
+                "exerciseGuideGif"
+            );
+
+        const fallback =
+            document.getElementById(
+                "exerciseGuideMediaFallback"
+            );
+
+        if (
+            image &&
+            fallback
+        ) {
+
+            image.hidden =
+                false;
+
+            fallback.hidden =
+                true;
+
+            image.alt =
+                `Démonstration de ${guide.name}`;
+
+            image.onerror =
+                () => {
+                    image.hidden =
+                        true;
+
+                    fallback.hidden =
+                        false;
+                };
+
+            image.src =
+                normalizeExerciseGuideMediaPath(
+                    guide.media
+                );
+
+            if (!image.src) {
+                image.hidden =
+                    true;
+
+                fallback.hidden =
+                    false;
+            }
+        }
+
+        modal.classList.add(
+            "open"
+        );
+
+        modal.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        document.body.classList.add(
+            "exercise-guide-open"
+        );
+    }
+
+
+    function closeExerciseGuide() {
+
+        const modal =
+            document.getElementById(
+                "exerciseGuideModal"
+            );
+
+        if (!modal) {
+            return;
+        }
+
+        modal.classList.remove(
+            "open"
+        );
+
+        modal.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        document.body.classList.remove(
+            "exercise-guide-open"
+        );
+    }
+
+
+    function initExerciseGuideModal() {
+
+        document
+            .querySelectorAll(
+                "[data-close-exercise-guide]"
+            )
+            .forEach(
+                button => {
+
+                    button.addEventListener(
+                        "click",
+                        closeExerciseGuide
+                    );
+
+                }
+            );
+
+        document.addEventListener(
+            "keydown",
+            event => {
+
+                if (
+                    event.key ===
+                    "Escape"
+                ) {
+                    closeExerciseGuide();
+                }
+            }
+        );
+    }
+
 
 
 
@@ -579,6 +1294,35 @@
                 )
         );
 
+    }
+
+
+
+    function trainingProgramMatchesDiscipline(program) {
+
+        const discipline =
+            normalizeText(
+                program?.discipline ||
+                (
+                    normalizeText(program?.category) === "cardio"
+                        ? "Cardio"
+                        : "Musculation"
+                )
+            );
+
+        if (
+            activeTrainingDiscipline === "calisthenie"
+        ) {
+            return discipline === "calisthenie";
+        }
+
+        if (
+            activeTrainingDiscipline === "cardio"
+        ) {
+            return discipline === "cardio";
+        }
+
+        return discipline === "musculation";
     }
 
 
@@ -1031,6 +1775,21 @@
                     );
 
 
+                    const demoButton =
+                        createExerciseDemoButton(
+                            spec.libraryId
+                        );
+
+
+                    if (demoButton) {
+
+                        info.appendChild(
+                            demoButton
+                        );
+
+                    }
+
+
                     if (spec.note) {
 
                         const note =
@@ -1213,6 +1972,9 @@
         const programs =
             trainingProgramLibrary
                 .filter(
+                    trainingProgramMatchesDiscipline
+                )
+                .filter(
                     trainingProgramMatchesFilter
                 )
                 .filter(
@@ -1269,6 +2031,31 @@
     function startTrainingProgram(
         program
     ) {
+
+        const programDiscipline =
+            normalizeText(
+                program?.discipline ||
+                (
+                    normalizeText(program?.category) === "cardio"
+                        ? "Cardio"
+                        : "Musculation"
+                )
+            );
+
+        if (
+            programDiscipline === "calisthenie" ||
+            programDiscipline === "cardio" ||
+            programDiscipline === "musculation"
+        ) {
+            activeTrainingDiscipline =
+                programDiscipline;
+
+            applyTrainingDisciplineUI(
+                activeTrainingDiscipline,
+                false
+            );
+        }
+
 
         if (
             !program ||
@@ -1482,6 +2269,12 @@
             );
 
 
+        const locationInput =
+            document.getElementById(
+                "sessionLocation"
+            );
+
+
         const durationInput =
             document.getElementById(
                 "sessionDuration"
@@ -1526,6 +2319,35 @@
                 typeInput.value =
                     "Autre";
 
+            }
+
+        }
+
+
+        if (
+            locationInput &&
+            program.location
+        ) {
+
+            const normalizedLocation =
+                normalizeText(
+                    program.location
+                );
+
+            const option =
+                [...locationInput.options]
+                    .find(
+                        item =>
+                            normalizedLocation.includes(
+                                normalizeText(
+                                    item.value
+                                )
+                            )
+                    );
+
+            if (option) {
+                locationInput.value =
+                    option.value;
             }
 
         }
@@ -4623,6 +5445,26 @@
                 );
 
 
+                const activeDemoButton =
+                    createExerciseDemoButton(
+                        exercise.libraryId,
+                        "▶ Voir l'exercice"
+                    );
+
+
+                if (activeDemoButton) {
+
+                    activeDemoButton.classList.add(
+                        "exercise-card-demo-button"
+                    );
+
+                    textWrap.appendChild(
+                        activeDemoButton
+                    );
+
+                }
+
+
                 if (
                     exercise.programTarget ||
                     exercise.programNote
@@ -5555,6 +6397,15 @@
 
                 type,
 
+                discipline:
+                    activeTrainingDiscipline,
+
+                location:
+                    document.getElementById(
+                        "sessionLocation"
+                    )?.value ||
+                    "",
+
                 duration,
 
                 difficulty,
@@ -5712,10 +6563,11 @@
         }
 
 
-        addSessionToHistory(
-            date,
-            session
-        );
+        const merged =
+            addOrMergeSessionToHistory(
+                date,
+                session
+            );
 
 
         resetCurrentSession();
@@ -5725,7 +6577,9 @@
 
 
         showSaveMessage(
-            "✅ Séance enregistrée."
+            merged
+                ? "✅ Cardio ajouté à la séance en cours — 1 seule séance comptabilisée."
+                : "✅ Séance enregistrée."
         );
 
     }
@@ -5943,6 +6797,12 @@
             );
 
 
+        const locationInput =
+            document.getElementById(
+                "sessionLocation"
+            );
+
+
         const durationInput =
             document.getElementById(
                 "sessionDuration"
@@ -5988,6 +6848,27 @@
                 typeInput.value =
                     session.type;
 
+            }
+
+        }
+
+
+        if (
+            locationInput &&
+            session.location
+        ) {
+
+            const optionExists =
+                [...locationInput.options]
+                    .some(
+                        option =>
+                            option.value ===
+                            session.location
+                    );
+
+            if (optionExists) {
+                locationInput.value =
+                    session.location;
             }
 
         }
@@ -6200,6 +7081,17 @@
 
 
         const metaParts = [];
+
+
+        if (
+            session.location
+        ) {
+
+            metaParts.push(
+                session.location
+            );
+
+        }
 
 
         if (
@@ -6706,7 +7598,9 @@
         if (sessionsElement) {
 
             sessionsElement.textContent =
-                sessions.length;
+                countTrainingSessions(
+                    sessions
+                );
 
         }
 
@@ -8509,6 +9403,1222 @@
     }
 
 
+
+    /* =========================================
+       TRAINING V10 — DISCIPLINES / SKILLS / MOBILITÉ
+    ========================================= */
+
+    const CALISTHENICS_STORAGE_KEY =
+        "hanaFitCalisthenics";
+
+    const MOBILITY_STORAGE_KEY =
+        "hanaFitMobility";
+
+    const FLEXIBILITY_STORAGE_KEY =
+        "hanaFitFlexibilityGoals";
+
+
+    const calisthenicsGoalDefinitions = [
+        { id: "pushups10", label: "10 pompes propres" },
+        { id: "pullup1", label: "1 traction" },
+        { id: "dips5", label: "5 dips" },
+        { id: "deadHang30", label: "30 s dead hang" },
+        { id: "pistol1", label: "1 pistol squat / jambe" },
+        { id: "lsit10", label: "L-sit 10 s" },
+        { id: "handstand10", label: "Handstand 10 s" },
+        { id: "handstandWalk3", label: "3 pas sur les mains" }
+    ];
+
+
+    const calisthenicsSkillDefinitions = [
+        {
+            id: "pushup",
+            title: "💪 Pompes",
+            unit: "reps",
+            steps: [
+                "Pompes inclinées sur poignées",
+                "Pompes sur les genoux sur poignées — niveau actuel",
+                "Négatives / transition vers pompe complète",
+                "Pompes classiques sur poignées",
+                "10+ pompes classiques",
+                "Pike push-ups"
+            ]
+        },
+        {
+            id: "pullup",
+            title: "🪽 Tractions",
+            unit: "reps",
+            steps: [
+                "Rows australiens sur station",
+                "Dead hang + scapular pull-ups",
+                "Tractions assistées — élastique 30 kg",
+                "Assistance 20 kg puis 15 kg",
+                "Négatives contrôlées",
+                "1 traction libre"
+            ]
+        },
+        {
+            id: "dips",
+            title: "💪 Dips",
+            unit: "reps",
+            steps: [
+                "Support hold stable sur station",
+                "Dips assistés — élastique 30 kg",
+                "Assistance 20 kg puis 15 kg",
+                "1 dip libre",
+                "5 dips libres"
+            ]
+        },
+        {
+            id: "lsit",
+            title: "🪑 L-sit",
+            unit: "sec",
+            steps: [
+                "Support hold",
+                "Tuck hold",
+                "Une jambe tendue",
+                "L-sit sous l'horizontale",
+                "L-sit parallèle au sol"
+            ]
+        },
+        {
+            id: "handstand",
+            title: "🤸 Handstand",
+            unit: "sec",
+            steps: [
+                "Hollow body + épaules",
+                "Pike hold",
+                "Handstand face au mur",
+                "Transferts de poids",
+                "Équilibre libre",
+                "10 s handstand"
+            ]
+        },
+        {
+            id: "handstandWalk",
+            title: "🚶 Handstand Walk",
+            unit: "pas",
+            steps: [
+                "Handstand libre 10 s",
+                "Transferts droite / gauche",
+                "Décollage d'une main",
+                "1–2 pas contrôlés",
+                "3+ pas"
+            ]
+        }
+    ];
+
+
+    const mobilityRoutines = [
+        {
+            id: "wake",
+            emoji: "🌅",
+            title: "Réveil articulaire",
+            duration: 5,
+            location: "Maison",
+            steps: [
+                "Respiration + grandissement — 30 s",
+                "Cercles d'épaules — 30 s",
+                "Rotations thoraciques — 45 s",
+                "Cercles de hanches — 45 s",
+                "Chevilles — 45 s / côté",
+                "Squat confortable assisté — 60 s"
+            ]
+        },
+        {
+            id: "general",
+            emoji: "🧘",
+            title: "Mobilité générale",
+            duration: 10,
+            location: "Maison",
+            steps: [
+                "Cat-cow doux — 60 s",
+                "Rotations thoraciques — 60 s / côté",
+                "90/90 hanches — 2 min",
+                "Fente fléchisseur de hanche — 60 s / côté",
+                "Chevilles genou vers l'avant — 60 s / côté",
+                "Épaules au mur — 2 min"
+            ]
+        },
+        {
+            id: "hips",
+            emoji: "🦵",
+            title: "Hanches & chevilles",
+            duration: 12,
+            location: "Maison",
+            steps: [
+                "90/90 transitions — 2 min",
+                "Adductor rock-back — 90 s / côté",
+                "Fente fléchisseur de hanche — 60 s / côté",
+                "Squat profond assisté — 2 min",
+                "Mobilité cheville genou-au-mur — 60 s / côté",
+                "Mollets doux — 45 s / côté"
+            ]
+        },
+        {
+            id: "upper",
+            emoji: "🪽",
+            title: "Épaules & dos",
+            duration: 10,
+            location: "Maison",
+            steps: [
+                "Cercles d'épaules — 60 s",
+                "Wall slides — 2 × 8",
+                "Rotations thoraciques — 60 s / côté",
+                "Child's pose avec bras décalés — 60 s / côté",
+                "Ouverture pectoraux douce — 45 s / côté"
+            ]
+        },
+        {
+            id: "legs-recovery",
+            emoji: "🍑",
+            title: "Récupération après jambes",
+            duration: 15,
+            location: "Maison",
+            steps: [
+                "Respiration / marche douce — 2 min",
+                "Fléchisseur de hanche — 60 s / côté",
+                "Ischios doux — 60 s / côté",
+                "Adducteurs — 60 s / côté",
+                "Fessiers / figure 4 — 60 s / côté",
+                "Mollets — 60 s / côté",
+                "90/90 relax — 2 min"
+            ]
+        },
+        {
+            id: "upper-recovery",
+            emoji: "💪",
+            title: "Récupération haut du corps",
+            duration: 10,
+            location: "Maison",
+            steps: [
+                "Respiration — 60 s",
+                "Étirement grand dorsal doux — 60 s / côté",
+                "Ouverture pectoraux — 45 s / côté",
+                "Rotation thoracique — 60 s / côté",
+                "Cercles d'épaules lents — 60 s",
+                "Avant-bras relâchés — 60 s"
+            ]
+        },
+        {
+            id: "office",
+            emoji: "💻",
+            title: "Journée assise au bureau 😭",
+            duration: 10,
+            location: "Maison / bureau",
+            steps: [
+                "Extension thoracique sur dossier — 60 s",
+                "Ouverture pectoraux — 45 s / côté",
+                "Fente fléchisseur de hanche — 60 s / côté",
+                "Good morning sans charge — 10 reps",
+                "Squat assisté — 60 s",
+                "Cercles de chevilles — 45 s / côté",
+                "Marche — 2 min"
+            ]
+        },
+        {
+            id: "wrists",
+            emoji: "✋",
+            title: "Préparation poignets / handstand",
+            duration: 8,
+            location: "Maison",
+            steps: [
+                "Ouvrir / fermer les doigts — 30 s",
+                "Cercles de poignets très doux — 30 s / sens",
+                "Flexion / extension active sans forcer — 8 reps",
+                "Pronation / supination avant-bras — 8 reps / côté",
+                "Appuis très progressifs sur poings ou parallettes si confortables",
+                "Scapular push-ups en prise neutre — 2 × 8"
+            ],
+            caution: "Pas d'étirement forcé : douleur vive, décharge électrique ou engourdissement = arrêt."
+        },
+        {
+            id: "split",
+            emoji: "✨",
+            title: "Souplesse — objectif grand écart",
+            duration: 15,
+            location: "Maison",
+            steps: [
+                "Échauffement léger — 3 min",
+                "Fente fléchisseur de hanche — 60 s / côté",
+                "Demi-grand écart / ischios — 60 s / côté",
+                "Adducteurs doux — 60 s / côté",
+                "Fente longue contrôlée — 60 s / côté",
+                "Grand écart assisté sans douleur — 2 × 30–45 s"
+            ]
+        }
+    ];
+
+
+    const flexibilityGoalDefinitions = [
+        { id: "toes", label: "🦶 Toucher les pieds jambes tendues" },
+        { id: "deepSquat", label: "🧘 Squat profond confortable" },
+        { id: "bridge", label: "🌉 Pont confortable" },
+        { id: "split", label: "✨ Grand écart" },
+        { id: "balance", label: "⚖️ Équilibre 30 s / jambe" }
+    ];
+
+
+    function loadSimpleStorage(
+        key,
+        fallback
+    ) {
+
+        try {
+            const raw =
+                localStorage.getItem(
+                    key
+                );
+
+            if (!raw) {
+                return fallback;
+            }
+
+            const parsed =
+                JSON.parse(
+                    raw
+                );
+
+            return parsed ?? fallback;
+
+        } catch (error) {
+
+            console.error(
+                `Erreur lecture ${key} :`,
+                error
+            );
+
+            return fallback;
+        }
+    }
+
+
+    function saveSimpleStorage(
+        key,
+        value
+    ) {
+
+        localStorage.setItem(
+            key,
+            JSON.stringify(
+                value
+            )
+        );
+    }
+
+
+    function applyTrainingDisciplineUI(
+        discipline,
+        scroll = false
+    ) {
+
+        const allowed = [
+            "musculation",
+            "cardio",
+            "calisthenie",
+            "mobilite"
+        ];
+
+        activeTrainingDiscipline =
+            allowed.includes(
+                discipline
+            )
+                ? discipline
+                : "musculation";
+
+        trainingProgramFilter =
+            "all";
+
+        document
+            .querySelectorAll(
+                ".training-program-filter"
+            )
+            .forEach(
+                button => {
+                    button.classList.toggle(
+                        "active",
+                        button.dataset.filter === "all"
+                    );
+                }
+            );
+
+        document.body.dataset.trainingDiscipline =
+            activeTrainingDiscipline;
+
+        document
+            .querySelectorAll(
+                ".training-discipline-tab"
+            )
+            .forEach(
+                button => {
+
+                    button.classList.toggle(
+                        "active",
+                        button.dataset.discipline ===
+                        activeTrainingDiscipline
+                    );
+
+                }
+            );
+
+        const intro =
+            document.getElementById(
+                "trainingDisciplineIntro"
+            );
+
+        const heading =
+            document.getElementById(
+                "trainingProgramHeading"
+            );
+
+        const programSubtitle =
+            document.getElementById(
+                "trainingProgramSubtitle"
+            );
+
+        const programSearch =
+            document.getElementById(
+                "trainingProgramSearch"
+            );
+
+        const intros = {
+            musculation:
+                "🏋️ Choisis une séance de musculation selon ton objectif, ton lieu et ton matériel.",
+            cardio:
+                "❤️ Cardio seul ou en fin de musculation : s'il est enregistré dans la foulée, Hana Fit le rattache à la même séance.",
+            calisthenie:
+                "🤸 Progresse par niveaux : force, contrôle, L-sit, handstand, tractions, dips et pistol squat.",
+            mobilite:
+                "🧘 Les routines mobilité restent indépendantes et ne gonflent jamais ton compteur de séances."
+        };
+
+        if (intro) {
+            intro.textContent =
+                intros[
+                    activeTrainingDiscipline
+                ];
+        }
+
+        if (heading) {
+
+            heading.textContent =
+                activeTrainingDiscipline === "cardio"
+                    ? "❤️ Séances Cardio"
+                    : activeTrainingDiscipline === "calisthenie"
+                        ? "🤸 Programmes Calisthénie"
+                        : activeTrainingDiscipline === "mobilite"
+                            ? "🧘 Mobilité"
+                            : "🏋️ Séances Musculation";
+        }
+
+        if (programSubtitle) {
+
+            programSubtitle.textContent =
+                activeTrainingDiscipline === "cardio"
+                    ? "Choisis ton cardio : seul ou en fin de séance de musculation."
+                    : activeTrainingDiscipline === "calisthenie"
+                        ? "Choisis un programme progressif selon ton skill, ton niveau et ton lieu."
+                        : activeTrainingDiscipline === "mobilite"
+                            ? "Choisis une routine courte : récupération, hanches, épaules, poignets ou souplesse."
+                            : "Choisis une séance selon ton objectif, ton matériel, ton lieu et le temps disponible.";
+        }
+
+        if (programSearch) {
+
+            programSearch.value =
+                "";
+
+            programSearch.placeholder =
+                activeTrainingDiscipline === "cardio"
+                    ? "Rechercher : tapis, rameur, elliptique..."
+                    : activeTrainingDiscipline === "calisthenie"
+                        ? "Rechercher : handstand, L-sit, traction, dips..."
+                        : activeTrainingDiscipline === "mobilite"
+                            ? "Rechercher une routine..."
+                            : "Rechercher : fessiers, haltères, maison, superset...";
+        }
+
+        const typeInput =
+            document.getElementById(
+                "sessionType"
+            );
+
+        if (
+            typeInput &&
+            activeTrainingDiscipline === "cardio"
+        ) {
+            typeInput.value =
+                "Cardio";
+        }
+
+        if (
+            typeInput &&
+            activeTrainingDiscipline === "calisthenie"
+        ) {
+            typeInput.value =
+                "Calisthénie";
+        }
+
+        renderTrainingProgramLibrary();
+
+        const programLibrary =
+            document.getElementById(
+                "trainingProgramLibrarySection"
+            );
+
+        if (
+            programLibrary &&
+            scroll
+        ) {
+            programLibrary.open =
+                true;
+        }
+
+        if (
+            scroll
+        ) {
+
+            const target =
+                activeTrainingDiscipline === "mobilite"
+                    ? document.getElementById(
+                        "mobilityPanel"
+                    )
+                    : activeTrainingDiscipline === "calisthenie"
+                        ? document.getElementById(
+                            "calisthenicsSkillsPanel"
+                        )
+                        : document.getElementById(
+                            "trainingProgramLibrarySection"
+                        );
+
+            target?.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+    }
+
+
+    function renderCalisthenicsGoals() {
+
+        const container =
+            document.getElementById(
+                "calisthenicsGoalList"
+            );
+
+        if (!container) {
+            return;
+        }
+
+        const data =
+            loadSimpleStorage(
+                CALISTHENICS_STORAGE_KEY,
+                {
+                    goals: {},
+                    skills: {}
+                }
+            );
+
+        data.goals =
+            data.goals ||
+            {};
+
+        container.innerHTML =
+            "";
+
+        calisthenicsGoalDefinitions.forEach(
+            goal => {
+
+                const label =
+                    document.createElement(
+                        "label"
+                    );
+
+                label.className =
+                    "skill-goal";
+
+                const input =
+                    document.createElement(
+                        "input"
+                    );
+
+                input.type =
+                    "checkbox";
+
+                input.checked =
+                    Boolean(
+                        data.goals[
+                            goal.id
+                        ]
+                    );
+
+                input.addEventListener(
+                    "change",
+                    () => {
+
+                        const latest =
+                            loadSimpleStorage(
+                                CALISTHENICS_STORAGE_KEY,
+                                {
+                                    goals: {},
+                                    skills: {}
+                                }
+                            );
+
+                        latest.goals =
+                            latest.goals ||
+                            {};
+
+                        latest.goals[
+                            goal.id
+                        ] =
+                            input.checked;
+
+                        saveSimpleStorage(
+                            CALISTHENICS_STORAGE_KEY,
+                            latest
+                        );
+
+                    }
+                );
+
+                const text =
+                    document.createElement(
+                        "span"
+                    );
+
+                text.textContent =
+                    goal.label;
+
+                label.append(
+                    input,
+                    text
+                );
+
+                container.appendChild(
+                    label
+                );
+
+            }
+        );
+    }
+
+
+    function renderCalisthenicsSkillPaths() {
+
+        const container =
+            document.getElementById(
+                "calisthenicsSkillPaths"
+            );
+
+        if (!container) {
+            return;
+        }
+
+        const data =
+            loadSimpleStorage(
+                CALISTHENICS_STORAGE_KEY,
+                {
+                    goals: {},
+                    skills: {}
+                }
+            );
+
+        data.skills =
+            data.skills ||
+            {};
+
+        container.innerHTML =
+            "";
+
+        calisthenicsSkillDefinitions.forEach(
+            skill => {
+
+                const saved =
+                    data.skills[
+                        skill.id
+                    ] ||
+                    {};
+
+                const level =
+                    Math.min(
+                        skill.steps.length - 1,
+                        Math.max(
+                            0,
+                            safeNumber(
+                                saved.level
+                            )
+                        )
+                    );
+
+                const card =
+                    document.createElement(
+                        "article"
+                    );
+
+                card.className =
+                    "skill-path-card";
+
+                const percentage =
+                    skill.steps.length <= 1
+                        ? 100
+                        : (
+                            level /
+                            (
+                                skill.steps.length - 1
+                            )
+                        ) * 100;
+
+                card.innerHTML = `
+                    <div class="skill-path-head">
+                        <strong>${skill.title}</strong>
+                        <span>Niveau ${level + 1}/${skill.steps.length}</span>
+                    </div>
+
+                    <div class="skill-progress-track">
+                        <div class="skill-progress-value" style="width:${percentage}%"></div>
+                    </div>
+
+                    <p class="skill-current-step">
+                        Étape actuelle : <strong>${skill.steps[level]}</strong>
+                    </p>
+
+                    <div class="skill-controls">
+                        <button type="button" data-action="down">← Niveau précédent</button>
+                        <button type="button" data-action="up">Niveau suivant →</button>
+                    </div>
+
+                    <div class="skill-record-row">
+                        <input
+                            type="number"
+                            min="0"
+                            step="1"
+                            inputmode="numeric"
+                            value="${saved.record ?? ""}"
+                            placeholder="Record (${skill.unit})"
+                            aria-label="Record ${skill.title}"
+                        >
+                        <button type="button" data-action="record">Sauver</button>
+                    </div>
+                `;
+
+                const saveLevel =
+                    nextLevel => {
+
+                        const latest =
+                            loadSimpleStorage(
+                                CALISTHENICS_STORAGE_KEY,
+                                {
+                                    goals: {},
+                                    skills: {}
+                                }
+                            );
+
+                        latest.skills =
+                            latest.skills ||
+                            {};
+
+                        latest.skills[
+                            skill.id
+                        ] = {
+                            ...(
+                                latest.skills[
+                                    skill.id
+                                ] ||
+                                {}
+                            ),
+                            level:
+                                Math.min(
+                                    skill.steps.length - 1,
+                                    Math.max(
+                                        0,
+                                        nextLevel
+                                    )
+                                )
+                        };
+
+                        saveSimpleStorage(
+                            CALISTHENICS_STORAGE_KEY,
+                            latest
+                        );
+
+                        renderCalisthenicsSkillPaths();
+                    };
+
+                card
+                    .querySelector(
+                        '[data-action="down"]'
+                    )
+                    .addEventListener(
+                        "click",
+                        () =>
+                            saveLevel(
+                                level - 1
+                            )
+                    );
+
+                card
+                    .querySelector(
+                        '[data-action="up"]'
+                    )
+                    .addEventListener(
+                        "click",
+                        () =>
+                            saveLevel(
+                                level + 1
+                            )
+                    );
+
+                card
+                    .querySelector(
+                        '[data-action="record"]'
+                    )
+                    .addEventListener(
+                        "click",
+                        () => {
+
+                            const input =
+                                card.querySelector(
+                                    ".skill-record-row input"
+                                );
+
+                            const latest =
+                                loadSimpleStorage(
+                                    CALISTHENICS_STORAGE_KEY,
+                                    {
+                                        goals: {},
+                                        skills: {}
+                                    }
+                                );
+
+                            latest.skills =
+                                latest.skills ||
+                                {};
+
+                            latest.skills[
+                                skill.id
+                            ] = {
+                                ...(
+                                    latest.skills[
+                                        skill.id
+                                    ] ||
+                                    {}
+                                ),
+                                level,
+                                record:
+                                    safeNumber(
+                                        input.value
+                                    )
+                            };
+
+                            saveSimpleStorage(
+                                CALISTHENICS_STORAGE_KEY,
+                                latest
+                            );
+
+                            input.blur();
+                        }
+                    );
+
+                container.appendChild(
+                    card
+                );
+            }
+        );
+    }
+
+
+    function loadMobilityHistory() {
+
+        const data =
+            loadSimpleStorage(
+                MOBILITY_STORAGE_KEY,
+                []
+            );
+
+        return Array.isArray(
+            data
+        )
+            ? data
+            : [];
+    }
+
+
+    function saveMobilityRoutine(
+        routine
+    ) {
+
+        const history =
+            loadMobilityHistory();
+
+        history.push({
+            id:
+                makeId(),
+            routineId:
+                routine.id,
+            title:
+                routine.title,
+            duration:
+                routine.duration,
+            date:
+                localDateKey(),
+            createdAt:
+                new Date()
+                    .toISOString()
+        });
+
+        saveSimpleStorage(
+            MOBILITY_STORAGE_KEY,
+            history
+        );
+
+        renderMobilitySummary();
+
+        const button =
+            document.querySelector(
+                `[data-mobility-complete="${routine.id}"]`
+            );
+
+        if (button) {
+            const original =
+                button.textContent;
+
+            button.textContent =
+                "✅ Routine enregistrée";
+
+            setTimeout(
+                () => {
+                    button.textContent =
+                        original;
+                },
+                1600
+            );
+        }
+    }
+
+
+    function renderMobilityRoutines() {
+
+        const container =
+            document.getElementById(
+                "mobilityRoutineList"
+            );
+
+        if (!container) {
+            return;
+        }
+
+        container.innerHTML =
+            "";
+
+        mobilityRoutines.forEach(
+            routine => {
+
+                const details =
+                    document.createElement(
+                        "details"
+                    );
+
+                details.className =
+                    "mobility-routine";
+
+                details.innerHTML = `
+                    <summary>
+                        <span class="mobility-routine-emoji">${routine.emoji}</span>
+
+                        <span class="mobility-routine-title">
+                            <strong>${routine.title}</strong>
+                            <span>${routine.duration} min · ${routine.location}</span>
+                        </span>
+
+                        <span class="mobility-routine-chevron">›</span>
+                    </summary>
+
+                    <div class="mobility-routine-content">
+                        <ul>
+                            ${routine.steps.map(step => `<li>${step}</li>`).join("")}
+                        </ul>
+
+                        ${routine.caution ? `<p class="wrist-caution">${routine.caution}</p>` : ""}
+
+                        <button
+                            type="button"
+                            class="mobility-complete-button"
+                            data-mobility-complete="${routine.id}"
+                        >
+                            ✓ Marquer comme faite
+                        </button>
+                    </div>
+                `;
+
+                details
+                    .querySelector(
+                        ".mobility-complete-button"
+                    )
+                    .addEventListener(
+                        "click",
+                        () =>
+                            saveMobilityRoutine(
+                                routine
+                            )
+                    );
+
+                container.appendChild(
+                    details
+                );
+            }
+        );
+    }
+
+
+    function getStartOfWeek(
+        date = new Date()
+    ) {
+
+        const result =
+            new Date(
+                date
+            );
+
+        const day =
+            result.getDay() ||
+            7;
+
+        result.setHours(
+            0,
+            0,
+            0,
+            0
+        );
+
+        result.setDate(
+            result.getDate() -
+            day +
+            1
+        );
+
+        return result;
+    }
+
+
+    function renderMobilitySummary() {
+
+        const history =
+            loadMobilityHistory();
+
+        const start =
+            getStartOfWeek();
+
+        const weekEntries =
+            history.filter(
+                entry => {
+
+                    const value =
+                        Date.parse(
+                            entry.createdAt ||
+                            `${entry.date}T12:00:00`
+                        );
+
+                    return (
+                        Number.isFinite(
+                            value
+                        ) &&
+                        value >=
+                        start.getTime()
+                    );
+                }
+            );
+
+        const minutes =
+            weekEntries.reduce(
+                (total, entry) =>
+                    total +
+                    safeNumber(
+                        entry.duration
+                    ),
+                0
+            );
+
+        const last =
+            [...history]
+                .sort(
+                    (a, b) =>
+                        Date.parse(
+                            b.createdAt ||
+                            ""
+                        ) -
+                        Date.parse(
+                            a.createdAt ||
+                            ""
+                        )
+                )[0];
+
+        const countElement =
+            document.getElementById(
+                "mobilityWeekCount"
+            );
+
+        const minutesElement =
+            document.getElementById(
+                "mobilityWeekMinutes"
+            );
+
+        const lastElement =
+            document.getElementById(
+                "mobilityLastRoutine"
+            );
+
+        if (countElement) {
+            countElement.textContent =
+                `${weekEntries.length} routine${weekEntries.length > 1 ? "s" : ""}`;
+        }
+
+        if (minutesElement) {
+            minutesElement.textContent =
+                `${formatNumber(minutes)} min`;
+        }
+
+        if (lastElement) {
+            lastElement.textContent =
+                last?.title ||
+                "—";
+        }
+    }
+
+
+    function renderFlexibilityGoals() {
+
+        const container =
+            document.getElementById(
+                "flexibilityGoalList"
+            );
+
+        if (!container) {
+            return;
+        }
+
+        const values =
+            loadSimpleStorage(
+                FLEXIBILITY_STORAGE_KEY,
+                {}
+            );
+
+        container.innerHTML =
+            "";
+
+        flexibilityGoalDefinitions.forEach(
+            goal => {
+
+                const label =
+                    document.createElement(
+                        "label"
+                    );
+
+                label.className =
+                    "flexibility-goal";
+
+                const input =
+                    document.createElement(
+                        "input"
+                    );
+
+                input.type =
+                    "checkbox";
+
+                input.checked =
+                    Boolean(
+                        values[
+                            goal.id
+                        ]
+                    );
+
+                input.addEventListener(
+                    "change",
+                    () => {
+
+                        const latest =
+                            loadSimpleStorage(
+                                FLEXIBILITY_STORAGE_KEY,
+                                {}
+                            );
+
+                        latest[
+                            goal.id
+                        ] =
+                            input.checked;
+
+                        saveSimpleStorage(
+                            FLEXIBILITY_STORAGE_KEY,
+                            latest
+                        );
+                    }
+                );
+
+                const text =
+                    document.createElement(
+                        "span"
+                    );
+
+                text.textContent =
+                    goal.label;
+
+                label.append(
+                    input,
+                    text
+                );
+
+                container.appendChild(
+                    label
+                );
+            }
+        );
+    }
+
+
+    function initTrainingV10Features() {
+
+        document
+            .querySelectorAll(
+                ".training-discipline-tab"
+            )
+            .forEach(
+                button => {
+
+                    button.addEventListener(
+                        "click",
+                        () => {
+
+                            applyTrainingDisciplineUI(
+                                button.dataset.discipline ||
+                                "musculation",
+                                true
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+        renderCalisthenicsGoals();
+
+        renderCalisthenicsSkillPaths();
+
+        renderMobilityRoutines();
+
+        renderMobilitySummary();
+
+        renderFlexibilityGoals();
+
+        applyTrainingDisciplineUI(
+            "musculation",
+            false
+        );
+    }
+
+
+
+
     /* =========================================
        ÉVÉNEMENTS
     ========================================= */
@@ -8706,7 +10816,13 @@
 
         await loadExerciseLibrary();
 
+        await loadExerciseGuideLibrary();
+
         await loadTrainingProgramLibrary();
+
+        initExerciseGuideModal();
+
+        initTrainingV10Features();
 
     }
 

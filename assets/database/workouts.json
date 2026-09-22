@@ -1425,5 +1425,425 @@
       "band abduction",
       "abduction elastique"
     ]
+  },
+  {
+    "id": "incline-push-up",
+    "name": "Pompes inclinées",
+    "emoji": "🤸",
+    "category": "Calisthénie / Poussée",
+    "muscles": [
+      "Pectoraux",
+      "Triceps",
+      "Épaules",
+      "Gainage"
+    ],
+    "equipment": "Banc / support stable",
+    "aliases": [
+      "pompes inclinées",
+      "incline push up",
+      "incline push-up"
+    ]
+  },
+  {
+    "id": "knee-push-up",
+    "name": "Pompes sur les genoux",
+    "emoji": "🤸",
+    "category": "Calisthénie / Poussée",
+    "muscles": [
+      "Pectoraux",
+      "Triceps",
+      "Épaules"
+    ],
+    "equipment": "Tapis",
+    "aliases": [
+      "pompes genoux",
+      "knee push up",
+      "knee push-up"
+    ]
+  },
+  {
+    "id": "scapular-push-up",
+    "name": "Pompes scapulaires",
+    "emoji": "🪽",
+    "category": "Calisthénie / Épaules",
+    "muscles": [
+      "Dentelé antérieur",
+      "Omoplates",
+      "Épaules"
+    ],
+    "equipment": "Sol / poignées",
+    "aliases": [
+      "scapular push up",
+      "pompes scapulaires"
+    ]
+  },
+  {
+    "id": "pike-push-up",
+    "name": "Pike Push-up",
+    "emoji": "🤸",
+    "category": "Calisthénie / Épaules",
+    "muscles": [
+      "Épaules",
+      "Triceps",
+      "Gainage"
+    ],
+    "equipment": "Sol / poignées",
+    "aliases": [
+      "pike push up",
+      "pike push-up",
+      "pompes pike"
+    ]
+  },
+  {
+    "id": "dead-hang",
+    "name": "Dead Hang / Suspension",
+    "emoji": "🪽",
+    "category": "Calisthénie / Tirage",
+    "muscles": [
+      "Avant-bras",
+      "Dos",
+      "Épaules"
+    ],
+    "equipment": "Barre de traction",
+    "aliases": [
+      "dead hang",
+      "suspension",
+      "suspension barre"
+    ]
+  },
+  {
+    "id": "scapular-pull-up",
+    "name": "Scapular Pull-ups",
+    "emoji": "🪽",
+    "category": "Calisthénie / Tirage",
+    "muscles": [
+      "Grand dorsal",
+      "Omoplates"
+    ],
+    "equipment": "Barre de traction",
+    "aliases": [
+      "scapular pull up",
+      "scapular pull-up",
+      "tractions scapulaires"
+    ]
+  },
+  {
+    "id": "negative-pull-up",
+    "name": "Tractions négatives",
+    "emoji": "🪽",
+    "category": "Calisthénie / Tirage",
+    "muscles": [
+      "Grand dorsal",
+      "Biceps"
+    ],
+    "equipment": "Barre de traction / step",
+    "aliases": [
+      "negative pull up",
+      "tractions negatives",
+      "traction négative"
+    ]
+  },
+  {
+    "id": "pull-up",
+    "name": "Tractions",
+    "emoji": "🪽",
+    "category": "Calisthénie / Tirage",
+    "muscles": [
+      "Grand dorsal",
+      "Biceps",
+      "Gainage"
+    ],
+    "equipment": "Barre de traction",
+    "aliases": [
+      "pull up",
+      "pull-up",
+      "traction"
+    ]
+  },
+  {
+    "id": "assisted-dip",
+    "name": "Dips assistés",
+    "emoji": "💪",
+    "category": "Calisthénie / Poussée",
+    "muscles": [
+      "Triceps",
+      "Pectoraux",
+      "Épaules"
+    ],
+    "equipment": "Machine assistée / élastique",
+    "aliases": [
+      "dips assistés",
+      "assisted dips"
+    ]
+  },
+  {
+    "id": "dip",
+    "name": "Dips",
+    "emoji": "💪",
+    "category": "Calisthénie / Poussée",
+    "muscles": [
+      "Triceps",
+      "Pectoraux",
+      "Épaules"
+    ],
+    "equipment": "Barres parallèles",
+    "aliases": [
+      "dips",
+      "dip"
+    ]
+  },
+  {
+    "id": "support-hold",
+    "name": "Support Hold",
+    "emoji": "🪑",
+    "category": "Calisthénie / L-sit",
+    "muscles": [
+      "Triceps",
+      "Épaules",
+      "Gainage"
+    ],
+    "equipment": "Parallettes / supports stables",
+    "aliases": [
+      "support hold",
+      "maintien support"
+    ]
+  },
+  {
+    "id": "compression-leg-lift",
+    "name": "Compression assise — levées de jambes",
+    "emoji": "🪑",
+    "category": "Calisthénie / L-sit",
+    "muscles": [
+      "Fléchisseurs de hanche",
+      "Abdominaux",
+      "Quadriceps"
+    ],
+    "equipment": "Sol",
+    "aliases": [
+      "compression assise",
+      "seated leg lift",
+      "leg lift compression"
+    ]
+  },
+  {
+    "id": "tuck-l-sit",
+    "name": "Tuck L-sit",
+    "emoji": "🪑",
+    "category": "Calisthénie / L-sit",
+    "muscles": [
+      "Abdominaux",
+      "Fléchisseurs de hanche",
+      "Triceps",
+      "Épaules"
+    ],
+    "equipment": "Parallettes / supports stables",
+    "aliases": [
+      "tuck l sit",
+      "tuck l-sit"
+    ]
+  },
+  {
+    "id": "one-leg-l-sit",
+    "name": "L-sit une jambe",
+    "emoji": "🪑",
+    "category": "Calisthénie / L-sit",
+    "muscles": [
+      "Abdominaux",
+      "Fléchisseurs de hanche",
+      "Triceps"
+    ],
+    "equipment": "Parallettes / supports stables",
+    "aliases": [
+      "one leg l sit",
+      "l sit une jambe"
+    ]
+  },
+  {
+    "id": "l-sit",
+    "name": "L-sit",
+    "emoji": "🪑",
+    "category": "Calisthénie / L-sit",
+    "muscles": [
+      "Abdominaux",
+      "Fléchisseurs de hanche",
+      "Triceps",
+      "Épaules"
+    ],
+    "equipment": "Parallettes / supports stables",
+    "aliases": [
+      "l sit",
+      "l-sit"
+    ]
+  },
+  {
+    "id": "hollow-body-hold",
+    "name": "Hollow Body Hold",
+    "emoji": "🔥",
+    "category": "Calisthénie / Gainage",
+    "muscles": [
+      "Abdominaux",
+      "Gainage"
+    ],
+    "equipment": "Tapis",
+    "aliases": [
+      "hollow body",
+      "hollow hold"
+    ]
+  },
+  {
+    "id": "pike-hold",
+    "name": "Pike Hold",
+    "emoji": "🤸",
+    "category": "Calisthénie / Handstand",
+    "muscles": [
+      "Épaules",
+      "Triceps",
+      "Gainage"
+    ],
+    "equipment": "Banc / box / sol",
+    "aliases": [
+      "pike hold"
+    ]
+  },
+  {
+    "id": "wall-handstand",
+    "name": "Handstand face au mur",
+    "emoji": "🤸",
+    "category": "Calisthénie / Handstand",
+    "muscles": [
+      "Épaules",
+      "Triceps",
+      "Gainage",
+      "Avant-bras"
+    ],
+    "equipment": "Mur / parallettes optionnelles",
+    "aliases": [
+      "wall handstand",
+      "handstand mur",
+      "équilibre mur"
+    ]
+  },
+  {
+    "id": "handstand-weight-shift",
+    "name": "Handstand — transferts de poids",
+    "emoji": "🤸",
+    "category": "Calisthénie / Handstand",
+    "muscles": [
+      "Épaules",
+      "Triceps",
+      "Gainage"
+    ],
+    "equipment": "Mur",
+    "aliases": [
+      "handstand weight shift",
+      "transfert de poids handstand"
+    ]
+  },
+  {
+    "id": "free-handstand",
+    "name": "Handstand libre",
+    "emoji": "🤸",
+    "category": "Calisthénie / Handstand",
+    "muscles": [
+      "Épaules",
+      "Triceps",
+      "Gainage",
+      "Avant-bras"
+    ],
+    "equipment": "Mur à proximité",
+    "aliases": [
+      "free handstand",
+      "handstand libre",
+      "équilibre libre"
+    ]
+  },
+  {
+    "id": "assisted-pistol-squat",
+    "name": "Pistol Squat assisté",
+    "emoji": "🦵",
+    "category": "Calisthénie / Jambes",
+    "muscles": [
+      "Quadriceps",
+      "Fessiers",
+      "Chevilles",
+      "Gainage"
+    ],
+    "equipment": "Support stable",
+    "aliases": [
+      "assisted pistol squat",
+      "pistol squat assisté"
+    ]
+  },
+  {
+    "id": "pistol-squat",
+    "name": "Pistol Squat",
+    "emoji": "🦵",
+    "category": "Calisthénie / Jambes",
+    "muscles": [
+      "Quadriceps",
+      "Fessiers",
+      "Chevilles",
+      "Gainage"
+    ],
+    "equipment": "Poids du corps",
+    "aliases": [
+      "pistol squat"
+    ]
+  },
+  {
+    "id": "wall-handstand-shoulder-tap",
+    "name": "Handstand au mur — décollage d'une main",
+    "emoji": "🤸",
+    "category": "Calisthénie / Handstand",
+    "muscles": [
+      "Épaules",
+      "Triceps",
+      "Gainage",
+      "Avant-bras"
+    ],
+    "equipment": "Mur / parallettes optionnelles",
+    "aliases": [
+      "handstand shoulder tap",
+      "wall handstand shoulder tap",
+      "décollage main handstand"
+    ]
+  },
+  {
+    "id": "handstand-walk-drill",
+    "name": "Handstand Walk — petits pas",
+    "emoji": "🚶",
+    "category": "Calisthénie / Handstand",
+    "muscles": [
+      "Épaules",
+      "Triceps",
+      "Gainage",
+      "Avant-bras"
+    ],
+    "equipment": "Mur à proximité / espace dégagé",
+    "aliases": [
+      "handstand walk drill",
+      "marche sur les mains",
+      "petits pas handstand"
+    ]
+  },
+  {
+    "id": "inverted-row",
+    "name": "Row australien / tirage inversé",
+    "emoji": "🪽",
+    "category": "Calisthénie / Tirage",
+    "muscles": [
+      "Dos",
+      "Biceps",
+      "Arrière d’épaules",
+      "Gainage"
+    ],
+    "equipment": "Station réglable / barre basse",
+    "aliases": [
+      "australian row",
+      "row australien",
+      "inverted row",
+      "tirage inverse",
+      "tirage inversé"
+    ]
   }
 ]
